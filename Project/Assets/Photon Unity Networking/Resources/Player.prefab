@@ -103,6 +103,7 @@ MonoBehaviour:
   photonView: {fileID: 5440725864618505865}
   rigidBody: {fileID: 5440725864618505866}
   playerCamera: {fileID: 5440725864766673751}
+  playerViewCone: {fileID: 7174434949090202695}
   moveSpeed: 6
 --- !u!114 &5440725864618505865
 MonoBehaviour:
@@ -376,7 +377,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4113929387402967251
 Transform:
   m_ObjectHideFlags: 0
@@ -443,12 +444,12 @@ GameObject:
   - component: {fileID: 5445722017635938532}
   - component: {fileID: 6986396456180241338}
   m_Layer: 0
-  m_Name: Point Light 2D
+  m_Name: ViewCone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5445722017635938532
 Transform:
   m_ObjectHideFlags: 0

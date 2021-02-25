@@ -7,7 +7,7 @@ public class Player : Photon.MonoBehaviour
     public PhotonView photonView;
 
     public Rigidbody2D rigidBody;
-    public GameObject playerCamera;
+    public GameObject playerCamera, playerViewCone;
     private Camera usedCameraComponent;
 
     public float moveSpeed;
@@ -21,6 +21,7 @@ public class Player : Photon.MonoBehaviour
         if (photonView.isMine)
         {
             playerCamera.SetActive(true);
+            playerViewCone.SetActive(true);
         }
 
         playerCamera.transform.SetParent(null);
