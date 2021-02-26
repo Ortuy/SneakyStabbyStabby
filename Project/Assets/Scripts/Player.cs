@@ -9,6 +9,7 @@ public class Player : Photon.MonoBehaviour
     public Rigidbody2D rigidBody;
     public GameObject playerCamera, playerViewCone;
     private Camera usedCameraComponent;
+    private Vector2 moveDirection;
 
     public float moveSpeed;
 
@@ -35,15 +36,21 @@ public class Player : Photon.MonoBehaviour
             CheckInput();
         }
     }
+    private void FixedUpdate()
+    {
+        Move();
+    }
 
     private void CheckInput()
     {
         float moveForward = Input.GetAxisRaw("Vertical");
         float strife = Input.GetAxisRaw("Horizontal");
 
+        moveDirection = new Vector2(strife, moveForward).normalized;
+
         Vector2 dir = GetDirectionFromMouse();
 
-        rigidBody.velocity = (moveForward * moveSpeed * dir) + (-strife * moveSpeed * Vector2.Perpendicular(dir));
+        //rigidBody.velocity = (moveForward * moveSpeed * dir) + (-strife * moveSpeed * Vector2.Perpendicular(dir));
 
         /**
         if (moveForward != 0)
@@ -73,5 +80,10 @@ public class Player : Photon.MonoBehaviour
         //playerCamera.transform.rotation = Quaternion.AngleAxis(-newAngle, Vector3.forward);
 
         return temp.normalized;
+    }
+
+    private void Move()
+    {
+        rigidBody.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
     }
 }
