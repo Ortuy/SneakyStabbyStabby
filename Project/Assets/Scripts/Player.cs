@@ -7,7 +7,7 @@ public class Player : Photon.MonoBehaviour
     public PhotonView photonView;
 
     public Rigidbody2D rigidBody;
-    public GameObject playerCamera, playerViewCone;
+    public GameObject playerCamera, playerViewCone, rotatingBody;
     private Camera usedCameraComponent;
     private Vector2 moveDirection;
 
@@ -25,7 +25,7 @@ public class Player : Photon.MonoBehaviour
             playerViewCone.SetActive(true);
         }
 
-        playerCamera.transform.SetParent(null);
+        //playerCamera.transform.SetParent(null);
     }
 
     // Update is called once per frame
@@ -76,7 +76,7 @@ public class Player : Photon.MonoBehaviour
         var newAngle = Mathf.Rad2Deg * Mathf.Atan2(temp.y, temp.x) - 90;
 
         //float newAngle = Vector2.Angle(Vector2.left + pos2D, mousePos);
-        transform.rotation = Quaternion.AngleAxis(newAngle, Vector3.forward);
+        rotatingBody.transform.rotation = Quaternion.AngleAxis(newAngle, Vector3.forward);
         //playerCamera.transform.rotation = Quaternion.AngleAxis(-newAngle, Vector3.forward);
 
         return temp.normalized;
