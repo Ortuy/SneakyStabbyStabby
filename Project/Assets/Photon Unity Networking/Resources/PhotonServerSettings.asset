@@ -41,4 +41,6 @@ MonoBehaviour:
   - RequestForPickupItems
   - RequestForPickupTimes
   - Respawn
+  - ActivateStabHitBox
+  - Deactivate
   DisableAutoOpenWizard: 1

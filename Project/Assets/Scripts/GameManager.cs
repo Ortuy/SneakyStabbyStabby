@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     private float timerAmount = 5f;
     private bool runSpawnTimer = false;
 
+    public Text stabCooldownText;
+
     public Text pingText;
 
     public void Awake()

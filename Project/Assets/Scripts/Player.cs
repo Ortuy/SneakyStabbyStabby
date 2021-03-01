@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : Photon.MonoBehaviour
 {
@@ -13,7 +14,10 @@ public class Player : Photon.MonoBehaviour
     public GameObject boltObject;
     public Transform firePos;
     public bool disableInput = false;
-    
+
+    public GameObject stabHitBox;
+    public int stabCooldown;
+    public bool stabReady = true;
 
     public float moveSpeed, shootSpeed;
 
@@ -54,9 +58,14 @@ public class Player : Photon.MonoBehaviour
 
         Vector2 dir = GetDirectionFromMouse();
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire2"))
         {
             Shoot();
+        }
+        
+        if(Input.GetButtonDown("Fire1") && stabReady)
+        {
+            Stab();
         }
         //rigidBody.velocity = (moveForward * moveSpeed * dir) + (-strife * moveSpeed * Vector2.Perpendicular(dir));
 
@@ -69,6 +78,20 @@ public class Player : Photon.MonoBehaviour
         {
             rigidBody.velocity = Vector2.zero;
         }**/
+    }
+
+    IEnumerator LockStabbing()
+    {
+        GameManager.instance.stabCooldownText.gameObject.SetActive(true);
+        GameManager.instance.stabCooldownText.text = stabCooldown.ToString();
+        stabReady = false;
+        for(int i = 0; i < stabCooldown; i++)
+        {
+            yield return new WaitForSeconds(1f);
+            GameManager.instance.stabCooldownText.text = (stabCooldown - i - 1).ToString();
+        }
+        GameManager.instance.stabCooldownText.gameObject.SetActive(false);
+        stabReady = true;
     }
 
     private Vector2 GetDirectionFromMouse()
@@ -95,11 +118,22 @@ public class Player : Photon.MonoBehaviour
         rigidBody.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
     }
 
+    private void Stab()
+    {
+        StartCoroutine(LockStabbing());
+        photonView.RPC("ActivateStabHitBox", PhotonTargets.AllBuffered);
+    }
+
+    [PunRPC]
+    private void ActivateStabHitBox()
+    {
+        stabHitBox.SetActive(true);
+    }
+
     private void Shoot()
     {
         GameObject obj = PhotonNetwork.Instantiate(boltObject.name, new Vector2(firePos.transform.position.x, firePos.transform.position.y), rotatingBody.transform.rotation, 0);
         Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
         rb.AddForce(firePos.up * shootSpeed, ForceMode2D.Impulse);
-
     }
 }

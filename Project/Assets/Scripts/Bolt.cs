@@ -20,6 +20,7 @@ public class Bolt : Photon.MonoBehaviour
         yield return new WaitForSeconds(destroyTime);
         this.GetComponent<PhotonView>().RPC("DestroyObject", PhotonTargets.AllBuffered);
     }
+
     [PunRPC]
     public void DestroyObject()
     {
