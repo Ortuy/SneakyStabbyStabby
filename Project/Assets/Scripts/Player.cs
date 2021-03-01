@@ -10,6 +10,10 @@ public class Player : Photon.MonoBehaviour
     public GameObject playerCamera, playerViewCone, rotatingBody;
     private Camera usedCameraComponent;
     private Vector2 moveDirection;
+    public GameObject boltObject;
+    public Transform firePos;
+    public bool disableInput = false;
+    
 
     public float moveSpeed;
 
@@ -29,9 +33,9 @@ public class Player : Photon.MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if(photonView.isMine)
+        if(photonView.isMine && !disableInput)
         {
             CheckInput();
         }
@@ -50,6 +54,10 @@ public class Player : Photon.MonoBehaviour
 
         Vector2 dir = GetDirectionFromMouse();
 
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Shoot();
+        }
         //rigidBody.velocity = (moveForward * moveSpeed * dir) + (-strife * moveSpeed * Vector2.Perpendicular(dir));
 
         /**
@@ -85,5 +93,13 @@ public class Player : Photon.MonoBehaviour
     private void Move()
     {
         rigidBody.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+    }
+
+    private void Shoot()
+    {
+        GameObject obj = PhotonNetwork.Instantiate(boltObject.name, new Vector2(firePos.transform.position.x, firePos.transform.position.y), Quaternion.identity, 0);
+        Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
+        rb.AddForce(firePos.up * moveSpeed, ForceMode2D.Impulse);
+
     }
 }
