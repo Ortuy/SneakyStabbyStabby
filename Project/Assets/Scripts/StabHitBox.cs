@@ -7,6 +7,8 @@ public class StabHitBox : Photon.MonoBehaviour
     public float damage;
     public float lifetime;
 
+    public bool valid;
+
     private void OnEnable()
     {
         StartCoroutine(WaitAndDeactivate());
@@ -33,7 +35,7 @@ public class StabHitBox : Photon.MonoBehaviour
             PhotonView target = collision.gameObject.transform.parent.GetComponent<PhotonView>();
             if (target != null && (!target.isMine || target.isSceneView))
             {
-                if (target.tag == "Player")
+                if (target.tag == "Player" && valid)
                 {
                     Debug.Log("Successful Stab!");
                     target.RPC("ReduceHealth", PhotonTargets.AllBuffered, damage);

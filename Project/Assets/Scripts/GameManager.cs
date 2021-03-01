@@ -14,9 +14,13 @@ public class GameManager : MonoBehaviour
     private float timerAmount = 5f;
     private bool runSpawnTimer = false;
 
+    public Text victoryText;
+
     public Text stabCooldownText;
 
     public Text pingText;
+
+    public int playerAmount;
 
     public void Awake()
     {
@@ -36,7 +40,7 @@ public class GameManager : MonoBehaviour
     {
         timerAmount = 5f;
         runSpawnTimer = true;
-        respawnMenu.SetActive(true);
+        //respawnMenu.SetActive(true);
     }
     private void StartRespawn()
     {
@@ -53,10 +57,11 @@ public class GameManager : MonoBehaviour
     public void SpawnPlayer()
     {
         float randomValueX = Random.Range(-2f, 2f);
-        float randomValueY = Random.Range(-2f, 2f);
+        float randomValueY = Random.Range(-2f, 2f);      
 
         PhotonNetwork.Instantiate(playerPrefab.name, new Vector2(randomValueX, randomValueY), Quaternion.identity, 0);
         gameCanvas.SetActive(false);
         sceneCamera.SetActive(false);
     }
+
 }

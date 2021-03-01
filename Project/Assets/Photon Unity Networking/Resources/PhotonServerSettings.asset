@@ -43,4 +43,5 @@ MonoBehaviour:
   - Respawn
   - ActivateStabHitBox
   - Deactivate
+  - RegisterPlayer
   DisableAutoOpenWizard: 1

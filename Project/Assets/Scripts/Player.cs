@@ -17,9 +17,11 @@ public class Player : Photon.MonoBehaviour
 
     public GameObject stabHitBox;
     public int stabCooldown;
-    public bool stabReady = true;
+    public bool stabReady = true, isBehindOtherPlayer;
 
     public float moveSpeed, shootSpeed;
+
+    public int playerID;
 
     private void Awake()
     {
@@ -31,6 +33,8 @@ public class Player : Photon.MonoBehaviour
         {
             playerCamera.SetActive(true);
             playerViewCone.SetActive(true);
+            photonView.RPC("RegisterPlayer", PhotonTargets.AllBuffered);
+            
         }
 
         //playerCamera.transform.SetParent(null);
@@ -49,6 +53,26 @@ public class Player : Photon.MonoBehaviour
         Move();
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!photonView.isMine)
+            return;
+        if (collision.CompareTag("Backside"))
+        {
+            isBehindOtherPlayer = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (!photonView.isMine)
+            return;
+        if (collision.CompareTag("Backside"))
+        {
+            isBehindOtherPlayer = false;
+        }
+    }
+
     private void CheckInput()
     {
         float moveForward = Input.GetAxisRaw("Vertical");
@@ -58,7 +82,7 @@ public class Player : Photon.MonoBehaviour
 
         Vector2 dir = GetDirectionFromMouse();
 
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetButtonDown("Fire2") && stabReady)
         {
             Shoot();
         }
@@ -125,13 +149,32 @@ public class Player : Photon.MonoBehaviour
     }
 
     [PunRPC]
+    private void RegisterPlayer()
+    {
+        GameManager.instance.playerAmount++;
+        playerID = GameManager.instance.playerAmount;
+    }
+
+    [PunRPC]
     private void ActivateStabHitBox()
     {
         stabHitBox.SetActive(true);
+
+        var hBox = stabHitBox.GetComponent<StabHitBox>();
+
+        if (isBehindOtherPlayer)
+        {
+            hBox.valid = true;
+        }
+        else
+        {
+            hBox.valid = false;
+        }
     }
 
     private void Shoot()
     {
+        StartCoroutine(LockStabbing());
         GameObject obj = PhotonNetwork.Instantiate(boltObject.name, new Vector2(firePos.transform.position.x, firePos.transform.position.y), rotatingBody.transform.rotation, 0);
         Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
         rb.AddForce(firePos.up * shootSpeed, ForceMode2D.Impulse);

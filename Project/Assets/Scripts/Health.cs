@@ -9,7 +9,9 @@ public class Health : Photon.MonoBehaviour
     public Rigidbody2D rb;
     public CircleCollider2D cc;
     public SpriteRenderer sr;
-    public GameObject playerCanvas;
+    //public GameObject playerCanvas;
+
+    public ParticleSystem deathFX;
 
     private void Awake()
     {
@@ -18,10 +20,12 @@ public class Health : Photon.MonoBehaviour
             GameManager.instance.localPlayer = this.gameObject;
         }
     }
+
     [PunRPC] public void ReduceHealth(float amount)
     {
         ModifyHealth(amount);
     }
+
     private void CheckHealth()
     {
         if(photonView.isMine && healthAmount <= 0)
@@ -40,17 +44,23 @@ public class Health : Photon.MonoBehaviour
     [PunRPC]
     private void Dead()
     {
-        cc.enabled = false;
-        sr.enabled = false;
-        playerCanvas.SetActive(false);
+        GameManager.instance.victoryText.gameObject.SetActive(true);
+        GameManager.instance.victoryText.text = "Player " + GetComponent<Player>().playerID + " vanquished!";
+        deathFX.Play();
+        //cc.enabled = false;
+        //sr.enabled = false;
+        //playerCanvas.SetActive(false);
     }
+
     [PunRPC]
     private void Respawn()
     {
-        cc.enabled = true;
-        sr.enabled = true;
-        playerCanvas.SetActive(true);
+        GameManager.instance.victoryText.gameObject.SetActive(false);
+        //cc.enabled = true;
+        //sr.enabled = true;
+        //playerCanvas.SetActive(true);
     }
+
     private void ModifyHealth(float amount)
     {
         if (photonView.isMine)
