@@ -15,7 +15,7 @@ public class Player : Photon.MonoBehaviour
     public bool disableInput = false;
     
 
-    public float moveSpeed;
+    public float moveSpeed, shootSpeed;
 
     private void Awake()
     {
@@ -97,9 +97,9 @@ public class Player : Photon.MonoBehaviour
 
     private void Shoot()
     {
-        GameObject obj = PhotonNetwork.Instantiate(boltObject.name, new Vector2(firePos.transform.position.x, firePos.transform.position.y), Quaternion.identity, 0);
+        GameObject obj = PhotonNetwork.Instantiate(boltObject.name, new Vector2(firePos.transform.position.x, firePos.transform.position.y), rotatingBody.transform.rotation, 0);
         Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
-        rb.AddForce(firePos.up * moveSpeed, ForceMode2D.Impulse);
+        rb.AddForce(firePos.up * shootSpeed, ForceMode2D.Impulse);
 
     }
 }

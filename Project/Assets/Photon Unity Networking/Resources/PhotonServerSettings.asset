@@ -29,16 +29,16 @@ MonoBehaviour:
   RunInBackground: 1
   RpcList:
   - Chat
+  - Dead
+  - DestroyObject
   - DestroyRpc
   - InstantiateRpc
   - PickupItemInit
   - PunPickup
   - PunPickupSimple
   - PunRespawn
+  - ReduceHealth
   - RequestForPickupItems
   - RequestForPickupTimes
-  - DestroyObject
-  - Dead
-  - ReduceHealth
   - Respawn
   DisableAutoOpenWizard: 1
