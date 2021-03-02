@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class Bolt : Photon.MonoBehaviour
+public class Bolt : MonoBehaviourPunCallbacks
 {
     //public bool moveDir = false;
     public float moveSpeed;
@@ -18,7 +19,7 @@ public class Bolt : Photon.MonoBehaviour
     IEnumerator DestroyByTime()
     {
         yield return new WaitForSeconds(destroyTime);
-        this.GetComponent<PhotonView>().RPC("DestroyObject", PhotonTargets.AllBuffered);
+        this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered);
     }
 
     [PunRPC]
@@ -30,17 +31,17 @@ public class Bolt : Photon.MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!photonView.isMine)
+        if (!photonView.IsMine)
             return;
         PhotonView target = collision.gameObject.GetComponent<PhotonView>();
-        if(target != null && (!target.isMine || target.isSceneView))
+        if(target != null && (!target.IsMine || target.IsRoomView))
         {
             if(target.tag == "Player")
             {
-                target.RPC("ReduceHealth", PhotonTargets.AllBuffered, boltDamage);
+                target.RPC("ReduceHealth", RpcTarget.AllBuffered, boltDamage);
             }
 
-            this.GetComponent<PhotonView>().RPC("DestroyObject", PhotonTargets.AllBuffered);
+            this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered);
         }
     }
 }

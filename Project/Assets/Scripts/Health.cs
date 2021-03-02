@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class Health : Photon.MonoBehaviour
+public class Health : MonoBehaviourPunCallbacks
 {
     public Player plMove;
     public float healthAmount;
@@ -15,7 +16,7 @@ public class Health : Photon.MonoBehaviour
 
     private void Awake()
     {
-        if (photonView.isMine)
+        if (photonView.IsMine)
         {
             GameManager.instance.localPlayer = this.gameObject;
         }
@@ -28,11 +29,11 @@ public class Health : Photon.MonoBehaviour
 
     private void CheckHealth()
     {
-        if(photonView.isMine && healthAmount <= 0)
+        if(photonView.IsMine && healthAmount <= 0)
         {
             GameManager.instance.EnableRespawn();
             plMove.disableInput = true;
-            this.GetComponent<PhotonView>().RPC("Dead", PhotonTargets.AllBuffered);
+            this.GetComponent<PhotonView>().RPC("Dead", RpcTarget.AllBuffered);
         }
     }
 
@@ -63,7 +64,7 @@ public class Health : Photon.MonoBehaviour
 
     private void ModifyHealth(float amount)
     {
-        if (photonView.isMine)
+        if (photonView.IsMine)
         {
             healthAmount -= amount;
         }

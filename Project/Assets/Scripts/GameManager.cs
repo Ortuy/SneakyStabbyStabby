@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
 public class GameManager : MonoBehaviour
 {
@@ -47,7 +48,7 @@ public class GameManager : MonoBehaviour
         timerAmount -= Time.deltaTime;
         if(timerAmount <= 0)
         {
-            localPlayer.GetComponent<PhotonView>().RPC("Respawn", PhotonTargets.AllBuffered);
+            localPlayer.GetComponent<PhotonView>().RPC("Respawn", RpcTarget.AllBuffered);
             localPlayer.GetComponent<Health>().EnableInput();
             respawnMenu.SetActive(false);
             runSpawnTimer = false;

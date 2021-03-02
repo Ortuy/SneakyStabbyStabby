@@ -1,15 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class StabHitBox : Photon.MonoBehaviour
+public class StabHitBox : MonoBehaviourPunCallbacks
 {
     public float damage;
     public float lifetime;
 
     public bool valid;
 
-    private void OnEnable()
+    private PhotonView playerPV;
+
+    /**
+    private void Start()
+    {
+        playerPV = transform.parent.GetComponentInParent<PhotonView>();
+    }
+
+
+    public override void OnEnable()
     {
         StartCoroutine(WaitAndDeactivate());
     }
@@ -17,28 +27,24 @@ public class StabHitBox : Photon.MonoBehaviour
     IEnumerator WaitAndDeactivate()
     {
         yield return new WaitForSeconds(lifetime);
-        photonView.RPC("Deactivate", PhotonTargets.AllBuffered);
+        playerPV.RPC("DeactivateStab", RpcTarget.AllBuffered);
     }
-
-    [PunRPC]
-    private void Deactivate()
-    {
-        this.gameObject.SetActive(false);
-    }
+    **/
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!photonView.isMine)
+        if (!photonView.IsMine)
             return;
         if(collision.gameObject.transform.parent != null)
         {
             PhotonView target = collision.gameObject.transform.parent.GetComponent<PhotonView>();
-            if (target != null && (!target.isMine || target.isSceneView))
+            if (target != null && (!target.IsMine || target.IsRoomView))
             {
                 if (target.tag == "Player" && valid)
                 {
                     Debug.Log("Successful Stab!");
-                    target.RPC("ReduceHealth", PhotonTargets.AllBuffered, damage);
+                    target.RPC("ReduceHealth", RpcTarget.AllBuffered, damage);
                 }
             }
         }        

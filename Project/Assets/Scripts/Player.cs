@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
-public class Player : Photon.MonoBehaviour
+public class Player : MonoBehaviourPunCallbacks
 {
     public PhotonView photonView;
 
@@ -29,11 +30,11 @@ public class Player : Photon.MonoBehaviour
 
         usedCameraComponent = playerCamera.GetComponent<Camera>();
 
-        if (photonView.isMine)
+        if (photonView.IsMine)
         {
             playerCamera.SetActive(true);
             playerViewCone.SetActive(true);
-            photonView.RPC("RegisterPlayer", PhotonTargets.AllBuffered);
+            photonView.RPC("RegisterPlayer", RpcTarget.AllBuffered);
             
         }
 
@@ -43,7 +44,7 @@ public class Player : Photon.MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if(photonView.isMine && !disableInput)
+        if(photonView.IsMine && !disableInput)
         {
             CheckInput();
         }
@@ -55,7 +56,7 @@ public class Player : Photon.MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!photonView.isMine)
+        if (!photonView.IsMine)
             return;
         if (collision.CompareTag("Backside"))
         {
@@ -65,7 +66,7 @@ public class Player : Photon.MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (!photonView.isMine)
+        if (!photonView.IsMine)
             return;
         if (collision.CompareTag("Backside"))
         {
@@ -145,7 +146,20 @@ public class Player : Photon.MonoBehaviour
     private void Stab()
     {
         StartCoroutine(LockStabbing());
-        photonView.RPC("ActivateStabHitBox", PhotonTargets.AllBuffered);
+        photonView.RPC("ActivateStabHitBox", RpcTarget.AllBuffered);
+        StartCoroutine(WaitAndDeactivateStab());
+    }
+
+    IEnumerator WaitAndDeactivateStab()
+    {
+        yield return new WaitForSeconds(0.2f);
+        photonView.RPC("DeactivateStab", RpcTarget.AllBuffered);
+    }
+
+    [PunRPC]
+    private void DeactivateStab()
+    {
+        stabHitBox.SetActive(false);
     }
 
     [PunRPC]
