@@ -10,7 +10,7 @@ public class Pickup : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        inventory = GameObject.FindGameObjectWithTag("GameController").GetComponent<Inventory>();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -21,7 +21,7 @@ public class Pickup : MonoBehaviourPunCallbacks
                 if (inventory.isFull[i] == false)
                 {
                     inventory.isFull[i] = true;
-                    Instantiate(itemButton, inventory.slots[i].transform,false);
+                    Instantiate(itemButton, inventory.slots[i].transform, false);
                     Destroy(gameObject);
                     break;
                 }
