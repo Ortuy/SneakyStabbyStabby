@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviourPunCallbacks
 {
     public static GameManager instance;
     public GameObject playerPrefab;
@@ -25,6 +25,9 @@ public class GameManager : MonoBehaviour
 
     public Color[] playerColors;
 
+    public GameObject[] spawnPoints;
+    private bool countdownStarted;
+
     public void Awake()
     {
         instance = this;
@@ -37,6 +40,16 @@ public class GameManager : MonoBehaviour
         if (runSpawnTimer)
         {
             StartRespawn();
+        }
+
+        if(!countdownStarted && playerAmount > 1)
+        {
+            StartCoroutine(StartCountdown());
+        }
+
+        if(!countdownStarted && Input.GetKeyDown(KeyCode.O))
+        {
+            StartCoroutine(StartCountdown());
         }
     }
     public void EnableRespawn()
@@ -62,10 +75,31 @@ public class GameManager : MonoBehaviour
         float randomValueX = Random.Range(-2f, 2f);
         float randomValueY = Random.Range(-2f, 2f);      
 
-        PhotonNetwork.Instantiate(playerPrefab.name, new Vector2(randomValueX, randomValueY), Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(playerPrefab.name, spawnPoints[playerAmount].transform.position, Quaternion.identity, 0);
         gameCanvas.SetActive(false);
         StartCoroutine(SetPlayerColor());
         sceneCamera.SetActive(false);
+    }
+
+    [PunRPC]
+    public void DissolveStartPoints()
+    {
+        spawnPoints[0].gameObject.SetActive(false);
+        spawnPoints[1].gameObject.SetActive(false);
+    }
+
+    IEnumerator StartCountdown()
+    {
+        countdownStarted = true;
+        victoryText.gameObject.SetActive(true);
+        victoryText.text = "3";
+        yield return new WaitForSeconds(1f);
+        victoryText.text = "2";
+        yield return new WaitForSeconds(1f);
+        victoryText.text = "1";
+        yield return new WaitForSeconds(1f);
+        victoryText.gameObject.SetActive(false);
+        photonView.RPC("DissolveStartPoints", RpcTarget.AllBuffered);
     }
 
     IEnumerator SetPlayerColor()
