@@ -9,7 +9,7 @@ public class Player : MonoBehaviourPunCallbacks
     public PhotonView photonView;
 
     public Rigidbody2D rigidBody;
-    public GameObject playerCamera, playerViewCone, rotatingBody;
+    public GameObject playerCamera, playerViewCone, rotatingBody, legs;
     private Camera usedCameraComponent;
     private Vector2 moveDirection;
     public GameObject boltObject;
@@ -23,6 +23,8 @@ public class Player : MonoBehaviourPunCallbacks
     public float moveSpeed, shootSpeed;
 
     public int playerID;
+
+    public SpriteRenderer[] recolorSprites;
 
     private void Awake()
     {
@@ -141,6 +143,22 @@ public class Player : MonoBehaviourPunCallbacks
     private void Move()
     {
         rigidBody.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+        
+        if(moveDirection != Vector2.zero)
+        {
+            var newAngle = Mathf.Rad2Deg * Mathf.Atan2(moveDirection.y, moveDirection.x) - 90;
+            legs.transform.rotation = Quaternion.AngleAxis(newAngle, Vector3.forward);
+        }
+       
+    }
+
+    [PunRPC]
+    public void SetColor(float newR, float newG, float newB)
+    {
+        foreach(SpriteRenderer renderer in recolorSprites)
+        {
+            renderer.color = new Color(newR, newG, newB);
+        }
     }
 
     private void Stab()

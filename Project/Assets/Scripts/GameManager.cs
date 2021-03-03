@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
 
     public int playerAmount;
 
+    public Color[] playerColors;
+
     public void Awake()
     {
         instance = this;
@@ -62,7 +64,14 @@ public class GameManager : MonoBehaviour
 
         PhotonNetwork.Instantiate(playerPrefab.name, new Vector2(randomValueX, randomValueY), Quaternion.identity, 0);
         gameCanvas.SetActive(false);
+        StartCoroutine(SetPlayerColor());
         sceneCamera.SetActive(false);
     }
 
+    IEnumerator SetPlayerColor()
+    {
+        yield return null;
+        var c = playerColors[Random.Range(0, playerColors.Length)];
+        localPlayer.GetComponent<PhotonView>().RPC("SetColor", RpcTarget.AllBuffered, c.r, c.g, c.b);
+    }
 }
