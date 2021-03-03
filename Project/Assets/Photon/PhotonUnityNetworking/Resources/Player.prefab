@@ -226,6 +226,7 @@ GameObject:
   - component: {fileID: 3254422218227237968}
   - component: {fileID: 1222969580622465534}
   - component: {fileID: 9090583457795101815}
+  - component: {fileID: 1143079544247014567}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -303,7 +304,7 @@ MonoBehaviour:
   observableSearch: 0
   ObservedComponents:
   - {fileID: 3254422218227237968}
-  sceneViewId: 0
+  sceneViewId: 3
   InstantiationId: -1
   isRuntimeInstantiated: 0
 --- !u!50 &5440725864618505866
@@ -377,6 +378,23 @@ MonoBehaviour:
   cc: {fileID: 1222969580622465534}
   sr: {fileID: 0}
   deathFX: {fileID: 7052129500536774760}
+--- !u!114 &1143079544247014567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5440725864618505909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b28236c4c846204a9bc92902a2701b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFull: 000000
+  slots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &5440725864766673751
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,7 +718,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 9122401884754903257}
-  sceneViewId: 0
+  sceneViewId: 2
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &6102428111852259385
@@ -5927,7 +5945,7 @@ MonoBehaviour:
   observableSearch: 0
   ObservedComponents:
   - {fileID: 5145842895129876341}
-  sceneViewId: 0
+  sceneViewId: 1
   InstantiationId: -1
   isRuntimeInstantiated: 0
 --- !u!114 &5145842895129876341
