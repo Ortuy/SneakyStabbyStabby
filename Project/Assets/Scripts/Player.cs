@@ -26,6 +26,8 @@ public class Player : MonoBehaviourPunCallbacks
 
     public SpriteRenderer[] recolorSprites;
 
+    private Animator animator;
+
     private void Awake()
     {
         photonView = GetComponent<PhotonView>();
@@ -39,6 +41,8 @@ public class Player : MonoBehaviourPunCallbacks
             photonView.RPC("RegisterPlayer", RpcTarget.AllBuffered);
             
         }
+
+        animator = GetComponent<Animator>();
 
         //playerCamera.transform.SetParent(null);
     }
@@ -146,10 +150,14 @@ public class Player : MonoBehaviourPunCallbacks
         
         if(moveDirection != Vector2.zero)
         {
+            animator.SetBool("Moving", true);
             var newAngle = Mathf.Rad2Deg * Mathf.Atan2(moveDirection.y, moveDirection.x) - 90;
             legs.transform.rotation = Quaternion.AngleAxis(newAngle, Vector3.forward);
         }
-       
+        else
+        {
+            animator.SetBool("Moving", false);
+        }
     }
 
     [PunRPC]
