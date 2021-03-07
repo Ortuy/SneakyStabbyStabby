@@ -88,6 +88,11 @@ public class GameManager : MonoBehaviourPunCallbacks
         spawnPoints[1].gameObject.SetActive(false);
     }
 
+    public void ReloadScene()
+    {
+        PhotonNetwork.LoadLevel("Arena");
+    }
+
     IEnumerator StartCountdown()
     {
         countdownStarted = true;

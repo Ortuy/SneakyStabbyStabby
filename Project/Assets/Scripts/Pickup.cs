@@ -31,7 +31,7 @@ public class Pickup : MonoBehaviourPunCallbacks
             switch(item.itemType)
             {
                 case ItemType.ACTIVE:
-                    for (int i = 0; i < inventory.slots.Length; i++)
+                    for (int i = 0; i < inventory.currentActives.Length; i++)
                     {
                         if (inventory.currentActives[i] == null)
                         {

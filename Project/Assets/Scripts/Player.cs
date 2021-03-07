@@ -102,17 +102,12 @@ public class Player : MonoBehaviourPunCallbacks
         {
             Stab();
         }
-        //rigidBody.velocity = (moveForward * moveSpeed * dir) + (-strife * moveSpeed * Vector2.Perpendicular(dir));
 
-        /**
-        if (moveForward != 0)
+        var scroll = Input.GetAxisRaw("Mouse ScrollWheel");
+        if (scroll != 0)
         {
-            rigidBody.velocity = moveForward * moveSpeed * GetDirectionFromMouse();
+            inventory.ChangeSelectedSlot(scroll);
         }
-        else
-        {
-            rigidBody.velocity = Vector2.zero;
-        }**/
     }
 
     IEnumerator LockStabbing()

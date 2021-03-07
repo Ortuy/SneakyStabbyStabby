@@ -57,6 +57,7 @@ public class Health : MonoBehaviourPunCallbacks
     private void Respawn()
     {
         GameManager.instance.victoryText.gameObject.SetActive(false);
+        GameManager.instance.ReloadScene();
         //cc.enabled = true;
         //sr.enabled = true;
         //playerCanvas.SetActive(true);

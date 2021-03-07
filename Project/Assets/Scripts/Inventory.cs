@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviourPunCallbacks
 {
     //public bool[] isFull;
-    public GameObject[] slots;
+    public GameObject[] slotSelectionDisplays;
+    public int selectedSlot;
     public Image[] itemImages;
 
     public Item currentTrap;
@@ -33,5 +34,33 @@ public class Inventory : MonoBehaviourPunCallbacks
         itemImages[3].gameObject.SetActive(true);
         itemImages[3].sprite = newItem.itemImage;
         currentTrap = newItem;
+    }
+
+    public void ChangeSelectedSlot(float direction)
+    {
+        if(direction > 0)
+        {
+            slotSelectionDisplays[selectedSlot].SetActive(false);
+            selectedSlot++;
+
+            if(selectedSlot >= currentActives.Length)
+            {
+                selectedSlot = 0;
+            }
+
+            slotSelectionDisplays[selectedSlot].SetActive(true);
+        }
+        else
+        {
+            slotSelectionDisplays[selectedSlot].SetActive(false);
+            selectedSlot--;
+
+            if (selectedSlot < 0)
+            {
+                selectedSlot = currentActives.Length - 1;
+            }
+
+            slotSelectionDisplays[selectedSlot].SetActive(true);
+        }
     }
 }
