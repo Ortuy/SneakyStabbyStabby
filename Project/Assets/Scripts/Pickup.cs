@@ -11,7 +11,8 @@ public class Pickup : MonoBehaviourPunCallbacks
 
     public Item item;
 
-    
+    public GameObject particleEffect;
+
     private void Start()
     {
         var temp = item;
@@ -20,6 +21,13 @@ public class Pickup : MonoBehaviourPunCallbacks
         //inventory = GameObject.FindGameObjectWithTag("GameController").GetComponent<Inventory>();
         //itemImage = item.itemImage;
         GetComponent<SpriteRenderer>().sprite = item.itemImage;
+    }
+
+    private void DestroyPickup()
+    {
+        var particle = Instantiate(particleEffect, transform.position, Quaternion.identity);
+        Destroy(particle, 5f);
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -38,7 +46,7 @@ public class Pickup : MonoBehaviourPunCallbacks
                             //inventory.isFull[i] = true;
                             //Instantiate(itemButton, inventory.slots[i].transform, false);
                             inventory.SetActiveItem(i, item);
-                            Destroy(gameObject);
+                            DestroyPickup();
                             break;
                         }
                     }
@@ -47,14 +55,14 @@ public class Pickup : MonoBehaviourPunCallbacks
                     if(inventory.currentPassive == null)
                     {
                         inventory.SetPassiveItem(item);
-                        Destroy(gameObject);
+                        DestroyPickup();
                     }
                     break;
                 case ItemType.TRAP:
                     if (inventory.currentTrap == null)
                     {
                         inventory.SetTrapItem(item);
-                        Destroy(gameObject);
+                        DestroyPickup();
                     }
                     break;
             }
