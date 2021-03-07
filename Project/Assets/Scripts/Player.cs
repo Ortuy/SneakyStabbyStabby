@@ -29,6 +29,7 @@ public class Player : MonoBehaviourPunCallbacks
     private Animator animator;
 
     public Inventory inventory;
+    public Text stabCooldownText;
 
     private void Awake()
     {
@@ -114,15 +115,15 @@ public class Player : MonoBehaviourPunCallbacks
     {
         //yield return null;
         //animator.SetBool("Stab", false);
-        GameManager.instance.stabCooldownText.gameObject.SetActive(true);
-        GameManager.instance.stabCooldownText.text = stabCooldown.ToString();
+        stabCooldownText.transform.parent.gameObject.SetActive(true);
+        stabCooldownText.text = stabCooldown.ToString();
         stabReady = false;
         for(int i = 0; i < stabCooldown; i++)
         {
             yield return new WaitForSeconds(1f);
-            GameManager.instance.stabCooldownText.text = (stabCooldown - i - 1).ToString();
+            stabCooldownText.text = (stabCooldown - i - 1).ToString();
         }
-        GameManager.instance.stabCooldownText.gameObject.SetActive(false);
+        stabCooldownText.transform.parent.gameObject.SetActive(false);
         stabReady = true;
     }
 

@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2048
     height: 1068.8
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 663}
   m_MaxSize: {x: 10000, y: 10000}
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 613}
   m_MaxSize: {x: 14002, y: 18063}
   vertical: 0
-  controlID: 10651
+  controlID: 18319
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 613}
   m_MaxSize: {x: 10001, y: 18063}
   vertical: 1
-  controlID: 10525
+  controlID: 18240
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 342}
   m_MaxSize: {x: 8003, y: 8042}
   vertical: 0
-  controlID: 10526
+  controlID: 18241
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 342}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 10527
+  controlID: 18242
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -456,7 +456,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 1041ffff7e8f0000
+      m_ExpandedIDs: 6083feff44e8000076e80000a2e80000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -517,9 +517,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.3473241, y: 0.1142963, z: -9.693401}
+    m_Target: {x: 924.2448, y: 88.97352, z: -3725.5972}
     speed: 2
-    m_Value: {x: -0.35522437, y: 0.09081246, z: -9.68679}
+    m_Value: {x: 924.2448, y: 88.97352, z: -3725.5972}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -570,9 +570,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1.5365747
+    m_Target: 153.07547
     speed: 2
-    m_Value: 1.4704064
+    m_Value: 153.07547
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -759,7 +759,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 36734
+  m_LastSelectedObjectID: 59530
 --- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -825,21 +825,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Photon/PhotonUnityNetworking/Resources
+    - Assets/Prefabs
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Photon/PhotonUnityNetworking/Resources
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\mimix\OneDrive\Dokumenty\GitHub\SneakyStabbyStabby\Project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 128.40002}
-    m_SelectedIDs: 4c470000
-    m_LastClickedID: 18252
-    m_ExpandedIDs: 0000000096450000984500009a4500009c4500003e47000000ca9a3b
+    scrollPos: {x: 0, y: 128}
+    m_SelectedIDs: fe430000
+    m_LastClickedID: 17406
+    m_ExpandedIDs: 00000000f4410000f6410000f8410000fa410000fc41000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -867,7 +867,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 40efffff
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000096450000984500009a4500009c4500003e47000000ca9a3b
+    m_ExpandedIDs: 00000000f4410000f6410000f8410000fa410000fc41000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -894,7 +894,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300006e360000ca360000c6390000cabfffffe43800006c430000ae390000343e00002e3b00005a4400003e470000be3d01008c4900002ec50100b6500000225c0000e8dfffff5298000000000000b45c00001e8a0000f4440000da430000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

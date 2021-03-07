@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a34fdc6b4d15d4b95694e856cc9366, type: 3}
   m_Name: TestPassive
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 5654289426265047787, guid: 9bd0bfe44f154084d9ddaff46612a153,
-    type: 3}
+  itemImage: {fileID: 21300000, guid: 7203aa5d5ffb1ea4daf203f0b2fb049a, type: 3}
   itemName: 
   itemDesc: 
   itemType: 1
