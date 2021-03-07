@@ -10,7 +10,7 @@ public class StabHitBox : MonoBehaviourPunCallbacks
 
     public bool valid;
 
-    private PhotonView playerPV;
+    public PhotonView playerPV;
 
     /**
     private void Start()
@@ -34,7 +34,7 @@ public class StabHitBox : MonoBehaviourPunCallbacks
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!photonView.IsMine)
+        if (!playerPV.IsMine)
             return;
         if(collision.gameObject.transform.parent != null)
         {

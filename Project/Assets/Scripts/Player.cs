@@ -112,6 +112,8 @@ public class Player : MonoBehaviourPunCallbacks
 
     IEnumerator LockStabbing()
     {
+        //yield return null;
+        //animator.SetBool("Stab", false);
         GameManager.instance.stabCooldownText.gameObject.SetActive(true);
         GameManager.instance.stabCooldownText.text = stabCooldown.ToString();
         stabReady = false;
@@ -171,13 +173,16 @@ public class Player : MonoBehaviourPunCallbacks
     private void Stab()
     {
         StartCoroutine(LockStabbing());
-        photonView.RPC("ActivateStabHitBox", RpcTarget.AllBuffered);
         StartCoroutine(WaitAndDeactivateStab());
+        animator.SetBool("Stab", true);
+        
     }
 
     IEnumerator WaitAndDeactivateStab()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.3f);
+        photonView.RPC("ActivateStabHitBox", RpcTarget.AllBuffered);
+        yield return new WaitForSeconds(0.15f);
         photonView.RPC("DeactivateStab", RpcTarget.AllBuffered);
     }
 
@@ -197,6 +202,7 @@ public class Player : MonoBehaviourPunCallbacks
     [PunRPC]
     private void ActivateStabHitBox()
     {
+        animator.SetBool("Stab", false);
         stabHitBox.SetActive(true);
 
         var hBox = stabHitBox.GetComponent<StabHitBox>();
