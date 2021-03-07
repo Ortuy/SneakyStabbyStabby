@@ -28,6 +28,8 @@ public class Player : MonoBehaviourPunCallbacks
 
     private Animator animator;
 
+    public Inventory inventory;
+
     private void Awake()
     {
         photonView = GetComponent<PhotonView>();
@@ -38,6 +40,8 @@ public class Player : MonoBehaviourPunCallbacks
         {
             playerCamera.SetActive(true);
             playerViewCone.SetActive(true);
+            inventory.gameObject.SetActive(true);
+            inventory.transform.SetParent(null);
             photonView.RPC("RegisterPlayer", RpcTarget.AllBuffered);
             
         }
