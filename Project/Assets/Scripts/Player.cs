@@ -13,7 +13,9 @@ public class Player : MonoBehaviourPunCallbacks
     private Camera usedCameraComponent;
     private Vector2 moveDirection;
     public GameObject boltObject;
+    public GameObject spikePitObject;
     public Transform firePos;
+    public Transform dropPos;
     public bool disableInput = false;
 
     public GameObject stabHitBox;
@@ -102,6 +104,10 @@ public class Player : MonoBehaviourPunCallbacks
         if(Input.GetButtonDown("Fire1") && stabReady)
         {
             Stab();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Drop();
         }
 
         var scroll = Input.GetAxisRaw("Mouse ScrollWheel");
@@ -224,5 +230,10 @@ public class Player : MonoBehaviourPunCallbacks
         GameObject obj = PhotonNetwork.Instantiate(boltObject.name, new Vector2(firePos.transform.position.x, firePos.transform.position.y), rotatingBody.transform.rotation, 0);
         Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
         rb.AddForce(firePos.up * shootSpeed, ForceMode2D.Impulse);
+    }
+    private void Drop()
+    {
+        GameObject obj = PhotonNetwork.Instantiate(spikePitObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
+        Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
 }
