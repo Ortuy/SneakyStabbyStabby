@@ -31,6 +31,8 @@ public class Player : MonoBehaviourPunCallbacks
     public Inventory inventory;
     public Text stabCooldownText;
 
+    public ParticleSystem footstep;
+
     private void Awake()
     {
         photonView = GetComponent<PhotonView>();
@@ -125,6 +127,11 @@ public class Player : MonoBehaviourPunCallbacks
         }
         stabCooldownText.transform.parent.gameObject.SetActive(false);
         stabReady = true;
+    }
+
+    public void PlayFootstep()
+    {
+        footstep.Play();
     }
 
     private Vector2 GetDirectionFromMouse()
