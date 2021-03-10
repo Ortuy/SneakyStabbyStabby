@@ -197,7 +197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1855426157573102743}
   - component: {fileID: 8031117393242406623}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StabArea
   m_TagString: Backside
   m_Icon: {fileID: 0}
