@@ -18,7 +18,7 @@ public class SpikePit : MonoBehaviourPunCallbacks
     {
         
         PhotonView target = collision.gameObject.GetComponent<PhotonView>();
-        
+        if(target != null)
         {
             if (target.tag == "Player")
             {
