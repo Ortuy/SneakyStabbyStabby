@@ -15,10 +15,12 @@ public class Player : MonoBehaviourPunCallbacks
     public GameObject boltObject;
     public GameObject spikePitObject;
     public GameObject tripwireObject;
+    public GameObject blidingtrapObject;
     public Transform firePos;
     public Transform dropPos;
     public bool disableInput = false;
-
+    public float timeBlindedRemaining = 3;
+    public bool timerBlindedRunning = false;
     public GameObject stabHitBox;
     public int stabCooldown;
     public bool stabReady = true, isBehindOtherPlayer;
@@ -65,6 +67,21 @@ public class Player : MonoBehaviourPunCallbacks
         if(photonView.IsMine && !disableInput)
         {
             CheckInput();
+        }
+        if (photonView.IsMine &&timerBlindedRunning)
+        {
+            if (timeBlindedRemaining > 0)
+            {
+                timeBlindedRemaining -= Time.deltaTime;
+                
+            }
+            else
+            {
+                
+                timeBlindedRemaining = 3;
+                timerBlindedRunning = false;
+                playerViewCone.SetActive(true);
+            }
         }
     }
     private void FixedUpdate()
@@ -117,6 +134,10 @@ public class Player : MonoBehaviourPunCallbacks
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             Tripwire();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            Blindingtrap();
         }
         var scroll = Input.GetAxisRaw("Mouse ScrollWheel");
         if (scroll != 0)
@@ -241,6 +262,13 @@ public class Player : MonoBehaviourPunCallbacks
     {
         moveSpeed = amount;
     }
+    [PunRPC]
+    public void Blinded(bool amount)
+    {
+        playerViewCone.SetActive(amount);
+        timerBlindedRunning = true;
+        
+    }
     private void Shoot()
     {
         StartCoroutine(LockStabbing());
@@ -256,6 +284,11 @@ public class Player : MonoBehaviourPunCallbacks
     private void Tripwire()
     {
         GameObject obj = PhotonNetwork.Instantiate(tripwireObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
+        Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
+    }
+    private void Blindingtrap()
+    {
+        GameObject obj = PhotonNetwork.Instantiate(blidingtrapObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
 }

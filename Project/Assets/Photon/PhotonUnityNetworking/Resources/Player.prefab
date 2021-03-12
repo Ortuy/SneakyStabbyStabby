@@ -1067,14 +1067,18 @@ MonoBehaviour:
     type: 3}
   tripwireObject: {fileID: 53122696133936287, guid: 853f77668a239844ab03be47c9f996a0,
     type: 3}
+  blidingtrapObject: {fileID: 53122696133936287, guid: 3f76c9ec37d52b446a530c743dfbc10e,
+    type: 3}
   firePos: {fileID: 7440086072658909183}
   dropPos: {fileID: 86798341152274341}
   disableInput: 0
+  timeBlindedRemaining: 3
+  timerBlindedRunning: 0
   stabHitBox: {fileID: 6965103715836864536}
   stabCooldown: 10
   stabReady: 1
   isBehindOtherPlayer: 0
-  moveSpeed: 0
+  moveSpeed: 5
   shootSpeed: 18
   playerID: 0
   recolorSprites:
