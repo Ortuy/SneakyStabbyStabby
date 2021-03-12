@@ -9,13 +9,14 @@ public class Player : MonoBehaviourPunCallbacks
     public PhotonView photonView;
 
     public Rigidbody2D rigidBody;
-    public GameObject playerCamera, playerViewCone, rotatingBody, legs;
+    public GameObject playerCamera, playerViewCone, rotatingBody,pointLight2d, legs;
     private Camera usedCameraComponent;
     private Vector2 moveDirection;
     public GameObject boltObject;
     public GameObject spikePitObject;
     public GameObject tripwireObject;
     public GameObject blidingtrapObject;
+    public GameObject bombObject;
     public Transform firePos;
     public Transform dropPos;
     public bool disableInput = false;
@@ -48,6 +49,7 @@ public class Player : MonoBehaviourPunCallbacks
         {
             playerCamera.SetActive(true);
             playerViewCone.SetActive(true);
+            pointLight2d.SetActive(true);
             inventory.gameObject.SetActive(true);
             inventory.transform.SetParent(null);
             photonView.RPC("RegisterPlayer", RpcTarget.AllBuffered);
@@ -138,6 +140,10 @@ public class Player : MonoBehaviourPunCallbacks
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             Blindingtrap();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            Bomb();
         }
         var scroll = Input.GetAxisRaw("Mouse ScrollWheel");
         if (scroll != 0)
@@ -289,6 +295,11 @@ public class Player : MonoBehaviourPunCallbacks
     private void Blindingtrap()
     {
         GameObject obj = PhotonNetwork.Instantiate(blidingtrapObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
+        Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
+    }
+    private void Bomb()
+    {
+        GameObject obj = PhotonNetwork.Instantiate(bombObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
 }
