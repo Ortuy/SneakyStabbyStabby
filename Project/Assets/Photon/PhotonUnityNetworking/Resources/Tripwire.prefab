@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -4250476620950875724}
   - component: {fileID: 3594744090796565129}
   - component: {fileID: 564095447872877452}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tripwire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 1}
+  m_Size: {x: 3, y: 0.4}
   m_EdgeRadius: 0
 --- !u!114 &5545381073160121928
 MonoBehaviour:
