@@ -177,4 +177,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 4329755955214362212}
   gas: {fileID: 53122696133936287}
-  scaleChange: {x: 0, y: 0}

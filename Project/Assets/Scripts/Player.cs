@@ -9,7 +9,7 @@ public class Player : MonoBehaviourPunCallbacks
     public PhotonView photonView;
 
     public Rigidbody2D rigidBody;
-    public GameObject playerCamera, playerViewCone, rotatingBody, legs;
+    public GameObject playerCamera, playerViewCone, rotatingBody,pointLight2d, legs;
     private Camera usedCameraComponent;
     private Vector2 moveDirection;
     public GameObject boltObject;
@@ -49,6 +49,7 @@ public class Player : MonoBehaviourPunCallbacks
         {
             playerCamera.SetActive(true);
             playerViewCone.SetActive(true);
+            pointLight2d.SetActive(true);
             inventory.gameObject.SetActive(true);
             inventory.transform.SetParent(null);
             photonView.RPC("RegisterPlayer", RpcTarget.AllBuffered);
