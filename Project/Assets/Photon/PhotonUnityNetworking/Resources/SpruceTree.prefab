@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2982988530244067873}
   - component: {fileID: 2982988530244067874}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_2 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2982988530544933707}
   - component: {fileID: 2982988530544933748}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_2 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2982988530718766118}
   - component: {fileID: 2982988530718766119}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_2 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2982988530808814127}
   - component: {fileID: 2982988530808814120}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -342,7 +342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2982988531213158178}
   - component: {fileID: 2982988531213158179}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_2 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,7 +425,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2982988531267433291}
   - component: {fileID: 2982988531267433332}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -508,7 +508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2982988531329807279}
   - component: {fileID: 2982988531329807272}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_2 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -594,7 +594,7 @@ GameObject:
   - component: {fileID: 2982988532237136248}
   - component: {fileID: 2982988532237136255}
   - component: {fileID: -790131804615309947}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SpruceTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -704,7 +704,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2982988532294140584}
   - component: {fileID: 2982988532294140585}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -798,6 +798,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PickupParticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071225970061495074, guid: 0a945cd83ded9ff408f524622385159a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4530596241280987519, guid: 0a945cd83ded9ff408f524622385159a,
         type: 3}

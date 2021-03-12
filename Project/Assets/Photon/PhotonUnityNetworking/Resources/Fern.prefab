@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5874997760843236819}
   - component: {fileID: 5874997760843236828}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_6 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5874997761294916795}
   - component: {fileID: 5874997761294916740}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_6 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5874997761333248612}
   - component: {fileID: 5874997761333248613}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_6 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5874997761481561270}
   - component: {fileID: 5874997761481561271}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -342,7 +342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5874997761806509059}
   - component: {fileID: 5874997761806509068}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_6 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -428,7 +428,7 @@ GameObject:
   - component: {fileID: 5874997762060139230}
   - component: {fileID: 5874997762060139229}
   - component: {fileID: -6379925726150651373}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Fern
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -538,7 +538,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5874997762305292877}
   - component: {fileID: 5874997762305292878}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_6 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -621,7 +621,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5874997762400388423}
   - component: {fileID: 5874997762400388416}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_6 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -704,7 +704,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5874997762407954815}
   - component: {fileID: 5874997762407954808}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_6 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -798,6 +798,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PickupParticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071225970061495074, guid: 0a945cd83ded9ff408f524622385159a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4530596241280987519, guid: 0a945cd83ded9ff408f524622385159a,
         type: 3}

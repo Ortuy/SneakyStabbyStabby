@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8233373971949156924}
   - component: {fileID: 1214093326711582274}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 264716888551038200}
   - component: {fileID: 264716888551038203}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_4 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 264716888753965927}
   - component: {fileID: 264716888753965926}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 264716889253145108}
   - component: {fileID: 264716889253145111}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 264716889687014925}
   - component: {fileID: 264716889687014924}
   - component: {fileID: 6677160300601224581}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Bush
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +453,7 @@ GameObject:
   m_Component:
   - component: {fileID: 264716889957376390}
   - component: {fileID: 264716889957376385}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_4 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -536,7 +536,7 @@ GameObject:
   m_Component:
   - component: {fileID: 264716890197201867}
   - component: {fileID: 264716890197201866}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_4 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -630,6 +630,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PickupParticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071225970061495074, guid: 0a945cd83ded9ff408f524622385159a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4530596241280987519, guid: 0a945cd83ded9ff408f524622385159a,
         type: 3}
