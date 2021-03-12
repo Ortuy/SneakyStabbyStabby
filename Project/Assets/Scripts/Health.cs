@@ -33,6 +33,7 @@ public class Health : MonoBehaviourPunCallbacks
         {
             GameManager.instance.EnableRespawn();
             plMove.disableInput = true;
+            plMove.moveSpeed = 0;
             this.GetComponent<PhotonView>().RPC("Dead", RpcTarget.AllBuffered);
         }
     }
@@ -40,6 +41,7 @@ public class Health : MonoBehaviourPunCallbacks
     public void EnableInput()
     {
         plMove.disableInput = false;
+        
     }
 
     [PunRPC]

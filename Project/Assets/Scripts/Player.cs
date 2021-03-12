@@ -14,6 +14,7 @@ public class Player : MonoBehaviourPunCallbacks
     private Vector2 moveDirection;
     public GameObject boltObject;
     public GameObject spikePitObject;
+    public GameObject tripwireObject;
     public Transform firePos;
     public Transform dropPos;
     public bool disableInput = false;
@@ -52,6 +53,8 @@ public class Player : MonoBehaviourPunCallbacks
         }
 
         animator = GetComponent<Animator>();
+
+        moveSpeed = 5;
 
         //playerCamera.transform.SetParent(null);
     }
@@ -109,9 +112,12 @@ public class Player : MonoBehaviourPunCallbacks
         }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            Drop();
+            Spikepit();
         }
-
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Tripwire();
+        }
         var scroll = Input.GetAxisRaw("Mouse ScrollWheel");
         if (scroll != 0)
         {
@@ -230,7 +236,11 @@ public class Player : MonoBehaviourPunCallbacks
             hBox.valid = false;
         }
     }
-
+    [PunRPC]
+    public void Stop(float amount)
+    {
+        moveSpeed = amount;
+    }
     private void Shoot()
     {
         StartCoroutine(LockStabbing());
@@ -238,9 +248,14 @@ public class Player : MonoBehaviourPunCallbacks
         Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
         rb.AddForce(firePos.up * shootSpeed, ForceMode2D.Impulse);
     }
-    private void Drop()
+    private void Spikepit()
     {
         GameObject obj = PhotonNetwork.Instantiate(spikePitObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
+        Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
+    }
+    private void Tripwire()
+    {
+        GameObject obj = PhotonNetwork.Instantiate(tripwireObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
 }

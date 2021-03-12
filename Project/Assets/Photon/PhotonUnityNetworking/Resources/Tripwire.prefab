@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 5545381073160121928}
   - component: {fileID: -4250476620950875724}
   - component: {fileID: 3594744090796565129}
-  - component: {fileID: 4753277455773013514}
+  - component: {fileID: 564095447872877452}
   m_Layer: 0
-  m_Name: SpikePit
+  m_Name: Tripwire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 1048197651
   m_SortingLayer: -1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 91a9f081c067ae946b0c7039184bdffc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 19dbf67bd7b77644e84af1f249a568a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,7 +104,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8, y: 8}
+    oldSize: {x: 4, y: 4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 0
---- !u!114 &4753277455773013514
+--- !u!114 &564095447872877452
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -182,8 +182,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 53122696133936287}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 379f237d079e387439b519aa0bd24c97, type: 3}
+  m_Script: {fileID: 11500000, guid: 90e8b1e0e8b436a4e868352de6515b3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: -4250476620950875724}
-  spikeDamage: 1
+  stop: 0
+  start: 5
+  destroyTime: 3

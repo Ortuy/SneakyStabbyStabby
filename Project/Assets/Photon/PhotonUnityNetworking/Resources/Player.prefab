@@ -1065,6 +1065,8 @@ MonoBehaviour:
     type: 3}
   spikePitObject: {fileID: 53122696133936287, guid: 1039f97608ca178498ef4efb6b476b91,
     type: 3}
+  tripwireObject: {fileID: 53122696133936287, guid: 853f77668a239844ab03be47c9f996a0,
+    type: 3}
   firePos: {fileID: 7440086072658909183}
   dropPos: {fileID: 86798341152274341}
   disableInput: 0
@@ -1072,7 +1074,7 @@ MonoBehaviour:
   stabCooldown: 10
   stabReady: 1
   isBehindOtherPlayer: 0
-  moveSpeed: 6
+  moveSpeed: 0
   shootSpeed: 18
   playerID: 0
   recolorSprites:
