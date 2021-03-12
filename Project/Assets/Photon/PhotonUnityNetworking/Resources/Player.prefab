@@ -1069,6 +1069,8 @@ MonoBehaviour:
     type: 3}
   blidingtrapObject: {fileID: 53122696133936287, guid: 3f76c9ec37d52b446a530c743dfbc10e,
     type: 3}
+  bombObject: {fileID: 53122696133936287, guid: f1901f099187a3e4593ebbdd311a257b,
+    type: 3}
   firePos: {fileID: 7440086072658909183}
   dropPos: {fileID: 86798341152274341}
   disableInput: 0
