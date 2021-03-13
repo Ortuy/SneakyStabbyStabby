@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TestPassive
   m_EditorClassIdentifier: 
   itemImage: {fileID: 21300000, guid: 7203aa5d5ffb1ea4daf203f0b2fb049a, type: 3}
-  itemName: 
-  itemDesc: 
+  itemName: Mimicry
+  itemDesc: Take the form of an inanimate object
   itemType: 1
   effectID: 0

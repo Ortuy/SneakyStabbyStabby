@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     private bool runSpawnTimer = false;
 
     public Text victoryText;
+    public Text secondaryText;
 
     public Text stabCooldownText;
 
@@ -91,6 +92,18 @@ public class GameManager : MonoBehaviourPunCallbacks
     public void ReloadScene()
     {
         PhotonNetwork.LoadLevel("Arena");
+    }
+
+    public void DisappearText(float time)
+    {
+        StartCoroutine(StopText(time));
+    }
+
+    IEnumerator StopText(float time)
+    {
+        yield return new WaitForSeconds(time);
+        victoryText.gameObject.SetActive(false);
+        secondaryText.gameObject.SetActive(false);
     }
 
     IEnumerator StartCountdown()

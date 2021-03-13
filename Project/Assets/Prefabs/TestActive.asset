@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemImage: {fileID: 4744203029889851514, guid: a073c5f641b680149bf32f675b7f66c0,
     type: 3}
-  itemName: 
-  itemDesc: 
+  itemName: Tactical crossbow
+  itemDesc: Kill your foe from afar... or disarm deadly traps
   itemType: 0
   effectID: 0

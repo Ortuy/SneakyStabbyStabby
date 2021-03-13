@@ -36,6 +36,8 @@ public class Pickup : MonoBehaviourPunCallbacks
         {
             var inventory = other.GetComponent<Player>().inventory;
 
+            bool pickedUp = false;
+
             switch(item.itemType)
             {
                 case ItemType.ACTIVE:
@@ -46,7 +48,9 @@ public class Pickup : MonoBehaviourPunCallbacks
                             //inventory.isFull[i] = true;
                             //Instantiate(itemButton, inventory.slots[i].transform, false);
                             inventory.SetActiveItem(i, item);
-                            DestroyPickup();
+
+                            pickedUp = true;
+
                             break;
                         }
                     }
@@ -55,17 +59,28 @@ public class Pickup : MonoBehaviourPunCallbacks
                     if(inventory.currentPassive == null)
                     {
                         inventory.SetPassiveItem(item);
-                        DestroyPickup();
+                        pickedUp = true;
                     }
                     break;
                 case ItemType.TRAP:
                     if (inventory.currentTrap == null)
                     {
                         inventory.SetTrapItem(item);
-                        DestroyPickup();
+                        pickedUp = true;
                     }
                     break;
             }
+
+            if(pickedUp)
+            {
+                DestroyPickup();
+
+                if (other.GetComponent<PhotonView>().IsMine)
+                {
+                    ShowItemText();
+                }
+            }
+            
 
             /*
             for (int i = 0; i < inventory.slots.Length; i++)
@@ -80,5 +95,14 @@ public class Pickup : MonoBehaviourPunCallbacks
                 }
             }*/
         }
+    }
+
+    private void ShowItemText()
+    {
+        GameManager.instance.victoryText.gameObject.SetActive(true);
+        GameManager.instance.victoryText.text = item.itemName;
+        GameManager.instance.secondaryText.gameObject.SetActive(true);
+        GameManager.instance.secondaryText.text = item.itemDesc;
+        GameManager.instance.DisappearText(2.4f);
     }
 }
