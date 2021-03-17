@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -1465806962033749409}
   - component: {fileID: 4329755955214362212}
   - component: {fileID: 268996148017676627}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Gas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: be1ba857fb5a3dc45bdcf1f91c4d1296, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.09803922}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -176,4 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4329755955214362212}
-  gas: {fileID: 53122696133936287}
+  timerInhaleRunning: 0
+  timeInhelRemaining: 3
+  toxinDamage: 1
+  ded: 0
