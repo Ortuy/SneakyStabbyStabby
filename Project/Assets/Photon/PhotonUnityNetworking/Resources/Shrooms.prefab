@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8436460014024565230}
   - component: {fileID: 258736253204606810}
   - component: {fileID: 4977239407266119963}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Spores
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4823,7 +4823,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8791672584067001984}
   - component: {fileID: 8791672584067001985}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4906,7 +4906,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8791672584135539407}
   - component: {fileID: 8791672584135539408}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4989,7 +4989,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8791672584159534342}
   - component: {fileID: 8791672584159534343}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5072,7 +5072,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8791672584233104423}
   - component: {fileID: 8791672584233104424}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5154,7 +5154,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8791672584406995750}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Mushroom (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5187,7 +5187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8791672584506865905}
   - component: {fileID: 8791672584506865906}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5269,7 +5269,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8791672584720921937}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5302,7 +5302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8791672584756397090}
   - component: {fileID: 8791672584756397091}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5385,7 +5385,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8791672584850408714}
   - component: {fileID: 8791672584850408713}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5468,7 +5468,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8791672585039370022}
   - component: {fileID: 8791672585039370023}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5551,7 +5551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8791672585046956364}
   - component: {fileID: 8791672585046956365}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5633,7 +5633,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8791672585048946082}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Mushroom (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5669,7 +5669,7 @@ GameObject:
   - component: {fileID: 3328761383141171483}
   - component: {fileID: 4451213461564590588}
   - component: {fileID: -9108090380198704839}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Shrooms
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -5779,7 +5779,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8791672585401801161}
   - component: {fileID: 8791672585401801162}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5862,7 +5862,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8791672585441846488}
   - component: {fileID: 8791672585441846487}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5945,7 +5945,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8791672585483842201}
   - component: {fileID: 8791672585483842202}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: plants_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6027,7 +6027,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8791672585606097666}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Mushroom (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6060,7 +6060,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8791672585746748055}
   - component: {fileID: 8791672585746748056}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6131,7 +6131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8791672585860552283}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Mushroom (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6163,7 +6163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8791672585947159189}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Mushroom (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6197,7 +6197,7 @@ GameObject:
   - component: {fileID: 5659189608717841964}
   - component: {fileID: 3685352596434301712}
   - component: {fileID: 1971500168068705700}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Spores (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
