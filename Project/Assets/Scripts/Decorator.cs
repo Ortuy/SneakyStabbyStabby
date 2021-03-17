@@ -20,7 +20,9 @@ public class Decorator : MonoBehaviourPunCallbacks
     {
         //photonView.RPC("PlaceDecor", RpcTarget.AllBuffered);
 
-        if (photonView.IsMine && transform.childCount == 0 && !Physics2D.OverlapPoint(transform.position, LayerMask.GetMask("Vegetation")))
+        Debug.Log(Physics2D.OverlapCircle(transform.position, 0.2f, LayerMask.GetMask("Decor")));
+
+        if (photonView.IsMine && !Physics2D.OverlapCircle(transform.position, 0.2f, LayerMask.GetMask("Decor")))
         {
             photonView.RPC("PlaceDecor", RpcTarget.AllBuffered);
         }
@@ -30,7 +32,7 @@ public class Decorator : MonoBehaviourPunCallbacks
     [PunRPC]
     private void PlaceDecor()
     {
-        Debug.Log("AAAAAAA");
+        //Debug.Log("AAAAAAA");
         if(Random.Range(0, 100) > blankPercentChance)
         {
             List<int> weightedDecorPool = new List<int>();

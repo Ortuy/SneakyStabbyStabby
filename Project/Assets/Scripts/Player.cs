@@ -55,7 +55,7 @@ public class Player : MonoBehaviourPunCallbacks
 
             if (GameManager.instance.playerAmount == 0)
             {
-                GameManager.instance.SpawnDecor();
+                //GameManager.instance.SpawnDecor();
             }
 
             photonView.RPC("RegisterPlayer", RpcTarget.AllBuffered);
