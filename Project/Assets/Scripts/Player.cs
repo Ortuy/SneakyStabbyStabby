@@ -55,6 +55,12 @@ public class Player : MonoBehaviourPunCallbacks
             pointLight2d.SetActive(true);
             inventory.gameObject.SetActive(true);
             inventory.transform.SetParent(null);
+
+            if (GameManager.instance.playerAmount == 0)
+            {
+                //GameManager.instance.SpawnDecor();
+            }
+
             photonView.RPC("RegisterPlayer", RpcTarget.AllBuffered);
             
         }
@@ -266,6 +272,8 @@ public class Player : MonoBehaviourPunCallbacks
     [PunRPC]
     private void RegisterPlayer()
     {
+        
+        
         GameManager.instance.playerAmount++;
         playerID = GameManager.instance.playerAmount;
     }

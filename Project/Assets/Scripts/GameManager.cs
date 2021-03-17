@@ -74,12 +74,28 @@ public class GameManager : MonoBehaviourPunCallbacks
     public void SpawnPlayer()
     {
         float randomValueX = Random.Range(-2f, 2f);
-        float randomValueY = Random.Range(-2f, 2f);      
+        float randomValueY = Random.Range(-2f, 2f);
+
+        if (playerAmount == 0)
+        {
+            //photonView.RPC("SpawnDecor", RpcTarget.AllBuffered);
+            //SpawnDecor();
+        }
 
         PhotonNetwork.Instantiate(playerPrefab.name, spawnPoints[playerAmount].transform.position, Quaternion.identity, 0);
+        
         gameCanvas.SetActive(false);
         StartCoroutine(SetPlayerColor());
         sceneCamera.SetActive(false);
+    }
+
+    //[PunRPC]
+    public void SpawnDecor()
+    {
+        if (photonView.IsMine)
+        {
+            PhotonNetwork.Instantiate("DecorHolder", Vector3.zero, Quaternion.identity);
+        }
     }
 
     [PunRPC]
@@ -108,6 +124,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     IEnumerator StartCountdown()
     {
+        photonView.RPC("KeepOneDecorSet", RpcTarget.AllBuffered);
         countdownStarted = true;
         victoryText.gameObject.SetActive(true);
         victoryText.text = "3";
@@ -118,6 +135,18 @@ public class GameManager : MonoBehaviourPunCallbacks
         yield return new WaitForSeconds(1f);
         victoryText.gameObject.SetActive(false);
         photonView.RPC("DissolveStartPoints", RpcTarget.AllBuffered);
+    }
+
+    [PunRPC]
+    public void KeepOneDecorSet()
+    {
+        Debug.LogWarning("FUCKING WORK");
+        var decors = FindObjectsOfType<DecorHolder>();
+
+        if(decors.Length > 1)
+        {
+            decors[1].gameObject.SetActive(false);
+        }
     }
 
     IEnumerator SetPlayerColor()

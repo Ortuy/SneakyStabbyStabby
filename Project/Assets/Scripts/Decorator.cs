@@ -18,15 +18,21 @@ public class Decorator : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
-        if(!isDecorPlaced)
+        //photonView.RPC("PlaceDecor", RpcTarget.AllBuffered);
+
+        Debug.Log(Physics2D.OverlapCircle(transform.position, 0.2f, LayerMask.GetMask("Decor")));
+
+        if (photonView.IsMine && !Physics2D.OverlapCircle(transform.position, 0.2f, LayerMask.GetMask("Decor")))
         {
             photonView.RPC("PlaceDecor", RpcTarget.AllBuffered);
         }
+        
     }
 
     [PunRPC]
     private void PlaceDecor()
     {
+        //Debug.Log("AAAAAAA");
         if(Random.Range(0, 100) > blankPercentChance)
         {
             List<int> weightedDecorPool = new List<int>();
@@ -43,10 +49,13 @@ public class Decorator : MonoBehaviourPunCallbacks
 
             var newObj = PhotonNetwork.Instantiate(decorPrefabs[decorID].name, transform.position, Quaternion.AngleAxis(Random.Range(0, 361), Vector3.forward));
 
+            newObj.transform.parent = transform;
+
             var decorScale = Random.Range(minScale, maxScale) * decorScaleModifiers[decorID];
             newObj.transform.localScale = new Vector3(decorScale, decorScale, 1);
         }
 
         isDecorPlaced = true;
+        //Destroy(gameObject);
     }
 }
