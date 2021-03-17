@@ -10,6 +10,7 @@ public class Health : MonoBehaviourPunCallbacks
     public Rigidbody2D rb;
     public CircleCollider2D cc;
     public SpriteRenderer sr;
+   
     //public GameObject playerCanvas;
 
     public ParticleSystem deathFX;
@@ -21,6 +22,7 @@ public class Health : MonoBehaviourPunCallbacks
             GameManager.instance.localPlayer = this.gameObject;
         }
     }
+    
 
     [PunRPC] public void ReduceHealth(float amount)
     {
@@ -77,4 +79,6 @@ public class Health : MonoBehaviourPunCallbacks
         }
         CheckHealth();
     }
+    
+    
 }

@@ -9,7 +9,7 @@ public class Player : MonoBehaviourPunCallbacks
     public PhotonView photonView;
 
     public Rigidbody2D rigidBody;
-    public GameObject playerCamera, playerViewCone, rotatingBody,pointLight2d, legs;
+    public GameObject playerCamera, playerViewCone, rotatingBody,pointLight2d,gel, legs;
     private Camera usedCameraComponent;
     private Vector2 moveDirection;
     public GameObject boltObject;
@@ -17,11 +17,14 @@ public class Player : MonoBehaviourPunCallbacks
     public GameObject tripwireObject;
     public GameObject blidingtrapObject;
     public GameObject bombObject;
+    public GameObject gelTrapObject;
     public Transform firePos;
     public Transform dropPos;
     public bool disableInput = false;
     public float timeBlindedRemaining = 3;
     public bool timerBlindedRunning = false;
+    public float timeShineRemaining = 3;
+    public bool timerShineRunning = false;
     public GameObject stabHitBox;
     public int stabCooldown;
     public bool stabReady = true, isBehindOtherPlayer;
@@ -60,6 +63,8 @@ public class Player : MonoBehaviourPunCallbacks
 
         moveSpeed = 5;
 
+        gel.SetActive(false);
+
         //playerCamera.transform.SetParent(null);
     }
 
@@ -83,6 +88,21 @@ public class Player : MonoBehaviourPunCallbacks
                 timeBlindedRemaining = 3;
                 timerBlindedRunning = false;
                 playerViewCone.SetActive(true);
+            }
+        }
+        if (photonView.IsMine && timerShineRunning)
+        {
+            if (timeShineRemaining > 0)
+            {
+                timeShineRemaining -= Time.deltaTime;
+
+            }
+            else
+            {
+
+                timeShineRemaining = 3;
+                timerShineRunning = false;
+                gel.SetActive(false);
             }
         }
     }
@@ -144,6 +164,10 @@ public class Player : MonoBehaviourPunCallbacks
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             Bomb();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            Geltrap();
         }
         var scroll = Input.GetAxisRaw("Mouse ScrollWheel");
         if (scroll != 0)
@@ -275,6 +299,13 @@ public class Player : MonoBehaviourPunCallbacks
         timerBlindedRunning = true;
         
     }
+    [PunRPC]
+    public void Shine(bool amount)
+    {
+        gel.SetActive(amount);
+        timerShineRunning = true;
+
+    }
     private void Shoot()
     {
         StartCoroutine(LockStabbing());
@@ -300,6 +331,11 @@ public class Player : MonoBehaviourPunCallbacks
     private void Bomb()
     {
         GameObject obj = PhotonNetwork.Instantiate(bombObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
+        Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
+    }
+    private void Geltrap()
+    {
+        GameObject obj = PhotonNetwork.Instantiate(gelTrapObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
 }
