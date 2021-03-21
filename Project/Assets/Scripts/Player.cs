@@ -138,6 +138,8 @@ public class Player : MonoBehaviourPunCallbacks
                 timerPaintRunning2 = false;
 
             }
+            //I commented out the method - we already have another good place to implement the footsteps
+            /*
             if (timePaintRemaining > 0)
             {
                 timePaintRemaining -= Time.deltaTime;
@@ -150,6 +152,7 @@ public class Player : MonoBehaviourPunCallbacks
 
                 Paint();
             }
+            */
         }
     }
     private void FixedUpdate()
@@ -242,7 +245,7 @@ public class Player : MonoBehaviourPunCallbacks
     {
         footstep.Play();
 
-        if(timerShineRunning)
+        if(timerPaintRunning2)
         {
             photonView.RPC("SpawnGlowingFootstep", RpcTarget.AllBuffered);
         }
@@ -253,7 +256,7 @@ public class Player : MonoBehaviourPunCallbacks
     {
         var foot = PhotonNetwork.Instantiate(glowingFootstep.name, transform.position, legs.transform.rotation);
         foot.GetComponent<SpriteRenderer>().flipX = legs.GetComponent<SpriteRenderer>().flipX;
-        Destroy(foot, 8);
+        Destroy(foot, 16);
     }
 
     private Vector2 GetDirectionFromMouse()
@@ -411,7 +414,7 @@ public class Player : MonoBehaviourPunCallbacks
     }
     private void Paint()
     {
-        GameObject obj = PhotonNetwork.Instantiate(paintObject.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), rotatingBody.transform.rotation, 0);
-        Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
+        //GameObject obj = PhotonNetwork.Instantiate(paintObject.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), rotatingBody.transform.rotation, 0);
+        //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
 }

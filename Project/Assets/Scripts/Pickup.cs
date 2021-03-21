@@ -61,14 +61,27 @@ public class Pickup : MonoBehaviourPunCallbacks
                         inventory.SetPassiveItem(item);
                         pickedUp = true;
                     }
-                    break;
+                    break;                
                 case ItemType.TRAP:
-                    if (inventory.currentTrap == null)
+                    /*if (inventory.currentTrap == null)
                     {
                         inventory.SetTrapItem(item);
                         pickedUp = true;
+                    }*/
+                    for (int i = 0; i < inventory.currentActives.Length; i++)
+                    {
+                        if (inventory.currentActives[i] == null)
+                        {
+                            //inventory.isFull[i] = true;
+                            //Instantiate(itemButton, inventory.slots[i].transform, false);
+                            inventory.SetActiveItem(i, item);
+
+                            pickedUp = true;
+
+                            break;
+                        }
                     }
-                    break;
+                    break;               
             }
 
             if(pickedUp)
