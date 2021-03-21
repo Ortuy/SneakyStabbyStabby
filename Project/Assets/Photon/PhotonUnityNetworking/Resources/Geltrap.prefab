@@ -187,3 +187,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: -4250476620950875724}
   shine: 1
+  paint: 1

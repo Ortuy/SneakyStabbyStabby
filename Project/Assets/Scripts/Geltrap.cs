@@ -7,6 +7,7 @@ public class Geltrap : MonoBehaviourPunCallbacks
 {
     public Rigidbody2D rb;
     public bool shine = true;
+    public bool paint = true;
 
     [PunRPC]
     public void DestroyObject()
@@ -22,6 +23,7 @@ public class Geltrap : MonoBehaviourPunCallbacks
             if (target.tag == "Player")
             {
                 target.RPC("Shine", RpcTarget.AllBuffered, shine);
+                target.RPC("Paint", RpcTarget.AllBuffered, paint);
 
 
             }

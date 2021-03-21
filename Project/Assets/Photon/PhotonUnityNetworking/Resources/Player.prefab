@@ -253,7 +253,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168452844210665359}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.024, y: 2.29, z: 0}
+  m_LocalPosition: {x: 0, y: 2.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1398817483973956088}
@@ -288,7 +288,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1398817483973956088}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &8031117393242406623
 CircleCollider2D:
@@ -458,6 +458,36 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &2118514024377486342
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5140371053139123640}
+  m_Layer: 0
+  m_Name: PaintPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5140371053139123640
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118514024377486342}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1398817483973956088}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2463868696998155858
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,7 +744,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1398817483973956088}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &32987086290004500
 SpriteRenderer:
@@ -1147,13 +1177,20 @@ MonoBehaviour:
     type: 3}
   gelTrapObject: {fileID: 53122696133936287, guid: fc107689b40e43c4a8c987c79b10e56d,
     type: 3}
+  paintObject: {fileID: 1025203636576575596, guid: d564e3e4d4147cc45aefc925d9b1cd58,
+    type: 3}
   firePos: {fileID: 7440086072658909183}
   dropPos: {fileID: 86798341152274341}
+  paintPos: {fileID: 5140371053139123640}
   disableInput: 0
   timeBlindedRemaining: 3
   timerBlindedRunning: 0
   timeShineRemaining: 3
   timerShineRunning: 0
+  timePaintRemaining: 3
+  timerPaintRunning: 0
+  timePaintRemaining2: 9
+  timerPaintRunning2: 0
   stabHitBox: {fileID: 6965103715836864536}
   stabCooldown: 10
   stabReady: 1
@@ -6987,7 +7024,7 @@ Transform:
   m_LocalScale: {x: 0.626382, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1398817483973956088}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7949455351504855111
 MonoBehaviour:
@@ -7588,7 +7625,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8496840635624945525}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.024, y: 0.654, z: 0}
+  m_LocalPosition: {x: 0, y: 0.654, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1398817483973956088}
@@ -7630,6 +7667,7 @@ Transform:
   - {fileID: 5445722017635938532}
   - {fileID: 7440086072658909183}
   - {fileID: 86798341152274341}
+  - {fileID: 5140371053139123640}
   - {fileID: 2518911253421274617}
   - {fileID: 1855426157573102743}
   - {fileID: 8455121422159573910}

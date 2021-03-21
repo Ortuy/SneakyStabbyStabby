@@ -18,16 +18,23 @@ public class Player : MonoBehaviourPunCallbacks
     public GameObject blidingtrapObject;
     public GameObject bombObject;
     public GameObject gelTrapObject;
+    public GameObject paintObject;
     public Transform firePos;
     public Transform dropPos;
+    public Transform paintPos;
     public bool disableInput = false;
     public float timeBlindedRemaining = 3;
     public bool timerBlindedRunning = false;
     public float timeShineRemaining = 3;
     public bool timerShineRunning = false;
+    public float timePaintRemaining = 3;
+    public bool timerPaintRunning = false;
+    public float timePaintRemaining2 = 20;
+    public bool timerPaintRunning2 = false;
     public GameObject stabHitBox;
     public int stabCooldown;
     public bool stabReady = true, isBehindOtherPlayer;
+    
 
     public float moveSpeed, shootSpeed;
 
@@ -55,6 +62,7 @@ public class Player : MonoBehaviourPunCallbacks
             pointLight2d.SetActive(true);
             inventory.gameObject.SetActive(true);
             inventory.transform.SetParent(null);
+            gel.SetActive(false);
 
             if (GameManager.instance.playerAmount == 0)
             {
@@ -69,7 +77,7 @@ public class Player : MonoBehaviourPunCallbacks
 
         moveSpeed = 5;
 
-        gel.SetActive(false);
+        
 
         //playerCamera.transform.SetParent(null);
     }
@@ -94,8 +102,10 @@ public class Player : MonoBehaviourPunCallbacks
                 timeBlindedRemaining = 3;
                 timerBlindedRunning = false;
                 playerViewCone.SetActive(true);
+                
             }
         }
+
         if (photonView.IsMine && timerShineRunning)
         {
             if (timeShineRemaining > 0)
@@ -109,6 +119,35 @@ public class Player : MonoBehaviourPunCallbacks
                 timeShineRemaining = 3;
                 timerShineRunning = false;
                 gel.SetActive(false);
+                
+            }
+        }
+        if (photonView.IsMine && timerPaintRunning2)
+        {
+            timerPaintRunning = true;
+            if (timePaintRemaining2 > 0)
+            {
+                
+                timePaintRemaining2 -= Time.deltaTime;
+
+            }
+            else
+            {
+                timePaintRemaining2 = 20;
+                timerPaintRunning2 = false;
+
+            }
+            if (timePaintRemaining > 0)
+            {
+                timePaintRemaining -= Time.deltaTime;
+                
+
+            }
+            else
+            {
+                timePaintRemaining = 3;
+
+                Paint();
             }
         }
     }
@@ -312,8 +351,18 @@ public class Player : MonoBehaviourPunCallbacks
     {
         gel.SetActive(amount);
         timerShineRunning = true;
+        
+    }
+    [PunRPC]
+    public void Paint(bool amount)
+    {
+
+        
+        timerPaintRunning2 = amount;
+
 
     }
+
     private void Shoot()
     {
         StartCoroutine(LockStabbing());
@@ -344,6 +393,11 @@ public class Player : MonoBehaviourPunCallbacks
     private void Geltrap()
     {
         GameObject obj = PhotonNetwork.Instantiate(gelTrapObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
+        Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
+    }
+    private void Paint()
+    {
+        GameObject obj = PhotonNetwork.Instantiate(paintObject.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), rotatingBody.transform.rotation, 0);
         Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
 }
