@@ -23,17 +23,19 @@ public class Player : MonoBehaviourPunCallbacks
     public Transform dropPos;
     public Transform paintPos;
     public bool disableInput = false;
-    public float timeBlindedRemaining = 3;
+    public float timeBlindedRemaining;
     public bool timerBlindedRunning = false;
-    public float timeShineRemaining = 3;
+    public float timeShineRemaining;
     public bool timerShineRunning = false;
-    public float timePaintRemaining = 3;
+    public float timePaintRemaining;
     public bool timerPaintRunning = false;
-    public float timePaintRemaining2 = 20;
+    public float timePaintRemaining2;
     public bool timerPaintRunning2 = false;
+    public float distance = 4;
     public GameObject stabHitBox;
     public int stabCooldown;
     public bool stabReady = true, isBehindOtherPlayer;
+
     
 
     public float moveSpeed, shootSpeed;
@@ -81,6 +83,10 @@ public class Player : MonoBehaviourPunCallbacks
         
 
         //playerCamera.transform.SetParent(null);
+    }
+    private void Start()
+    {
+        Physics2D.queriesStartInColliders = false;
     }
 
     // Update is called once per frame
@@ -154,6 +160,51 @@ public class Player : MonoBehaviourPunCallbacks
             }
             */
         }
+        if (!photonView.IsMine && timerShineRunning)
+        {
+            if (timeShineRemaining > 0)
+            {
+                timeShineRemaining -= Time.deltaTime;
+
+            }
+            else
+            {
+
+                timeShineRemaining = 3;
+                timerShineRunning = false;
+                gel.SetActive(false);
+
+            }
+        }
+        if (!photonView.IsMine && timerPaintRunning2)
+        {
+            timerPaintRunning = true;
+            if (timePaintRemaining2 > 0)
+            {
+
+                timePaintRemaining2 -= Time.deltaTime;
+
+            }
+            else
+            {
+                timePaintRemaining2 = 20;
+                timerPaintRunning2 = false;
+
+            }
+            if (timePaintRemaining > 0)
+            {
+                timePaintRemaining -= Time.deltaTime;
+
+
+            }
+            else
+            {
+                timePaintRemaining = 3;
+
+                Paint();
+            }
+        }
+        
     }
     private void FixedUpdate()
     {
@@ -218,11 +269,24 @@ public class Player : MonoBehaviourPunCallbacks
         {
             Geltrap();
         }
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector3.right, distance);
+            if (hit.collider == null)
+            {
+                transform.position += transform.localScale.x * Vector3.right * distance;
+            }
+            else
+            {
+                transform.position = hit.point;
+            }
+        }
         var scroll = Input.GetAxisRaw("Mouse ScrollWheel");
         if (scroll != 0)
         {
             inventory.ChangeSelectedSlot(scroll);
         }
+
     }
 
     IEnumerator LockStabbing()

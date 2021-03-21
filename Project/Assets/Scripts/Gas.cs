@@ -9,7 +9,7 @@ public class Gas : MonoBehaviourPunCallbacks
     //public GameObject gas;
     private Vector3 scaleChange;
     public bool timerInhaleRunning = false;
-    public float timeInhelRemaining = 5;
+    public float timeInhelRemaining;
     public float toxinDamage = 1;
     public bool ded = false;
     
