@@ -1191,6 +1191,7 @@ MonoBehaviour:
   timerPaintRunning: 0
   timePaintRemaining2: 9
   timerPaintRunning2: 0
+  distance: 4
   stabHitBox: {fileID: 6965103715836864536}
   stabCooldown: 10
   stabReady: 1

@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 1025203636576575597}
   - component: {fileID: 1025203636576575595}
   - component: {fileID: -8416321041305774667}
+  - component: {fileID: 6024914409992768219}
+  - component: {fileID: 1699849259134675458}
+  - component: {fileID: -3006744695380920693}
   m_Layer: 12
   m_Name: Paint
   m_TagString: Untagged
@@ -73,8 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 1048197651
   m_SortingLayer: -1
   m_SortingOrder: 2
-  m_Sprite: {fileID: -1927889906097043966, guid: 0b6b27e681d8e0141a3d045755583942,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: a26bf6bee4a956f4b840ce44eb3067d8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,7 +105,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 1699849259134675458}
   sceneViewId: 23
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -123,3 +126,54 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.553125
+--- !u!114 &6024914409992768219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025203636576575596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d151dd25fa7d1048ab8958d6255aa1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: -3006744695380920693}
+  paintDestroyTime: 5
+--- !u!114 &1699849259134675458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025203636576575596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
+--- !u!50 &-3006744695380920693
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025203636576575596}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
