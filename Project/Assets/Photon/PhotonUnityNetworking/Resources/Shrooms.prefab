@@ -5669,6 +5669,7 @@ GameObject:
   - component: {fileID: 3328761383141171483}
   - component: {fileID: 4451213461564590588}
   - component: {fileID: -9108090380198704839}
+  - component: {fileID: 6110851331191568118}
   m_Layer: 13
   m_Name: Shrooms
   m_TagString: Untagged
@@ -5765,10 +5766,27 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 6110851331191568118}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &6110851331191568118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8791672585073947281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 1
+  m_UseLocal: 1
 --- !u!1 &8791672585401801160
 GameObject:
   m_ObjectHideFlags: 0

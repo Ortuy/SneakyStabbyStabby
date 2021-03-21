@@ -6,7 +6,7 @@ using Photon.Pun;
 
 public class GameManager : MonoBehaviourPunCallbacks
 {
-    public static GameManager instance;
+    public static GameManager localInstance;
     public GameObject playerPrefab;
     public GameObject gameCanvas;
     public GameObject sceneCamera;
@@ -29,15 +29,20 @@ public class GameManager : MonoBehaviourPunCallbacks
     public GameObject[] spawnPoints;
     private bool countdownStarted;
 
+    public GameObject decorHolder;
+
     public void Awake()
     {
-        instance = this;
+        localInstance = this;
         gameCanvas.SetActive(true);
     }
 
     private void Update()
     {
-        pingText.text = "Ping: " + PhotonNetwork.GetPing();
+        //pingText.text = "Ping: " + PhotonNetwork.GetPing();
+
+        pingText.text = "Players: " + playerAmount;
+
         if (runSpawnTimer)
         {
             StartRespawn();
@@ -75,13 +80,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         float randomValueX = Random.Range(-2f, 2f);
         float randomValueY = Random.Range(-2f, 2f);
-
-        if (playerAmount == 0)
-        {
-            //photonView.RPC("SpawnDecor", RpcTarget.AllBuffered);
-            //SpawnDecor();
-        }
-
+        
         PhotonNetwork.Instantiate(playerPrefab.name, spawnPoints[playerAmount].transform.position, Quaternion.identity, 0);
         
         gameCanvas.SetActive(false);
@@ -89,12 +88,14 @@ public class GameManager : MonoBehaviourPunCallbacks
         sceneCamera.SetActive(false);
     }
 
-    //[PunRPC]
+    [PunRPC]
     public void SpawnDecor()
     {
+        PhotonNetwork.Instantiate("DecorHolder", Vector3.zero, Quaternion.identity);
         if (photonView.IsMine)
         {
-            PhotonNetwork.Instantiate("DecorHolder", Vector3.zero, Quaternion.identity);
+            //PhotonNetwork.Instantiate("DecorHolder", Vector3.zero, Quaternion.identity);
+            //Instantiate(decorHolder, Vector3.zero, Quaternion.identity);
         }
     }
 
@@ -124,7 +125,15 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     IEnumerator StartCountdown()
     {
-        photonView.RPC("KeepOneDecorSet", RpcTarget.AllBuffered);
+        //photonView.RPC("KeepOneDecorSet", RpcTarget.AllBuffered);
+
+        if (PhotonNetwork.IsMasterClient)
+        {
+            //photonView.RPC("SpawnDecor", RpcTarget.AllBuffered);
+            PhotonNetwork.InstantiateRoomObject("DecorHolder", Vector3.zero, Quaternion.identity);
+            //SpawnDecor();
+        }
+
         countdownStarted = true;
         victoryText.gameObject.SetActive(true);
         victoryText.text = "3";
@@ -145,7 +154,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         if(decors.Length > 1)
         {
-            decors[1].gameObject.SetActive(false);
+            //decors[1].gameObject.SetActive(false);
         }
     }
 

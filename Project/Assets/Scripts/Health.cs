@@ -19,7 +19,7 @@ public class Health : MonoBehaviourPunCallbacks
     {
         if (photonView.IsMine)
         {
-            GameManager.instance.localPlayer = this.gameObject;
+            GameManager.localInstance.localPlayer = this.gameObject;
         }
     }
     
@@ -33,7 +33,7 @@ public class Health : MonoBehaviourPunCallbacks
     {
         if(photonView.IsMine && healthAmount <= 0)
         {
-            GameManager.instance.EnableRespawn();
+            GameManager.localInstance.EnableRespawn();
             plMove.disableInput = true;
             plMove.moveSpeed = 0;
             this.GetComponent<PhotonView>().RPC("Dead", RpcTarget.AllBuffered);
@@ -49,8 +49,8 @@ public class Health : MonoBehaviourPunCallbacks
     [PunRPC]
     private void Dead()
     {
-        GameManager.instance.victoryText.gameObject.SetActive(true);
-        GameManager.instance.victoryText.text = "Player " + GetComponent<Player>().playerID + " vanquished!";
+        GameManager.localInstance.victoryText.gameObject.SetActive(true);
+        GameManager.localInstance.victoryText.text = "Player " + GetComponent<Player>().playerID + " vanquished!";
         deathFX.Play();
         //cc.enabled = false;
         //sr.enabled = false;
@@ -60,8 +60,8 @@ public class Health : MonoBehaviourPunCallbacks
     [PunRPC]
     private void Respawn()
     {
-        GameManager.instance.victoryText.gameObject.SetActive(false);
-        GameManager.instance.ReloadScene();
+        GameManager.localInstance.victoryText.gameObject.SetActive(false);
+        GameManager.localInstance.ReloadScene();
         //cc.enabled = true;
         //sr.enabled = true;
         //playerCanvas.SetActive(true);

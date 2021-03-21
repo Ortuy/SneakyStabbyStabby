@@ -15,17 +15,49 @@ public class Decorator : MonoBehaviourPunCallbacks
 
     public int blankPercentChance;
 
+    private PhotonView pView;
+    private int decorID;
+    private float decorScale;
+    private bool decorGenerated = true;
+
+    private GameObject newObj;
+
     // Start is called before the first frame update
     void Start()
     {
+        pView = GetComponent<PhotonView>();
+
+        Debug.Log(GameManager.localInstance.playerAmount);
         //photonView.RPC("PlaceDecor", RpcTarget.AllBuffered);
 
-        Debug.Log(Physics2D.OverlapCircle(transform.position, 0.2f, LayerMask.GetMask("Decor")));
-
-        if (photonView.IsMine && !Physics2D.OverlapCircle(transform.position, 0.2f, LayerMask.GetMask("Decor")))
+        //Debug.Log(Physics2D.OverlapCircle(transform.position, 0.2f, LayerMask.GetMask("Decor")));
+        /*
+        if (pView.IsMine)
         {
-            photonView.RPC("PlaceDecor", RpcTarget.AllBuffered);
+            pView.RPC("PlaceDecor", RpcTarget.AllBuffered);
+
+            var newObj = PhotonNetwork.Instantiate(decorPrefabs[decorID].name, transform.position, Quaternion.AngleAxis(Random.Range(0, 361), Vector3.forward));
+
+            newObj.transform.parent = transform;
+            newObj.transform.localScale = new Vector3(decorScale, decorScale, 1);
+        }*/
+        if(true)
+        {
+            pView.RPC("PlaceDecor", RpcTarget.AllBuffered);
+
+            if (decorGenerated)
+            {
+                newObj = PhotonNetwork.InstantiateRoomObject(decorPrefabs[decorID].name, transform.position, Quaternion.AngleAxis(Random.Range(0, 361), Vector3.forward));
+
+                if(newObj != null)
+                {
+                    //newObj.transform.parent = transform;
+                    newObj.transform.localScale = new Vector3(decorScale, decorScale, 1);
+                }
+               
+            }
         }
+        
         
     }
 
@@ -45,17 +77,20 @@ public class Decorator : MonoBehaviourPunCallbacks
                 }
             }
 
-            int decorID = weightedDecorPool[Random.Range(0, weightedDecorPool.Count)];
+            decorID = weightedDecorPool[Random.Range(0, weightedDecorPool.Count)];
 
-            var newObj = PhotonNetwork.Instantiate(decorPrefabs[decorID].name, transform.position, Quaternion.AngleAxis(Random.Range(0, 361), Vector3.forward));
+            decorGenerated = true;
 
-            newObj.transform.parent = transform;
+            decorScale = Random.Range(minScale, maxScale) * decorScaleModifiers[decorID];
 
-            var decorScale = Random.Range(minScale, maxScale) * decorScaleModifiers[decorID];
-            newObj.transform.localScale = new Vector3(decorScale, decorScale, 1);
+           
+        }
+        else
+        {
+            decorGenerated = false;
         }
 
-        isDecorPlaced = true;
+        //isDecorPlaced = true;
         //Destroy(gameObject);
     }
 }

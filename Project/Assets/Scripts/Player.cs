@@ -67,7 +67,7 @@ public class Player : MonoBehaviourPunCallbacks
             inventory.transform.SetParent(null);
             gel.SetActive(false);
 
-            if (GameManager.instance.playerAmount == 0)
+            if (GameManager.localInstance.playerAmount == 0)
             {
                 //GameManager.instance.SpawnDecor();
             }
@@ -391,8 +391,8 @@ public class Player : MonoBehaviourPunCallbacks
     {
         
         
-        GameManager.instance.playerAmount++;
-        playerID = GameManager.instance.playerAmount;
+        GameManager.localInstance.playerAmount++;
+        playerID = GameManager.localInstance.playerAmount;
     }
 
     [PunRPC]

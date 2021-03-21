@@ -99,10 +99,10 @@ public class Pickup : MonoBehaviourPunCallbacks
 
     private void ShowItemText()
     {
-        GameManager.instance.victoryText.gameObject.SetActive(true);
-        GameManager.instance.victoryText.text = item.itemName;
-        GameManager.instance.secondaryText.gameObject.SetActive(true);
-        GameManager.instance.secondaryText.text = item.itemDesc;
-        GameManager.instance.DisappearText(2.4f);
+        GameManager.localInstance.victoryText.gameObject.SetActive(true);
+        GameManager.localInstance.victoryText.text = item.itemName;
+        GameManager.localInstance.secondaryText.gameObject.SetActive(true);
+        GameManager.localInstance.secondaryText.text = item.itemDesc;
+        GameManager.localInstance.DisappearText(2.4f);
     }
 }
