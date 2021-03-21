@@ -16,7 +16,7 @@ MonoBehaviour:
     AppIdRealtime: 2389f568-f479-47ec-8e06-c997490ca0e0
     AppIdChat: 
     AppIdVoice: 
-    AppVersion: 2021.03.02
+    AppVersion: 2021.03.21
     UseNameServer: 1
     FixedRegion: 
     Server: 
@@ -27,12 +27,29 @@ MonoBehaviour:
     AuthMode: 0
     EnableLobbyStatistics: 0
     NetworkLogging: 1
-  DevRegion: 
+  DevRegion: ru
   PunLogging: 0
   EnableSupportLogger: 0
   RunInBackground: 1
   StartInOfflineMode: 0
-  RpcList: []
+  RpcList:
+  - ActivateStabHitBox
+  - Blinded
+  - ClickRpc
+  - DeactivateStab
+  - Dead
+  - DestroyObject
+  - DestroyRpc
+  - DissolveStartPoints
+  - KeepOneDecorSet
+  - PlaceDecor
+  - ReduceHealth
+  - RegisterPlayer
+  - Respawn
+  - SetColor
+  - Shine
+  - SpawnGlowingFootstep
+  - Stop
   DisableAutoOpenWizard: 1
   ShowSettings: 1
-  DevRegionSetOnce: 0
+  DevRegionSetOnce: 1
