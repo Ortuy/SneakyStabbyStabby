@@ -128,9 +128,9 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.42035934, g: 0.8113208, b: 0.20971872, a: 1}
-  m_Intensity: 0.8
-  m_LightVolumeOpacity: 0
+  m_Color: {r: 0.9716981, g: 0.9698438, b: 0.65452117, a: 1}
+  m_Intensity: 1
+  m_LightVolumeOpacity: 0.254
   m_ApplyToSortingLayers: 133a7a3e00000000
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1.5
+  m_PointLightOuterRadius: 1.8
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -1204,6 +1204,8 @@ MonoBehaviour:
   inventory: {fileID: 7606935154199142934}
   stabCooldownText: {fileID: 758867239988188209}
   footstep: {fileID: 7351449792337515033}
+  glowingFootstep: {fileID: 1025203636576575597, guid: 8445cfd32da99dc44ad6ae54ce066406,
+    type: 3}
 --- !u!114 &5440725864618505865
 MonoBehaviour:
   m_ObjectHideFlags: 0

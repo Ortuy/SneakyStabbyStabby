@@ -48,6 +48,7 @@ public class Player : MonoBehaviourPunCallbacks
     public Text stabCooldownText;
 
     public ParticleSystem footstep;
+    public SpriteRenderer glowingFootstep;
 
     private void Awake()
     {
@@ -240,6 +241,19 @@ public class Player : MonoBehaviourPunCallbacks
     public void PlayFootstep()
     {
         footstep.Play();
+
+        if(timerShineRunning)
+        {
+            photonView.RPC("SpawnGlowingFootstep", RpcTarget.AllBuffered);
+        }
+    }
+
+    [PunRPC]
+    private void SpawnGlowingFootstep()
+    {
+        var foot = PhotonNetwork.Instantiate(glowingFootstep.name, transform.position, legs.transform.rotation);
+        foot.GetComponent<SpriteRenderer>().flipX = legs.GetComponent<SpriteRenderer>().flipX;
+        Destroy(foot, 8);
     }
 
     private Vector2 GetDirectionFromMouse()
