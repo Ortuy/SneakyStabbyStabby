@@ -311,14 +311,15 @@ public class Player : MonoBehaviourPunCallbacks
 
         if(timerPaintRunning2)
         {
-            photonView.RPC("SpawnGlowingFootstep", RpcTarget.AllBuffered);
+            //photonView.RPC("SpawnGlowingFootstep", RpcTarget.AllBuffered);
+            SpawnGlowingFootstep();
         }
     }
 
-    [PunRPC]
+    //[PunRPC]
     private void SpawnGlowingFootstep()
     {
-        var foot = PhotonNetwork.Instantiate(glowingFootstep.name, transform.position, legs.transform.rotation);
+        var foot = PhotonNetwork.InstantiateRoomObject(glowingFootstep.name, transform.position, legs.transform.rotation);
         foot.GetComponent<SpriteRenderer>().flipX = legs.GetComponent<SpriteRenderer>().flipX;
         Destroy(foot, 16);
     }
