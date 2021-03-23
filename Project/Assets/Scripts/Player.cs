@@ -31,7 +31,11 @@ public class Player : MonoBehaviourPunCallbacks
     public bool timerPaintRunning = false;
     public float timePaintRemaining2;
     public bool timerPaintRunning2 = false;
-    public float distance = 4;
+    public float distance;
+    public float sprint = 10;
+    public float timeSprintRemaining = 4;
+    public bool timerSprintRunning = false;
+    public bool timerSprintRunning2 = true;
     public GameObject stabHitBox;
     public int stabCooldown;
     public bool stabReady = true, isBehindOtherPlayer;
@@ -144,6 +148,7 @@ public class Player : MonoBehaviourPunCallbacks
                 timerPaintRunning2 = false;
 
             }
+            
             //I commented out the method - we already have another good place to implement the footsteps
             /*
             if (timePaintRemaining > 0)
@@ -269,12 +274,48 @@ public class Player : MonoBehaviourPunCallbacks
         {
             Geltrap();
         }
-        if (Input.GetKeyDown(KeyCode.Alpha6))
+        if (Input.GetKey(KeyCode.D) && Input.GetKeyDown(KeyCode.Mouse2))
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector3.right, distance);
             if (hit.collider == null)
             {
                 transform.position += transform.localScale.x * Vector3.right * distance;
+            }
+            else
+            {
+                transform.position = hit.point;
+            }
+        }
+        if (Input.GetKey(KeyCode.A) && Input.GetKeyDown(KeyCode.Mouse2))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector3.left, distance);
+            if (hit.collider == null)
+            {
+                transform.position += transform.localScale.x * Vector3.left * distance;
+            }
+            else
+            {
+                transform.position = hit.point;
+            }
+        }
+        if (Input.GetKey(KeyCode.W) && Input.GetKeyDown(KeyCode.Mouse2))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.y * Vector3.up, distance);
+            if (hit.collider == null)
+            {
+                transform.position += transform.localScale.y * Vector3.up * distance;
+            }
+            else
+            {
+                transform.position = hit.point;
+            }
+        }
+        if (Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Mouse2))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.y * Vector3.down, distance);
+            if (hit.collider == null)
+            {
+                transform.position += transform.localScale.y * Vector3.down * distance;
             }
             else
             {
@@ -346,6 +387,15 @@ public class Player : MonoBehaviourPunCallbacks
     private void Move()
     {
         rigidBody.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+        if (Input.GetKey(KeyCode.LeftShift)&& timeSprintRemaining !=0 && timerSprintRunning2)
+        {
+            rigidBody.velocity = new Vector2(moveDirection.x * sprint, moveDirection.y * sprint);
+            timerSprintRunning = true;
+        }
+        else
+        {
+            timerSprintRunning = false;
+        }
         
         if(moveDirection != Vector2.zero)
         {
@@ -356,6 +406,43 @@ public class Player : MonoBehaviourPunCallbacks
         else
         {
             animator.SetBool("Moving", false);
+        }
+        if (photonView.IsMine && timerSprintRunning)
+        {
+            if (timeSprintRemaining >= 0)
+            {
+                timeSprintRemaining -= Time.deltaTime;
+
+            }
+            else
+            {
+
+                timeSprintRemaining = 0;
+                timerSprintRunning = false;
+
+
+            }
+            
+
+        }
+        if (photonView.IsMine && timerSprintRunning==false)
+        {
+            timerSprintRunning2 = false;
+            
+            timeSprintRemaining += Time.deltaTime;
+
+            
+            if (timeSprintRemaining >=4)
+            {
+
+                timeSprintRemaining = 4;
+                timerSprintRunning2 = true;
+                
+
+
+            }
+
+
         }
     }
 
