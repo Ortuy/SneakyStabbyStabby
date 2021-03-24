@@ -23,6 +23,7 @@ public class Player : MonoBehaviourPunCallbacks
     public Transform dropPos;
     public Transform paintPos;
     public bool disableInput = false;
+    public bool isBlinking;
     public float timeBlindedRemaining;
     public bool timerBlindedRunning = false;
     public float timeShineRemaining;
@@ -274,6 +275,7 @@ public class Player : MonoBehaviourPunCallbacks
         {
             Geltrap();
         }
+        /*
         if (Input.GetKey(KeyCode.D) && Input.GetKeyDown(KeyCode.Mouse2))
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector3.right, distance);
@@ -322,12 +324,40 @@ public class Player : MonoBehaviourPunCallbacks
                 transform.position = hit.point;
             }
         }
+        */
+
+        //Alternative blink, hopefully less clunky
+        if(Input.GetKeyDown(KeyCode.Mouse2))
+        {
+            StartCoroutine(Blink());
+        }
+
         var scroll = Input.GetAxisRaw("Mouse ScrollWheel");
         if (scroll != 0)
         {
             inventory.ChangeSelectedSlot(scroll);
         }
 
+    }
+
+    IEnumerator Blink()
+    {
+        var durationLeft = 0.2f;
+        var blinkDirection = GetDirectionFromMouse();
+        var blinkSpeed = distance / durationLeft;
+
+        rigidBody.velocity = new Vector2(blinkDirection.x * blinkSpeed, blinkDirection.y * blinkSpeed);
+        disableInput = true;
+        isBlinking = true;
+
+        while(durationLeft > 0)
+        {
+            durationLeft -= Time.deltaTime;
+            yield return null;
+        }
+
+        disableInput = false;
+        isBlinking = false;
     }
 
     IEnumerator LockStabbing()
@@ -386,7 +416,11 @@ public class Player : MonoBehaviourPunCallbacks
 
     private void Move()
     {
-        rigidBody.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+        if(!isBlinking)
+        {
+            rigidBody.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+        }
+        
         if (Input.GetKey(KeyCode.LeftShift)&& timeSprintRemaining !=0 && timerSprintRunning2)
         {
             rigidBody.velocity = new Vector2(moveDirection.x * sprint, moveDirection.y * sprint);
