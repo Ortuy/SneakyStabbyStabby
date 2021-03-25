@@ -14,6 +14,12 @@ public class Bomb : MonoBehaviourPunCallbacks
     {
         Destroy(this.gameObject);
     }
+
+    private void Awake()
+    {
+        StartCoroutine(DestroyByTime());
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -29,6 +35,7 @@ public class Bomb : MonoBehaviourPunCallbacks
             
         }
     }
+
     IEnumerator DestroyByTime()
     {
         yield return new WaitForSeconds(time);
