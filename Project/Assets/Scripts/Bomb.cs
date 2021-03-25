@@ -8,6 +8,7 @@ public class Bomb : MonoBehaviourPunCallbacks
     public GameObject rotatingItem;
     public Transform gasExitPos;
     public GameObject gasObject;
+    public float time = 2;
     [PunRPC]
     public void DestroyObject()
     {
@@ -21,10 +22,17 @@ public class Bomb : MonoBehaviourPunCallbacks
         {
             if (target.tag == "Player")
             {
-                GameObject obj = PhotonNetwork.Instantiate(gasObject.name, new Vector2(gasExitPos.transform.position.x, gasExitPos.transform.position.y), rotatingItem.transform.rotation, 0);
+                
+                StartCoroutine("DestroyByTime");
             }
 
-            this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered);
+            
         }
+    }
+    IEnumerator DestroyByTime()
+    {
+        yield return new WaitForSeconds(time);
+        this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered);
+        GameObject obj = PhotonNetwork.Instantiate(gasObject.name, new Vector2(gasExitPos.transform.position.x, gasExitPos.transform.position.y), rotatingItem.transform.rotation, 0);
     }
 }

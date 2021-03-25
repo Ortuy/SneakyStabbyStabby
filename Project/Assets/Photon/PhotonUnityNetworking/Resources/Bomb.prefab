@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -4250476620950875724}
   - component: {fileID: 3594744090796565129}
   - component: {fileID: -7494050297555375404}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,6 +190,7 @@ MonoBehaviour:
   rotatingItem: {fileID: 53122696133936287}
   gasExitPos: {fileID: 6876974300232525382}
   gasObject: {fileID: 53122696133936287, guid: 1d5e0275757c6c54298014f6f8b46455, type: 3}
+  time: 2
 --- !u!1 &6217311610149594492
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +200,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6876974300232525382}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Gasexit
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
