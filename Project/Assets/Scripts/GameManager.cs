@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public GameObject decorHolder;
 
+    private IEnumerator currentBigTextCoroutine;
+
     public void Awake()
     {
         localInstance = this;
@@ -113,7 +115,14 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public void DisappearText(float time)
     {
-        StartCoroutine(StopText(time));
+        if(currentBigTextCoroutine != null)
+        {
+            StopCoroutine(currentBigTextCoroutine);
+        }
+
+        currentBigTextCoroutine = StopText(time);
+
+        StartCoroutine(currentBigTextCoroutine);
     }
 
     IEnumerator StopText(float time)

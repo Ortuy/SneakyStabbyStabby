@@ -5,13 +5,20 @@ using Photon.Pun;
 public class Blindingtrap : MonoBehaviourPunCallbacks
 {
     public Rigidbody2D rb;
+
+    [SerializeField]
+    private Animator animator;
+
     public bool see = false;
     
     [PunRPC]
     public void DestroyObject()
     {
-        Destroy(this.gameObject);
+        Destroy(this.gameObject, 1.4f);
     }
+
+    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -20,13 +27,21 @@ public class Blindingtrap : MonoBehaviourPunCallbacks
         {
             if (target.tag == "Player")
             {
-                target.RPC("Blinded", RpcTarget.AllBuffered, see);
-                
+                //target.RPC("Blinded", RpcTarget.AllBuffered, see);
+                StartCoroutine(BlindPlayer(target));
 
             }
+
+            animator.SetBool("Activated", true);
 
             this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered);
         }
     }
     
+    IEnumerator BlindPlayer(PhotonView player)
+    {
+        yield return new WaitForSeconds(0.35f);
+        player.RPC("Blinded", RpcTarget.AllBuffered, see);
+    }
+
 }

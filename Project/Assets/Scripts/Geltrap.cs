@@ -9,11 +9,14 @@ public class Geltrap : MonoBehaviourPunCallbacks
     public bool shine = true;
     public bool paint = true;
 
+    public ParticleSystem activateFX;
+
     [PunRPC]
     public void DestroyObject()
     {
-        Destroy(this.gameObject);
+        Destroy(this.gameObject, 1f);
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -27,6 +30,8 @@ public class Geltrap : MonoBehaviourPunCallbacks
 
 
             }
+
+            activateFX.Play();
 
             this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered);
         }
