@@ -9,7 +9,7 @@ public class Player : MonoBehaviourPunCallbacks
     public PhotonView photonView;
 
     public Rigidbody2D rigidBody;
-    public GameObject playerCamera, playerViewCone, rotatingBody,pointLight2d,gel, legs;
+    public GameObject playerCamera, playerViewCone, playerViewCone2, rotatingBody,pointLight2d,gel, legs;
     private Camera usedCameraComponent;
     private Vector2 moveDirection;
     public GameObject boltObject;
@@ -34,12 +34,14 @@ public class Player : MonoBehaviourPunCallbacks
     public bool timerPaintRunning2 = false;
     public float distance;
     public float sprint = 10;
+    public float pasiveItemTimeWorking = 20;
     public float timeSprintRemaining = 4;
     public bool timerSprintRunning = false;
     public bool timerSprintRunning2 = true;
     public GameObject stabHitBox;
     public int stabCooldown;
     public bool stabReady = true, isBehindOtherPlayer;
+    public bool canUsePotion = true;
 
     
 
@@ -67,6 +69,7 @@ public class Player : MonoBehaviourPunCallbacks
         {
             playerCamera.SetActive(true);
             playerViewCone.SetActive(true);
+            playerViewCone2.SetActive(false);
             pointLight2d.SetActive(true);
             inventory.gameObject.SetActive(true);
             inventory.transform.SetParent(null);
@@ -331,6 +334,20 @@ public class Player : MonoBehaviourPunCallbacks
         {
             StartCoroutine(Blink());
         }
+        if (Input.GetKeyDown(KeyCode.F) && canUsePotion == true)
+        {
+            SeePotion();
+            canUsePotion = false;
+
+
+        }
+        if (Input.GetKeyDown(KeyCode.G) && canUsePotion == true)
+        {
+            SprintPotion();
+            canUsePotion = false;
+
+
+        }
 
         var scroll = Input.GetAxisRaw("Mouse ScrollWheel");
         if (scroll != 0)
@@ -466,12 +483,21 @@ public class Player : MonoBehaviourPunCallbacks
             timeSprintRemaining += Time.deltaTime;
 
             
-            if (timeSprintRemaining >=4)
+            if (timeSprintRemaining >=8 && canUsePotion == false)
+            {
+
+                timeSprintRemaining = 8;
+                timerSprintRunning2 = true;
+                
+
+
+            }
+            if (timeSprintRemaining >= 4 && canUsePotion == true)
             {
 
                 timeSprintRemaining = 4;
                 timerSprintRunning2 = true;
-                
+
 
 
             }
@@ -602,5 +628,43 @@ public class Player : MonoBehaviourPunCallbacks
     {
         //GameObject obj = PhotonNetwork.Instantiate(paintObject.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
+    }
+    private void SeePotion()
+    {
+        if (photonView.IsMine)
+        {
+            playerViewCone.SetActive(false);
+            playerViewCone2.SetActive(true);
+            StartCoroutine("PotionStopWorking");
+        }
+            
+    }
+    IEnumerator PotionStopWorking()
+    {
+        yield return new WaitForSeconds(pasiveItemTimeWorking);
+        if (photonView.IsMine)
+        {
+            playerViewCone2.SetActive(false);
+            playerViewCone.SetActive(true);
+            canUsePotion = true;
+        }
+    }
+    private void SprintPotion()
+    {
+        if (photonView.IsMine)
+        {
+            timeSprintRemaining = 8;
+            StartCoroutine("PotionStopWorking2");
+        }
+
+    }
+    IEnumerator PotionStopWorking2()
+    {
+        yield return new WaitForSeconds(pasiveItemTimeWorking);
+        if (photonView.IsMine)
+        {
+            timeSprintRemaining = 4;
+            canUsePotion = true;
+        }
     }
 }
