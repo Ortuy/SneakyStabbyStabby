@@ -9,7 +9,7 @@ public class Player : MonoBehaviourPunCallbacks
     public PhotonView photonView;
 
     public Rigidbody2D rigidBody;
-    public GameObject playerCamera, playerViewCone, playerViewCone2, rotatingBody,pointLight2d,gel, legs;
+    public GameObject playerCamera, playerViewCone, playerViewCone2, rotatingBody,pointLight2d,gel, legs, camo, dis, dis1, dis2, dis3;
     private Camera usedCameraComponent;
     private Vector2 moveDirection;
     public GameObject boltObject;
@@ -42,6 +42,7 @@ public class Player : MonoBehaviourPunCallbacks
     public int stabCooldown;
     public bool stabReady = true, isBehindOtherPlayer;
     public bool canUsePotion = true;
+    public int camoNum = 0;
 
     
 
@@ -76,6 +77,11 @@ public class Player : MonoBehaviourPunCallbacks
             inventory.gameObject.SetActive(true);
             inventory.transform.SetParent(null);
             gel.SetActive(false);
+            camo.SetActive(false);
+            dis.SetActive(false);
+            dis1.SetActive(false);
+            dis2.SetActive(false);
+            dis3.SetActive(false);
 
             if (GameManager.localInstance.playerAmount == 0)
             {
@@ -346,6 +352,14 @@ public class Player : MonoBehaviourPunCallbacks
         if (Input.GetKeyDown(KeyCode.G) && canUsePotion == true)
         {
             SprintPotion();
+            canUsePotion = false;
+
+
+        }
+        if (Input.GetKeyDown(KeyCode.H) && canUsePotion == true)
+        {
+            camoNum = Random.Range(1, 5);
+            CamoSpell();
             canUsePotion = false;
 
 
@@ -689,6 +703,49 @@ public class Player : MonoBehaviourPunCallbacks
         {
             timeSprintRemaining = 4;
             canUsePotion = true;
+        }
+    }
+    private void CamoSpell()
+    {
+        if (photonView.IsMine && camoNum == 1)
+        {
+            camo.SetActive(true);
+            dis.SetActive(true);
+            StartCoroutine("CamoStopWorking");
+        }
+        if (photonView.IsMine && camoNum == 2)
+        {
+            camo.SetActive(true);
+            dis1.SetActive(true);
+            StartCoroutine("CamoStopWorking");
+        }
+        if (photonView.IsMine && camoNum == 3)
+        {
+            camo.SetActive(true);
+            dis2.SetActive(true);
+            StartCoroutine("CamoStopWorking");
+        }
+        if (photonView.IsMine && camoNum == 4)
+        {
+            camo.SetActive(true);
+            dis3.SetActive(true);
+            StartCoroutine("CamoStopWorking");
+        }
+
+    }
+    IEnumerator CamoStopWorking()
+    {
+        yield return new WaitForSeconds(pasiveItemTimeWorking);
+        if (photonView.IsMine)
+        {
+            camo.SetActive(false);
+            dis.SetActive(false);
+            dis1.SetActive(false);
+            dis2.SetActive(false);
+            dis3.SetActive(false);
+
+            canUsePotion = true;
+            camoNum = 0;
         }
     }
 }
