@@ -51,6 +51,7 @@ public class Player : MonoBehaviourPunCallbacks
     public int playerID;
 
     public SpriteRenderer[] recolorSprites;
+    public SpriteRenderer[] nonRecolorSprites;
 
     private Animator animator;
 
@@ -61,6 +62,9 @@ public class Player : MonoBehaviourPunCallbacks
     public SpriteRenderer glowingFootstep;
 
     [SerializeField] private Slider staminaBar;
+    private bool sprintPotionActive;
+
+    [SerializeField] private GameObject[] camoObjects;
 
     private void Awake()
     {
@@ -357,8 +361,8 @@ public class Player : MonoBehaviourPunCallbacks
         }
         if (Input.GetKeyDown(KeyCode.H) && canUsePotion == true)
         {
-            camoNum = Random.Range(1, 5);
-            photonView.RPC("CamoSpell", RpcTarget.AllBuffered);
+            camoNum = Random.Range(0, camoObjects.Length);
+            photonView.RPC("CamoSpell", RpcTarget.AllBuffered, camoNum);
             //CamoSpell();
             canUsePotion = false;
 
@@ -482,7 +486,7 @@ public class Player : MonoBehaviourPunCallbacks
 
                 float value;
 
-                if (!canUsePotion)
+                if (sprintPotionActive)
                 {
                     value = timeSprintRemaining / 8;
                 }
@@ -511,7 +515,7 @@ public class Player : MonoBehaviourPunCallbacks
 
             float value;
 
-            if(!canUsePotion)
+            if(sprintPotionActive)
             {
                 value = timeSprintRemaining / 8;
             }
@@ -640,27 +644,27 @@ public class Player : MonoBehaviourPunCallbacks
     private void Spikepit()
     {
         GameObject obj = PhotonNetwork.Instantiate(spikePitObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
-        Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
+        //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
     private void Tripwire()
     {
         GameObject obj = PhotonNetwork.Instantiate(tripwireObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
-        Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
+        //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
     private void Blindingtrap()
     {
         GameObject obj = PhotonNetwork.Instantiate(blidingtrapObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
-        Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
+        //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
     private void Bomb()
     {
         GameObject obj = PhotonNetwork.Instantiate(bombObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
-        Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
+        //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
     private void Geltrap()
     {
         GameObject obj = PhotonNetwork.Instantiate(gelTrapObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
-        Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
+        //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
     private void Paint()
     {
@@ -692,6 +696,7 @@ public class Player : MonoBehaviourPunCallbacks
         if (photonView.IsMine)
         {
             timeSprintRemaining = 8;
+            sprintPotionActive = true;
             StartCoroutine("PotionStopWorking2");
         }
 
@@ -702,12 +707,15 @@ public class Player : MonoBehaviourPunCallbacks
         if (photonView.IsMine)
         {
             timeSprintRemaining = 4;
+            sprintPotionActive = false;
             canUsePotion = true;
         }
     }
     [PunRPC]
-    private void CamoSpell()
+    private void CamoSpell(int variant)
     {
+
+        /**
         if (photonView.IsMine && camoNum == 1)
         {
             
@@ -732,12 +740,75 @@ public class Player : MonoBehaviourPunCallbacks
             dis3.SetActive(true);
             StartCoroutine("CamoStopWorking");
         }
-        
+        **/
+        /*
+        if (variant == 1)
+        {
 
+            dis.SetActive(true);
+            
+        }
+        else if (variant == 2)
+        {
+
+            dis1.SetActive(true);
+            
+        }
+        else if (variant == 3)
+        {
+
+            dis2.SetActive(true);
+            
+        }
+        else if (variant == 4)
+        {
+
+            dis3.SetActive(true);
+            
+        }*/
+
+        camoObjects[variant].SetActive(true);
+
+        foreach(SpriteRenderer renderer in recolorSprites)
+        {
+            renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, 0);
+        }
+
+        foreach (SpriteRenderer renderer in nonRecolorSprites)
+        {
+            renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, 0);
+        }
+
+        StartCoroutine("CamoStopWorking");
     }
     IEnumerator CamoStopWorking()
     {
         yield return new WaitForSeconds(pasiveItemTimeWorking);
+
+        foreach (SpriteRenderer renderer in recolorSprites)
+        {
+            renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, 1);
+        }
+
+        foreach (SpriteRenderer renderer in nonRecolorSprites)
+        {
+            renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, 1);
+        }
+
+        /*
+        dis.SetActive(false);
+        dis1.SetActive(false);
+        dis2.SetActive(false);
+        dis3.SetActive(false);
+        */
+        foreach(GameObject camo in camoObjects)
+        {
+            camo.SetActive(false);
+        }
+
+        canUsePotion = true;
+        camoNum = 0;
+        /*
         if (photonView.IsMine)
         {
             
@@ -749,5 +820,6 @@ public class Player : MonoBehaviourPunCallbacks
             canUsePotion = true;
             camoNum = 0;
         }
+        */
     }
 }
