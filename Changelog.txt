@@ -24,6 +24,85 @@
 ## [0.1.0] - 2021-03-02
 ### Changed
 - Server changed to Photon 2
-
-
+## [0.1.0] - 2021-03-03
+### Added
+- Player Sprites
+- Basic Invetory
+- Map Sprites
+- Game Start
+## [0.1.0] - 2021-03-04
+### Changed
+- Proper walking
+### Added
+- Map Sprites
+## [0.1.0] - 2021-03-07
+### Changed
+- Basic Inventory
+- Player Spites
+### Added
+- Attack Animation 
+- UI Arts
+## [0.1.0] - 2021-03-08
+### Added
+- SpikePit Trap
+- Map Sprites
+## [0.1.0] - 2021-03-09
+### Added
+- Map Sprites
+## [0.1.0] - 2021-03-10
+### Added
+- Map Sprites
+## [0.1.0] - 2021-03-11
+### Added
+- Decor Sprites
+- Trap Sprites
+## [0.1.0] - 2021-03-12
+### Added
+- Tripwire 
+- Blindingtrap
+- Bomb
+- Decor Sprites
+## [0.1.0] - 2021-03-13
+### Added
+- Item text 
+### Fixed
+- Traps
+### Changed
+- Bomb
+## [0.1.0] - 2021-03-17
+### Added
+- Decorator
+- Geltrap
+## [0.1.0] - 2021-03-21
+### Added
+- Trap Sprites
+### Changed 
+- Geltrap
+### Fixed 
+- Decor duplication bug
+## [0.1.0] - 2021-03-22
+### Added
+- Decor Art
+### Fixed
+- Geltrap 
+- Inventory
+## [0.1.0] - 2021-03-23
+### Added
+- Blink
+- Sprint
+- Map Sprites
+## [0.1.0] - 2021-03-25
+### Added
+- Items art
+### Changed
+- Bomb
+- Blink
+## [0.1.0] - 2021-03-29
+### Added
+- Sprint potion
+- Night vision potion
+- Trap Animoations
+## [0.1.0] - 2021-03-30
+### Changed
+- UI
 
