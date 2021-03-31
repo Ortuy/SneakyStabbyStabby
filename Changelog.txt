@@ -1,0 +1,29 @@
+## [0.1.0] - 2021-02-22
+### Added
+- Create Unity Project 
+- Gitignore
+- Main menu
+## [0.1.0] - 2021-02-24
+### Added
+- Create Photon server
+- Basic player movement 
+## [0.1.0] - 2021-02-25
+### Added
+- Lights
+## [0.1.0] - 2021-02-26
+### Added
+- Proper movement
+- Better camera
+- Test level
+## [0.1.0] - 2021-03-01
+### Added
+- Crossbow
+- Health system
+- Stabbing
+- Death particle effects
+## [0.1.0] - 2021-03-02
+### Changed
+- Server changed to Photon 2
+
+
+
