@@ -59,6 +59,8 @@ public class Player : MonoBehaviourPunCallbacks
     public ParticleSystem footstep;
     public SpriteRenderer glowingFootstep;
 
+    [SerializeField] private Slider staminaBar;
+
     private void Awake()
     {
         photonView = GetComponent<PhotonView>();
@@ -464,6 +466,17 @@ public class Player : MonoBehaviourPunCallbacks
             {
                 timeSprintRemaining -= Time.deltaTime;
 
+                float value;
+
+                if (!canUsePotion)
+                {
+                    value = timeSprintRemaining / 8;
+                }
+                else
+                {
+                    value = timeSprintRemaining / 4;
+                }
+                staminaBar.value = value;
             }
             else
             {
@@ -482,14 +495,25 @@ public class Player : MonoBehaviourPunCallbacks
             
             timeSprintRemaining += Time.deltaTime;
 
+            float value;
+
+            if(!canUsePotion)
+            {
+                value = timeSprintRemaining / 8;
+            }
+            else
+            {
+                value = timeSprintRemaining / 4;
+            }
+
             
             if (timeSprintRemaining >=8 && canUsePotion == false)
             {
 
                 timeSprintRemaining = 8;
                 timerSprintRunning2 = true;
-                
 
+                value = 1;
 
             }
             if (timeSprintRemaining >= 4 && canUsePotion == true)
@@ -498,10 +522,10 @@ public class Player : MonoBehaviourPunCallbacks
                 timeSprintRemaining = 4;
                 timerSprintRunning2 = true;
 
-
+                value = 1;
 
             }
-
+            staminaBar.value = value;
 
         }
     }
