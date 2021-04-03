@@ -39,6 +39,7 @@ public class Health : MonoBehaviourPunCallbacks
 
                 player.ghost.SetActive(true);
                 player.moveSpeed = 10;
+                player.stabReady = false;
             }
 
             
@@ -50,7 +51,8 @@ public class Health : MonoBehaviourPunCallbacks
         yield return new WaitForSeconds(ghostTime);
         isGhost = false;
         player.ghost.SetActive(false);
-        if(healthAmount > 0)
+        player.stabReady = true;
+        if (healthAmount > 0)
         {
             player.moveSpeed = 5;
         }
