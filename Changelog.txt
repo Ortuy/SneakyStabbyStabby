@@ -132,6 +132,7 @@
 - Spike Pit activating animation and particle
 - Health loss displayed on UI
 - Health loss particles
+- Chest sprites and prefab (no functionality)
 ### Changed
 - Spike Pit sprites
 ### Fixed
