@@ -6,26 +6,37 @@ using Photon.Pun;
 public class SpikePit : MonoBehaviourPunCallbacks
 {
 
-    public Rigidbody2D rb;
+    //public Rigidbody2D rb;
+    [SerializeField] private Animator animator;
+    [SerializeField] private ParticleSystem activateFX;
+    private bool usedUp;
     public float spikeDamage;
 
     [PunRPC]
-    public void DestroyObject()
+    public void DestroyObject(float duration)
     {
-        Destroy(this.gameObject);
+        Destroy(this.gameObject, duration);
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-        PhotonView target = collision.gameObject.GetComponent<PhotonView>();
-        if(target != null)
+        if(!usedUp)
         {
-            if (target.tag == "Player")
+            PhotonView target = collision.gameObject.GetComponent<PhotonView>();
+            if (target != null)
             {
-                target.RPC("ReduceHealth", RpcTarget.AllBuffered, spikeDamage);
-            }
+                if (target.tag == "Player")
+                {
+                    target.RPC("ReduceHealth", RpcTarget.AllBuffered, spikeDamage);
+                }
 
-            this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered);
+                animator.SetBool("Activated", true);
+                activateFX.Play();
+
+                this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered, 3f);
+                usedUp = true;
+            }
         }
+        
     }
 }

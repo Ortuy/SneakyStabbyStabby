@@ -13,10 +13,11 @@ public class Health : MonoBehaviourPunCallbacks
     public SpriteRenderer sr;
     public bool isGhost = false;
     public float ghostTime = 3;
-   
+
     //public GameObject playerCanvas;
 
-    public ParticleSystem deathFX;
+    public GameObject[] lifeMarkers;
+    public ParticleSystem deathFX, hurtFX;
 
     private void Awake()
     {
@@ -31,6 +32,7 @@ public class Health : MonoBehaviourPunCallbacks
     {
         if(isGhost == false)
         {
+            hurtFX.Play();
             ModifyHealth(amount);
             isGhost = true;
             StartCoroutine("GhostEnum");
@@ -106,6 +108,7 @@ public class Health : MonoBehaviourPunCallbacks
         if (photonView.IsMine)
         {
             healthAmount -= amount;
+            lifeMarkers[Mathf.FloorToInt(healthAmount)].SetActive(false);
         }
         else
         {
