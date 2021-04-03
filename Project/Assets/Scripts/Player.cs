@@ -166,22 +166,6 @@ public class Player : MonoBehaviourPunCallbacks
                 timerPaintRunning2 = false;
 
             }
-            
-            //I commented out the method - we already have another good place to implement the footsteps
-            /*
-            if (timePaintRemaining > 0)
-            {
-                timePaintRemaining -= Time.deltaTime;
-                
-
-            }
-            else
-            {
-                timePaintRemaining = 3;
-
-                Paint();
-            }
-            */
         }
         if (!photonView.IsMine && timerShineRunning)
         {
@@ -430,9 +414,17 @@ public class Player : MonoBehaviourPunCallbacks
     //[PunRPC]
     private void SpawnGlowingFootstep()
     {
-        var foot = PhotonNetwork.InstantiateRoomObject(glowingFootstep.name, transform.position, legs.transform.rotation);
-        foot.GetComponent<SpriteRenderer>().flipX = legs.GetComponent<SpriteRenderer>().flipX;
-        Destroy(foot, 16);
+        GameObject foot = null;
+
+        if(photonView.IsMine)
+        {
+            foot = PhotonNetwork.Instantiate/*RoomObject*/(glowingFootstep.name, transform.position, legs.transform.rotation);
+            //foot.GetComponent<SpriteRenderer>().flipX = legs.GetComponent<SpriteRenderer>().flipX;
+            //Destroy(foot, 16);
+            float f = 16f;
+            foot.GetComponent<PhotonView>().RPC("SetFootstep", RpcTarget.AllBuffered, legs.GetComponent<SpriteRenderer>().flipX, f);
+        }
+        
     }
 
     private Vector2 GetDirectionFromMouse()
