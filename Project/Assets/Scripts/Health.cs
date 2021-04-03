@@ -10,6 +10,8 @@ public class Health : MonoBehaviourPunCallbacks
     public Rigidbody2D rb;
     public CircleCollider2D cc;
     public SpriteRenderer sr;
+    public bool isGhost = false;
+    public float ghostTime = 3;
    
     //public GameObject playerCanvas;
 
@@ -26,7 +28,21 @@ public class Health : MonoBehaviourPunCallbacks
 
     [PunRPC] public void ReduceHealth(float amount)
     {
-        ModifyHealth(amount);
+        if(isGhost == false)
+        {
+            ModifyHealth(amount);
+            isGhost = true;
+            StartCoroutine("GhostEnum");
+
+            
+        }
+        
+    }
+    IEnumerator GhostEnum()
+    {
+        yield return new WaitForSeconds(ghostTime);
+        isGhost = false;
+        
     }
 
     private void CheckHealth()

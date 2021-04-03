@@ -8,8 +8,9 @@ public class Player : MonoBehaviourPunCallbacks
 {
     public PhotonView photonView;
 
+    public Health health;
     public Rigidbody2D rigidBody;
-    public GameObject playerCamera, playerViewCone, playerViewCone2, rotatingBody,pointLight2d,gel, legs, dis, dis1, dis2, dis3;
+    public GameObject playerCamera, playerViewCone, playerViewCone2, rotatingBody,pointLight2d,gel, legs, dis, dis1, dis2, dis3, ghost;
     private Camera usedCameraComponent;
     private Vector2 moveDirection;
     public GameObject boltObject;
@@ -81,6 +82,7 @@ public class Player : MonoBehaviourPunCallbacks
             inventory.gameObject.SetActive(true);
             inventory.transform.SetParent(null);
             gel.SetActive(false);
+            ghost.SetActive(false);
             dis.SetActive(false);
             dis1.SetActive(false);
             dis2.SetActive(false);
@@ -821,5 +823,13 @@ public class Player : MonoBehaviourPunCallbacks
             camoNum = 0;
         }
         */
+    }
+    public void Ghost()
+    {
+        if (health.isGhost == true) 
+        {
+            ghost.SetActive(true);
+            moveSpeed = 30;
+        }
     }
 }
