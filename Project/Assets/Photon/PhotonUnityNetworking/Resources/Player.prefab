@@ -9689,6 +9689,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plMove: {fileID: 5440725864618505864}
+  player: {fileID: 5440725864618505864}
   healthAmount: 3
   rb: {fileID: 5440725864618505866}
   cc: {fileID: 1222969580622465534}

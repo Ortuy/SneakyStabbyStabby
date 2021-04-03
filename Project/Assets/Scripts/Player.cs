@@ -44,6 +44,7 @@ public class Player : MonoBehaviourPunCallbacks
     public bool stabReady = true, isBehindOtherPlayer;
     public bool canUsePotion = true;
     public int camoNum = 0;
+    
 
     
 
@@ -824,12 +825,5 @@ public class Player : MonoBehaviourPunCallbacks
         }
         */
     }
-    public void Ghost()
-    {
-        if (health.isGhost == true) 
-        {
-            ghost.SetActive(true);
-            moveSpeed = 30;
-        }
-    }
+    
 }

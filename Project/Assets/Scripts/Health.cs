@@ -6,6 +6,7 @@ using Photon.Pun;
 public class Health : MonoBehaviourPunCallbacks
 {
     public Player plMove;
+    public Player player;
     public float healthAmount;
     public Rigidbody2D rb;
     public CircleCollider2D cc;
@@ -33,6 +34,12 @@ public class Health : MonoBehaviourPunCallbacks
             ModifyHealth(amount);
             isGhost = true;
             StartCoroutine("GhostEnum");
+            if (isGhost == true && healthAmount >0)
+            {
+
+                player.ghost.SetActive(true);
+                player.moveSpeed = 10;
+            }
 
             
         }
@@ -42,7 +49,18 @@ public class Health : MonoBehaviourPunCallbacks
     {
         yield return new WaitForSeconds(ghostTime);
         isGhost = false;
-        
+        player.ghost.SetActive(false);
+        if(healthAmount > 0)
+        {
+            player.moveSpeed = 5;
+        }
+        if (healthAmount <= 0)
+        {
+            plMove.disableInput = true;
+            player.moveSpeed = 0;
+            
+        }
+
     }
 
     private void CheckHealth()
