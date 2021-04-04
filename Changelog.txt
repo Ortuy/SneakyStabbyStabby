@@ -138,3 +138,7 @@
 ### Fixed
 - Gel trap footsteps causing null reference errors for the second player
 
+## [0.1.1] - 2021-04-04
+### Added
+- Central portal art, spawn portal art
+- Spawn portals animate when a player enters the arena through them

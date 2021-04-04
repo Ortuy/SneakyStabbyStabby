@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     public Color[] playerColors;
 
     public GameObject[] spawnPoints;
+    [SerializeField] private Animator[] spawnPortalAnimators;
     private bool countdownStarted;
 
     public GameObject decorHolder;
@@ -82,9 +83,11 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         float randomValueX = Random.Range(-2f, 2f);
         float randomValueY = Random.Range(-2f, 2f);
-        
+
+        spawnPortalAnimators[playerAmount].SetBool("Open", true);
         PhotonNetwork.Instantiate(playerPrefab.name, spawnPoints[playerAmount].transform.position, Quaternion.identity, 0);
         
+
         gameCanvas.SetActive(false);
         StartCoroutine(SetPlayerColor());
         sceneCamera.SetActive(false);
@@ -172,5 +175,6 @@ public class GameManager : MonoBehaviourPunCallbacks
         yield return null;
         var c = playerColors[Random.Range(0, playerColors.Length)];
         localPlayer.GetComponent<PhotonView>().RPC("SetColor", RpcTarget.AllBuffered, c.r, c.g, c.b);
+        spawnPortalAnimators[playerAmount - 1].SetBool("Open", false);
     }
 }
