@@ -54,6 +54,7 @@ public class Player : MonoBehaviourPunCallbacks
 
     public SpriteRenderer[] recolorSprites;
     public SpriteRenderer[] nonRecolorSprites;
+    public SpriteRenderer[] ghostSprites;
 
     private Animator animator;
 

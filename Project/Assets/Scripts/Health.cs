@@ -38,8 +38,16 @@ public class Health : MonoBehaviourPunCallbacks
             StartCoroutine("GhostEnum");
             if (isGhost == true && healthAmount >0)
             {
+                Color playerColor = new Color(player.recolorSprites[0].color.r, player.recolorSprites[0].color.g, player.recolorSprites[0].color.b, 0);
 
-                player.ghost.SetActive(true);
+                //player.ghost.SetActive(true);
+                player.ghostSprites[0].color = new Color(1, 1, 1, 1);
+                player.ghostSprites[1].color = new Color(1, 1, 1, 1);
+                player.nonRecolorSprites[0].color = new Color(1, 1, 1, 0);
+                player.nonRecolorSprites[1].color = new Color(1, 1, 1, 0);
+                player.recolorSprites[0].color = playerColor;
+                player.recolorSprites[1].color = playerColor;
+
                 player.moveSpeed = 10;
                 player.stabReady = false;
             }
@@ -52,7 +60,15 @@ public class Health : MonoBehaviourPunCallbacks
     {
         yield return new WaitForSeconds(ghostTime);
         isGhost = false;
-        player.ghost.SetActive(false);
+
+        Color playerColor = new Color(player.recolorSprites[0].color.r, player.recolorSprites[0].color.g, player.recolorSprites[0].color.b, 1);
+
+        player.ghostSprites[0].color = new Color(1, 1, 1, 0);
+        player.ghostSprites[1].color = new Color(1, 1, 1, 0);
+        player.nonRecolorSprites[0].color = new Color(1, 1, 1, 1);
+        player.nonRecolorSprites[1].color = new Color(1, 1, 1, 1);
+        player.recolorSprites[0].color = playerColor;
+        player.recolorSprites[1].color = playerColor;
         player.stabReady = true;
         if (healthAmount > 0)
         {

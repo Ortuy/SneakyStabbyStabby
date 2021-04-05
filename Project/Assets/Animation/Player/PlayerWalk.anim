@@ -122,6 +122,20 @@ AnimationClip:
     path: Legs/Recolor
     classID: 212
     script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 21300000, guid: fc82a9ee377f58d4987cf51d48219a7a, type: 3}
+    attribute: m_Sprite
+    path: RotatingBody/Ghost_Top
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 21300000, guid: c9033cc5f79ddaa4385c4df317f6fa45, type: 3}
+    attribute: m_Sprite
+    path: Legs/GhostBottom
+    classID: 212
+    script: {fileID: 0}
   m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
@@ -157,6 +171,20 @@ AnimationClip:
       typeID: 212
       customType: 23
       isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 1907879335
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 730158786
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
     pptrCurveMapping:
     - {fileID: 21300000, guid: 8e60dab0271ee34448dc9d72f97ee53a, type: 3}
     - {fileID: 21300000, guid: a60a2e0010c513e4cbc3df353561e293, type: 3}
@@ -168,6 +196,8 @@ AnimationClip:
     - {fileID: 21300000, guid: 2b2b771a1a6c0f141847983543fd0f7e, type: 3}
     - {fileID: 21300000, guid: 5386a990019bcca41835d92b314853a4, type: 3}
     - {fileID: 21300000, guid: 2b2b771a1a6c0f141847983543fd0f7e, type: 3}
+    - {fileID: 21300000, guid: fc82a9ee377f58d4987cf51d48219a7a, type: 3}
+    - {fileID: 21300000, guid: c9033cc5f79ddaa4385c4df317f6fa45, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
