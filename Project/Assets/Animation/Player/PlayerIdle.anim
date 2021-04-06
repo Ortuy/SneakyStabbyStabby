@@ -32,6 +32,20 @@ AnimationClip:
     path: Legs/Recolor
     classID: 212
     script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 21300000, guid: 32199d695e475fa4e8210e4473f5f857, type: 3}
+    attribute: m_Sprite
+    path: Legs/GhostBottom
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 21300000, guid: c0a167ea87b93a44aa45eec8f8a753b2, type: 3}
+    attribute: m_Sprite
+    path: RotatingBody/Ghost_Top
+    classID: 212
+    script: {fileID: 0}
   m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
@@ -53,9 +67,25 @@ AnimationClip:
       typeID: 212
       customType: 23
       isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 730158786
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 1907879335
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
     pptrCurveMapping:
     - {fileID: 21300000, guid: dfa68a11d2c5183489ce6a9066b020c1, type: 3}
     - {fileID: 21300000, guid: 8f80822b9bb7c7543a0c1fae0ed0c756, type: 3}
+    - {fileID: 21300000, guid: 32199d695e475fa4e8210e4473f5f857, type: 3}
+    - {fileID: 21300000, guid: c0a167ea87b93a44aa45eec8f8a753b2, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
