@@ -15,5 +15,5 @@ MonoBehaviour:
   itemImage: {fileID: 21300000, guid: d7d06f0af5a60df48ae1db7f1db76e0e, type: 3}
   itemName: Enchanted Eye
   itemDesc: Mark nearby foes on your map
-  itemType: 2
-  effectID: 3
+  itemType: 0
+  effectID: 7

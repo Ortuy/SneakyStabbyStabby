@@ -15,5 +15,5 @@ MonoBehaviour:
   itemImage: {fileID: 21300000, guid: fb8b23a791b85fe4cb8159b0cfcfb67d, type: 3}
   itemName: Blinding Trap
   itemDesc: Impair your foe's sight
-  itemType: 2
-  effectID: 4
+  itemType: 0
+  effectID: 2

@@ -16,4 +16,4 @@ MonoBehaviour:
   itemName: Mimicry
   itemDesc: Take the form of an inanimate object
   itemType: 1
-  effectID: 0
+  effectID: 2

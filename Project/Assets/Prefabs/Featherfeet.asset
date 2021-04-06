@@ -15,5 +15,5 @@ MonoBehaviour:
   itemImage: {fileID: 21300000, guid: 46f187448d34b6541b1393f4cf670014, type: 3}
   itemName: Featherfeet Potion
   itemDesc: Step with no sound
-  itemType: 0
-  effectID: 1
+  itemType: 1
+  effectID: 3

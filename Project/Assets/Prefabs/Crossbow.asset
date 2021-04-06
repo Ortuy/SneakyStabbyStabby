@@ -16,4 +16,4 @@ MonoBehaviour:
   itemName: Tactical Crossbow
   itemDesc: Kill your foe from afar... or disarm deadly traps
   itemType: 0
-  effectID: 0
+  effectID: 5

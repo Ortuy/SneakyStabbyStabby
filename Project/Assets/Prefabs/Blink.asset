@@ -16,4 +16,4 @@ MonoBehaviour:
   itemName: Blink Spell
   itemDesc: Quickly move a short distance
   itemType: 0
-  effectID: 1
+  effectID: 6

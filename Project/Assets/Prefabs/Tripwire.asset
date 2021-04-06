@@ -15,5 +15,5 @@ MonoBehaviour:
   itemImage: {fileID: 21300000, guid: 487022513042e2d47824d50bc6de9f4e, type: 3}
   itemName: Web Trap
   itemDesc: Lock your foe in place
-  itemType: 2
+  itemType: 0
   effectID: 1
