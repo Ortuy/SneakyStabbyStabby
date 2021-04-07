@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &558696931377419245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2489207343066065454}
+  m_Layer: 0
+  m_Name: dropPos1
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2489207343066065454
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558696931377419245}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.46, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8675110067393681158}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &606875475890072403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2455402402289764824}
+  m_Layer: 0
+  m_Name: dropPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2455402402289764824
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606875475890072403}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.42, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8675110067393681158}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1842878721824303723
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,6 +359,7 @@ GameObject:
   - component: {fileID: 8675110067393681158}
   - component: {fileID: 8675110067393681153}
   - component: {fileID: 2969147952283558797}
+  - component: {fileID: 552092202723210673}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -323,6 +384,8 @@ Transform:
   - {fileID: 8031564647153315350}
   - {fileID: 3689810584895221863}
   - {fileID: 1073536299402769182}
+  - {fileID: 2455402402289764824}
+  - {fileID: 2489207343066065454}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -396,6 +459,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &552092202723210673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8675110067393681152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474911a44eca547489af688442eaea3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portalIsActive: 0
+  spawnTime: 20
+  itemNum: 0
+  itemNum1: 0
+  itemNum2: 0
+  dropPos: {fileID: 5911388623839334667}
+  dropPos1: {fileID: 606875475890072403}
+  dropPos2: {fileID: 558696931377419245}
+  pickup1: {fileID: 6016474575503332140, guid: d0096c7395cd4a14590a80fa508a7d80, type: 3}
+  pickup2: {fileID: 6016474575503332140, guid: c66d80d1ed6802d48ba62afbd367f5e2, type: 3}
+  pickup3: {fileID: 6016474575503332140, guid: 9dd5822f9fb932a4ea124131a2735652, type: 3}
+  pickup4: {fileID: 6016474575503332140, guid: c872a01f6838bed419b7d1da564979a4, type: 3}
+  pickup5: {fileID: 6016474575503332140, guid: 358c949d105326948a8fc196f2b0edb5, type: 3}
+  pickup6: {fileID: 6016474575503332140, guid: 18a9ee4fb24226a4ca6db2bf9f5fb63a, type: 3}
+  pickup7: {fileID: 6016474575503332140, guid: 7c189a1d93ea19a499758c109fe78dc8, type: 3}
+  pickup8: {fileID: 6016474575503332140, guid: b7fdac3e149caeb47b82e22403c75a4a, type: 3}
+  pickup9: {fileID: 6016474575503332140, guid: 3c4cccf8f876db44796d26131f7d8ef3, type: 3}
+  pickup10: {fileID: 6016474575503332140, guid: b47449d655fadcf4796c04328bbad0b6,
+    type: 3}
 --- !u!1 &8892510954186784862
 GameObject:
   m_ObjectHideFlags: 0
