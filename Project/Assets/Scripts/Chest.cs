@@ -6,6 +6,7 @@ using Photon.Pun;
 public class Chest : MonoBehaviourPunCallbacks
 {
     public Player player;
+    public StabHitBox stabHitBox;
     public float itemNum = 0;
     public bool chestlIsActive = true;
     public float spawnTime;
@@ -27,7 +28,7 @@ public class Chest : MonoBehaviourPunCallbacks
     private void OnTriggerStay2D(Collider2D Player)
     {
 
-        if (Input.GetButtonDown("Fire1") && player.stabHitBox == true && chestlIsActive == true)
+        if (Input.GetButtonDown("Fire1") && stabHitBox.canOpenChest == true&& chestlIsActive == true)
         {
 
             itemNum = Random.Range(1, 10);
