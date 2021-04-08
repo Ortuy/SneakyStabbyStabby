@@ -17,3 +17,5 @@ MonoBehaviour:
   itemDesc: Release foul vapours into the air
   itemType: 0
   effectID: 3
+  maxUses: 1
+  usesLeft: 1

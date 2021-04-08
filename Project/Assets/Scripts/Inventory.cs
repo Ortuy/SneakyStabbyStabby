@@ -16,12 +16,23 @@ public class Inventory : MonoBehaviourPunCallbacks
     public Item currentPassive;
     public Item[] currentActives;
 
+    public UseMarker[] useMarkers;
+    public Color unusedColor, usedColor;
+
     public void SetActiveItem(int slotID, Item newItem)
     {
         itemImages[slotID].gameObject.SetActive(true);
         itemImages[slotID].sprite = newItem.itemImage;
         currentActives[slotID] = newItem;
         
+        if(newItem.maxUses > 1)
+        {
+            for(int i = 0; i < newItem.maxUses; i++)
+            {
+                useMarkers[slotID].markers[i].gameObject.SetActive(true);
+                useMarkers[slotID].markers[i].color = unusedColor;
+            }
+        }
     }
 
     public void SetPassiveItem(Item newItem)
@@ -96,9 +107,22 @@ public class Inventory : MonoBehaviourPunCallbacks
                     player.Blinking();
                     break;
 
+            }           
+
+            currentActives[selectedSlot].usesLeft--;
+            useMarkers[selectedSlot].markers[currentActives[selectedSlot].usesLeft].color = usedColor;
+
+            if(currentActives[selectedSlot].usesLeft == 0)
+            {
+                currentActives[selectedSlot] = null;
+                itemImages[selectedSlot].gameObject.SetActive(false);
+
+                for(int i = 0; i < useMarkers[selectedSlot].markers.Length; i++)
+                {
+                    useMarkers[selectedSlot].markers[i].gameObject.SetActive(false);
+                }
             }
-            currentActives[selectedSlot] = null;
-            itemImages[selectedSlot].gameObject.SetActive(false);
+            
         }
         
 

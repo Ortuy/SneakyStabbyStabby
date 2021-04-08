@@ -17,3 +17,5 @@ MonoBehaviour:
   itemDesc: Impair your foe's sight
   itemType: 0
   effectID: 2
+  maxUses: 1
+  usesLeft: 1

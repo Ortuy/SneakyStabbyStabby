@@ -17,3 +17,5 @@ MonoBehaviour:
   itemDesc: Take the form of an inanimate object
   itemType: 1
   effectID: 2
+  maxUses: 1
+  usesLeft: 1

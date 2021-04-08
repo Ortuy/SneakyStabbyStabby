@@ -59,7 +59,7 @@ public class Player : MonoBehaviourPunCallbacks
     private Animator animator;
 
     public Inventory inventory;
-    public Text stabCooldownText;
+    public Text stabCooldownText, potionCooldownText;
 
     public ParticleSystem footstep;
     public SpriteRenderer glowingFootstep;
@@ -244,7 +244,7 @@ public class Player : MonoBehaviourPunCallbacks
 
         Vector2 dir = GetDirectionFromMouse();
 
-        if (Input.GetButtonDown("Fire2") && stabReady)
+        if (Input.GetButtonDown("Fire2"))
         {
             //Shoot();
             inventory.UseItem();
@@ -258,26 +258,27 @@ public class Player : MonoBehaviourPunCallbacks
         {
             inventory.UsePassiveItem();
         }
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            Spikepit();
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            Tripwire();
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            Blindingtrap();
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            Bomb();
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            Geltrap();
-        }
+
+        //if (Input.GetKeyDown(KeyCode.Alpha1))
+        //{
+        //    Spikepit();
+        //}
+        //if (Input.GetKeyDown(KeyCode.Alpha2))
+        //{
+        //    Tripwire();
+        //}
+        //if (Input.GetKeyDown(KeyCode.Alpha3))
+        //{
+        //    Blindingtrap();
+        //}
+        //if (Input.GetKeyDown(KeyCode.Alpha4))
+        //{
+        //    Bomb();
+        //}
+        //if (Input.GetKeyDown(KeyCode.Alpha5))
+        //{
+        //    Geltrap();
+        //}
         /*
         if (Input.GetKey(KeyCode.D) && Input.GetKeyDown(KeyCode.Mouse2))
         {
@@ -684,7 +685,18 @@ public class Player : MonoBehaviourPunCallbacks
     }
     IEnumerator PotionStopWorking()
     {
-        yield return new WaitForSeconds(pasiveItemTimeWorking);
+        int timeLeft = Mathf.FloorToInt(pasiveItemTimeWorking);
+        potionCooldownText.transform.parent.gameObject.SetActive(true);       
+
+        while (timeLeft > 0)
+        {
+            potionCooldownText.text = timeLeft.ToString();
+            yield return new WaitForSeconds(1);
+            timeLeft--;
+        }
+
+        potionCooldownText.transform.parent.gameObject.SetActive(false);
+
         if (photonView.IsMine)
         {
             playerViewCone2.SetActive(false);
@@ -692,6 +704,7 @@ public class Player : MonoBehaviourPunCallbacks
             canUsePotion = true;
         }
     }
+
     public void SprintPotion()
     {
         if (photonView.IsMine)
@@ -704,7 +717,18 @@ public class Player : MonoBehaviourPunCallbacks
     }
     IEnumerator PotionStopWorking2()
     {
-        yield return new WaitForSeconds(pasiveItemTimeWorking);
+        int timeLeft = Mathf.FloorToInt(pasiveItemTimeWorking);
+        potionCooldownText.transform.parent.gameObject.SetActive(true);
+
+        while (timeLeft > 0)
+        {
+            potionCooldownText.text = timeLeft.ToString();
+            yield return new WaitForSeconds(1);
+            timeLeft--;
+        }
+
+        potionCooldownText.transform.parent.gameObject.SetActive(false);
+
         if (photonView.IsMine)
         {
             timeSprintRemaining = 4;
@@ -784,7 +808,17 @@ public class Player : MonoBehaviourPunCallbacks
     }
     IEnumerator CamoStopWorking()
     {
-        yield return new WaitForSeconds(pasiveItemTimeWorking);
+        int timeLeft = Mathf.FloorToInt(pasiveItemTimeWorking);
+        potionCooldownText.transform.parent.gameObject.SetActive(true);
+
+        while (timeLeft > 0)
+        {
+            potionCooldownText.text = timeLeft.ToString();
+            yield return new WaitForSeconds(1);
+            timeLeft--;
+        }
+
+        potionCooldownText.transform.parent.gameObject.SetActive(false);
 
         foreach (SpriteRenderer renderer in recolorSprites)
         {

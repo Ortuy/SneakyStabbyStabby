@@ -472,7 +472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portalIsActive: 0
-  spawnTime: 20
+  spawnTime: 90
   itemNum: 0
   itemNum1: 0
   itemNum2: 0
@@ -490,6 +490,21 @@ MonoBehaviour:
   pickup9: {fileID: 6016474575503332140, guid: 3c4cccf8f876db44796d26131f7d8ef3, type: 3}
   pickup10: {fileID: 6016474575503332140, guid: b47449d655fadcf4796c04328bbad0b6,
     type: 3}
+  pickup11: {fileID: 0}
+  pickup12: {fileID: 0}
+  pickups:
+  - {fileID: 6016474575503332140, guid: d0096c7395cd4a14590a80fa508a7d80, type: 3}
+  - {fileID: 6016474575503332140, guid: c66d80d1ed6802d48ba62afbd367f5e2, type: 3}
+  - {fileID: 6016474575503332140, guid: 9dd5822f9fb932a4ea124131a2735652, type: 3}
+  - {fileID: 6016474575503332140, guid: c872a01f6838bed419b7d1da564979a4, type: 3}
+  - {fileID: 6016474575503332140, guid: 358c949d105326948a8fc196f2b0edb5, type: 3}
+  - {fileID: 6016474575503332140, guid: 18a9ee4fb24226a4ca6db2bf9f5fb63a, type: 3}
+  - {fileID: 6016474575503332140, guid: 7c189a1d93ea19a499758c109fe78dc8, type: 3}
+  - {fileID: 6016474575503332140, guid: b7fdac3e149caeb47b82e22403c75a4a, type: 3}
+  - {fileID: 6016474575503332140, guid: 3c4cccf8f876db44796d26131f7d8ef3, type: 3}
+  - {fileID: 6016474575503332140, guid: b47449d655fadcf4796c04328bbad0b6, type: 3}
+  - {fileID: 6016474575503332140, guid: 424ef0bcaa387714892c3c8283d5231a, type: 3}
+  - {fileID: 6016474575503332140, guid: d8093f0a5896e4440ad6b651b884c513, type: 3}
 --- !u!1 &8892510954186784862
 GameObject:
   m_ObjectHideFlags: 0

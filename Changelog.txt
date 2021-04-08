@@ -146,7 +146,23 @@
 ## [0.1.2] - 2021-04-05
 ### Added
 - Player ghost sprites
+
 ## [0.1.3] - 2021-04-07
 ### Added
 - Portal & Chests
 
+## [0.1.4] - 2021-04-07
+### Added
+- Chest cooldown visibility
+- Chests show what item is inside
+- Supply drop announcement
+- Central portal animates
+- Shop art and decor
+- Inventory and items integration
+- Potion cooldown visibility
+- Item use amount markers
+### Changed
+- Chest cooldowns set to 60 seconds
+- Portal cooldown set to 90 seconds
+### Fixed
+- Chests now drop proper items

@@ -6,10 +6,10 @@ using Photon.Pun;
 public class Portal : MonoBehaviourPunCallbacks
 {
     public bool portalIsActive = false;
-    public float spawnTime = 20;
-    public float itemNum = 0;
-    public float itemNum1 = 0;
-    public float itemNum2 = 0;
+    public float spawnTime = 90;
+    public int itemNum = 0;
+    public int itemNum1 = 0;
+    public int itemNum2 = 0;
     public GameObject dropPos;
     public GameObject dropPos1;
     public GameObject dropPos2;
@@ -23,16 +23,26 @@ public class Portal : MonoBehaviourPunCallbacks
     public GameObject pickup8;
     public GameObject pickup9;
     public GameObject pickup10;
+    public GameObject pickup11;
+    public GameObject pickup12;
 
-    private void Awake()
-    {
-        portalIsActive = true;
-    }
-    private void nTriggerStay2D(Collider2D collision)
-    {
-        
-    }
+    private Animator animator;
 
+    [SerializeField] private GameObject[] pickups;
+
+    //private void Awake()
+    //{
+    //    //portalIsActive = true;
+    //}
+    //private void nTriggerStay2D(Collider2D collision)
+    //{
+
+    //}
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     void Update()
     {
@@ -42,16 +52,39 @@ public class Portal : MonoBehaviourPunCallbacks
         //}
         if (portalIsActive == true)
         {
-            StartCoroutine("ItemMaking");
-            StartCoroutine("ItemMaking1");
-            StartCoroutine("ItemMaking2");
-            itemNum = Random.Range(1, 10);
-            itemNum1 = Random.Range(1, 10);
-            itemNum2 = Random.Range(1, 10);
+            //StartCoroutine("ItemMaking");
+            //StartCoroutine("ItemMaking1");
+            //StartCoroutine("ItemMaking2");
+            StartCoroutine(WaitAndSpawnItems());
+            itemNum = Random.Range(0, 12);
+            itemNum1 = Random.Range(0, 12);
+            itemNum2 = Random.Range(0, 12);
             portalIsActive = false;
         }
         
     }
+
+    IEnumerator WaitAndSpawnItems()
+    {
+        yield return new WaitForSeconds(spawnTime);
+
+        animator.SetBool("Open", true);
+
+        GameManager.localInstance.victoryText.gameObject.SetActive(true);
+        GameManager.localInstance.victoryText.text = "Supplies Arrived!";
+        GameManager.localInstance.DisappearText(2.4f);
+
+        PhotonNetwork.Instantiate(pickups[itemNum].name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(pickups[itemNum1].name, new Vector2(dropPos1.transform.position.x, dropPos1.transform.position.y), Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(pickups[itemNum2].name, new Vector2(dropPos2.transform.position.x, dropPos2.transform.position.y), Quaternion.identity, 0);
+
+        yield return null;
+
+        animator.SetBool("Open", false);
+
+        portalIsActive = true;
+    }
+
     IEnumerator ItemMaking()
     {
         yield return new WaitForSeconds(spawnTime);

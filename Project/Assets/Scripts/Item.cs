@@ -12,6 +12,8 @@ public class Item : ScriptableObject
     public string itemDesc;
     public ItemType itemType;
     public int effectID;
+    public int maxUses;
+    public int usesLeft;
 
     public void SetParameters(Item baseItem)
     {
@@ -20,5 +22,7 @@ public class Item : ScriptableObject
         itemDesc = baseItem.itemDesc;
         itemType = baseItem.itemType;
         effectID = baseItem.effectID;
+        maxUses = baseItem.maxUses;
+        usesLeft = baseItem.maxUses;
     }
 }

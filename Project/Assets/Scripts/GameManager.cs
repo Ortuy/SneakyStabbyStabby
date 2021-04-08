@@ -107,6 +107,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     [PunRPC]
     public void DissolveStartPoints()
     {
+        FindObjectOfType<Portal>().portalIsActive = true;
         spawnPoints[0].gameObject.SetActive(false);
         spawnPoints[1].gameObject.SetActive(false);
     }

@@ -17,3 +17,5 @@ MonoBehaviour:
   itemDesc: Quickly move a short distance
   itemType: 0
   effectID: 6
+  maxUses: 3
+  usesLeft: 3

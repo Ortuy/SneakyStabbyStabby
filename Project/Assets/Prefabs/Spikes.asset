@@ -17,3 +17,5 @@ MonoBehaviour:
   itemDesc: Set a fatal ambush for your foe
   itemType: 0
   effectID: 0
+  maxUses: 1
+  usesLeft: 1

@@ -17,3 +17,5 @@ MonoBehaviour:
   itemDesc: Make sure your foe will be seen
   itemType: 0
   effectID: 4
+  maxUses: 1
+  usesLeft: 1
