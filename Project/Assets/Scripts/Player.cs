@@ -67,7 +67,7 @@ public class Player : MonoBehaviourPunCallbacks
     [SerializeField] private Slider staminaBar;
     private bool sprintPotionActive;
 
-    [SerializeField] private GameObject[] camoObjects;
+    [SerializeField] public GameObject[] camoObjects;
 
     private void Awake()
     {
@@ -246,12 +246,17 @@ public class Player : MonoBehaviourPunCallbacks
 
         if (Input.GetButtonDown("Fire2") && stabReady)
         {
-            Shoot();
+            //Shoot();
+            inventory.UseItem();
         }
         
         if(Input.GetButtonDown("Fire1") && stabReady)
         {
             Stab();
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            inventory.UsePassiveItem();
         }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -625,45 +630,49 @@ public class Player : MonoBehaviourPunCallbacks
 
 
     }
+    public void Blinking()
+    {
+        StartCoroutine(Blink());
+    }
 
-    private void Shoot()
+    public void Shoot()
     {
         StartCoroutine(LockStabbing());
         GameObject obj = PhotonNetwork.Instantiate(boltObject.name, new Vector2(firePos.transform.position.x, firePos.transform.position.y), rotatingBody.transform.rotation, 0);
         Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
         rb.AddForce(firePos.up * shootSpeed, ForceMode2D.Impulse);
     }
-    private void Spikepit()
+    public void Spikepit()
     {
         GameObject obj = PhotonNetwork.Instantiate(spikePitObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
-    private void Tripwire()
+    public void Tripwire()
     {
         GameObject obj = PhotonNetwork.Instantiate(tripwireObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
-    private void Blindingtrap()
+    public void Blindingtrap()
     {
         GameObject obj = PhotonNetwork.Instantiate(blidingtrapObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
-    private void Bomb()
+    public void Bomb()
     {
         GameObject obj = PhotonNetwork.Instantiate(bombObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
-    private void Geltrap()
+    public void Geltrap()
     {
         GameObject obj = PhotonNetwork.Instantiate(gelTrapObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
-    private void Paint()
+    public void Paint()
     {
         //GameObject obj = PhotonNetwork.Instantiate(paintObject.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
-    private void SeePotion()
+    public void SeePotion()
     {
         if (photonView.IsMine)
         {
@@ -683,7 +692,7 @@ public class Player : MonoBehaviourPunCallbacks
             canUsePotion = true;
         }
     }
-    private void SprintPotion()
+    public void SprintPotion()
     {
         if (photonView.IsMine)
         {
@@ -704,7 +713,7 @@ public class Player : MonoBehaviourPunCallbacks
         }
     }
     [PunRPC]
-    private void CamoSpell(int variant)
+    public void CamoSpell(int variant)
     {
 
         /**

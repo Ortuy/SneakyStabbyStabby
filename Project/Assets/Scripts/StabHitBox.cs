@@ -35,6 +35,7 @@ public class StabHitBox : MonoBehaviourPunCallbacks
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (!playerPV.IsMine)
             return;
         if(collision.gameObject.transform.parent != null)
@@ -47,8 +48,25 @@ public class StabHitBox : MonoBehaviourPunCallbacks
                     Debug.Log("Successful Stab!");
                     target.RPC("ReduceHealth", RpcTarget.AllBuffered, damage);
                 }
+                
+                
             }
-        }        
+            
+        }
+        
+        
+            Debug.LogWarning("DUPA");
+            PhotonView target1 = collision.GetComponent<PhotonView>();
+            if (target1 != null)
+            {
+            Debug.LogWarning(target1); 
+                if (target1.CompareTag("Chest"))
+                {
+                    target1.RPC("RandomItem", RpcTarget.AllBuffered);
+
+                }
+            }
+        
     }
     private void OnTriggerStay2D(Collider2D Chest)
     {

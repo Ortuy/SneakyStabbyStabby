@@ -10,6 +10,7 @@ public class Inventory : MonoBehaviourPunCallbacks
     public GameObject[] slotSelectionDisplays;
     public int selectedSlot;
     public Image[] itemImages;
+    public Player player;
 
     public Item currentTrap;
     public Item currentPassive;
@@ -20,6 +21,7 @@ public class Inventory : MonoBehaviourPunCallbacks
         itemImages[slotID].gameObject.SetActive(true);
         itemImages[slotID].sprite = newItem.itemImage;
         currentActives[slotID] = newItem;
+        
     }
 
     public void SetPassiveItem(Item newItem)
@@ -63,4 +65,71 @@ public class Inventory : MonoBehaviourPunCallbacks
             slotSelectionDisplays[selectedSlot].SetActive(true);
         }
     }
+
+    public void UseItem()
+    {
+        if (currentActives[selectedSlot] != null)
+        {
+            var effectID = currentActives[selectedSlot].effectID;
+
+            switch (effectID)
+            {
+                case 0:
+                    player.Spikepit();
+                    break;
+                case 1:
+                    player.Tripwire();
+                    break;
+                case 2:
+                    player.Blindingtrap();
+                    break;
+                case 3:
+                    player.Bomb();
+                    break;
+                case 4:
+                    player.Geltrap();
+                    break;
+                case 5:
+                    player.Shoot();
+                    break;
+                case 6:
+                    player.Blinking();
+                    break;
+
+            }
+            currentActives[selectedSlot] = null;
+            itemImages[selectedSlot].gameObject.SetActive(false);
+        }
+        
+
+
+    }
+    public void UsePassiveItem()
+    {
+        if (currentPassive != null && player.canUsePotion)
+        {
+            var effectID = currentPassive.effectID;
+
+            switch (effectID)
+            {
+                case 0:
+                    player.SprintPotion();
+                    break;
+                case 1:
+                    player.SeePotion();
+                    break;
+                case 2:
+                    int variant = Random.Range(0, player.camoObjects.Length);
+                    player.GetComponent<PhotonView>().RPC("CamoSpell", RpcTarget.AllBuffered,variant);
+                    break;
+
+            }
+            currentPassive = null;
+            itemImages[4].gameObject.SetActive(false);
+        }
+
+
+
+    }
+
 }

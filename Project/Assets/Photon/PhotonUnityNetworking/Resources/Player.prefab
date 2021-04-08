@@ -25759,6 +25759,7 @@ MonoBehaviour:
   - {fileID: 8337421055905069236}
   - {fileID: 968556845089333327}
   - {fileID: 6624383107639137687}
+  player: {fileID: 5440725864618505864}
   currentTrap: {fileID: 0}
   currentPassive: {fileID: 0}
   currentActives:
@@ -25816,6 +25817,7 @@ MonoBehaviour:
   lifetime: 0.2
   valid: 0
   playerPV: {fileID: 5440725864618505865}
+  canOpenChest: 0
 --- !u!60 &6351092914413353084
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -25853,7 +25855,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6965103715836864536}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

@@ -25,26 +25,34 @@ public class Chest : MonoBehaviourPunCallbacks
 
 
 
-    private void OnTriggerStay2D(Collider2D Player)
+    //private void OnTriggerStay2D(Collider2D Player)
+    //{
+
+    //    if (Input.GetButtonDown("Fire1") && stabHitBox.canOpenChest == true && chestlIsActive == true)
+    //    {
+
+    //        itemNum = Random.Range(1, 10);
+    //        if (itemNum >= 1 && itemNum <= 10)
+    //        {
+    //            CreateItem();
+    //            StartCoroutine("ItemMaking");
+    //            chestlIsActive = false;
+    //        }
+
+
+    //    }
+
+
+    //}
+    [PunRPC]
+    private void RandomItem()
     {
-
-        if (Input.GetButtonDown("Fire1") && stabHitBox.canOpenChest == true&& chestlIsActive == true)
-        {
-
-            itemNum = Random.Range(1, 10);
-            if (itemNum >=1 && itemNum <=10)
-            {
-                CreateItem();
-                StartCoroutine("ItemMaking");
-                chestlIsActive = false;
-            }
-
-
-        }
-        
-
+        itemNum = Random.Range(1, 10);
+        CreateItem();
+        StartCoroutine("ItemMaking");
+        chestlIsActive = false;
     }
-
+        
     private void CreateItem()
     {
 
