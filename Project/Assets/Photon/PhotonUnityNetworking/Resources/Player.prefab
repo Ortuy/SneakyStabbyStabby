@@ -25816,6 +25816,7 @@ MonoBehaviour:
   lifetime: 0.2
   valid: 0
   playerPV: {fileID: 5440725864618505865}
+  canOpenChest: 0
 --- !u!60 &6351092914413353084
 PolygonCollider2D:
   m_ObjectHideFlags: 0
