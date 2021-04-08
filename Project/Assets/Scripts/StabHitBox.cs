@@ -11,6 +11,7 @@ public class StabHitBox : MonoBehaviourPunCallbacks
     public bool valid;
 
     public PhotonView playerPV;
+    public bool canOpenChest = false;
 
     /**
     private void Start()
@@ -48,5 +49,9 @@ public class StabHitBox : MonoBehaviourPunCallbacks
                 }
             }
         }        
+    }
+    private void OnTriggerStay2D(Collider2D Chest)
+    {
+        canOpenChest = true;
     }
 }
