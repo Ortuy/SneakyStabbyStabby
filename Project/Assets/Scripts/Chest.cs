@@ -58,8 +58,7 @@ public class Chest : MonoBehaviourPunCallbacks
         itemImage.sprite = itemSprites[itemNum];
     }
 
-    [PunRPC]
-    private void RandomItem()
+    public void RandomItem()
     {
         lid.gameObject.SetActive(false);
         itemImage.gameObject.SetActive(false);

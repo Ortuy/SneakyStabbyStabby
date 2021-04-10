@@ -81,48 +81,51 @@ public class Inventory : MonoBehaviourPunCallbacks
     {
         if (currentActives[selectedSlot] != null)
         {
+            
             var effectID = currentActives[selectedSlot].effectID;
 
-            switch (effectID)
+            if (effectID != 5 || player.stabReady)
             {
-                case 0:
-                    player.Spikepit();
-                    break;
-                case 1:
-                    player.Tripwire();
-                    break;
-                case 2:
-                    player.Blindingtrap();
-                    break;
-                case 3:
-                    player.Bomb();
-                    break;
-                case 4:
-                    player.Geltrap();
-                    break;
-                case 5:
-                    player.Shoot();
-                    break;
-                case 6:
-                    player.Blinking();
-                    break;
-
-            }           
-
-            currentActives[selectedSlot].usesLeft--;
-            useMarkers[selectedSlot].markers[currentActives[selectedSlot].usesLeft].color = usedColor;
-
-            if(currentActives[selectedSlot].usesLeft == 0)
-            {
-                currentActives[selectedSlot] = null;
-                itemImages[selectedSlot].gameObject.SetActive(false);
-
-                for(int i = 0; i < useMarkers[selectedSlot].markers.Length; i++)
+                switch (effectID)
                 {
-                    useMarkers[selectedSlot].markers[i].gameObject.SetActive(false);
+                    case 0:
+                        player.Spikepit();
+                        break;
+                    case 1:
+                        player.Tripwire();
+                        break;
+                    case 2:
+                        player.Blindingtrap();
+                        break;
+                    case 3:
+                        player.Bomb();
+                        break;
+                    case 4:
+                        player.Geltrap();
+                        break;
+                    case 5:
+                        player.Shoot();
+                        break;
+                    case 6:
+                        player.Blinking();
+                        break;
+
                 }
-            }
-            
+
+                currentActives[selectedSlot].usesLeft--;
+                useMarkers[selectedSlot].markers[currentActives[selectedSlot].usesLeft].color = usedColor;
+
+                if (currentActives[selectedSlot].usesLeft == 0)
+                {
+                    currentActives[selectedSlot] = null;
+                    itemImages[selectedSlot].gameObject.SetActive(false);
+
+                    for (int i = 0; i < useMarkers[selectedSlot].markers.Length; i++)
+                    {
+                        useMarkers[selectedSlot].markers[i].gameObject.SetActive(false);
+                    }
+                }
+            }           
         }
         
 

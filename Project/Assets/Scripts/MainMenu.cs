@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviourPunCallbacks
     [SerializeField] private InputField createGameInput;
     [SerializeField] private InputField joinGameInput;
 
-    [SerializeField] private GameObject loadingPanel;
+    [SerializeField] private GameObject loadingPanel, tutorialPanel;
 
     //[SerializeField] private GameObject startButton;
 
@@ -45,5 +45,22 @@ public class MainMenu : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         PhotonNetwork.LoadLevel("Arena");
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
+
+    public void ToggleTutorial()
+    {
+        if(tutorialPanel.activeInHierarchy)
+        {
+            tutorialPanel.SetActive(false);
+        }
+        else
+        {
+            tutorialPanel.SetActive(true);
+        }
     }
 }

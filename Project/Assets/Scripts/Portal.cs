@@ -50,7 +50,7 @@ public class Portal : MonoBehaviourPunCallbacks
         //{
         //    portalIsActive = true;
         //}
-        if (portalIsActive == true)
+        if (portalIsActive == true && PhotonNetwork.IsMasterClient)
         {
             //StartCoroutine("ItemMaking");
             //StartCoroutine("ItemMaking1");
@@ -70,19 +70,27 @@ public class Portal : MonoBehaviourPunCallbacks
 
         animator.SetBool("Open", true);
 
-        GameManager.localInstance.victoryText.gameObject.SetActive(true);
-        GameManager.localInstance.victoryText.text = "Supplies Arrived!";
-        GameManager.localInstance.DisappearText(2.4f);
+        GetComponent<PhotonView>().RPC("ShowSupplyText", RpcTarget.AllBuffered);
 
-        PhotonNetwork.Instantiate(pickups[itemNum].name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
-        PhotonNetwork.Instantiate(pickups[itemNum1].name, new Vector2(dropPos1.transform.position.x, dropPos1.transform.position.y), Quaternion.identity, 0);
-        PhotonNetwork.Instantiate(pickups[itemNum2].name, new Vector2(dropPos2.transform.position.x, dropPos2.transform.position.y), Quaternion.identity, 0);
+        PhotonNetwork.InstantiateRoomObject(pickups[itemNum].name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
+        PhotonNetwork.InstantiateRoomObject(pickups[itemNum1].name, new Vector2(dropPos1.transform.position.x, dropPos1.transform.position.y), Quaternion.identity, 0);
+        PhotonNetwork.InstantiateRoomObject(pickups[itemNum2].name, new Vector2(dropPos2.transform.position.x, dropPos2.transform.position.y), Quaternion.identity, 0);
+
+        portalIsActive = true;
 
         yield return null;
 
         animator.SetBool("Open", false);
 
-        portalIsActive = true;
+        
+    }
+
+    [PunRPC]
+    private void ShowSupplyText()
+    {
+        GameManager.localInstance.victoryText.gameObject.SetActive(true);
+        GameManager.localInstance.victoryText.text = "Supplies Arrived!";
+        GameManager.localInstance.DisappearText(2.4f);
     }
 
     IEnumerator ItemMaking()

@@ -151,7 +151,7 @@
 ### Added
 - Portal & Chests
 
-## [0.1.4] - 2021-04-07
+## [0.2.0] - 2021-04-07
 ### Added
 - Chest cooldown visibility
 - Chests show what item is inside

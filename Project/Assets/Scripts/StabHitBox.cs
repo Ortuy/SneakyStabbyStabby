@@ -56,13 +56,13 @@ public class StabHitBox : MonoBehaviourPunCallbacks
         
         
             Debug.LogWarning("DUPA");
-            PhotonView target1 = collision.GetComponent<PhotonView>();
+            var target1 = collision.GetComponent<Chest>();
             if (target1 != null)
             {
             Debug.LogWarning(target1); 
                 if (target1.CompareTag("Chest"))
                 {
-                    target1.RPC("RandomItem", RpcTarget.AllBuffered);
+                    target1.RandomItem();
 
                 }
             }
