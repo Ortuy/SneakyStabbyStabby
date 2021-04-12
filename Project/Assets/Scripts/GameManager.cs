@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     public Color[] playerColors;
 
     public GameObject[] spawnPoints;
+    public GameObject[] spawnPointsWait;
     [SerializeField] private Animator[] spawnPortalAnimators;
     private bool countdownStarted;
 
@@ -51,12 +52,12 @@ public class GameManager : MonoBehaviourPunCallbacks
             StartRespawn();
         }
 
-        if(!countdownStarted && playerAmount > 1)
+        if (!countdownStarted && playerAmount > 1)
         {
             StartCoroutine(StartCountdown());
         }
 
-        if(!countdownStarted && Input.GetKeyDown(KeyCode.O))
+        if (!countdownStarted && Input.GetKeyDown(KeyCode.O))
         {
             StartCoroutine(StartCountdown());
         }
@@ -86,12 +87,25 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         spawnPortalAnimators[playerAmount].SetBool("Open", true);
         PhotonNetwork.Instantiate(playerPrefab.name, spawnPoints[playerAmount].transform.position, Quaternion.identity, 0);
-        
+
 
         gameCanvas.SetActive(false);
         StartCoroutine(SetPlayerColor());
         sceneCamera.SetActive(false);
     }
+    //public void SpawnPlayerWaitRoom()
+    //{
+    //    float randomValueX = Random.Range(-2f, 2f);
+    //    float randomValueY = Random.Range(-2f, 2f);
+
+
+    //    PhotonNetwork.Instantiate(playerPrefab.name, spawnPointsWait[playerAmount].transform.position, Quaternion.identity, 0);
+
+
+    //    gameCanvas.SetActive(false);
+    //    StartCoroutine(SetPlayerColor());
+    //    sceneCamera.SetActive(false);
+    //}
 
     [PunRPC]
     public void SpawnDecor()
@@ -157,6 +171,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         yield return new WaitForSeconds(1f);
         victoryText.gameObject.SetActive(false);
         photonView.RPC("DissolveStartPoints", RpcTarget.AllBuffered);
+
     }
 
     [PunRPC]
