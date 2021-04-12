@@ -166,3 +166,7 @@
 - Portal cooldown set to 90 seconds
 ### Fixed
 - Chests now drop proper items
+
+## [0.2.0] - 2021-04-07
+### Added
+- Level map art
