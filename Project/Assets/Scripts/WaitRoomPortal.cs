@@ -7,19 +7,44 @@ public class WaitRoomPortal : MonoBehaviourPunCallbacks
 {
     public GameObject StartPortal;
     public GameObject Player;
+    public GameManager gameManager;
+    public bool timeSpawnEnd = false;
 
-    public void OnTriggerEnter2D(Collider2D other)
+
+
+    private void OnTriggerStay2D(Collider2D Player)
     {
-        if (other.gameObject.tag == "Player")
+
+        Debug.Log("penis");
+        //PhotonView target = collision.gameObject.GetComponent<PhotonView>();
+
+        if (Player.tag == "Player")
         {
-            Teleport();
+            gameManager.readyToStart = true;
+            //target.RPC("TeleportToStart1", RpcTarget.AllBuffered);
+            if(gameManager.readyToStart == true && gameManager.readyToStart1 == true)
+            {
+                
+                StartCoroutine(Ready());
+            }
+            if (timeSpawnEnd == true)
+            {
+                Player.transform.position = new Vector2(StartPortal.transform.position.x, StartPortal.transform.position.y);
+            }
+           
         }
     }
-
-
-    public void Teleport()
+    private void OnTriggerExit2D(Collider2D collision)
     {
+        if (Player.tag == "Player")
+        {
+            gameManager.readyToStart = false;
+        }
 
-        Player.transform.position = new Vector2(StartPortal.transform.position.x, StartPortal.transform.position.y);
+    }
+    IEnumerator Ready()
+    {
+        yield return new WaitForSeconds(0.2f);
+        timeSpawnEnd = true;
     }
 }

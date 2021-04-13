@@ -12,8 +12,14 @@ public class GameManager : MonoBehaviourPunCallbacks
     public GameObject sceneCamera;
     [HideInInspector]public GameObject localPlayer;
     public GameObject respawnMenu;
+    public GameObject waitRoomPortal;
+    public GameObject waitRoomPortal1;
     private float timerAmount = 5f;
     private bool runSpawnTimer = false;
+    public bool readyToStart = false;
+    public bool readyToStart1 = false;
+
+
 
     public Text victoryText;
     public Text secondaryText;
@@ -52,7 +58,7 @@ public class GameManager : MonoBehaviourPunCallbacks
             StartRespawn();
         }
 
-        if (!countdownStarted && playerAmount > 1)
+        if (!countdownStarted && /*playerAmount > 1*/ readyToStart == true && readyToStart1 == true)
         {
             StartCoroutine(StartCountdown());
         }
@@ -61,6 +67,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         {
             StartCoroutine(StartCountdown());
         }
+
     }
     public void EnableRespawn()
     {
@@ -68,7 +75,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         runSpawnTimer = true;
         //respawnMenu.SetActive(true);
     }
-    private void StartRespawn()
+    public void StartRespawn()
     {
         timerAmount -= Time.deltaTime;
         if(timerAmount <= 0)
@@ -86,7 +93,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         float randomValueY = Random.Range(-2f, 2f);
 
         spawnPortalAnimators[playerAmount].SetBool("Open", true);
-        PhotonNetwork.Instantiate(playerPrefab.name, spawnPoints[playerAmount].transform.position, Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(playerPrefab.name, spawnPointsWait[playerAmount].transform.position, Quaternion.identity, 0);
 
 
         gameCanvas.SetActive(false);

@@ -331,33 +331,33 @@ public class Player : MonoBehaviourPunCallbacks
         */
 
         //Alternative blink, hopefully less clunky
-        if(Input.GetKeyDown(KeyCode.Mouse2))
-        {
-            StartCoroutine(Blink());
-        }
-        if (Input.GetKeyDown(KeyCode.F) && canUsePotion == true)
-        {
-            SeePotion();
-            canUsePotion = false;
+        //if(Input.GetKeyDown(KeyCode.Mouse2))
+        //{
+        //    StartCoroutine(Blink());
+        //}
+        //if (Input.GetKeyDown(KeyCode.F) && canUsePotion == true)
+        //{
+        //    SeePotion();
+        //    canUsePotion = false;
 
 
-        }
-        if (Input.GetKeyDown(KeyCode.G) && canUsePotion == true)
-        {
-            SprintPotion();
-            canUsePotion = false;
+        //}
+        //if (Input.GetKeyDown(KeyCode.G) && canUsePotion == true)
+        //{
+        //    SprintPotion();
+        //    canUsePotion = false;
 
 
-        }
-        if (Input.GetKeyDown(KeyCode.H) && canUsePotion == true)
-        {
-            camoNum = Random.Range(0, camoObjects.Length);
-            photonView.RPC("CamoSpell", RpcTarget.AllBuffered, camoNum);
-            //CamoSpell();
-            canUsePotion = false;
+        //}
+        //if (Input.GetKeyDown(KeyCode.H) && canUsePotion == true)
+        //{
+        //    camoNum = Random.Range(0, camoObjects.Length);
+        //    photonView.RPC("CamoSpell", RpcTarget.AllBuffered, camoNum);
+        //    //CamoSpell();
+        //    canUsePotion = false;
 
 
-        }
+        //}
 
         var scroll = Input.GetAxisRaw("Mouse ScrollWheel");
         if (scroll != 0)
@@ -857,5 +857,6 @@ public class Player : MonoBehaviourPunCallbacks
         }
         */
     }
+    
     
 }
