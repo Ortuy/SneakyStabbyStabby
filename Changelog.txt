@@ -166,6 +166,12 @@
 - Portal cooldown set to 90 seconds
 ### Fixed
 - Chests now drop proper items
+
 ## [0.2.1] - 2021-04-13
 ### Added
 - WaitRoom Portal
+
+## [0.2.2] - 2021-04-13
+### Added
+- WaitRoom decor
+- Proposed skin colour choices
