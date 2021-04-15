@@ -25,6 +25,11 @@ public class Inventory : MonoBehaviourPunCallbacks
         itemImages[slotID].sprite = newItem.itemImage;
         currentActives[slotID] = newItem;
         
+        if(newItem.effectID == 5)
+        {
+            player.SetCrossbowAnimation(true);
+        }
+
         if(newItem.maxUses > 1)
         {
             for(int i = 0; i < newItem.maxUses; i++)
@@ -61,6 +66,22 @@ public class Inventory : MonoBehaviourPunCallbacks
                 selectedSlot = 0;
             }
 
+            if(currentActives[selectedSlot] != null)
+            {
+                if(currentActives[selectedSlot].effectID == 5)
+                {
+                    player.SetCrossbowAnimation(true);
+                }
+                else
+                {
+                    player.SetCrossbowAnimation(false);
+                }
+            }
+            else
+            {
+                player.SetCrossbowAnimation(false);
+            }
+
             slotSelectionDisplays[selectedSlot].SetActive(true);
         }
         else
@@ -71,6 +92,22 @@ public class Inventory : MonoBehaviourPunCallbacks
             if (selectedSlot < 0)
             {
                 selectedSlot = currentActives.Length - 1;
+            }
+
+            if (currentActives[selectedSlot] != null)
+            {
+                if (currentActives[selectedSlot].effectID == 5)
+                {
+                    player.SetCrossbowAnimation(true);
+                }
+                else
+                {
+                    player.SetCrossbowAnimation(false);
+                }
+            }
+            else
+            {
+                player.SetCrossbowAnimation(false);
             }
 
             slotSelectionDisplays[selectedSlot].SetActive(true);
@@ -117,6 +154,8 @@ public class Inventory : MonoBehaviourPunCallbacks
 
                 if (currentActives[selectedSlot].usesLeft == 0)
                 {
+                    player.SetCrossbowAnimation(false);
+
                     currentActives[selectedSlot] = null;
                     itemImages[selectedSlot].gameObject.SetActive(false);
 

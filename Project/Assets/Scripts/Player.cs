@@ -56,7 +56,7 @@ public class Player : MonoBehaviourPunCallbacks
     public SpriteRenderer[] nonRecolorSprites;
     public SpriteRenderer[] ghostSprites;
 
-    private Animator animator;
+    [SerializeField] private Animator legsAnimator, torsoAnimator;
 
     public Inventory inventory;
     public Text stabCooldownText, potionCooldownText;
@@ -95,7 +95,7 @@ public class Player : MonoBehaviourPunCallbacks
             
         }
 
-        animator = GetComponent<Animator>();
+        //legsAnimator = GetComponent<Animator>();
 
         moveSpeed = 5;
 
@@ -391,6 +391,8 @@ public class Player : MonoBehaviourPunCallbacks
     {
         //yield return null;
         //animator.SetBool("Stab", false);
+        torsoAnimator.SetBool("Loaded", false);
+
         stabCooldownText.transform.parent.gameObject.SetActive(true);
         stabCooldownText.text = stabCooldown.ToString();
         stabReady = false;
@@ -401,6 +403,8 @@ public class Player : MonoBehaviourPunCallbacks
         }
         stabCooldownText.transform.parent.gameObject.SetActive(false);
         stabReady = true;
+
+        torsoAnimator.SetBool("Loaded", true);
     }
 
     public void PlayFootstep()
@@ -468,13 +472,13 @@ public class Player : MonoBehaviourPunCallbacks
         
         if(moveDirection != Vector2.zero)
         {
-            animator.SetBool("Moving", true);
+            legsAnimator.SetBool("Moving", true);
             var newAngle = Mathf.Rad2Deg * Mathf.Atan2(moveDirection.y, moveDirection.x) - 90;
             legs.transform.rotation = Quaternion.AngleAxis(newAngle, Vector3.forward);
         }
         else
         {
-            animator.SetBool("Moving", false);
+            legsAnimator.SetBool("Moving", false);
         }
         if (photonView.IsMine && timerSprintRunning)
         {
@@ -557,10 +561,15 @@ public class Player : MonoBehaviourPunCallbacks
 
     private void Stab()
     {
+        bool crossbow = torsoAnimator.GetBool("Crossbow");
+
+        torsoAnimator.SetBool("Crossbow", false);
+
         StartCoroutine(LockStabbing());
         StartCoroutine(WaitAndDeactivateStab());
-        animator.SetBool("Stab", true);
-        
+        torsoAnimator.SetBool("Stab", true);
+
+        torsoAnimator.SetBool("Crossbow", crossbow);
     }
 
     IEnumerator WaitAndDeactivateStab()
@@ -589,7 +598,7 @@ public class Player : MonoBehaviourPunCallbacks
     [PunRPC]
     private void ActivateStabHitBox()
     {
-        animator.SetBool("Stab", false);
+        torsoAnimator.SetBool("Stab", false);
         stabHitBox.SetActive(true);
 
         var hBox = stabHitBox.GetComponent<StabHitBox>();
@@ -638,11 +647,25 @@ public class Player : MonoBehaviourPunCallbacks
 
     public void Shoot()
     {
+        torsoAnimator.SetBool("Stab", true);
         StartCoroutine(LockStabbing());
         GameObject obj = PhotonNetwork.Instantiate(boltObject.name, new Vector2(firePos.transform.position.x, firePos.transform.position.y), rotatingBody.transform.rotation, 0);
         Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
         rb.AddForce(firePos.up * shootSpeed, ForceMode2D.Impulse);
+        StartCoroutine(UpdateShotBool());
     }
+
+    IEnumerator UpdateShotBool()
+    {
+        yield return null;
+        torsoAnimator.SetBool("Stab", false);
+    }
+
+    public void SetCrossbowAnimation(bool value)
+    {
+        torsoAnimator.SetBool("Crossbow", value);
+    }
+
     public void Spikepit()
     {
         GameObject obj = PhotonNetwork.Instantiate(spikePitObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
