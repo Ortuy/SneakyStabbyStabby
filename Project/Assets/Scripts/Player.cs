@@ -44,8 +44,8 @@ public class Player : MonoBehaviourPunCallbacks
     public bool stabReady = true, isBehindOtherPlayer;
     public bool canUsePotion = true;
     public int camoNum = 0;
-    
 
+    private int selectedTrapID;
     
 
     public float moveSpeed, shootSpeed;
@@ -61,13 +61,17 @@ public class Player : MonoBehaviourPunCallbacks
     public Inventory inventory;
     public Text stabCooldownText, potionCooldownText;
 
-    public ParticleSystem footstep;
+    public ParticleSystem footstep, camoFX, stimFX, visionFX;
     public SpriteRenderer glowingFootstep;
 
     [SerializeField] private Slider staminaBar;
     private bool sprintPotionActive;
 
     [SerializeField] public GameObject[] camoObjects;
+
+    public bool waitingForTrap, settingTrap;
+    [SerializeField] private GameObject trapMarker;
+    [SerializeField] private Sprite[] trapImages;
 
     private void Awake()
     {
@@ -237,132 +241,82 @@ public class Player : MonoBehaviourPunCallbacks
 
     private void CheckInput()
     {
-        float moveForward = Input.GetAxisRaw("Vertical");
-        float strife = Input.GetAxisRaw("Horizontal");
+        if(!settingTrap)
+        {
+            float moveForward = Input.GetAxisRaw("Vertical");
+            float strife = Input.GetAxisRaw("Horizontal");
 
-        moveDirection = new Vector2(strife, moveForward).normalized;
+            moveDirection = new Vector2(strife, moveForward).normalized;
+            Vector2 dir = GetDirectionFromMouse();
+        }      
 
-        Vector2 dir = GetDirectionFromMouse();
-
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetButtonDown("Fire2") && !settingTrap)
         {
             //Shoot();
             inventory.UseItem();
         }
         
-        if(Input.GetButtonDown("Fire1") && stabReady)
+        if(Input.GetButtonUp("Fire2") && waitingForTrap && !settingTrap)
+        {
+            torsoAnimator.SetBool("Stab", true);
+            waitingForTrap = false;
+            StartCoroutine(SetTrap());
+        }
+
+        if(Input.GetButtonDown("Fire1") && stabReady && !waitingForTrap && !settingTrap)
         {
             Stab();
         }
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
             inventory.UsePassiveItem();
         }
 
-        //if (Input.GetKeyDown(KeyCode.Alpha1))
-        //{
-        //    Spikepit();
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha2))
-        //{
-        //    Tripwire();
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha3))
-        //{
-        //    Blindingtrap();
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha4))
-        //{
-        //    Bomb();
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha5))
-        //{
-        //    Geltrap();
-        //}
-        /*
-        if (Input.GetKey(KeyCode.D) && Input.GetKeyDown(KeyCode.Mouse2))
-        {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector3.right, distance);
-            if (hit.collider == null)
-            {
-                transform.position += transform.localScale.x * Vector3.right * distance;
-            }
-            else
-            {
-                transform.position = hit.point;
-            }
-        }
-        if (Input.GetKey(KeyCode.A) && Input.GetKeyDown(KeyCode.Mouse2))
-        {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector3.left, distance);
-            if (hit.collider == null)
-            {
-                transform.position += transform.localScale.x * Vector3.left * distance;
-            }
-            else
-            {
-                transform.position = hit.point;
-            }
-        }
-        if (Input.GetKey(KeyCode.W) && Input.GetKeyDown(KeyCode.Mouse2))
-        {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.y * Vector3.up, distance);
-            if (hit.collider == null)
-            {
-                transform.position += transform.localScale.y * Vector3.up * distance;
-            }
-            else
-            {
-                transform.position = hit.point;
-            }
-        }
-        if (Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Mouse2))
-        {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.y * Vector3.down, distance);
-            if (hit.collider == null)
-            {
-                transform.position += transform.localScale.y * Vector3.down * distance;
-            }
-            else
-            {
-                transform.position = hit.point;
-            }
-        }
-        */
-
-        //Alternative blink, hopefully less clunky
-        //if(Input.GetKeyDown(KeyCode.Mouse2))
-        //{
-        //    StartCoroutine(Blink());
-        //}
-        //if (Input.GetKeyDown(KeyCode.F) && canUsePotion == true)
-        //{
-        //    SeePotion();
-        //    canUsePotion = false;
-
-
-        //}
-        //if (Input.GetKeyDown(KeyCode.G) && canUsePotion == true)
-        //{
-        //    SprintPotion();
-        //    canUsePotion = false;
-
-
-        //}
-        //if (Input.GetKeyDown(KeyCode.H) && canUsePotion == true)
-        //{
-        //    camoNum = Random.Range(0, camoObjects.Length);
-        //    photonView.RPC("CamoSpell", RpcTarget.AllBuffered, camoNum);
-        //    //CamoSpell();
-        //    canUsePotion = false;
-
-
-        //}
-
         var scroll = Input.GetAxisRaw("Mouse ScrollWheel");
         if (scroll != 0)
         {
             inventory.ChangeSelectedSlot(scroll);
+        }
+
+    }
+
+    public void StartTrapPlacement(int trapID)
+    {
+        trapMarker.SetActive(true);
+        trapMarker.GetComponent<SpriteRenderer>().sprite = trapImages[trapID];
+        selectedTrapID = trapID;
+        torsoAnimator.SetBool("Trap", true);
+        waitingForTrap = true;
+    }
+
+    IEnumerator SetTrap()
+    {
+        settingTrap = true;
+        trapMarker.SetActive(false);
+        yield return new WaitForSeconds(0.5f);
+        torsoAnimator.SetBool("Stab", false);
+        torsoAnimator.SetBool("Trap", false);
+
+        yield return new WaitForSeconds(0.3f);
+        settingTrap = false;
+        switch (selectedTrapID)
+        {
+            case 0:
+                Spikepit();
+                break;
+            case 1:
+                Tripwire();
+                break;
+            case 2:
+                Blindingtrap();
+                break;
+            case 3:
+                Bomb();
+                break;
+            case 4:
+                Geltrap();
+                break;
         }
 
     }
@@ -560,13 +514,20 @@ public class Player : MonoBehaviourPunCallbacks
     }
 
     private void Stab()
+    {        
+        StartCoroutine(LockStabbing());
+        StartCoroutine(HandleStabAnimation());
+        StartCoroutine(WaitAndDeactivateStab());               
+    }
+
+    IEnumerator HandleStabAnimation()
     {
         bool crossbow = torsoAnimator.GetBool("Crossbow");
 
         torsoAnimator.SetBool("Crossbow", false);
 
-        StartCoroutine(LockStabbing());
-        StartCoroutine(WaitAndDeactivateStab());
+        yield return null;
+
         torsoAnimator.SetBool("Stab", true);
 
         torsoAnimator.SetBool("Crossbow", crossbow);
@@ -700,6 +661,7 @@ public class Player : MonoBehaviourPunCallbacks
     {
         if (photonView.IsMine)
         {
+            visionFX.Play();
             playerViewCone.SetActive(false);
             playerViewCone2.SetActive(true);
             StartCoroutine("PotionStopWorking");
@@ -732,6 +694,7 @@ public class Player : MonoBehaviourPunCallbacks
     {
         if (photonView.IsMine)
         {
+            stimFX.Play();
             timeSprintRemaining = 8;
             sprintPotionActive = true;
             StartCoroutine("PotionStopWorking2");
@@ -762,58 +725,7 @@ public class Player : MonoBehaviourPunCallbacks
     [PunRPC]
     public void CamoSpell(int variant)
     {
-
-        /**
-        if (photonView.IsMine && camoNum == 1)
-        {
-            
-            dis.SetActive(true);
-            StartCoroutine("CamoStopWorking");
-        }
-        if (photonView.IsMine && camoNum == 2)
-        {
-            
-            dis1.SetActive(true);
-            StartCoroutine("CamoStopWorking");
-        }
-        if (photonView.IsMine && camoNum == 3)
-        {
-            
-            dis2.SetActive(true);
-            StartCoroutine("CamoStopWorking");
-        }
-        if (photonView.IsMine && camoNum == 4)
-        {
-            
-            dis3.SetActive(true);
-            StartCoroutine("CamoStopWorking");
-        }
-        **/
-        /*
-        if (variant == 1)
-        {
-
-            dis.SetActive(true);
-            
-        }
-        else if (variant == 2)
-        {
-
-            dis1.SetActive(true);
-            
-        }
-        else if (variant == 3)
-        {
-
-            dis2.SetActive(true);
-            
-        }
-        else if (variant == 4)
-        {
-
-            dis3.SetActive(true);
-            
-        }*/
+        camoFX.Play();
 
         camoObjects[variant].SetActive(true);
 

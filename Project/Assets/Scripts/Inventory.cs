@@ -126,19 +126,24 @@ public class Inventory : MonoBehaviourPunCallbacks
                 switch (effectID)
                 {
                     case 0:
-                        player.Spikepit();
+                        //player.Spikepit();
+                        player.StartTrapPlacement(effectID);
                         break;
                     case 1:
-                        player.Tripwire();
+                        //player.Tripwire();
+                        player.StartTrapPlacement(effectID);
                         break;
                     case 2:
-                        player.Blindingtrap();
+                        //player.Blindingtrap();
+                        player.StartTrapPlacement(effectID);
                         break;
                     case 3:
-                        player.Bomb();
+                        //player.Bomb();
+                        player.StartTrapPlacement(effectID);
                         break;
                     case 4:
-                        player.Geltrap();
+                        //player.Geltrap();
+                        player.StartTrapPlacement(effectID);
                         break;
                     case 5:
                         player.Shoot();
