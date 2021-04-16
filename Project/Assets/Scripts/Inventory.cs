@@ -25,7 +25,7 @@ public class Inventory : MonoBehaviourPunCallbacks
         itemImages[slotID].sprite = newItem.itemImage;
         currentActives[slotID] = newItem;
         
-        if(newItem.effectID == 5)
+        if(newItem.effectID == 5 && slotID == selectedSlot)
         {
             player.SetCrossbowAnimation(true);
         }
@@ -154,7 +154,7 @@ public class Inventory : MonoBehaviourPunCallbacks
 
                 if (currentActives[selectedSlot].usesLeft == 0)
                 {
-                    player.SetCrossbowAnimation(false);
+                    StartCoroutine(WaitAndHideCrossbow());
 
                     currentActives[selectedSlot] = null;
                     itemImages[selectedSlot].gameObject.SetActive(false);
@@ -170,6 +170,13 @@ public class Inventory : MonoBehaviourPunCallbacks
 
 
     }
+
+    IEnumerator WaitAndHideCrossbow()
+    {
+        yield return new WaitForSeconds(0.5f);
+        player.SetCrossbowAnimation(false);
+    }
+
     public void UsePassiveItem()
     {
         if (currentPassive != null && player.canUsePotion)
