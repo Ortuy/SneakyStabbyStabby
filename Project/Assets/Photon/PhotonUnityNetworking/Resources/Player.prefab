@@ -16264,7 +16264,7 @@ MonoBehaviour:
   B: 37
   colourChange: 1
   Colour: {fileID: 2079538847494703867, guid: 1153dbaec57ae9149aeae72ea9230553, type: 3}
-  gold: 40
+  gold: 125
   goldText: {fileID: 5108663003708218560}
   moveSpeed: 3
   shootSpeed: 18
@@ -16284,6 +16284,9 @@ MonoBehaviour:
   stabCooldownText: {fileID: 758867239988188209}
   potionCooldownText: {fileID: 7990219894436877213}
   footstep: {fileID: 7351449792337515033}
+  camoFX: {fileID: 0}
+  stimFX: {fileID: 0}
+  visionFX: {fileID: 0}
   glowingFootstep: {fileID: 1025203636576575597, guid: 8445cfd32da99dc44ad6ae54ce066406,
     type: 3}
   staminaBar: {fileID: 4491126797537947526}
@@ -16297,6 +16300,10 @@ MonoBehaviour:
   - {fileID: 5185653548088975301}
   - {fileID: 7811821383690166058}
   - {fileID: 1131015303842372928}
+  waitingForTrap: 0
+  settingTrap: 0
+  trapMarker: {fileID: 0}
+  trapImages: []
 --- !u!114 &5440725864618505865
 MonoBehaviour:
   m_ObjectHideFlags: 0
