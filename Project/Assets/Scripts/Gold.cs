@@ -6,14 +6,22 @@ using Photon.Pun;
 public class Gold : MonoBehaviourPunCallbacks
 {
     public Player player;
+    public int goldAmount;
 
-    public void OnTriggerEnter2D(Collider2D Player)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
+        PhotonView target = collision.gameObject.GetComponent<PhotonView>();
 
-        if (Player.tag == "Player")
-        {
-            player.gold += 5; 
-            Debug.Log("yee");
-        }
+
+       if (collision.tag == "Player")
+       {
+          player = collision.GetComponent<Player>();
+          player.gold += goldAmount;
+          Debug.Log("yee");
+
+       }
+
+
+        Destroy(this);
     }
 }
