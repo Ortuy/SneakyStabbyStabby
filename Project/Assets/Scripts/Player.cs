@@ -44,9 +44,15 @@ public class Player : MonoBehaviourPunCallbacks
     public bool stabReady = true, isBehindOtherPlayer;
     public bool canUsePotion = true;
     public int camoNum = 0;
-    
+    public int R;
+    public int G;
+    public int B;
+    public bool colourChange = false;
+    public GameObject Colour;
+    public int gold = 0;
+    public Text goldText;
 
-    
+
 
     public float moveSpeed, shootSpeed;
 
@@ -71,6 +77,7 @@ public class Player : MonoBehaviourPunCallbacks
 
     private void Awake()
     {
+
         photonView = GetComponent<PhotonView>();
 
         usedCameraComponent = playerCamera.GetComponent<Camera>();
@@ -98,20 +105,23 @@ public class Player : MonoBehaviourPunCallbacks
         //legsAnimator = GetComponent<Animator>();
 
         moveSpeed = 5;
+        gold = 0;
 
-        
 
         //playerCamera.transform.SetParent(null);
     }
     private void Start()
     {
         Physics2D.queriesStartInColliders = false;
+        goldText.text = gold.ToString();
+
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if(photonView.IsMine && !disableInput)
+
+        if (photonView.IsMine && !disableInput)
         {
             CheckInput();
         }
@@ -549,15 +559,18 @@ public class Player : MonoBehaviourPunCallbacks
 
         }
     }
-
+    //tutej//
     [PunRPC]
     public void SetColor(float newR, float newG, float newB)
     {
         foreach(SpriteRenderer renderer in recolorSprites)
         {
             renderer.color = new Color(newR, newG, newB);
+
         }
     }
+
+
 
     private void Stab()
     {
