@@ -83,7 +83,7 @@ public class Player : MonoBehaviourPunCallbacks
     public Inventory inventory;
     public Text stabCooldownText, potionCooldownText;
 
-    public ParticleSystem footstep, camoFX, stimFX, visionFX;
+    public ParticleSystem footstep, camoFX, stimFX, visionFX, blinkFX;
     public SpriteRenderer glowingFootstep;
 
     [SerializeField] private Slider staminaBar;
@@ -359,11 +359,33 @@ public class Player : MonoBehaviourPunCallbacks
         disableInput = true;
         isBlinking = true;
 
-        while(durationLeft > 0)
+        Color playerColor = new Color(recolorSprites[0].color.r, recolorSprites[0].color.g, recolorSprites[0].color.b, 0);
+
+        ghostSprites[0].color = new Color(1, 1, 1, 1);
+        ghostSprites[1].color = new Color(1, 1, 1, 1);
+        nonRecolorSprites[0].color = new Color(1, 1, 1, 0);
+        nonRecolorSprites[1].color = new Color(1, 1, 1, 0);
+        recolorSprites[0].color = playerColor;
+        recolorSprites[1].color = playerColor;
+
+        blinkFX.Play();
+
+        while (durationLeft > 0)
         {
             durationLeft -= Time.deltaTime;
             yield return null;
         }
+
+        playerColor = new Color(recolorSprites[0].color.r, recolorSprites[0].color.g, recolorSprites[0].color.b, 1);
+
+        ghostSprites[0].color = new Color(1, 1, 1, 0);
+        ghostSprites[1].color = new Color(1, 1, 1, 0);
+        nonRecolorSprites[0].color = new Color(1, 1, 1, 1);
+        nonRecolorSprites[1].color = new Color(1, 1, 1, 1);
+        recolorSprites[0].color = playerColor;
+        recolorSprites[1].color = playerColor;
+
+        blinkFX.Stop();
 
         disableInput = false;
         isBlinking = false;
