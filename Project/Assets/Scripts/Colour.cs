@@ -13,12 +13,13 @@ public class Colour : MonoBehaviourPunCallbacks
 
         if (Player.tag == "Player")
         {
+            player = Player.GetComponent<Player>();
             Debug.Log("yee");
-            player.colourChange = true;
-            player.R = 108;
-            player.G = 30;
-            player.B = 37;
-            player.SetColor(108,30,37);
+            //player.colourChange = true;
+            //player.R = 108;
+            //player.G = 30;
+            //player.B = 37;
+            player.SetColor(190, 28, 157);
             
         }
     }

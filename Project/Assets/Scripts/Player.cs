@@ -10,7 +10,7 @@ public class Player : MonoBehaviourPunCallbacks
 
     public Health health;
     public Rigidbody2D rigidBody;
-    public GameObject playerCamera, playerViewCone, playerViewCone2, rotatingBody,pointLight2d,gel, legs, HUD;
+    public GameObject playerCamera, playerViewCone, playerViewCone2, rotatingBody,pointLight2d,gel, legs, HUD, Shop;
     private Camera usedCameraComponent;
     private Vector2 moveDirection;
     public GameObject boltObject;
@@ -20,6 +20,18 @@ public class Player : MonoBehaviourPunCallbacks
     public GameObject bombObject;
     public GameObject gelTrapObject;
     public GameObject paintObject;
+    public GameObject pickup1;
+    public GameObject pickup2;
+    public GameObject pickup3;
+    public GameObject pickup4;
+    public GameObject pickup5;
+    public GameObject pickup6;
+    public GameObject pickup7;
+    public GameObject pickup8;
+    public GameObject pickup9;
+    public GameObject pickup10;
+    public GameObject pickup11;
+    public GameObject pickup12;
     public Transform firePos;
     public Transform dropPos;
     public Transform paintPos;
@@ -44,13 +56,14 @@ public class Player : MonoBehaviourPunCallbacks
     public bool stabReady = true, isBehindOtherPlayer;
     public bool canUsePotion = true;
     public int camoNum = 0;
-    public int R;
-    public int G;
-    public int B;
+    public float R;
+    public float G;
+    public float B;
     public bool colourChange = false;
     public GameObject Colour;
-    public int gold = 0;
+    public int gold;
     public Text goldText;
+
 
 
 
@@ -99,6 +112,7 @@ public class Player : MonoBehaviourPunCallbacks
             inventory.transform.SetParent(null);
             gel.SetActive(false);
             HUD.SetActive(true);
+            Shop.SetActive(false);
 
             if (GameManager.localInstance.playerAmount == 0)
             {
@@ -112,7 +126,7 @@ public class Player : MonoBehaviourPunCallbacks
         //legsAnimator = GetComponent<Animator>();
 
         moveSpeed = 5;
-        gold = 0;
+
 
 
         //playerCamera.transform.SetParent(null);
@@ -120,13 +134,14 @@ public class Player : MonoBehaviourPunCallbacks
     private void Start()
     {
         Physics2D.queriesStartInColliders = false;
-        goldText.text = gold.ToString();
+
 
     }
 
     // Update is called once per frame
     private void Update()
     {
+        goldText.text = gold.ToString();
 
         if (photonView.IsMine && !disableInput)
         {
@@ -807,6 +822,10 @@ public class Player : MonoBehaviourPunCallbacks
             camoNum = 0;
         }
         */
+    }
+    public void BuyBlinding()
+    {
+        PhotonNetwork.Instantiate(pickup1.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
     }
     
     
