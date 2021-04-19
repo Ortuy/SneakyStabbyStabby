@@ -13,7 +13,10 @@ public class MainMenu : MonoBehaviourPunCallbacks
     [SerializeField] private InputField createGameInput;
     [SerializeField] private InputField joinGameInput;
 
-    [SerializeField] private GameObject loadingPanel, tutorialPanel;
+    [SerializeField] private GameObject loadingPanel, tutorialPanel, joinPanel, hostPanel, mainPanel;
+    [SerializeField] private Text roomCodeText;
+
+    private string roomName;
 
     //[SerializeField] private GameObject startButton;
 
@@ -32,14 +35,54 @@ public class MainMenu : MonoBehaviourPunCallbacks
 
     public void CreateGame()
     {
-        PhotonNetwork.CreateRoom(createGameInput.text, new RoomOptions() { MaxPlayers = 2 }, null);
+        PhotonNetwork.CreateRoom(roomName, new RoomOptions() { MaxPlayers = 2 }, null);
     }
 
     public void JoinGame()
     {
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = 2;
-        PhotonNetwork.JoinOrCreateRoom(joinGameInput.text, roomOptions, TypedLobby.Default);
+        //PhotonNetwork.JoinOrCreateRoom(joinGameInput.text, roomOptions, TypedLobby.Default);
+        PhotonNetwork.JoinRoom(joinGameInput.text);
+    }
+
+    public void ToggleJoinPanel()
+    {
+        if (joinPanel.activeInHierarchy)
+        {
+            joinPanel.SetActive(false);
+            mainPanel.SetActive(true);
+        }
+        else
+        {
+            joinPanel.SetActive(true);
+            mainPanel.SetActive(false);
+        }
+    }
+
+    public void ToggleHostPanel()
+    {
+        if (hostPanel.activeInHierarchy)
+        {
+            hostPanel.SetActive(false);
+            mainPanel.SetActive(true);
+        }
+        else
+        {
+            char c = (char)('A' + Random.Range(0, 26));
+            roomName = c.ToString();
+
+            for(int i = 0; i < 3; i++)
+            {
+                c = (char)('A' + Random.Range(0, 26));
+                roomName += c.ToString();
+            }
+
+            roomCodeText.text = roomName;
+
+            hostPanel.SetActive(true);
+            mainPanel.SetActive(false);
+        }
     }
 
     public override void OnJoinedRoom()
@@ -57,10 +100,12 @@ public class MainMenu : MonoBehaviourPunCallbacks
         if(tutorialPanel.activeInHierarchy)
         {
             tutorialPanel.SetActive(false);
+            mainPanel.SetActive(true);
         }
         else
         {
             tutorialPanel.SetActive(true);
+            mainPanel.SetActive(false);
         }
     }
 }

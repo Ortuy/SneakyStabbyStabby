@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         //pingText.text = "Ping: " + PhotonNetwork.GetPing();
 
-        pingText.text = "Players: " + playerAmount;
+        pingText.text = "Room: " + PhotonNetwork.CurrentRoom.Name;
 
         if (runSpawnTimer)
         {
