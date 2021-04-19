@@ -61172,13 +61172,13 @@ MonoBehaviour:
     SynchronizeType: 2
     Name: Stab
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: Crossbow
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: Loaded
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: Trap
   m_SynchronizeLayers:
   - SynchronizeType: 0
