@@ -26124,6 +26124,7 @@ MonoBehaviour:
   Colour: {fileID: 2079538847494703867, guid: 1153dbaec57ae9149aeae72ea9230553, type: 3}
   gold: 0
   goldText: {fileID: 5108663003708218560}
+  stabLock: 0
   moveSpeed: 3
   shootSpeed: 18
   playerID: 0

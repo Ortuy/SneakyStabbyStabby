@@ -6,20 +6,21 @@ using Photon.Pun;
 public class WaitRoomPortal : MonoBehaviourPunCallbacks
 {
     public GameObject StartPortal;
-    public GameObject Player;
+    public Player Player;
     public GameManager gameManager;
     public bool timeSpawnEnd = false;
 
 
 
-    private void OnTriggerStay2D(Collider2D Player)
+    private void OnTriggerStay2D(Collider2D collision)
     {
 
         Debug.Log("penis");
-        //PhotonView target = collision.gameObject.GetComponent<PhotonView>();
+        PhotonView target = collision.gameObject.GetComponent<PhotonView>();
 
-        if (Player.tag == "Player")
+        if (collision.tag == "Player")
         {
+            Player = collision.GetComponent<Player>();
             gameManager.readyToStart = true;
             //target.RPC("TeleportToStart1", RpcTarget.AllBuffered);
             if(gameManager.readyToStart == true && gameManager.readyToStart1 == true)
@@ -31,12 +32,16 @@ public class WaitRoomPortal : MonoBehaviourPunCallbacks
             {
                 Player.transform.position = new Vector2(StartPortal.transform.position.x, StartPortal.transform.position.y);
             }
-           
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                StartCoroutine(Ready());
+            }
+
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (Player.tag == "Player")
+        if (collision.tag == "Player")
         {
             gameManager.readyToStart = false;
         }
@@ -46,5 +51,8 @@ public class WaitRoomPortal : MonoBehaviourPunCallbacks
     {
         yield return new WaitForSeconds(0.2f);
         timeSpawnEnd = true;
+        Player.stabLock = false;
+
     }
+
 }

@@ -6,7 +6,7 @@ using Photon.Pun;
 public class Portal : MonoBehaviourPunCallbacks
 {
     public bool portalIsActive = false;
-    public float spawnTime = 90;
+    public float spawnTime = 4;
     public int itemNum = 0;
     public int itemNum1 = 0;
     public int itemNum2 = 0;

@@ -63,6 +63,7 @@ public class Player : MonoBehaviourPunCallbacks
     public GameObject Colour;
     public int gold;
     public Text goldText;
+    public bool stabLock = true;
 
 
 
@@ -126,7 +127,7 @@ public class Player : MonoBehaviourPunCallbacks
         //legsAnimator = GetComponent<Animator>();
 
         moveSpeed = 5;
-
+        stabLock = true;
 
 
         //playerCamera.transform.SetParent(null);
@@ -567,10 +568,14 @@ public class Player : MonoBehaviourPunCallbacks
 
 
     private void Stab()
-    {        
-        StartCoroutine(LockStabbing());
-        StartCoroutine(HandleStabAnimation());
-        StartCoroutine(WaitAndDeactivateStab());               
+    {
+        if (stabLock == false)
+        {
+            StartCoroutine(LockStabbing());
+            StartCoroutine(HandleStabAnimation());
+            StartCoroutine(WaitAndDeactivateStab());
+        }
+             
     }
 
     IEnumerator HandleStabAnimation()

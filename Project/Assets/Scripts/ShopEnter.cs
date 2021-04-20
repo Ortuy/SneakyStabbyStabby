@@ -10,7 +10,8 @@ public class ShopEnter : MonoBehaviourPunCallbacks
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        PhotonView target = collision.gameObject.GetComponent<PhotonView>();
+        if (collision.tag == "Player")
         {
             player = collision.GetComponent<Player>();
             player.Shop.SetActive(true);
