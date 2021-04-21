@@ -10,6 +10,7 @@ public class Player : MonoBehaviourPunCallbacks
 
     public Health health;
     public Rigidbody2D rigidBody;
+    public GameObject mapIcon;
     public GameObject playerCamera, playerViewCone, playerViewCone2, rotatingBody,pointLight2d,gel, legs, HUD, Shop,ColorSelect, Buyblind;
     private Camera usedCameraComponent;
     public Camera mapCamera;
@@ -86,6 +87,7 @@ public class Player : MonoBehaviourPunCallbacks
     public int seePotionPrice = 10;
     public int speedPotionPrice = 10;
 
+
     private int selectedTrapID;
     
 
@@ -133,6 +135,7 @@ public class Player : MonoBehaviourPunCallbacks
             HUD.SetActive(true);
             Shop.SetActive(false);
             ColorSelect.SetActive(false);
+            mapIcon.SetActive(true);
  
 
             if (GameManager.localInstance.playerAmount == 0)
@@ -321,7 +324,10 @@ public class Player : MonoBehaviourPunCallbacks
         {
             inventory.UsePassiveItem();
         }
-
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            GameManager.localInstance.ToggleMap();
+        }
         var scroll = Input.GetAxisRaw("Mouse ScrollWheel");
         if (scroll != 0)
         {

@@ -18,8 +18,8 @@ public class GameManager : MonoBehaviourPunCallbacks
     private bool runSpawnTimer = false;
     public bool readyToStart = false;
     public bool readyToStart1 = false;
-
-
+    public GameObject mapPanel;
+    public GameObject mapCamera;
 
     public Text victoryText;
     public Text secondaryText;
@@ -199,5 +199,18 @@ public class GameManager : MonoBehaviourPunCallbacks
         var c = playerColors[Random.Range(0, playerColors.Length)];
         localPlayer.GetComponent<PhotonView>().RPC("SetColor", RpcTarget.AllBuffered, c.r, c.g, c.b);
         spawnPortalAnimators[playerAmount - 1].SetBool("Open", false);
+    }
+    public void ToggleMap()
+    {
+        if (mapPanel.activeInHierarchy)
+        {
+            mapPanel.SetActive(false);
+            mapCamera.SetActive(false);
+        }
+        else
+        {
+            mapPanel.SetActive(true);
+            mapCamera.SetActive(true);
+        }
     }
 }

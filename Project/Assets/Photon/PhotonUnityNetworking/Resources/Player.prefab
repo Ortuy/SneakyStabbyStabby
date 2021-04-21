@@ -28946,6 +28946,7 @@ MonoBehaviour:
   photonView: {fileID: 5440725864618505865}
   health: {fileID: 0}
   rigidBody: {fileID: 5440725864618505866}
+  mapIcon: {fileID: 8942310127030866685}
   playerCamera: {fileID: 5440725864766673751}
   playerViewCone: {fileID: 7174434949090202695}
   playerViewCone2: {fileID: 8177922455512053397}
@@ -70529,7 +70530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6035397503654781073
 Transform:
   m_ObjectHideFlags: 0
@@ -70538,7 +70539,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8942310127030866685}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 60}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5440725864618505867}
