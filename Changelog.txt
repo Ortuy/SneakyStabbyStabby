@@ -175,3 +175,7 @@
 ### Added
 - WaitRoom decor
 - Proposed skin colour choices
+## [0.2.2] - 2021-04-21
+### Added
+- ColourSelect
+- Shop

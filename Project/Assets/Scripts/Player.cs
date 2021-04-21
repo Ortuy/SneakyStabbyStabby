@@ -10,8 +10,9 @@ public class Player : MonoBehaviourPunCallbacks
 
     public Health health;
     public Rigidbody2D rigidBody;
-    public GameObject playerCamera, playerViewCone, playerViewCone2, rotatingBody,pointLight2d,gel, legs, HUD, Shop;
+    public GameObject playerCamera, playerViewCone, playerViewCone2, rotatingBody,pointLight2d,gel, legs, HUD, Shop,ColorSelect, Buyblind;
     private Camera usedCameraComponent;
+    public Camera mapCamera;
     private Vector2 moveDirection;
     public GameObject boltObject;
     public GameObject spikePitObject;
@@ -61,12 +62,29 @@ public class Player : MonoBehaviourPunCallbacks
     public float B;
     public bool colourChange = false;
     public GameObject Colour;
+    public bool stabLock = true;
+    public Color colorToSet;
+    public Color colorToSet1;
+    public Color colorToSet2;
+    public Color colorToSet3;
+    public Color colorToSet4;
+    public Color colorToSet5;
+    public Color colorToSet6;
+    public Color colorToSet7;
     public int gold;
     public Text goldText;
-    public bool stabLock = true;
-
-
-
+    public int blidingtrapprice = 10;
+    public int blinkPrice = 10;
+    public int bombPrice = 10;
+    public int camoPrice = 10;
+    public int crossbowPrice = 10;
+    public int detectorPrice = 10;
+    public int silentPotionPrice = 10;
+    public int gelTrapPrice = 10;
+    public int spikePitPrice = 10;
+    public int tripWireTrapPrice = 10;
+    public int seePotionPrice = 10;
+    public int speedPotionPrice = 10;
 
     private int selectedTrapID;
     
@@ -114,6 +132,8 @@ public class Player : MonoBehaviourPunCallbacks
             gel.SetActive(false);
             HUD.SetActive(true);
             Shop.SetActive(false);
+            ColorSelect.SetActive(false);
+ 
 
             if (GameManager.localInstance.playerAmount == 0)
             {
@@ -850,10 +870,147 @@ public class Player : MonoBehaviourPunCallbacks
         }
         */
     }
+    
+    public void ColourSet()
+    {
+        SetColor(colorToSet.r, colorToSet.g, colorToSet.b);
+    }
+    public void ColourSet1()
+    {
+        SetColor(colorToSet1.r, colorToSet1.g, colorToSet1.b);
+    }
+    public void ColourSet2()
+    {
+        SetColor(colorToSet2.r, colorToSet2.g, colorToSet2.b);
+    }
+    public void ColourSet3()
+    {
+        SetColor(colorToSet3.r, colorToSet3.g, colorToSet3.b);
+    }
+    public void ColourSet4()
+    {
+        SetColor(colorToSet4.r, colorToSet4.g, colorToSet4.b);
+    }
+    public void ColourSet5()
+    {
+        SetColor(colorToSet5.r, colorToSet5.g, colorToSet5.b);
+    }
+    public void ColourSet6()
+    {
+        SetColor(colorToSet6.r, colorToSet6.g, colorToSet6.b);
+    }
+    public void ColourSet7()
+    {
+        SetColor(colorToSet7.r, colorToSet7.g, colorToSet7.b);
+    }
     public void BuyBlinding()
     {
-        PhotonNetwork.Instantiate(pickup1.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
+        if (gold >= blidingtrapprice)
+        {
+            PhotonNetwork.Instantiate(pickup1.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
+            gold -= blidingtrapprice;
+        }
+
     }
-    
-    
+    public void BuyBlink()
+    {
+        if (gold >= blinkPrice)
+        {
+            PhotonNetwork.Instantiate(pickup2.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
+            gold -= blinkPrice;
+        }
+
+    }
+    public void BuyBomb()
+    {
+        if (gold >= bombPrice)
+        {
+            PhotonNetwork.Instantiate(pickup3.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
+            gold -= bombPrice;
+        }
+
+    }
+    public void BuyCamo()
+    {
+        if (gold >= camoPrice)
+        {
+            PhotonNetwork.Instantiate(pickup4.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
+            gold -= camoPrice;
+        }
+
+    }
+    public void BuyCrossbow()
+    {
+        if (gold >= crossbowPrice)
+        {
+            PhotonNetwork.Instantiate(pickup5.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
+            gold -= crossbowPrice;
+        }
+
+    }
+    public void BuyDetector()
+    {
+        if (gold >= detectorPrice)
+        {
+            PhotonNetwork.Instantiate(pickup6.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
+            gold -= detectorPrice;
+        }
+
+    }
+    public void BuySilentPotion()
+    {
+        if (gold >= silentPotionPrice)
+        {
+            PhotonNetwork.Instantiate(pickup7.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
+            gold -= silentPotionPrice;
+        }
+
+    }
+    public void BuyGelTrap()
+    {
+        if (gold >= gelTrapPrice)
+        {
+            PhotonNetwork.Instantiate(pickup8.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
+            gold -= gelTrapPrice;
+        }
+
+    }
+    public void BuySpikePit()
+    {
+        if (gold >= spikePitPrice)
+        {
+            PhotonNetwork.Instantiate(pickup9.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
+            gold -= spikePitPrice;
+        }
+
+    }
+    public void BuyTripWire()
+    {
+        if (gold >= tripWireTrapPrice)
+        {
+            PhotonNetwork.Instantiate(pickup10.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
+            gold -= tripWireTrapPrice;
+        }
+
+    }
+    public void BuySeePotion()
+    {
+        if (gold >= seePotionPrice)
+        {
+            PhotonNetwork.Instantiate(pickup11.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
+            gold -= seePotionPrice;
+        }
+
+    }
+    public void BuySpeedPotion()
+    {
+        if (gold >= speedPotionPrice)
+        {
+            PhotonNetwork.Instantiate(pickup12.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
+            gold -= speedPotionPrice;
+        }
+
+    }
+
+
 }

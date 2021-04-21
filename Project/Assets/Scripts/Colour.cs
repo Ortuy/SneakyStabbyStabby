@@ -8,17 +8,13 @@ public class Colour : MonoBehaviourPunCallbacks
     public Player player;
     public Color colorToSet;
 
-    public void OnTriggerEnter2D(Collider2D Player)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (Player.tag == "Player")
+        if (collision.tag == "Player")
         {
-            var temp = Player.GetComponent<PhotonView>();
-            Debug.Log("yee");
-            //player.colourChange = true;
-            //player.R = 108;
-            //player.G = 30;
-            //player.B = 37;
+            var temp = collision.GetComponent<PhotonView>();
+            player.ColorSelect.SetActive(true);
             temp.RPC("SetColor", RpcTarget.AllBuffered, colorToSet.r, colorToSet.g, colorToSet.b);
             
         }
