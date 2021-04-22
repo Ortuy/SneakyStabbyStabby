@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         //pingText.text = "Ping: " + PhotonNetwork.GetPing();
 
-        pingText.text = "Room: " + PhotonNetwork.CurrentRoom.Name;
+        pingText.text = PhotonNetwork.CurrentRoom.Name;
 
         if (runSpawnTimer)
         {
@@ -127,8 +127,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     [PunRPC]
     public void DissolveStartPoints()
-    {
-        FindObjectOfType<Portal>().portalIsActive = true;
+    {        
         spawnPoints[0].gameObject.SetActive(false);
         spawnPoints[1].gameObject.SetActive(false);
     }
@@ -183,6 +182,12 @@ public class GameManager : MonoBehaviourPunCallbacks
         victoryText.text = "1";
         yield return new WaitForSeconds(1f);
         victoryText.gameObject.SetActive(false);
+
+        if(PhotonNetwork.IsMasterClient)
+        {
+            FindObjectOfType<Portal>().portalIsActive = true;
+        }
+
         photonView.RPC("DissolveStartPoints", RpcTarget.AllBuffered);
 
     }

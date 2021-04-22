@@ -52,8 +52,9 @@ public class Portal : MonoBehaviourPunCallbacks
         //{
         //    portalIsActive = true;
         //}
-        if (portalIsActive == true && PhotonNetwork.IsMasterClient)
+        if (portalIsActive == true && PhotonNetwork.IsMasterClient && photonView.IsMine)
         {
+            Debug.LogWarning("PortalStart");
             //StartCoroutine("ItemMaking");
             //StartCoroutine("ItemMaking1");
             //StartCoroutine("ItemMaking2");
@@ -76,27 +77,27 @@ public class Portal : MonoBehaviourPunCallbacks
 
         photonView.RPC("ShowSupplyText", RpcTarget.AllBuffered);
 
-        if(PhotonNetwork.IsMasterClient)
+        if (PhotonNetwork.IsMasterClient)
         {
             PhotonNetwork.Instantiate(pickups[itemNum].name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
             PhotonNetwork.Instantiate(pickups[itemNum1].name, new Vector2(dropPos1.transform.position.x, dropPos1.transform.position.y), Quaternion.identity, 0);
             PhotonNetwork.Instantiate(pickups[itemNum2].name, new Vector2(dropPos2.transform.position.x, dropPos2.transform.position.y), Quaternion.identity, 0);
         }
-        
 
-        portalIsActive = true;
+
+        
 
         yield return null;
 
         animator.SetBool("Open", false);
+        portalIsActive = true;
 
-        
     }
 
     [PunRPC]
     private void ShowSupplyText()
     {
-        if(managers.Length == 0)
+        if(managers == null)
         {
             managers = FindObjectsOfType<GameManager>();
         }
@@ -107,10 +108,21 @@ public class Portal : MonoBehaviourPunCallbacks
             manager.victoryText.text = "Supplies Arrived!";
             manager.DisappearText(2.4f);
         }
-        
+
     }
 
-
+    //if (portalIsActive == true && PhotonNetwork.IsMasterClient && photonView.IsMine)
+    //    {
+    //        Debug.LogWarning("PortalStart");
+    //        //StartCoroutine("ItemMaking");
+    //        //StartCoroutine("ItemMaking1");
+    //        //StartCoroutine("ItemMaking2");
+    //        StartCoroutine(WaitAndSpawnItems());
+    //itemNum = Random.Range(0, 12);
+    //        itemNum1 = Random.Range(0, 12);
+    //        itemNum2 = Random.Range(0, 12);
+    //        portalIsActive = false;
+    //    }
 
     IEnumerator ItemMaking()
     {
