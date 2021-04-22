@@ -54,20 +54,48 @@ public class Chest : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        itemNum = Random.Range(0, 12);
+        chestlIsActive = false;
+    }
+
+    public void InitChest()
+    {
+        chestlIsActive = true;
+        if(PhotonNetwork.IsMasterClient)
+        {
+            var temp = Random.Range(0, 12);
+            photonView.RPC("SyncItemNumber", RpcTarget.AllBuffered, temp);
+        }
         itemImage.sprite = itemSprites[itemNum];
     }
 
     public void RandomItem()
     {
-        lid.gameObject.SetActive(false);
-        itemImage.gameObject.SetActive(false);
-        CreateItem();
-        itemNum = Random.Range(0, 12);
+        if(chestlIsActive)
+        {
+            Debug.LogWarning(photonView.IsMine);
+            CreateItem();
+
+            photonView.RPC("StartItemCoolDown", RpcTarget.AllBuffered);
+            var temp = Random.Range(0, 12);
+            photonView.RPC("SyncItemNumber", RpcTarget.AllBuffered, temp);
+        }
+    }
+       
+    [PunRPC]
+    private void StartItemCoolDown()
+    {
         StartCoroutine("ItemMaking");
         chestlIsActive = false;
-    }
+        lid.gameObject.SetActive(false);
+        itemImage.gameObject.SetActive(false);
         
+    }
+    [PunRPC]
+    private void SyncItemNumber(int number)
+    {
+        itemNum = number;
+    }
+
     private void CreateItem()
     {
 

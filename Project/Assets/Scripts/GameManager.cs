@@ -168,6 +168,12 @@ public class GameManager : MonoBehaviourPunCallbacks
             //SpawnDecor();
         }
 
+        var chests = FindObjectsOfType<Chest>();
+        foreach (Chest chest in chests)
+        {
+            chest.InitChest();
+        }
+
         countdownStarted = true;
         victoryText.gameObject.SetActive(true);
         victoryText.text = "3";

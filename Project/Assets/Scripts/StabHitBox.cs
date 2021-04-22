@@ -35,7 +35,7 @@ public class StabHitBox : MonoBehaviourPunCallbacks
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        Debug.LogWarning("DUPA");
         if (!playerPV.IsMine)
             return;
         if(collision.gameObject.transform.parent != null)
@@ -55,7 +55,7 @@ public class StabHitBox : MonoBehaviourPunCallbacks
         }
         
         
-            Debug.LogWarning("DUPA");
+            
             var target1 = collision.GetComponent<Chest>();
             if (target1 != null)
             {
@@ -68,8 +68,8 @@ public class StabHitBox : MonoBehaviourPunCallbacks
             }
         
     }
-    private void OnTriggerStay2D(Collider2D Chest)
-    {
-        canOpenChest = true;
-    }
+    //private void OnTriggerStay2D(Collider2D Chest)
+    //{
+    //    canOpenChest = true;
+    //}
 }
