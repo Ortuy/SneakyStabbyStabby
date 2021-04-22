@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Backside
   - DecorHolder
+  - Pickup
+  - Chest
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - Projectiles
   - Traps
   - Decor
-  - 
+  - Detector
   - 
   - 
   - 

@@ -151,6 +151,10 @@ public class Inventory : MonoBehaviourPunCallbacks
                     case 6:
                         player.Blinking();
                         break;
+                    case 7:
+                        //player.Geltrap();
+                        player.StartTrapPlacement(effectID);
+                        break;
 
                 }
 

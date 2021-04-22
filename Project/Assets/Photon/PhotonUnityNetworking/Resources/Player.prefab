@@ -29079,6 +29079,7 @@ MonoBehaviour:
   - {fileID: 1131015303842372928}
   waitingForTrap: 0
   settingTrap: 0
+  isByDetector: 0
   trapMarker: {fileID: 8217094936792234436}
   trapImages:
   - {fileID: 21300000, guid: 6dfdda76ac9dd4b46b612adac8ea1938, type: 3}
@@ -29086,6 +29087,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4bd33566473334a408f8f2edf47efcd1, type: 3}
   - {fileID: 21300000, guid: 8d2b1d091ded5e645ae8bbe22aae49c9, type: 3}
   - {fileID: 21300000, guid: ec25d5c197c52fa49a6e3d2b8f72226b, type: 3}
+  - {fileID: 21300000, guid: ec25d5c197c52fa49a6e3d2b8f72226b, type: 3}
+  - {fileID: 21300000, guid: ec25d5c197c52fa49a6e3d2b8f72226b, type: 3}
+  - {fileID: 7800013291351675066, guid: 79f8c2d8d2c8899499ac883898db9d80, type: 3}
 --- !u!114 &5440725864618505865
 MonoBehaviour:
   m_ObjectHideFlags: 0

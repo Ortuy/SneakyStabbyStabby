@@ -112,7 +112,7 @@ public class Player : MonoBehaviourPunCallbacks
 
     [SerializeField] public GameObject[] camoObjects;
 
-    public bool waitingForTrap, settingTrap;
+    public bool waitingForTrap, settingTrap, isByDetector;
     [SerializeField] private GameObject trapMarker;
     [SerializeField] private Sprite[] trapImages;
 
@@ -371,6 +371,9 @@ public class Player : MonoBehaviourPunCallbacks
                 break;
             case 4:
                 Geltrap();
+                break;
+            case 7:
+                Detector();
                 break;
         }
 
@@ -734,6 +737,11 @@ public class Player : MonoBehaviourPunCallbacks
     public void Geltrap()
     {
         GameObject obj = PhotonNetwork.Instantiate(gelTrapObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
+        //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
+    }
+    public void Detector()
+    {
+        GameObject obj = PhotonNetwork.Instantiate("Detector", new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
     public void Paint()

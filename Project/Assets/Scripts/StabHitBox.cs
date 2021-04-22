@@ -51,6 +51,10 @@ public class StabHitBox : MonoBehaviourPunCallbacks
                 
                 
             }
+            if(target != null && LayerMask.LayerToName(target.gameObject.layer) == "Detector")
+            {
+                target.RPC("DestroyDetector", RpcTarget.AllBuffered);
+            }
             
         }
         
