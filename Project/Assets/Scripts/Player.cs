@@ -327,6 +327,16 @@ public class Player : MonoBehaviourPunCallbacks
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             GameManager.localInstance.ToggleMap();
+            if(GameManager.localInstance.mapPanel.activeInHierarchy)
+            {
+                stabLock = true;
+                torsoAnimator.SetBool("Map", true);
+            }
+            else
+            {
+                stabLock = false;
+                torsoAnimator.SetBool("Map", false);
+            }
         }
         var scroll = Input.GetAxisRaw("Mouse ScrollWheel");
         if (scroll != 0)
@@ -821,10 +831,12 @@ public class Player : MonoBehaviourPunCallbacks
 
         camoObjects[variant].SetActive(true);
 
-        foreach(SpriteRenderer renderer in recolorSprites)
-        {
-            renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, 0);
-        }
+        //foreach(SpriteRenderer renderer in recolorSprites)
+        //{
+        //    renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, 0);
+        //}
+        recolorSprites[0].color = new Color(recolorSprites[0].color.r, recolorSprites[0].color.g, recolorSprites[0].color.b, 0);
+        recolorSprites[1].color = new Color(recolorSprites[0].color.r, recolorSprites[0].color.g, recolorSprites[0].color.b, 0);
 
         foreach (SpriteRenderer renderer in nonRecolorSprites)
         {
@@ -847,10 +859,12 @@ public class Player : MonoBehaviourPunCallbacks
 
         potionCooldownText.transform.parent.gameObject.SetActive(false);
 
-        foreach (SpriteRenderer renderer in recolorSprites)
-        {
-            renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, 1);
-        }
+        //foreach (SpriteRenderer renderer in recolorSprites)
+        //{
+        //    renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, 1);
+        //}
+        recolorSprites[0].color = new Color(recolorSprites[0].color.r, recolorSprites[0].color.g, recolorSprites[0].color.b, 1);
+        recolorSprites[1].color = new Color(recolorSprites[0].color.r, recolorSprites[0].color.g, recolorSprites[0].color.b, 1);
 
         foreach (SpriteRenderer renderer in nonRecolorSprites)
         {
@@ -887,35 +901,43 @@ public class Player : MonoBehaviourPunCallbacks
     
     public void ColourSet()
     {
-        SetColor(colorToSet.r, colorToSet.g, colorToSet.b);
+        photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet.r, colorToSet.g, colorToSet.b);
+        //SetColor(colorToSet.r, colorToSet.g, colorToSet.b);
     }
     public void ColourSet1()
     {
-        SetColor(colorToSet1.r, colorToSet1.g, colorToSet1.b);
+        photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet1.r, colorToSet1.g, colorToSet1.b);
+        //SetColor(colorToSet1.r, colorToSet1.g, colorToSet1.b);
     }
     public void ColourSet2()
     {
-        SetColor(colorToSet2.r, colorToSet2.g, colorToSet2.b);
+        photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet2.r, colorToSet2.g, colorToSet2.b);
+        //SetColor(colorToSet2.r, colorToSet2.g, colorToSet2.b);
     }
     public void ColourSet3()
     {
-        SetColor(colorToSet3.r, colorToSet3.g, colorToSet3.b);
+        photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet3.r, colorToSet3.g, colorToSet3.b);
+        //SetColor(colorToSet3.r, colorToSet3.g, colorToSet3.b);
     }
     public void ColourSet4()
     {
-        SetColor(colorToSet4.r, colorToSet4.g, colorToSet4.b);
+        photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet4.r, colorToSet4.g, colorToSet4.b);
+        //SetColor(colorToSet4.r, colorToSet4.g, colorToSet4.b);
     }
     public void ColourSet5()
     {
-        SetColor(colorToSet5.r, colorToSet5.g, colorToSet5.b);
+        photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet5.r, colorToSet5.g, colorToSet5.b);
+        //SetColor(colorToSet5.r, colorToSet5.g, colorToSet5.b);
     }
     public void ColourSet6()
     {
-        SetColor(colorToSet6.r, colorToSet6.g, colorToSet6.b);
+        photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet6.r, colorToSet6.g, colorToSet6.b);
+        //SetColor(colorToSet6.r, colorToSet6.g, colorToSet6.b);
     }
     public void ColourSet7()
     {
-        SetColor(colorToSet7.r, colorToSet7.g, colorToSet7.b);
+        photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet7.r, colorToSet7.g, colorToSet7.b);
+        //SetColor(colorToSet7.r, colorToSet7.g, colorToSet7.b);
     }
     public void BuyBlinding()
     {

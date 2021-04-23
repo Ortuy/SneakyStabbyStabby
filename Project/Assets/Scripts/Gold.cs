@@ -22,6 +22,6 @@ public class Gold : MonoBehaviourPunCallbacks
        }
 
 
-        Destroy(this);
+        Destroy(gameObject);
     }
 }

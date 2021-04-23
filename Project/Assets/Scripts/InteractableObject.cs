@@ -65,8 +65,9 @@ public class InteractableObject : MonoBehaviourPunCallbacks
             interactionKeyIndicator.SetActive(false);
             if(targetPV == other.GetComponent<PhotonView>())
             {
-                targetPV = null;
                 EndInteraction();
+                targetPV = null;
+                
                 interactionOn = false;
             }
         }
