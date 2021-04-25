@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 5266134012750501369}
   - component: {fileID: 4493365752017403770}
   - component: {fileID: 7184223711224142850}
+  - component: {fileID: 4158171774531200380}
   m_Layer: 0
   m_Name: GoldChest
   m_TagString: Untagged
@@ -263,3 +264,25 @@ MonoBehaviour:
   - {fileID: 5334608607688306917, guid: ccc9609d130aa56428c6f64617237ac0, type: 3}
   - {fileID: 6452539268646292839, guid: dd9ad5478a2eb9549992306573d36f0b, type: 3}
   - {fileID: 2912739654983196017, guid: a8468902c8610f642944d2ee1ccece04, type: 3}
+--- !u!114 &4158171774531200380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9101824907338195137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0

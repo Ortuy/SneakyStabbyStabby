@@ -186,7 +186,12 @@ public class GameManager : MonoBehaviourPunCallbacks
         if(PhotonNetwork.IsMasterClient)
         {
             FindObjectOfType<Portal>().portalIsActive = true;
-            FindObjectOfType<GoldChest>().chestIsActive = true;
+            var gChests = FindObjectsOfType<GoldChest>();
+            foreach (GoldChest goldChest in gChests)
+            {
+                Debug.Log("gchest found");
+                goldChest.chestIsActive = true;
+            }
         }
 
         photonView.RPC("DissolveStartPoints", RpcTarget.AllBuffered);

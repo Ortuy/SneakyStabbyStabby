@@ -26,8 +26,6 @@ public class Decorator : MonoBehaviourPunCallbacks
     void Start()
     {
         pView = GetComponent<PhotonView>();
-
-        Debug.Log(GameManager.localInstance.playerAmount);
         //photonView.RPC("PlaceDecor", RpcTarget.AllBuffered);
 
         //Debug.Log(Physics2D.OverlapCircle(transform.position, 0.2f, LayerMask.GetMask("Decor")));

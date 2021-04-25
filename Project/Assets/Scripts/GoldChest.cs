@@ -21,11 +21,12 @@ public class GoldChest : MonoBehaviourPunCallbacks
 
     void Update()
     {
-        if (chestIsActive == true && PhotonNetwork.IsMasterClient && photonView.IsMine)
+        if (chestIsActive == true && PhotonNetwork.IsMasterClient)
         {
-            Debug.LogWarning("PortalStartGold");
+            Debug.LogWarning("ChestStartGold");
             StartCoroutine(WaitAndSpawnGold());
-            itemNum = Random.Range(0,3);
+            itemNum = Random.Range(0, 3);
+            //dropPosNum = Random.Range(1, 6);
             chestIsActive = false;
         }
     }
@@ -35,7 +36,7 @@ public class GoldChest : MonoBehaviourPunCallbacks
 
         if (PhotonNetwork.IsMasterClient)
         {
-
+            Debug.LogWarning("Gold");
             if (dropPosNum == 5)
             {
                 PhotonNetwork.Instantiate(goldPickups[itemNum].name, new Vector2(dropPos4.transform.position.x, dropPos4.transform.position.y), Quaternion.identity, 0);
@@ -63,7 +64,7 @@ public class GoldChest : MonoBehaviourPunCallbacks
             }
 
 
-            yield return null;
+            //yield return null;
             chestIsActive = true;
 
         }

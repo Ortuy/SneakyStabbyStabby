@@ -14,8 +14,6 @@ public class WaitRoomPortal : MonoBehaviourPunCallbacks
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-
-        Debug.Log("penis");
         PhotonView target = collision.gameObject.GetComponent<PhotonView>();
 
         if (collision.tag == "Player")
