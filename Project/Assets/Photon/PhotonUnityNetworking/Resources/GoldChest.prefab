@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 4493365752017403770}
   - component: {fileID: 7184223711224142850}
   - component: {fileID: 4158171774531200380}
+  - component: {fileID: 4793069542651391725}
   m_Layer: 0
   m_Name: GoldChest
   m_TagString: Untagged
@@ -228,7 +229,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 438f3898ef2e0c64982880b57741b720, type: 3}
+  m_Sprite: {fileID: -2054668099214213088, guid: 65ce509cfd877c24cae9075b88c4fc63,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -286,3 +288,19 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!58 &4793069542651391725
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9101824907338195137}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.4
