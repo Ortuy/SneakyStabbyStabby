@@ -310,8 +310,8 @@ public class ShopEnter : MonoBehaviourPunCallbacks
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        PhotonView target = collision.gameObject.GetComponent<PhotonView>();
-        if (collision.tag == "Player")
+
+        if (collision.CompareTag("Player") && collision.GetComponent<PhotonView>().IsMine)
         {
             player = collision.GetComponent<Player>();
             Shop.SetActive(true);
@@ -320,7 +320,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
     }
     public void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.CompareTag("Player") && collision.GetComponent<PhotonView>().IsMine)
         {
             player = collision.GetComponent<Player>();
             Shop.SetActive(false);
