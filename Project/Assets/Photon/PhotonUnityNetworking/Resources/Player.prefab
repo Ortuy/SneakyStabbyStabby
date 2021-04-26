@@ -32126,18 +32126,6 @@ MonoBehaviour:
   colorToSet7: {r: 1, g: 0.227451, b: 1, a: 0}
   gold: 0
   goldText: {fileID: 5108663003708218560}
-  blidingtrapprice: 10
-  blinkPrice: 10
-  bombPrice: 10
-  camoPrice: 10
-  crossbowPrice: 10
-  detectorPrice: 10
-  silentPotionPrice: 10
-  gelTrapPrice: 10
-  spikePitPrice: 10
-  tripWireTrapPrice: 10
-  seePotionPrice: 10
-  speedPotionPrice: 10
   moveSpeed: 3
   shootSpeed: 18
   playerID: 0
@@ -32187,45 +32175,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ec25d5c197c52fa49a6e3d2b8f72226b, type: 3}
   - {fileID: 21300000, guid: ec25d5c197c52fa49a6e3d2b8f72226b, type: 3}
   - {fileID: 7800013291351675066, guid: 79f8c2d8d2c8899499ac883898db9d80, type: 3}
-  shopSlotRange: 0
-  shopSlotRange1: 0
-  shopSlotRange2: 0
-  buyBlinding: {fileID: 8419366212001117909}
-  buyBlink: {fileID: 2590692720292403456}
-  buyBomb: {fileID: 6697269424495196913}
-  buyCamo: {fileID: 5252905053158353734}
-  buyCrossbow: {fileID: 4595739946702933839}
-  buyDetector: {fileID: 2473348991604156266}
-  buySilentPotion: {fileID: 3887390585756911967}
-  buyGelTrap: {fileID: 1504352827387503119}
-  buySpikePit: {fileID: 4202244989412163670}
-  buyTripWire: {fileID: 562839533592437079}
-  buySeePotion: {fileID: 5971334911726544118}
-  buySpeedPotion: {fileID: 506790954456990516}
-  buyBlinding1: {fileID: 8480791985840071413}
-  buyBlink1: {fileID: 6140130295005029950}
-  buyBomb1: {fileID: 2307491255862311209}
-  buyCamo1: {fileID: 3683807079330413615}
-  buyCrossbow1: {fileID: 7854961246004505579}
-  buyDetector1: {fileID: 604419450268389248}
-  buySilentPotion1: {fileID: 3251843409803543940}
-  buyGelTrap1: {fileID: 4603797523633866483}
-  buySpikePit1: {fileID: 6096246809032395254}
-  buyTripWire1: {fileID: 203460257458488295}
-  buySeePotion1: {fileID: 5881801336188303806}
-  buySpeedPotion1: {fileID: 4620257133056070152}
-  buyBlinding2: {fileID: 5583553498919642001}
-  buyBlink2: {fileID: 96654250068663153}
-  buyBomb2: {fileID: 5615879656817202945}
-  buyCamo2: {fileID: 3504820674004078635}
-  buyCrossbow2: {fileID: 4086109933283285501}
-  buyDetector2: {fileID: 4713952548695922678}
-  buySilentPotion2: {fileID: 6758384623842128773}
-  buyGelTrap2: {fileID: 5978896413056632313}
-  buySpikePit2: {fileID: 1402338099001876956}
-  buyTripWire2: {fileID: 6780096709595464133}
-  buySeePotion2: {fileID: 1231899132707760554}
-  buySpeedPotion2: {fileID: 6541975109438318911}
 --- !u!114 &5440725864618505865
 MonoBehaviour:
   m_ObjectHideFlags: 0
