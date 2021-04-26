@@ -273,14 +273,14 @@ public class ShopEnter : MonoBehaviourPunCallbacks
     {
 
 
-            var temp = Random.Range(0, 12);
+            var temp = Random.Range(1, 13);
             photonView.RPC("SyncItemNumber", RpcTarget.AllBuffered, temp);
 
     }
     public void RandomItem1()
     {
 
-            var temp1 = Random.Range(0, 12);
+            var temp1 = Random.Range(1, 13);
             photonView.RPC("SyncItemNumber1", RpcTarget.AllBuffered, temp1);
 
     }
@@ -288,7 +288,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
     {
 
 
-            var temp2 = Random.Range(0, 12);
+            var temp2 = Random.Range(1, 13);
 
             photonView.RPC("SyncItemNumber2", RpcTarget.AllBuffered, temp2);
 
