@@ -32,6 +32,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
 
     public void Awake()
     {
+
         Shop.SetActive(false);
 
         buyBlinding.SetActive(false);
@@ -73,12 +74,18 @@ public class ShopEnter : MonoBehaviourPunCallbacks
         buySeePotion2.SetActive(false);
         buySpeedPotion2.SetActive(false);
 
-        shopSlotRange = Random.Range(0, 12);
-        shopSlotRange1 = Random.Range(0, 12);
-        shopSlotRange2 = Random.Range(0, 12);
-
+        //if (photonView.IsMine)
+        //{
+        //    shopSlotRange = Random.Range(0, 12);
+        //    shopSlotRange1 = Random.Range(0, 12);
+        //    shopSlotRange2 = Random.Range(0, 12);
+        //}
+        RandomItem();
+        RandomItem1();
+        RandomItem2();
 
     }
+
     public void Update()
     {
         if (shopSlotRange == 1)
@@ -262,6 +269,45 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             buySpeedPotion2.SetActive(true);
         }
     }
+    public void RandomItem()
+    {
+
+
+            var temp = Random.Range(0, 12);
+            photonView.RPC("SyncItemNumber", RpcTarget.AllBuffered, temp);
+
+    }
+    public void RandomItem1()
+    {
+
+            var temp1 = Random.Range(0, 12);
+            photonView.RPC("SyncItemNumber1", RpcTarget.AllBuffered, temp1);
+
+    }
+    public void RandomItem2()
+    {
+
+
+            var temp2 = Random.Range(0, 12);
+
+            photonView.RPC("SyncItemNumber2", RpcTarget.AllBuffered, temp2);
+
+    }
+    [PunRPC]
+    private void SyncItemNumber(int number)
+    {
+        shopSlotRange = number;
+    }
+    [PunRPC]
+    private void SyncItemNumber1(int number)
+    {
+        shopSlotRange1 = number;
+    }
+    [PunRPC]
+    private void SyncItemNumber2(int number)
+    {
+        shopSlotRange2 = number;
+    }
     public void OnTriggerEnter2D(Collider2D collision)
     {
         PhotonView target = collision.gameObject.GetComponent<PhotonView>();
@@ -288,7 +334,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup1.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= blidingtrapprice;
             buyBlinding.SetActive(false);
-            shopSlotRange = Random.Range(0, 12);
+            RandomItem();
         }
 
     }
@@ -299,7 +345,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup2.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= blinkPrice;
             buyBlink.SetActive(false);
-            shopSlotRange = Random.Range(0, 12);
+            RandomItem();
         }
 
     }
@@ -310,7 +356,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup3.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= bombPrice;
             buyBomb.SetActive(false);
-            shopSlotRange = Random.Range(0, 12);
+            RandomItem();
         }
 
     }
@@ -321,7 +367,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup4.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= camoPrice;
             buyCamo.SetActive(false);
-            shopSlotRange = Random.Range(0, 12);
+            RandomItem();
         }
 
     }
@@ -332,7 +378,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup5.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= crossbowPrice;
             buyCrossbow.SetActive(false);
-            shopSlotRange = Random.Range(0, 12);
+            RandomItem();
         }
 
     }
@@ -343,7 +389,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup6.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= detectorPrice;
             buyDetector.SetActive(false);
-            shopSlotRange = Random.Range(0, 12);
+            RandomItem();
         }
 
     }
@@ -354,7 +400,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup7.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= silentPotionPrice;
             buySilentPotion.SetActive(false);
-            shopSlotRange = Random.Range(0, 12);
+            RandomItem();
         }
 
     }
@@ -365,7 +411,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup8.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= gelTrapPrice;
             buyGelTrap.SetActive(false);
-            shopSlotRange = Random.Range(0, 12);
+            RandomItem();
         }
 
     }
@@ -376,7 +422,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup9.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= spikePitPrice;
             buySpikePit.SetActive(false);
-            shopSlotRange = Random.Range(0, 12);
+            RandomItem();
         }
 
     }
@@ -387,7 +433,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup10.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= tripWireTrapPrice;
             buyTripWire.SetActive(false);
-            shopSlotRange = Random.Range(0, 12);
+            RandomItem();
         }
 
     }
@@ -398,7 +444,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup11.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= seePotionPrice;
             buySeePotion.SetActive(false);
-            shopSlotRange = Random.Range(0, 12);
+            RandomItem();
         }
 
     }
@@ -409,7 +455,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup12.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= speedPotionPrice;
             buySpeedPotion.SetActive(false);
-            shopSlotRange = Random.Range(0, 12);
+            RandomItem();
         }
 
     }
@@ -420,7 +466,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup1.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= blidingtrapprice;
             buyBlinding1.SetActive(false);
-            shopSlotRange1 = Random.Range(0, 12);
+            RandomItem1();
         }
 
     }
@@ -431,7 +477,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup2.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= blinkPrice;
             buyBlink1.SetActive(false);
-            shopSlotRange1 = Random.Range(0, 12);
+            RandomItem1();
         }
 
     }
@@ -442,7 +488,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup3.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= bombPrice;
             buyBomb1.SetActive(false);
-            shopSlotRange1 = Random.Range(0, 12);
+            RandomItem1();
         }
 
     }
@@ -453,7 +499,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup4.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= camoPrice;
             buyCamo1.SetActive(false);
-            shopSlotRange1 = Random.Range(0, 12);
+            RandomItem1();
         }
 
     }
@@ -464,7 +510,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup5.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= crossbowPrice;
             buyCrossbow1.SetActive(false);
-            shopSlotRange1 = Random.Range(0, 12);
+            RandomItem1();
         }
 
     }
@@ -475,7 +521,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup6.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= detectorPrice;
             buyDetector1.SetActive(false);
-            shopSlotRange1 = Random.Range(0, 12);
+            RandomItem1();
         }
 
     }
@@ -486,7 +532,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup7.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= silentPotionPrice;
             buySilentPotion1.SetActive(false);
-            shopSlotRange1 = Random.Range(0, 12);
+            RandomItem1();
         }
 
     }
@@ -497,7 +543,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup8.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= gelTrapPrice;
             buyGelTrap1.SetActive(false);
-            shopSlotRange1 = Random.Range(0, 12);
+            RandomItem1();
         }
 
     }
@@ -508,7 +554,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup9.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= spikePitPrice;
             buySpikePit1.SetActive(false);
-            shopSlotRange1 = Random.Range(0, 12);
+            RandomItem1();
         }
 
     }
@@ -519,7 +565,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup10.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= tripWireTrapPrice;
             buyTripWire1.SetActive(false);
-            shopSlotRange1 = Random.Range(0, 12);
+            RandomItem1();
         }
 
     }
@@ -530,7 +576,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup11.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= seePotionPrice;
             buySeePotion1.SetActive(false);
-            shopSlotRange1 = Random.Range(0, 12);
+            RandomItem1();
         }
 
     }
@@ -541,7 +587,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup12.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= speedPotionPrice;
             buySpeedPotion1.SetActive(false);
-            shopSlotRange1 = Random.Range(0, 12);
+            RandomItem1();
         }
 
     }
@@ -552,7 +598,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup1.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= blidingtrapprice;
             buyBlinding2.SetActive(false);
-            shopSlotRange2 = Random.Range(0, 12);
+            RandomItem2();
         }
 
     }
@@ -563,7 +609,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup2.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= blinkPrice;
             buyBlink2.SetActive(false);
-            shopSlotRange2 = Random.Range(0, 12);
+            RandomItem2();
         }
 
     }
@@ -574,7 +620,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup3.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= bombPrice;
             buyBomb2.SetActive(false);
-            shopSlotRange2 = Random.Range(0, 12);
+            RandomItem2();
         }
 
     }
@@ -585,7 +631,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup4.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= camoPrice;
             buyCamo2.SetActive(false);
-            shopSlotRange2 = Random.Range(0, 12);
+            RandomItem2();
         }
 
     }
@@ -596,7 +642,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup5.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= crossbowPrice;
             buyCrossbow2.SetActive(false);
-            shopSlotRange2 = Random.Range(0, 12);
+            RandomItem2();
         }
 
     }
@@ -607,7 +653,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup6.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= detectorPrice;
             buyDetector2.SetActive(false);
-            shopSlotRange2 = Random.Range(0, 12);
+            RandomItem2();
         }
 
     }
@@ -618,7 +664,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup7.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= silentPotionPrice;
             buySilentPotion2.SetActive(false);
-            shopSlotRange2 = Random.Range(0, 12);
+            RandomItem2();
         }
 
     }
@@ -629,7 +675,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup8.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= gelTrapPrice;
             buyGelTrap2.SetActive(false);
-            shopSlotRange2 = Random.Range(0, 12);
+            RandomItem2();
         }
 
     }
@@ -640,7 +686,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup9.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= spikePitPrice;
             buySpikePit2.SetActive(false);
-            shopSlotRange2 = Random.Range(0, 12);
+            RandomItem2();
         }
 
     }
@@ -651,7 +697,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup10.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= tripWireTrapPrice;
             buyTripWire2.SetActive(false);
-            shopSlotRange2 = Random.Range(0, 12);
+            RandomItem2();
         }
 
     }
@@ -662,7 +708,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup11.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= seePotionPrice;
             buySeePotion2.SetActive(false);
-            shopSlotRange2 = Random.Range(0, 12);
+            RandomItem2();
         }
 
     }
@@ -673,7 +719,7 @@ public class ShopEnter : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.pickup12.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= speedPotionPrice;
             buySpeedPotion2.SetActive(false);
-            shopSlotRange2 = Random.Range(0, 12);
+            RandomItem2();
         }
 
     }
