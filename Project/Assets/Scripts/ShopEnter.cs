@@ -4,7 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using UnityEngine.UI;
 
-public class ShopEnter : MonoBehaviourPunCallbacks
+public class ShopEnter : InteractableObject
 {
     public Player player;
     public GameObject Shop;
@@ -308,25 +308,42 @@ public class ShopEnter : MonoBehaviourPunCallbacks
     {
         shopSlotRange2 = number;
     }
-    public void OnTriggerEnter2D(Collider2D collision)
+
+    protected override void StartInteraction()
     {
-
-        if (collision.CompareTag("Player") && collision.GetComponent<PhotonView>().IsMine)
-        {
-            player = collision.GetComponent<Player>();
-            Shop.SetActive(true);
-        }
-
+        player = targetPV.GetComponent<Player>();
+        Shop.SetActive(true);
+        player.stabLock = true;
+        base.StartInteraction();
     }
-    public void OnTriggerExit2D(Collider2D collision)
+
+    protected override void EndInteraction()
     {
-        if (collision.CompareTag("Player") && collision.GetComponent<PhotonView>().IsMine)
-        {
-            player = collision.GetComponent<Player>();
-            Shop.SetActive(false);
-        }
-
+        player = targetPV.GetComponent<Player>();
+        Shop.SetActive(false);
+        player.stabLock = false;
+        base.EndInteraction();
     }
+
+    //public void OnTriggerEnter2D(Collider2D collision)
+    //{
+
+    //    if (collision.CompareTag("Player") && collision.GetComponent<PhotonView>().IsMine)
+    //    {
+    //        player = collision.GetComponent<Player>();
+    //        Shop.SetActive(true);
+    //    }
+
+    //}
+    //public void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    if (collision.CompareTag("Player") && collision.GetComponent<PhotonView>().IsMine)
+    //    {
+    //        player = collision.GetComponent<Player>();
+    //        Shop.SetActive(false);
+    //    }
+
+    //}
     public void BuyBlinding()
     {
         if (player.gold >= blidingtrapprice)

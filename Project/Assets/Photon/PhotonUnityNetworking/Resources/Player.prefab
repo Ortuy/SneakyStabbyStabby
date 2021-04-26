@@ -32100,7 +32100,7 @@ MonoBehaviour:
   timerPaintRunning2: 0
   distance: 7
   sprint: 8
-  pasiveItemTimeWorking: 10
+  pasiveItemTimeWorking: 20
   timeSprintRemaining: 4
   timerSprintRunning: 0
   timerSprintRunning2: 1
