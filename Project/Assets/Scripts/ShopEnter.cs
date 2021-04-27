@@ -80,9 +80,13 @@ public class ShopEnter : InteractableObject
         //    shopSlotRange1 = Random.Range(0, 12);
         //    shopSlotRange2 = Random.Range(0, 12);
         //}
-        RandomItem();
-        RandomItem1();
-        RandomItem2();
+        if(PhotonNetwork.IsMasterClient)
+        {
+            RandomItem();
+            RandomItem1();
+            RandomItem2();
+        }
+        
 
     }
 
