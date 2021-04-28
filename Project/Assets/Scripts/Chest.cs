@@ -32,6 +32,8 @@ public class Chest : MonoBehaviourPunCallbacks
     [SerializeField] private Text cooldownText;
     [SerializeField] private GameObject lid;
 
+    [SerializeField] private ParticleSystem chestFX;
+
     //private void OnTriggerStay2D(Collider2D Player)
     //{
 
@@ -74,6 +76,7 @@ public class Chest : MonoBehaviourPunCallbacks
         {
             Debug.LogWarning(photonView.IsMine);
             CreateItem();
+            chestFX.Play();
 
             photonView.RPC("StartItemCoolDown", RpcTarget.AllBuffered);
             var temp = Random.Range(0, 12);

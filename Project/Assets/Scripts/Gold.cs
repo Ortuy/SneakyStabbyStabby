@@ -8,6 +8,8 @@ public class Gold : MonoBehaviourPunCallbacks
     public Player player;
     public int goldAmount;
 
+    public GameObject particleEffect;
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         PhotonView target = collision.gameObject.GetComponent<PhotonView>();
@@ -21,7 +23,8 @@ public class Gold : MonoBehaviourPunCallbacks
 
        }
 
-
-        Destroy(gameObject);
+       var particle = Instantiate(particleEffect, transform.position, Quaternion.identity);
+       Destroy(particle, 5f);
+       Destroy(gameObject);
     }
 }

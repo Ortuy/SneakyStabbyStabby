@@ -240,6 +240,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 5440725864618505864, guid: 8bbee6f82a5b23c4bb8ad53e8d910e2e, type: 3}
   goldAmount: 10
+  particleEffect: {fileID: 1071225970061495074, guid: 7f6e8a61c5b91ab49b8c2d468e94c903,
+    type: 3}
 --- !u!114 &6688935097704684914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,7 +260,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: -2871458494392991938}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
