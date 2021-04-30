@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
+using UnityEngine.Tilemaps;
 
 public class GameManager : MonoBehaviourPunCallbacks
 {
@@ -40,6 +41,8 @@ public class GameManager : MonoBehaviourPunCallbacks
     public GameObject decorHolder;
 
     private IEnumerator currentBigTextCoroutine;
+
+    public Tilemap stoneMask;
 
     public void Awake()
     {

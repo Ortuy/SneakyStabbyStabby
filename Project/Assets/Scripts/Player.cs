@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
+using UnityEngine.Tilemaps;
 
 public class Player : MonoBehaviourPunCallbacks
 {
@@ -105,7 +106,7 @@ public class Player : MonoBehaviourPunCallbacks
     public Inventory inventory;
     public Text stabCooldownText, potionCooldownText;
 
-    public ParticleSystem footstep, camoFX, stimFX, visionFX, blinkFX;
+    public ParticleSystem footstep, footstepStone, camoFX, stimFX, visionFX, blinkFX, crossbowFX;
     public SpriteRenderer glowingFootstep;
 
     [SerializeField] private Slider staminaBar;
@@ -630,16 +631,7 @@ public class Player : MonoBehaviourPunCallbacks
         disableInput = true;
         isBlinking = true;
 
-        Color playerColor = new Color(recolorSprites[0].color.r, recolorSprites[0].color.g, recolorSprites[0].color.b, 0);
-
-        ghostSprites[0].color = new Color(1, 1, 1, 1);
-        ghostSprites[1].color = new Color(1, 1, 1, 1);
-        nonRecolorSprites[0].color = new Color(1, 1, 1, 0);
-        nonRecolorSprites[1].color = new Color(1, 1, 1, 0);
-        recolorSprites[0].color = playerColor;
-        recolorSprites[1].color = playerColor;
-
-        blinkFX.Play();
+        photonView.RPC("SetBlinkVisuals", RpcTarget.AllBuffered, true);
 
         while (durationLeft > 0)
         {
@@ -647,19 +639,43 @@ public class Player : MonoBehaviourPunCallbacks
             yield return null;
         }
 
-        playerColor = new Color(recolorSprites[0].color.r, recolorSprites[0].color.g, recolorSprites[0].color.b, 1);
-
-        ghostSprites[0].color = new Color(1, 1, 1, 0);
-        ghostSprites[1].color = new Color(1, 1, 1, 0);
-        nonRecolorSprites[0].color = new Color(1, 1, 1, 1);
-        nonRecolorSprites[1].color = new Color(1, 1, 1, 1);
-        recolorSprites[0].color = playerColor;
-        recolorSprites[1].color = playerColor;
-
-        blinkFX.Stop();
+        photonView.RPC("SetBlinkVisuals", RpcTarget.AllBuffered, false);
 
         disableInput = false;
         isBlinking = false;
+    }
+
+    [PunRPC]
+    public void SetBlinkVisuals(bool isBlinkOn)
+    {
+        if(isBlinkOn)
+        {
+            Color playerColor = new Color(recolorSprites[0].color.r, recolorSprites[0].color.g, recolorSprites[0].color.b, 0);
+
+            ghostSprites[0].color = new Color(1, 1, 1, 1);
+            ghostSprites[1].color = new Color(1, 1, 1, 1);
+            nonRecolorSprites[0].color = new Color(1, 1, 1, 0);
+            nonRecolorSprites[1].color = new Color(1, 1, 1, 0);
+            nonRecolorSprites[2].color = new Color(1, 1, 1, 0);
+            recolorSprites[0].color = playerColor;
+            recolorSprites[1].color = playerColor;
+
+            blinkFX.Play();
+        }
+        else
+        {
+            Color playerColor = new Color(recolorSprites[0].color.r, recolorSprites[0].color.g, recolorSprites[0].color.b, 1);
+
+            ghostSprites[0].color = new Color(1, 1, 1, 0);
+            ghostSprites[1].color = new Color(1, 1, 1, 0);
+            nonRecolorSprites[0].color = new Color(1, 1, 1, 1);
+            nonRecolorSprites[1].color = new Color(1, 1, 1, 1);
+            nonRecolorSprites[2].color = new Color(1, 1, 1, 1);
+            recolorSprites[0].color = playerColor;
+            recolorSprites[1].color = playerColor;
+
+            blinkFX.Stop();
+        }
     }
 
     IEnumerator LockStabbing()
@@ -684,7 +700,16 @@ public class Player : MonoBehaviourPunCallbacks
 
     public void PlayFootstep()
     {
-        footstep.Play();
+        var intPosition = new Vector3Int(Mathf.FloorToInt(transform.position.x), Mathf.FloorToInt(transform.position.y), 0);
+        if(GameManager.localInstance.stoneMask.GetTile(intPosition))
+        {
+            footstepStone.Play();
+        }
+        else
+        {
+            footstep.Play();
+        }
+        
 
         if(timerPaintRunning2)
         {
@@ -936,7 +961,15 @@ public class Player : MonoBehaviourPunCallbacks
 
     public void Shoot()
     {
+        StartCoroutine(ShootCoroutine());
+    }
+
+    IEnumerator ShootCoroutine()
+    {
+        
         torsoAnimator.SetBool("Stab", true);
+        yield return new WaitForSeconds(0.08f);
+        crossbowFX.Play();
         StartCoroutine(LockStabbing());
         GameObject obj = PhotonNetwork.Instantiate(boltObject.name, new Vector2(firePos.transform.position.x, firePos.transform.position.y), rotatingBody.transform.rotation, 0);
         Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
