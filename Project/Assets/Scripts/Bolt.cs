@@ -38,6 +38,19 @@ public class Bolt : MonoBehaviourPunCallbacks
         {
             if(target.tag == "Player")
             {
+                Vector2 temp = Vector2.zero;
+
+                Vector2 attackerPos = transform.position;
+
+                Vector2 targetPos = collision.transform.position;
+
+                temp = attackerPos - targetPos;
+
+                var newAngle = Mathf.Rad2Deg * Mathf.Atan2(temp.y, temp.x) + 180;
+
+                //float newAngle = Vector2.Angle(Vector2.left + pos2D, mousePos);
+                target.GetComponent<Health>().hurtFX.transform.rotation = Quaternion.AngleAxis(newAngle, Vector3.forward);
+
                 target.RPC("ReduceHealth", RpcTarget.AllBuffered, boltDamage);
             }
 

@@ -191,3 +191,9 @@
 - Gold objects now apear rotated randomly
 ### Fixed
 - Synchronised blink effects
+
+## [0.2.4] - 2021-05-01
+### Added
+- Particle effects for setting traps
+### Changed
+- Hit particle effects now rotate depending on the direction of the hit

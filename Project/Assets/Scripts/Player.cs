@@ -106,7 +106,7 @@ public class Player : MonoBehaviourPunCallbacks
     public Inventory inventory;
     public Text stabCooldownText, potionCooldownText;
 
-    public ParticleSystem footstep, footstepStone, camoFX, stimFX, visionFX, blinkFX, crossbowFX;
+    public ParticleSystem footstep, footstepStone, camoFX, stimFX, visionFX, blinkFX, crossbowFX, trapFX;
     public SpriteRenderer glowingFootstep;
 
     [SerializeField] private Slider staminaBar;
@@ -597,6 +597,7 @@ public class Player : MonoBehaviourPunCallbacks
 
         yield return new WaitForSeconds(0.3f);
         settingTrap = false;
+        trapFX.Play();
         switch (selectedTrapID)
         {
             case 0:
