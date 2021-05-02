@@ -27,7 +27,7 @@ public class Blindingtrap : MonoBehaviourPunCallbacks
         {
             if (target.tag == "Player")
             {
-                //target.RPC("Blinded", RpcTarget.AllBuffered, see);
+                //target.RPC("Blinded", RpcTarget.AllBuffered, !see);
                 StartCoroutine(BlindPlayer(target));
 
             }
@@ -41,7 +41,7 @@ public class Blindingtrap : MonoBehaviourPunCallbacks
     IEnumerator BlindPlayer(PhotonView player)
     {
         yield return new WaitForSeconds(0.35f);
-        player.RPC("Blinded", RpcTarget.AllBuffered, see);
+        player.RPC("Blinded", RpcTarget.AllBuffered, !see);
     }
 
 }
