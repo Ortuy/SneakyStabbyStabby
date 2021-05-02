@@ -197,3 +197,6 @@
 - Particle effects for setting traps
 ### Changed
 - Hit particle effects now rotate depending on the direction of the hit
+## [0.2.5] - 2021-05-02
+### Fixed
+- Shop Sync

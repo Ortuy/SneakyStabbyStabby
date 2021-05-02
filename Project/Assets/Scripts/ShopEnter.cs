@@ -313,6 +313,192 @@ public class ShopEnter : InteractableObject
         shopSlotRange2 = number;
     }
 
+
+    [PunRPC]
+    public void SyncBuyBlinding()
+    {
+        buyBlinding.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuyBlink()
+    {
+        buyBlink.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuyBomb()
+    {
+        buyBomb.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuyCamo()
+    {
+        buyCamo.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuyCrossbow()
+    {
+        buyCrossbow.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuyDetector()
+    {
+        buyDetector.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuySilentPotion()
+    {
+        buySilentPotion.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuyGelTrap()
+    {
+        buyGelTrap.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuySpikePit()
+    {
+        buySpikePit.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuyTripWire()
+    {
+        buyTripWire.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuySeePotion()
+    {
+        buySeePotion.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuySpeedPotion()
+    {
+        buySpeedPotion.SetActive(false);
+    }
+
+
+    [PunRPC]
+    public void SyncBuyBlinding1()
+    {
+        buyBlinding1.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuyBlink1()
+    {
+        buyBlink1.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuyBomb1()
+    {
+        buyBomb1.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuyCamo1()
+    {
+        buyCamo1.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuyCrossbow1()
+    {
+        buyCrossbow1.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuyDetector1()
+    {
+        buyDetector1.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuySilentPotion1()
+    {
+        buySilentPotion1.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuyGelTrap1()
+    {
+        buyGelTrap1.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuySpikePit1()
+    {
+        buySpikePit1.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuyTripWire1()
+    {
+        buyTripWire1.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuySeePotion1()
+    {
+        buySeePotion1.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuySpeedPotion1()
+    {
+        buySpeedPotion1.SetActive(false);
+    }
+
+
+    [PunRPC]
+    public void SyncBuyBlinding2()
+    {
+        buyBlinding2.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuyBlink2()
+    {
+        buyBlink2.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuyBomb2()
+    {
+        buyBomb2.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuyCamo2()
+    {
+        buyCamo2.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuyCrossbow2()
+    {
+        buyCrossbow2.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuyDetector2()
+    {
+        buyDetector2.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuySilentPotion2()
+    {
+        buySilentPotion2.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuyGelTrap2()
+    {
+        buyGelTrap2.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuySpikePit2()
+    {
+        buySpikePit2.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuyTripWire2()
+    {
+        buyTripWire2.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuySeePotion2()
+    {
+        buySeePotion2.SetActive(false);
+    }
+    [PunRPC]
+    public void SyncBuySpeedPotion2()
+    {
+        buySpeedPotion2.SetActive(false);
+    }
+
     protected override void StartInteraction()
     {
         player = targetPV.GetComponent<Player>();
@@ -355,6 +541,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup1.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= blidingtrapprice;
             buyBlinding.SetActive(false);
+            photonView.RPC("SyncBuyBlinding", RpcTarget.AllBuffered);
             RandomItem();
         }
 
@@ -366,6 +553,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup2.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= blinkPrice;
             buyBlink.SetActive(false);
+            photonView.RPC("SyncBuyBlink", RpcTarget.AllBuffered);
             RandomItem();
         }
 
@@ -377,6 +565,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup3.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= bombPrice;
             buyBomb.SetActive(false);
+            photonView.RPC("SyncBuyBomb", RpcTarget.AllBuffered);
             RandomItem();
         }
 
@@ -388,6 +577,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup4.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= camoPrice;
             buyCamo.SetActive(false);
+            photonView.RPC("SyncBuyCamo", RpcTarget.AllBuffered);
             RandomItem();
         }
 
@@ -399,6 +589,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup5.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= crossbowPrice;
             buyCrossbow.SetActive(false);
+            photonView.RPC("SyncBuyCrossbow", RpcTarget.AllBuffered);
             RandomItem();
         }
 
@@ -410,6 +601,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup6.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= detectorPrice;
             buyDetector.SetActive(false);
+            photonView.RPC("SyncBuyDetector", RpcTarget.AllBuffered);
             RandomItem();
         }
 
@@ -421,6 +613,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup7.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= silentPotionPrice;
             buySilentPotion.SetActive(false);
+            photonView.RPC("SyncBuySilentPotion", RpcTarget.AllBuffered);
             RandomItem();
         }
 
@@ -432,6 +625,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup8.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= gelTrapPrice;
             buyGelTrap.SetActive(false);
+            photonView.RPC("SyncBuyGelTrap", RpcTarget.AllBuffered);
             RandomItem();
         }
 
@@ -443,6 +637,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup9.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= spikePitPrice;
             buySpikePit.SetActive(false);
+            photonView.RPC("SyncBuySpikePit", RpcTarget.AllBuffered);
             RandomItem();
         }
 
@@ -454,6 +649,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup10.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= tripWireTrapPrice;
             buyTripWire.SetActive(false);
+            photonView.RPC("SyncBuyTripWire", RpcTarget.AllBuffered);
             RandomItem();
         }
 
@@ -465,6 +661,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup11.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= seePotionPrice;
             buySeePotion.SetActive(false);
+            photonView.RPC("SyncBuySeePotion", RpcTarget.AllBuffered);
             RandomItem();
         }
 
@@ -476,6 +673,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup12.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= speedPotionPrice;
             buySpeedPotion.SetActive(false);
+            photonView.RPC("SyncBuySpeedPotion", RpcTarget.AllBuffered);
             RandomItem();
         }
 
@@ -487,6 +685,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup1.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= blidingtrapprice;
             buyBlinding1.SetActive(false);
+            photonView.RPC("SyncBuyBlinding1", RpcTarget.AllBuffered);
             RandomItem1();
         }
 
@@ -498,6 +697,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup2.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= blinkPrice;
             buyBlink1.SetActive(false);
+            photonView.RPC("SyncBuyBlink1", RpcTarget.AllBuffered);
             RandomItem1();
         }
 
@@ -509,6 +709,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup3.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= bombPrice;
             buyBomb1.SetActive(false);
+            photonView.RPC("SyncBuyBomb1", RpcTarget.AllBuffered);
             RandomItem1();
         }
 
@@ -520,6 +721,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup4.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= camoPrice;
             buyCamo1.SetActive(false);
+            photonView.RPC("SyncBuyCamo1", RpcTarget.AllBuffered);
             RandomItem1();
         }
 
@@ -531,6 +733,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup5.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= crossbowPrice;
             buyCrossbow1.SetActive(false);
+            photonView.RPC("SyncBuyCrossbow1", RpcTarget.AllBuffered);
             RandomItem1();
         }
 
@@ -542,6 +745,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup6.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= detectorPrice;
             buyDetector1.SetActive(false);
+            photonView.RPC("SyncBuyDetector1", RpcTarget.AllBuffered);
             RandomItem1();
         }
 
@@ -553,6 +757,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup7.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= silentPotionPrice;
             buySilentPotion1.SetActive(false);
+            photonView.RPC("SyncBuySilentPotion1", RpcTarget.AllBuffered);
             RandomItem1();
         }
 
@@ -564,6 +769,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup8.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= gelTrapPrice;
             buyGelTrap1.SetActive(false);
+            photonView.RPC("SyncBuyGelTrap1", RpcTarget.AllBuffered);
             RandomItem1();
         }
 
@@ -575,6 +781,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup9.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= spikePitPrice;
             buySpikePit1.SetActive(false);
+            photonView.RPC("SyncBuySpikePit1", RpcTarget.AllBuffered);
             RandomItem1();
         }
 
@@ -586,6 +793,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup10.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= tripWireTrapPrice;
             buyTripWire1.SetActive(false);
+            photonView.RPC("SyncBuyTripWire1", RpcTarget.AllBuffered);
             RandomItem1();
         }
 
@@ -597,6 +805,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup11.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= seePotionPrice;
             buySeePotion1.SetActive(false);
+            photonView.RPC("SyncBuySeePotion1", RpcTarget.AllBuffered);
             RandomItem1();
         }
 
@@ -608,6 +817,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup12.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= speedPotionPrice;
             buySpeedPotion1.SetActive(false);
+            photonView.RPC("SyncBuySpeedPotion1", RpcTarget.AllBuffered);
             RandomItem1();
         }
 
@@ -619,6 +829,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup1.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= blidingtrapprice;
             buyBlinding2.SetActive(false);
+            photonView.RPC("SyncBuyBlinding2", RpcTarget.AllBuffered);
             RandomItem2();
         }
 
@@ -630,6 +841,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup2.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= blinkPrice;
             buyBlink2.SetActive(false);
+            photonView.RPC("SyncBuyBlink2", RpcTarget.AllBuffered);
             RandomItem2();
         }
 
@@ -641,6 +853,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup3.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= bombPrice;
             buyBomb2.SetActive(false);
+            photonView.RPC("SyncBuyBomb2", RpcTarget.AllBuffered);
             RandomItem2();
         }
 
@@ -652,6 +865,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup4.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= camoPrice;
             buyCamo2.SetActive(false);
+            photonView.RPC("SyncBuyCamo2", RpcTarget.AllBuffered);
             RandomItem2();
         }
 
@@ -663,6 +877,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup5.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= crossbowPrice;
             buyCrossbow2.SetActive(false);
+            photonView.RPC("SyncBuyCrossbow2", RpcTarget.AllBuffered);
             RandomItem2();
         }
 
@@ -674,6 +889,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup6.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= detectorPrice;
             buyDetector2.SetActive(false);
+            photonView.RPC("SyncBuyDetector2", RpcTarget.AllBuffered);
             RandomItem2();
         }
 
@@ -685,6 +901,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup7.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= silentPotionPrice;
             buySilentPotion2.SetActive(false);
+            photonView.RPC("SyncBuySilentPotion2", RpcTarget.AllBuffered);
             RandomItem2();
         }
 
@@ -696,6 +913,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup8.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= gelTrapPrice;
             buyGelTrap2.SetActive(false);
+            photonView.RPC("SyncBuyGelTrap2", RpcTarget.AllBuffered);
             RandomItem2();
         }
 
@@ -707,6 +925,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup9.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= spikePitPrice;
             buySpikePit2.SetActive(false);
+            photonView.RPC("SyncBuySpikePit2", RpcTarget.AllBuffered);
             RandomItem2();
         }
 
@@ -718,6 +937,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup10.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= tripWireTrapPrice;
             buyTripWire2.SetActive(false);
+            photonView.RPC("SyncBuyTripWire2", RpcTarget.AllBuffered);
             RandomItem2();
         }
 
@@ -729,6 +949,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup11.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= seePotionPrice;
             buySeePotion2.SetActive(false);
+            photonView.RPC("SyncBuySeePotion2", RpcTarget.AllBuffered);
             RandomItem2();
         }
 
@@ -740,6 +961,7 @@ public class ShopEnter : InteractableObject
             PhotonNetwork.Instantiate(player.pickup12.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= speedPotionPrice;
             buySpeedPotion2.SetActive(false);
+            photonView.RPC("SyncBuySpeedPotion2", RpcTarget.AllBuffered);
             RandomItem2();
         }
 

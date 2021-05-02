@@ -12,7 +12,7 @@ public class Player : MonoBehaviourPunCallbacks
     public Health health;
     public Rigidbody2D rigidBody;
     public GameObject mapIcon;
-    public GameObject playerCamera, playerViewCone, playerViewCone2, rotatingBody,pointLight2d,gel, legs, HUD, Shop,ColorSelect, Buyblind;
+    public GameObject playerCamera, playerViewCone, playerViewCone2, rotatingBody,pointLight2d,gel, legs, HUD, Shop,ColorSelect, Buyblind, BlindVignette;
     private Camera usedCameraComponent;
     public Camera mapCamera;
     private Vector2 moveDirection;
@@ -75,18 +75,8 @@ public class Player : MonoBehaviourPunCallbacks
     public Color colorToSet7;
     public int gold;
     public Text goldText;
-    //public int blidingtrapprice = 10;
-    //public int blinkPrice = 10;
-    //public int bombPrice = 10;
-    //public int camoPrice = 10;
-    //public int crossbowPrice = 10;
-    //public int detectorPrice = 10;
-    //public int silentPotionPrice = 10;
-    //public int gelTrapPrice = 10;
-    //public int spikePitPrice = 10;
-    //public int tripWireTrapPrice = 10;
-    //public int seePotionPrice = 10;
-    //public int speedPotionPrice = 10;
+    public bool mouseLock = true;
+
 
 
 
@@ -118,13 +108,6 @@ public class Player : MonoBehaviourPunCallbacks
     [SerializeField] private GameObject trapMarker;
     [SerializeField] private Sprite[] trapImages;
 
-    //public int shopSlotRange = 0;
-    //public int shopSlotRange1 = 0;
-    //public int shopSlotRange2 = 0;
-    //public GameObject shopEnter;
-    //public GameObject buyBlinding, buyBlink, buyBomb, buyCamo, buyCrossbow, buyDetector, buySilentPotion, buyGelTrap, buySpikePit, buyTripWire, buySeePotion, buySpeedPotion;
-    //public GameObject buyBlinding1, buyBlink1, buyBomb1, buyCamo1, buyCrossbow1, buyDetector1, buySilentPotion1, buyGelTrap1, buySpikePit1, buyTripWire1, buySeePotion1, buySpeedPotion1;
-    //public GameObject buyBlinding2, buyBlink2, buyBomb2, buyCamo2, buyCrossbow2, buyDetector2, buySilentPotion2, buyGelTrap2, buySpikePit2, buyTripWire2, buySeePotion2, buySpeedPotion2;
 
     private void Awake()
     {
@@ -145,51 +128,9 @@ public class Player : MonoBehaviourPunCallbacks
             HUD.SetActive(true);
             ColorSelect.SetActive(false);
             mapIcon.SetActive(true);
+            BlindVignette.SetActive(false);
 
-            //Shop.SetActive(false);
 
-            //buyBlinding.SetActive(false);
-            //buyBlink.SetActive(false);
-            //buyBomb.SetActive(false);
-            //buyCamo.SetActive(false);
-            //buyCrossbow.SetActive(false);
-            //buyDetector.SetActive(false);
-            //buySilentPotion.SetActive(false);
-            //buyGelTrap.SetActive(false);
-            //buySpikePit.SetActive(false);
-            //buyTripWire.SetActive(false);
-            //buySeePotion.SetActive(false);
-            //buySpeedPotion.SetActive(false);
-
-            //buyBlinding1.SetActive(false);
-            //buyBlink1.SetActive(false);
-            //buyBomb1.SetActive(false);
-            //buyCamo1.SetActive(false);
-            //buyCrossbow1.SetActive(false);
-            //buyDetector1.SetActive(false);
-            //buySilentPotion1.SetActive(false);
-            //buyGelTrap1.SetActive(false);
-            //buySpikePit1.SetActive(false);
-            //buyTripWire1.SetActive(false);
-            //buySeePotion1.SetActive(false);
-            //buySpeedPotion1.SetActive(false);
-
-            //buyBlinding2.SetActive(false);
-            //buyBlink2.SetActive(false);
-            //buyBomb2.SetActive(false);
-            //buyCamo2.SetActive(false);
-            //buyCrossbow2.SetActive(false);
-            //buyDetector2.SetActive(false);
-            //buySilentPotion2.SetActive(false);
-            //buyGelTrap2.SetActive(false);
-            //buySpikePit2.SetActive(false);
-            //buyTripWire2.SetActive(false);
-            //buySeePotion2.SetActive(false);
-            //buySpeedPotion2.SetActive(false);
-
-            //shopSlotRange = Random.Range(0, 12);
-            //shopSlotRange1 = Random.Range(0, 12);
-            //shopSlotRange2 = Random.Range(0, 12);
             if (GameManager.localInstance.playerAmount == 0)
             {
                 //GameManager.instance.SpawnDecor();
@@ -235,8 +176,8 @@ public class Player : MonoBehaviourPunCallbacks
                 
                 timeBlindedRemaining = 3;
                 timerBlindedRunning = false;
-                playerViewCone.SetActive(true);
-                
+                BlindVignette.SetActive(false);
+
             }
         }
 
@@ -317,186 +258,7 @@ public class Player : MonoBehaviourPunCallbacks
             }
 
         }
-        //if(shopSlotRange == 1)
-        //{
-        //    buyBlinding.SetActive(true);
-
-        //}
-        //if (shopSlotRange == 2)
-        //{
-        //    buyBlink.SetActive(true);
-
-
-        //}
-        //if (shopSlotRange == 3)
-        //{
-        //    buyBomb.SetActive(true);
-
-        //}
-        //if (shopSlotRange == 4)
-        //{
-        //    buyCamo.SetActive(true);
-
-        //}
-        //if (shopSlotRange == 5)
-        //{
-        //    buyCrossbow.SetActive(true);
-
-        //}
-        //if (shopSlotRange == 6)
-        //{
-        //    buyDetector.SetActive(true);
-
-        //}
-        //if (shopSlotRange == 7)
-        //{
-        //    buySilentPotion.SetActive(true);
-
-        //}
-        //if (shopSlotRange == 8)
-        //{
-        //    buyGelTrap.SetActive(true);
-
-        //}
-        //if (shopSlotRange == 9)
-        //{
-        //    buySpikePit.SetActive(true);
-
-        //}
-        //if (shopSlotRange == 10)
-        //{
-        //    buyTripWire.SetActive(true);
-
-        //}
-        //if (shopSlotRange == 11)
-        //{
-        //    buySeePotion.SetActive(true);
-
-        //}
-        //if (shopSlotRange == 12)
-        //{
-        //    buySpeedPotion.SetActive(true);
-        //}
-        //if (shopSlotRange1 == 1)
-        //{
-        //    buyBlinding1.SetActive(true);
-
-        //}
-        //if (shopSlotRange1 == 2)
-        //{
-        //    buyBlink1.SetActive(true);
-
-
-        //}
-        //if (shopSlotRange1 == 3)
-        //{
-        //    buyBomb1.SetActive(true);
-
-        //}
-        //if (shopSlotRange1 == 4)
-        //{
-        //    buyCamo1.SetActive(true);
-
-        //}
-        //if (shopSlotRange1 == 5)
-        //{
-        //    buyCrossbow1.SetActive(true);
-
-        //}
-        //if (shopSlotRange1 == 6)
-        //{
-        //    buyDetector1.SetActive(true);
-
-        //}
-        //if (shopSlotRange1 == 7)
-        //{
-        //    buySilentPotion1.SetActive(true);
-
-        //}
-        //if (shopSlotRange1 == 8)
-        //{
-        //    buyGelTrap1.SetActive(true);
-
-        //}
-        //if (shopSlotRange1 == 9)
-        //{
-        //    buySpikePit1.SetActive(true);
-
-        //}
-        //if (shopSlotRange1 == 10)
-        //{
-        //    buyTripWire1.SetActive(true);
-
-        //}
-        //if (shopSlotRange1 == 11)
-        //{
-        //    buySeePotion1.SetActive(true);
-
-        //}
-        //if (shopSlotRange1 == 12)
-        //{
-        //    buySpeedPotion1.SetActive(true);
-        //}
-        //if (shopSlotRange2 == 1)
-        //{
-        //    buyBlinding2.SetActive(true);
-
-        //}
-        //if (shopSlotRange2 == 2)
-        //{
-        //    buyBlink2.SetActive(true);
-
-
-        //}
-        //if (shopSlotRange2 == 3)
-        //{
-        //    buyBomb2.SetActive(true);
-
-        //}
-        //if (shopSlotRange2 == 4)
-        //{
-        //    buyCamo2.SetActive(true);
-
-        //}
-        //if (shopSlotRange2 == 5)
-        //{
-        //    buyCrossbow2.SetActive(true);
-
-        //}
-        //if (shopSlotRange2 == 6)
-        //{
-        //    buyDetector2.SetActive(true);
-
-        //}
-        //if (shopSlotRange2 == 7)
-        //{
-        //    buySilentPotion2.SetActive(true);
-
-        //}
-        //if (shopSlotRange2 == 8)
-        //{
-        //    buyGelTrap2.SetActive(true);
-
-        //}
-        //if (shopSlotRange2 == 9)
-        //{
-        //    buySpikePit2.SetActive(true);
-
-        //}
-        //if (shopSlotRange2 == 10)
-        //{
-        //    buyTripWire2.SetActive(true);
-
-        //}
-        //if (shopSlotRange2 == 11)
-        //{
-        //    buySeePotion2.SetActive(true);
-
-        //}
-        //if (shopSlotRange2== 12)
-        //{
-        //    buySpeedPotion2.SetActive(true);
-        //}
+        
     }
     private void FixedUpdate()
     {
@@ -737,6 +499,7 @@ public class Player : MonoBehaviourPunCallbacks
 
     private Vector2 GetDirectionFromMouse()
     {
+
         Vector2 temp = Vector2.zero;
 
         Vector2 mousePos = usedCameraComponent.ScreenToWorldPoint(Input.mousePosition);
@@ -748,8 +511,11 @@ public class Player : MonoBehaviourPunCallbacks
         var newAngle = Mathf.Rad2Deg * Mathf.Atan2(temp.y, temp.x) - 90;
 
         //float newAngle = Vector2.Angle(Vector2.left + pos2D, mousePos);
-        rotatingBody.transform.rotation = Quaternion.AngleAxis(newAngle, Vector3.forward);
+
         //playerCamera.transform.rotation = Quaternion.AngleAxis(-newAngle, Vector3.forward);
+
+        rotatingBody.transform.rotation = Quaternion.AngleAxis(newAngle, Vector3.forward);
+
 
         return temp.normalized;
     }
@@ -935,7 +701,7 @@ public class Player : MonoBehaviourPunCallbacks
     [PunRPC]
     public void Blinded(bool amount)
     {
-        playerViewCone.SetActive(amount);
+        BlindVignette.SetActive(amount);
         timerBlindedRunning = true;
         
     }
@@ -1096,10 +862,7 @@ public class Player : MonoBehaviourPunCallbacks
 
         camoObjects[variant].SetActive(true);
 
-        //foreach(SpriteRenderer renderer in recolorSprites)
-        //{
-        //    renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, 0);
-        //}
+
         recolorSprites[0].color = new Color(recolorSprites[0].color.r, recolorSprites[0].color.g, recolorSprites[0].color.b, 0);
         recolorSprites[1].color = new Color(recolorSprites[0].color.r, recolorSprites[0].color.g, recolorSprites[0].color.b, 0);
 
@@ -1124,10 +887,7 @@ public class Player : MonoBehaviourPunCallbacks
 
         potionCooldownText.transform.parent.gameObject.SetActive(false);
 
-        //foreach (SpriteRenderer renderer in recolorSprites)
-        //{
-        //    renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, 1);
-        //}
+
         recolorSprites[0].color = new Color(recolorSprites[0].color.r, recolorSprites[0].color.g, recolorSprites[0].color.b, 1);
         recolorSprites[1].color = new Color(recolorSprites[0].color.r, recolorSprites[0].color.g, recolorSprites[0].color.b, 1);
 
@@ -1136,12 +896,7 @@ public class Player : MonoBehaviourPunCallbacks
             renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, 1);
         }
 
-        /*
-        dis.SetActive(false);
-        dis1.SetActive(false);
-        dis2.SetActive(false);
-        dis3.SetActive(false);
-        */
+
         foreach(GameObject camo in camoObjects)
         {
             camo.SetActive(false);
@@ -1149,19 +904,7 @@ public class Player : MonoBehaviourPunCallbacks
 
         canUsePotion = true;
         camoNum = 0;
-        /*
-        if (photonView.IsMine)
-        {
-            
-            dis.SetActive(false);
-            dis1.SetActive(false);
-            dis2.SetActive(false);
-            dis3.SetActive(false);
-
-            canUsePotion = true;
-            camoNum = 0;
-        }
-        */
+  
     }
     
     public void ColourSet()
@@ -1204,402 +947,7 @@ public class Player : MonoBehaviourPunCallbacks
         photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet7.r, colorToSet7.g, colorToSet7.b);
         //SetColor(colorToSet7.r, colorToSet7.g, colorToSet7.b);
     }
-    //public void BuyBlinding()
-    //{
-    //    if (gold >= blidingtrapprice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup1.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= blidingtrapprice;
-    //        buyBlinding.SetActive(false);
-    //        shopSlotRange = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuyBlink()
-    //{
-    //    if (gold >= blinkPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup2.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= blinkPrice;
-    //        buyBlink.SetActive(false);
-    //        shopSlotRange = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuyBomb()
-    //{
-    //    if (gold >= bombPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup3.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= bombPrice;
-    //        buyBomb.SetActive(false);
-    //        shopSlotRange = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuyCamo()
-    //{
-    //    if (gold >= camoPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup4.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= camoPrice;
-    //        buyCamo.SetActive(false);
-    //        shopSlotRange = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuyCrossbow()
-    //{
-    //    if (gold >= crossbowPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup5.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= crossbowPrice;
-    //        buyCrossbow.SetActive(false);
-    //        shopSlotRange = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuyDetector()
-    //{
-    //    if (gold >= detectorPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup6.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= detectorPrice;
-    //        buyDetector.SetActive(false);
-    //        shopSlotRange = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuySilentPotion()
-    //{
-    //    if (gold >= silentPotionPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup7.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= silentPotionPrice;
-    //        buySilentPotion.SetActive(false);
-    //        shopSlotRange = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuyGelTrap()
-    //{
-    //    if (gold >= gelTrapPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup8.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= gelTrapPrice;
-    //        buyGelTrap.SetActive(false);
-    //        shopSlotRange = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuySpikePit()
-    //{
-    //    if (gold >= spikePitPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup9.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= spikePitPrice;
-    //        buySpikePit.SetActive(false);
-    //        shopSlotRange = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuyTripWire()
-    //{
-    //    if (gold >= tripWireTrapPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup10.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= tripWireTrapPrice;
-    //        buyTripWire.SetActive(false);
-    //        shopSlotRange = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuySeePotion()
-    //{
-    //    if (gold >= seePotionPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup11.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= seePotionPrice;
-    //        buySeePotion.SetActive(false);
-    //        shopSlotRange = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuySpeedPotion()
-    //{
-    //    if (gold >= speedPotionPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup12.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= speedPotionPrice;
-    //        buySpeedPotion.SetActive(false);
-    //        shopSlotRange = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuyBlinding1()
-    //{
-    //    if (gold >= blidingtrapprice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup1.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= blidingtrapprice;
-    //        buyBlinding1.SetActive(false);
-    //        shopSlotRange1 = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuyBlink1()
-    //{
-    //    if (gold >= blinkPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup2.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= blinkPrice;
-    //        buyBlink1.SetActive(false);
-    //        shopSlotRange1 = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuyBomb1()
-    //{
-    //    if (gold >= bombPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup3.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= bombPrice;
-    //        buyBomb1.SetActive(false);
-    //        shopSlotRange1 = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuyCamo1()
-    //{
-    //    if (gold >= camoPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup4.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= camoPrice;
-    //        buyCamo1.SetActive(false);
-    //        shopSlotRange1 = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuyCrossbow1()
-    //{
-    //    if (gold >= crossbowPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup5.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= crossbowPrice;
-    //        buyCrossbow1.SetActive(false);
-    //        shopSlotRange1 = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuyDetector1()
-    //{
-    //    if (gold >= detectorPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup6.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= detectorPrice;
-    //        buyDetector1.SetActive(false);
-    //        shopSlotRange1 = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuySilentPotion1()
-    //{
-    //    if (gold >= silentPotionPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup7.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= silentPotionPrice;
-    //        buySilentPotion1.SetActive(false);
-    //        shopSlotRange1 = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuyGelTrap1()
-    //{
-    //    if (gold >= gelTrapPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup8.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= gelTrapPrice;
-    //        buyGelTrap1.SetActive(false);
-    //        shopSlotRange1 = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuySpikePit1()
-    //{
-    //    if (gold >= spikePitPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup9.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= spikePitPrice;
-    //        buySpikePit1.SetActive(false);
-    //        shopSlotRange1 = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuyTripWire1()
-    //{
-    //    if (gold >= tripWireTrapPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup10.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= tripWireTrapPrice;
-    //        buyTripWire1.SetActive(false);
-    //        shopSlotRange1 = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuySeePotion1()
-    //{
-    //    if (gold >= seePotionPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup11.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= seePotionPrice;
-    //        buySeePotion1.SetActive(false);
-    //        shopSlotRange1 = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuySpeedPotion1()
-    //{
-    //    if (gold >= speedPotionPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup12.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= speedPotionPrice;
-    //        buySpeedPotion1.SetActive(false);
-    //        shopSlotRange1 = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuyBlinding2()
-    //{
-    //    if (gold >= blidingtrapprice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup1.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= blidingtrapprice;
-    //        buyBlinding2.SetActive(false);
-    //        shopSlotRange2 = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuyBlink2()
-    //{
-    //    if (gold >= blinkPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup2.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= blinkPrice;
-    //        buyBlink2.SetActive(false);
-    //        shopSlotRange2 = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuyBomb2()
-    //{
-    //    if (gold >= bombPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup3.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= bombPrice;
-    //        buyBomb2.SetActive(false);
-    //        shopSlotRange2 = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuyCamo2()
-    //{
-    //    if (gold >= camoPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup4.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= camoPrice;
-    //        buyCamo2.SetActive(false);
-    //        shopSlotRange2 = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuyCrossbow2()
-    //{
-    //    if (gold >= crossbowPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup5.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= crossbowPrice;
-    //        buyCrossbow2.SetActive(false);
-    //        shopSlotRange2 = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuyDetector2()
-    //{
-    //    if (gold >= detectorPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup6.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= detectorPrice;
-    //        buyDetector2.SetActive(false);
-    //        shopSlotRange2 = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuySilentPotion2()
-    //{
-    //    if (gold >= silentPotionPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup7.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= silentPotionPrice;
-    //        buySilentPotion2.SetActive(false);
-    //        shopSlotRange2 = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuyGelTrap2()
-    //{
-    //    if (gold >= gelTrapPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup8.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= gelTrapPrice;
-    //        buyGelTrap2.SetActive(false);
-    //        shopSlotRange2 = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuySpikePit2()
-    //{
-    //    if (gold >= spikePitPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup9.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= spikePitPrice;
-    //        buySpikePit2.SetActive(false);
-    //        shopSlotRange2 = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuyTripWire2()
-    //{
-    //    if (gold >= tripWireTrapPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup10.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= tripWireTrapPrice;
-    //        buyTripWire2.SetActive(false);
-    //        shopSlotRange2 = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuySeePotion2()
-    //{
-    //    if (gold >= seePotionPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup11.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= seePotionPrice;
-    //        buySeePotion2.SetActive(false);
-    //        shopSlotRange2 = Random.Range(0, 12);
-    //    }
-
-    //}
-    //public void BuySpeedPotion2()
-    //{
-    //    if (gold >= speedPotionPrice)
-    //    {
-    //        PhotonNetwork.Instantiate(pickup12.name, new Vector2(paintPos.transform.position.x, paintPos.transform.position.y), Quaternion.identity, 0);
-    //        gold -= speedPotionPrice;
-    //        buySpeedPotion2.SetActive(false);
-    //        shopSlotRange2 = Random.Range(0, 12);
-    //    }
-
-    //}
+    
 
 
 

@@ -9,7 +9,7 @@ public class Blindingtrap : MonoBehaviourPunCallbacks
     [SerializeField]
     private Animator animator;
 
-    public bool see = false;
+    public bool see = true;
     
     [PunRPC]
     public void DestroyObject()
