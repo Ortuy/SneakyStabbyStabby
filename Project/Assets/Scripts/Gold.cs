@@ -20,11 +20,11 @@ public class Gold : MonoBehaviourPunCallbacks
           player = collision.GetComponent<Player>();
           player.gold += goldAmount;
           Debug.Log("yee");
+          var particle = Instantiate(particleEffect, transform.position, Quaternion.identity);
+          Destroy(particle, 5f);
+          Destroy(gameObject);
+        }
 
-       }
-
-       var particle = Instantiate(particleEffect, transform.position, Quaternion.identity);
-       Destroy(particle, 5f);
-       Destroy(gameObject);
+       
     }
 }

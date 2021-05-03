@@ -205,3 +205,15 @@
 - The blinding trap vignette
 ### Fixed
 - Shop Sync
+
+## [0.2.6] - 2021-05-03
+### Added
+- Moving ferns in the overlay
+- Slightly more overlay branches
+- Seeing through bushes and trees with the night vision potion
+### Changed
+- Revamped lighting:
+- Mushrooms and potions now only glow when looked at
+- The level is a bit darker, but the view cone is more pronounced
+- Tweaked the night vision potion modified vision cone
+- Tweaked the size of the blinding vignette

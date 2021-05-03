@@ -18,7 +18,7 @@ public class Vegetation : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!animationPlaying)
+        if(!animationPlaying && !collision.CompareTag("ViewCone"))
         {
             animator.SetTrigger("Rustle");
             particles.Play();

@@ -108,6 +108,7 @@ public class Player : MonoBehaviourPunCallbacks
     [SerializeField] private GameObject trapMarker;
     [SerializeField] private Sprite[] trapImages;
 
+    public bool visionPotionActive;
 
     private void Awake()
     {
@@ -797,6 +798,7 @@ public class Player : MonoBehaviourPunCallbacks
             visionFX.Play();
             playerViewCone.SetActive(false);
             playerViewCone2.SetActive(true);
+            visionPotionActive = true;
             StartCoroutine("PotionStopWorking");
         }
             
@@ -819,6 +821,7 @@ public class Player : MonoBehaviourPunCallbacks
         {
             playerViewCone2.SetActive(false);
             playerViewCone.SetActive(true);
+            visionPotionActive = false;
             canUsePotion = true;
         }
     }
