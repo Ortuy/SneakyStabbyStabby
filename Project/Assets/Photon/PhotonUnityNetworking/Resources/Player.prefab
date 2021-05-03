@@ -25933,6 +25933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particles: {fileID: 7612877825554210462}
+  moveParticlesToCollision: 0
 --- !u!114 &6271035608936069594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33393,6 +33394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particles: {fileID: 7382953874716935629}
+  moveParticlesToCollision: 0
 --- !u!58 &3326199452192849418
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -40551,6 +40553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particles: {fileID: 2346024473896317340}
+  moveParticlesToCollision: 0
 --- !u!58 &6670795645324995093
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -112944,6 +112947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particles: {fileID: 3943454940831962538}
+  moveParticlesToCollision: 0
 --- !u!114 &2488289118610260499
 MonoBehaviour:
   m_ObjectHideFlags: 0

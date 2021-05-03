@@ -212,6 +212,7 @@
 - Slightly more overlay branches
 - Seeing through bushes and trees with the night vision potion
 - Extra postprocessing when using a night vision potion
+- Puddles!
 ### Changed
 - Revamped lighting:
 - Mushrooms and potions now only glow when looked at

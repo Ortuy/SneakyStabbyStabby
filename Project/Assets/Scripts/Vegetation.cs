@@ -7,6 +7,7 @@ public class Vegetation : MonoBehaviour
 {
     private Animator animator;
     [SerializeField] private ParticleSystem particles;
+    [SerializeField] private bool moveParticlesToCollision;
 
     private bool animationPlaying;
 
@@ -21,6 +22,10 @@ public class Vegetation : MonoBehaviour
         if(!animationPlaying && !collision.CompareTag("ViewCone"))
         {
             animator.SetTrigger("Rustle");
+            if(moveParticlesToCollision)
+            {
+                particles.transform.position = collision.transform.position;
+            }
             particles.Play();
             animationPlaying = true;
         }
