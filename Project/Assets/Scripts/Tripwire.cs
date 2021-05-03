@@ -14,6 +14,7 @@ public class Tripwire : MonoBehaviourPunCallbacks
 
     [SerializeField]
     private GameObject web;
+    public Player player;
 
     [PunRPC]
     public void DestroyObject()
@@ -35,6 +36,8 @@ public class Tripwire : MonoBehaviourPunCallbacks
         {
             if (target.tag == "Player")
             {
+                player = collision.GetComponent<Player>();
+                player.settingTrap = true;
                 bool flip = false;
                 if (Vector2.Distance(target.transform.position, lowerPoint.position) > Vector2.Distance(target.transform.position, upperPoint.position))
                 {
@@ -67,6 +70,8 @@ public class Tripwire : MonoBehaviourPunCallbacks
         {
             if (target.tag == "Player")
             {
+                player = collision.GetComponent<Player>();
+                player.settingTrap = false;
                 bool flip = false;
                 if (Vector2.Distance(target.transform.position, lowerPoint.position) > Vector2.Distance(target.transform.position, upperPoint.position))
                 {
