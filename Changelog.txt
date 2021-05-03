@@ -213,6 +213,8 @@
 - Seeing through bushes and trees with the night vision potion
 - Extra postprocessing when using a night vision potion
 - Puddles!
+- Cutting Web
+- Trapped player can't rotate 
 ### Changed
 - Revamped lighting:
 - Mushrooms and potions now only glow when looked at
