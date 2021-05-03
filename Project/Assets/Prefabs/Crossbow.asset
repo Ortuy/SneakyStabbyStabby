@@ -17,5 +17,5 @@ MonoBehaviour:
   itemDesc: Kill your foe from afar... or disarm deadly traps
   itemType: 0
   effectID: 5
-  maxUses: 3
-  usesLeft: 3
+  maxUses: 2
+  usesLeft: 2
