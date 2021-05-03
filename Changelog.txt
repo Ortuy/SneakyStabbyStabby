@@ -211,9 +211,13 @@
 - Moving ferns in the overlay
 - Slightly more overlay branches
 - Seeing through bushes and trees with the night vision potion
+- Extra postprocessing when using a night vision potion
 ### Changed
 - Revamped lighting:
 - Mushrooms and potions now only glow when looked at
 - The level is a bit darker, but the view cone is more pronounced
 - Tweaked the night vision potion modified vision cone
 - Tweaked the size of the blinding vignette
+- Tweaked the level's postprocessing settings
+### Fixed
+- The blinding vignette is no longer visible to the other player
