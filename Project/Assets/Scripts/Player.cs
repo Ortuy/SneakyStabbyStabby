@@ -299,7 +299,7 @@ public class Player : MonoBehaviourPunCallbacks
         //    moveDirection = new Vector2(strife, moveForward).normalized;
         //    Vector2 dir = GetDirectionFromMouse();
         //}
-        if (!isTrapped || !settingTrap)
+        if (!isTrapped && !settingTrap)
         {
             float moveForward = Input.GetAxisRaw("Vertical");
             float strife = Input.GetAxisRaw("Horizontal");
