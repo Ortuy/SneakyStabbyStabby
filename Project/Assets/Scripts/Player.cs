@@ -75,7 +75,8 @@ public class Player : MonoBehaviourPunCallbacks
     public Color colorToSet7;
     public int gold;
     public Text goldText;
-    public bool mouseLock = true;
+    public bool destroyWeb = false;
+    public bool isTrapped;
 
 
 
@@ -113,6 +114,7 @@ public class Player : MonoBehaviourPunCallbacks
     private void Awake()
     {
 
+
         photonView = GetComponent<PhotonView>();
 
         usedCameraComponent = playerCamera.GetComponent<Camera>();
@@ -145,6 +147,7 @@ public class Player : MonoBehaviourPunCallbacks
 
         moveSpeed = 5;
         stabLock = true;
+        destroyWeb = false;
 
 
         //playerCamera.transform.SetParent(null);
@@ -288,14 +291,23 @@ public class Player : MonoBehaviourPunCallbacks
 
     private void CheckInput()
     {
-        if(!settingTrap)
+        //if(!settingTrap)
+        //{
+        //    float moveForward = Input.GetAxisRaw("Vertical");
+        //    float strife = Input.GetAxisRaw("Horizontal");
+
+        //    moveDirection = new Vector2(strife, moveForward).normalized;
+        //    Vector2 dir = GetDirectionFromMouse();
+        //}
+        if (!isTrapped || !settingTrap)
         {
             float moveForward = Input.GetAxisRaw("Vertical");
             float strife = Input.GetAxisRaw("Horizontal");
 
             moveDirection = new Vector2(strife, moveForward).normalized;
             Vector2 dir = GetDirectionFromMouse();
-        }      
+        }
+
 
         if (Input.GetButtonDown("Fire2") && !settingTrap)
         {
@@ -313,6 +325,7 @@ public class Player : MonoBehaviourPunCallbacks
         if(Input.GetButtonDown("Fire1") && stabReady && !waitingForTrap && !settingTrap)
         {
             Stab();
+
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
@@ -666,6 +679,7 @@ public class Player : MonoBehaviourPunCallbacks
     private void DeactivateStab()
     {
         stabHitBox.SetActive(false);
+        destroyWeb = false;
     }
 
     [PunRPC]
@@ -682,6 +696,7 @@ public class Player : MonoBehaviourPunCallbacks
     {
         torsoAnimator.SetBool("Stab", false);
         stabHitBox.SetActive(true);
+        destroyWeb = true;
 
         var hBox = stabHitBox.GetComponent<StabHitBox>();
 
