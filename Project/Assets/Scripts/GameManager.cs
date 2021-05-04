@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviourPunCallbacks
 {
@@ -11,8 +12,8 @@ public class GameManager : MonoBehaviourPunCallbacks
     public GameObject playerPrefab;
     public GameObject gameCanvas;
     public GameObject sceneCamera;
-    [HideInInspector]public GameObject localPlayer;
-    public GameObject respawnMenu;
+    [HideInInspector] public GameObject localPlayer;
+    public GameObject respawnMenu, pauseMenu;
     public GameObject waitRoomPortal;
     public GameObject waitRoomPortal1;
     private float timerAmount = 5f;
@@ -71,13 +72,55 @@ public class GameManager : MonoBehaviourPunCallbacks
             StartCoroutine(StartCountdown());
         }
 
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            TogglePauseMenu();
+        }
+
     }
+
+    public void TogglePauseMenu()
+    {
+        Player player = localPlayer.GetComponent<Player>();
+
+        if (pauseMenu.activeInHierarchy)
+        {
+            player.stabLock = false;
+            pauseMenu.SetActive(false);
+        }
+        else if(!player.isInteracting)
+        {
+            player.stabLock = true;
+            pauseMenu.SetActive(true);
+        }
+    }
+
+    public void QuitToMenu()
+    {
+        TerminateLocalPlayer();
+        PhotonNetwork.LeaveRoom();
+        SceneManager.LoadScene(0);
+    }
+
+    public void QuitToDesktop()
+    {
+        TerminateLocalPlayer();
+        PhotonNetwork.LeaveRoom();
+        Application.Quit();
+    }
+
+    private void TerminateLocalPlayer()
+    {
+        localPlayer.GetComponent<PhotonView>().RPC("ReduceHealth", RpcTarget.AllBuffered, 10f);
+    }
+
     public void EnableRespawn()
     {
         timerAmount = 5f;
         runSpawnTimer = true;
         //respawnMenu.SetActive(true);
     }
+
     public void StartRespawn()
     {
         timerAmount -= Time.deltaTime;

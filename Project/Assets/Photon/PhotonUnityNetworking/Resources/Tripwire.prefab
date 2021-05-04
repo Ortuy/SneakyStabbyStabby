@@ -194,6 +194,7 @@ MonoBehaviour:
   stop: 0
   start: 5
   destroyTime: 3
+  isTrapped: 0
   lowerPoint: {fileID: 5362704737774586823}
   upperPoint: {fileID: 5247399512489160219}
   web: {fileID: 2584511977506439007}

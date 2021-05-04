@@ -23,8 +23,7 @@ public class InteractableObject : MonoBehaviourPunCallbacks
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player") && other.GetComponent<PhotonView>().IsMine)
-        {
-            
+        {            
             interactionKeyIndicator.SetActive(true);
         }
     }
@@ -44,6 +43,7 @@ public class InteractableObject : MonoBehaviourPunCallbacks
             
             if (Input.GetKeyDown(KeyCode.E) && !interactionOn)
             {
+                other.GetComponent<Player>().isInteracting = true;
                 interactionOn = true;
                 StartInteraction();
                 
@@ -51,6 +51,7 @@ public class InteractableObject : MonoBehaviourPunCallbacks
 
             if (Input.GetKeyDown(KeyCode.Escape) && interactionOn)
             {
+                other.GetComponent<Player>().isInteracting = false;
                 interactionOn = false;
                 EndInteraction();
                
@@ -62,6 +63,7 @@ public class InteractableObject : MonoBehaviourPunCallbacks
     {
         if (other.CompareTag("Player") && other.GetComponent<PhotonView>().IsMine)
         {
+            other.GetComponent<Player>().isInteracting = false;
             interactionKeyIndicator.SetActive(false);
             if(targetPV == other.GetComponent<PhotonView>())
             {

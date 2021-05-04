@@ -9,11 +9,12 @@ public class MainMenu : MonoBehaviourPunCallbacks
 {
     //[SerializeField] private string versionName = "2021.02.22";
 
-    [SerializeField] private GameObject connectPanel;
-    [SerializeField] private InputField createGameInput;
+    //[SerializeField] private GameObject connectPanel;
+    //[SerializeField] private InputField createGameInput;
     [SerializeField] private InputField joinGameInput;
 
-    [SerializeField] private GameObject loadingPanel, tutorialPanel, joinPanel, hostPanel, mainPanel;
+    [SerializeField] private GameObject loadingPanel, tutorialPanel, joinPanel, hostPanel, mainPanel, creditsPanel;
+    [SerializeField] private GameObject[] devCredits;
     [SerializeField] private Text roomCodeText;
 
     private string roomName;
@@ -57,6 +58,38 @@ public class MainMenu : MonoBehaviourPunCallbacks
         {
             joinPanel.SetActive(true);
             mainPanel.SetActive(false);
+        }
+    }
+
+    public void ToggleCreditsPanel()
+    {
+        if (creditsPanel.activeInHierarchy)
+        {
+            creditsPanel.SetActive(false);
+            mainPanel.SetActive(true);
+        }
+        else
+        {
+            ReshuffleDevs();
+            creditsPanel.SetActive(true);
+            mainPanel.SetActive(false);
+        }
+    }
+
+    //Shamelessly copied from unity forums
+    void ReshuffleDevs()
+    {
+        for (int i = 0; i < devCredits.Length; i++)
+        {
+            var tmp = devCredits[i];
+            int r = Random.Range(i, devCredits.Length);
+            devCredits[i] = devCredits[r];
+            devCredits[r] = tmp;
+        }
+
+        for(int i = 0; i < devCredits.Length; i++)
+        {
+            devCredits[i].transform.SetSiblingIndex(i);
         }
     }
 

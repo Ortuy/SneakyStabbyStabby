@@ -58318,7 +58318,8 @@ MonoBehaviour:
   colorToSet7: {r: 1, g: 0.227451, b: 1, a: 0}
   gold: 10000000
   goldText: {fileID: 5108663003708218560}
-  mouseLock: 0
+  destroyWeb: 0
+  isTrapped: 0
   moveSpeed: 3
   shootSpeed: 18
   playerID: 0
@@ -58362,6 +58363,7 @@ MonoBehaviour:
   waitingForTrap: 0
   settingTrap: 0
   isByDetector: 0
+  isInteracting: 0
   trapMarker: {fileID: 8217094936792234436}
   trapImages:
   - {fileID: 21300000, guid: 6dfdda76ac9dd4b46b612adac8ea1938, type: 3}

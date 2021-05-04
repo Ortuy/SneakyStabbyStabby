@@ -224,3 +224,9 @@
 - Tweaked the level's postprocessing settings
 ### Fixed
 - The blinding vignette is no longer visible to the other player
+
+## [0.2.7] - 2021-05-04
+### Added
+- Pause menu in the game
+- The ability to leave a game
+- Credits
