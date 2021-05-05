@@ -48,7 +48,14 @@ public class GameManager : MonoBehaviourPunCallbacks
     public void Awake()
     {
         localInstance = this;
-        gameCanvas.SetActive(true);
+        //gameCanvas.SetActive(true);
+        StartCoroutine(WaitAndSpawnPlayer());
+    }
+
+    IEnumerator WaitAndSpawnPlayer()
+    {
+        yield return null;
+        SpawnPlayer();
     }
 
     private void Update()
@@ -148,6 +155,8 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public void SpawnPlayer()
     {
+        EffectsManager.instance.Unfade();
+
         float randomValueX = Random.Range(-2f, 2f);
         float randomValueY = Random.Range(-2f, 2f);
 

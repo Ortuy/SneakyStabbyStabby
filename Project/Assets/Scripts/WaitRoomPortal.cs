@@ -10,7 +10,7 @@ public class WaitRoomPortal : MonoBehaviourPunCallbacks
     public GameManager gameManager;
     public bool timeSpawnEnd = false;
 
-
+    [SerializeField] private Animator portalAnimator;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -23,12 +23,14 @@ public class WaitRoomPortal : MonoBehaviourPunCallbacks
             //target.RPC("TeleportToStart1", RpcTarget.AllBuffered);
             if(gameManager.readyToStart == true && gameManager.readyToStart1 == true)
             {
-                
+                EffectsManager.instance.FadeUnfade();
                 StartCoroutine(Ready());
             }
             if (timeSpawnEnd == true)
             {
                 Player.transform.position = new Vector2(StartPortal.transform.position.x, StartPortal.transform.position.y);
+                portalAnimator.SetBool("Open", true);
+                StartCoroutine(StopPortal());
             }
             if (Input.GetKeyDown(KeyCode.F))
             {
@@ -47,10 +49,15 @@ public class WaitRoomPortal : MonoBehaviourPunCallbacks
     }
     IEnumerator Ready()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.6f);
         timeSpawnEnd = true;
         Player.stabLock = false;
 
     }
 
+    IEnumerator StopPortal()
+    {
+        yield return null;
+        portalAnimator.SetBool("Open", false);
+    }
 }
