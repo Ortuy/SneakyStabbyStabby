@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviourPunCallbacks
     //[SerializeField] private InputField createGameInput;
     [SerializeField] private InputField joinGameInput;
 
-    [SerializeField] private GameObject loadingPanel, tutorialPanel, joinPanel, hostPanel, mainPanel, creditsPanel;
+    [SerializeField] private GameObject loadingPanel, tutorialPanel, joinPanel, hostPanel, mainPanel, creditsPanel, optionsPanel;
     [SerializeField] private GameObject[] devCredits;
     [SerializeField] private Text roomCodeText;
 
@@ -138,6 +138,20 @@ public class MainMenu : MonoBehaviourPunCallbacks
         else
         {
             tutorialPanel.SetActive(true);
+            mainPanel.SetActive(false);
+        }
+    }
+
+    public void ToggleOptions()
+    {
+        if (optionsPanel.activeInHierarchy)
+        {
+            optionsPanel.SetActive(false);
+            mainPanel.SetActive(true);
+        }
+        else
+        {
+            optionsPanel.SetActive(true);
             mainPanel.SetActive(false);
         }
     }

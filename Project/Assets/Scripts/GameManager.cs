@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     public GameObject gameCanvas;
     public GameObject sceneCamera;
     [HideInInspector] public GameObject localPlayer;
-    public GameObject respawnMenu, pauseMenu;
+    public GameObject respawnMenu, pauseMenu, optionsMenu;
     public GameObject waitRoomPortal;
     public GameObject waitRoomPortal1;
     private float timerAmount = 5f;
@@ -107,6 +107,19 @@ public class GameManager : MonoBehaviourPunCallbacks
         TerminateLocalPlayer();
         PhotonNetwork.LeaveRoom();
         Application.Quit();
+    }
+
+    public void ToggleOptions()
+    {
+        TogglePauseMenu();
+        if(optionsMenu.activeInHierarchy)
+        {
+            optionsMenu.SetActive(false);
+        }
+        else
+        {
+            optionsMenu.SetActive(true);
+        }
     }
 
     private void TerminateLocalPlayer()

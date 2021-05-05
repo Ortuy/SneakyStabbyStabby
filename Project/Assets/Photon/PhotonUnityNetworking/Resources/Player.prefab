@@ -58491,6 +58491,7 @@ GameObject:
   - component: {fileID: 5440725864766673748}
   - component: {fileID: 5440725864766673749}
   - component: {fileID: 523762519383238659}
+  - component: {fileID: 1794301454459229411}
   m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: Untagged
@@ -58608,6 +58609,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 5440725864618505909}
   interest: 1
+--- !u!114 &1794301454459229411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5440725864766673751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0d493fa7722ba64cab96e146a0d2774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5450521272395179399
 GameObject:
   m_ObjectHideFlags: 0
@@ -113903,15 +113916,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a945cd83ded9ff408f524622385159a, type: 3}
---- !u!4 &1190916561663925421 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4530596241280987519, guid: 0a945cd83ded9ff408f524622385159a,
-    type: 3}
-  m_PrefabInstance: {fileID: 3339723737428553170}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &7351449792337515033 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 5214198228148027339, guid: 0a945cd83ded9ff408f524622385159a,
+    type: 3}
+  m_PrefabInstance: {fileID: 3339723737428553170}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1190916561663925421 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4530596241280987519, guid: 0a945cd83ded9ff408f524622385159a,
     type: 3}
   m_PrefabInstance: {fileID: 3339723737428553170}
   m_PrefabAsset: {fileID: 0}

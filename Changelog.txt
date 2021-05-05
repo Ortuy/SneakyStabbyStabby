@@ -230,3 +230,7 @@
 - Pause menu in the game
 - The ability to leave a game
 - Credits
+
+## [0.2.8] - 2021-05-05
+### Added
+- Options: changing resolution, fullscreen and postprocessing
