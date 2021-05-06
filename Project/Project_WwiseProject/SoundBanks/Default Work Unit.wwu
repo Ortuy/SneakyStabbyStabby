@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{1F4B2B4F-7269-4D8D-B17F-E651857BC6A5}" SchemaVersion="103">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{1F4B2B4F-7269-4D8D-B17F-E651857BC6A5}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Main" ID="{16B32C41-763F-484E-B069-20F40EC15CCC}">
+					<ObjectInclusionList>
+						<ObjectRef Name="amb_fire" ID="{40EDF7AD-721D-40C0-BB17-48E2A16A206E}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="UIClickWoodPanel" ID="{5409B217-A9DA-4270-B72B-C3F455BB605B}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="ui_click_wood_panel_exit" ID="{2C8E2554-9539-48F5-A1B9-423DB7CB1FB0}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Music_Ambient_Drone" ID="{73E89B78-0A93-4FD3-9A4C-C9836485148B}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

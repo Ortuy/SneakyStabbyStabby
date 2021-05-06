@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{999F8E5B-9A8C-4682-92A4-87227847F832}" SchemaVersion="103">
+	<Switches>
+		<WorkUnit Name="Default Work Unit" ID="{999F8E5B-9A8C-4682-92A4-87227847F832}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="location" ID="{9B3647E2-CC95-45AE-893D-5DB366000072}">
+					<ChildrenList>
+						<Switch Name="forest" ID="{7E0D7E86-A3C1-4607-9FF1-0C55B0C42032}"/>
+						<Switch Name="ruins" ID="{48D81CBA-0B5E-40B7-B781-D2A569F25D23}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="foostep_intensity" ID="{EC612544-274D-49D5-A50E-B9F6E93D8DF7}">
+					<ChildrenList>
+						<Switch Name="calm" ID="{5977B2C9-8421-40F2-9EE1-91D736DCC567}"/>
+						<Switch Name="loud" ID="{E3C3477C-E741-4783-9EBB-69FACA38D18D}"/>
+					</ChildrenList>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</Switches>
+</WwiseDocument>

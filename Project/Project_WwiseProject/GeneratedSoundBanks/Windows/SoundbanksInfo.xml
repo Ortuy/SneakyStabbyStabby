@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
+	<RootPaths>
+		<ProjectRoot>D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX" Hash="3690994985">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3161908922" Language="SFX" Hash="3633544410">
+			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
+			<ShortName>Main</ShortName>
+			<Path>Main.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3207324726" Name="amb_fire" ObjectPath="\Events\Default Work Unit\Ambience\amb_fire" MaxAttenuation="2800.000000" DurationType="OneShot" DurationMin="37.713364" DurationMax="37.713364">
+					<IncludedMemoryFiles>
+						<File Id="941754977" Language="SFX">
+							<ShortName>Fire, Burning, Wood, Soft Intensity SND8758 1.wav</ShortName>
+							<Path>SFX\Fire, Burning, Wood, Soft Intensity SND8758 1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="205229924" Name="Music_Ambient_Drone" ObjectPath="\Events\Default Work Unit\Music\Music_Ambient_Drone" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="27403535" Language="SFX">
+							<ShortName>Sound Design, Soundscape, Dark Ambience, City Of Dystopia 08 SND42224 1.wav</ShortName>
+							<Path>SFX\Sound Design, Soundscape, Dark Ambience, City Of Dystopia 08 SND42224 1_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3464476944" Name="ui_click_wood_panel_exit" ObjectPath="\Events\Default Work Unit\UI\ui_click_wood_panel_exit" DurationType="OneShot" DurationMin="0.524104" DurationMax="0.524104">
+					<IncludedMemoryFiles>
+						<File Id="620292358" Language="SFX">
+							<ShortName>Wood, Impact, Hit, Table, Hard SND4258 7.wav</ShortName>
+							<Path>SFX\Wood, Impact, Hit, Table, Hard SND4258 7_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2097608532" Name="UIClickWoodPanel" ObjectPath="\Events\Default Work Unit\UI\UIClickWoodPanel" DurationType="OneShot" DurationMin="0.458583" DurationMax="0.458583">
+					<IncludedMemoryFiles>
+						<File Id="125900082" Language="SFX">
+							<ShortName>Wood, Impact, Hit, Table, Hard SND4258 6.wav</ShortName>
+							<Path>SFX\Wood, Impact, Hit, Table, Hard SND4258 6_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>
