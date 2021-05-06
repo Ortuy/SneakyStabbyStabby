@@ -128,7 +128,9 @@ public class MainMenu : MonoBehaviourPunCallbacks
 
     public void Exit()
     {
-        //AkSoundEngine.PostEvent("ui_click_wood_panel_exit", gameObject, gameObject);
+        AkSoundEngine.PostEvent("ui_click_wood_panel_exit", gameObject, gameObject);
+        AkSoundEngine.PostEvent("ui_click_wood_panel_exit", gameObject, gameObject);
+
         Application.Quit();
     }
 
