@@ -50,7 +50,7 @@ public class WaitRoomPortal1 : MonoBehaviourPunCallbacks
     }
     IEnumerator Ready1()
     {
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(0.45f);
         timeSpawnEnd1 = true;
         Player.stabLock = false;
     }

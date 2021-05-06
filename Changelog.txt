@@ -234,3 +234,10 @@
 ## [0.2.8] - 2021-05-05
 ### Added
 - Options: changing resolution, fullscreen and postprocessing
+
+## [0.2.9] - 2021-05-06
+### Added
+- Screen shake!
+- Hit stops for stabbing players
+### Fixed
+- Camera transitions
