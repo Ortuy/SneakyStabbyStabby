@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" SchemaVersion="103">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="UI" ID="{1A24ED6D-A0C2-499F-A8F7-EAFCBABC865C}" ShortID="38127815">
+					<ChildrenList>
+						<Event Name="UIClickWoodPanel" ID="{5409B217-A9DA-4270-B72B-C3F455BB605B}">
+							<ChildrenList>
+								<Action Name="" ID="{5C5CB2FE-9794-4BFB-AA20-9BF6E1778B63}" ShortID="379236945">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ui_wood_panel_click" ID="{E04C81BC-B9D5-413E-A68A-2CDFED9E8C79}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="ui_click_wood_panel_exit" ID="{2C8E2554-9539-48F5-A1B9-423DB7CB1FB0}">
+							<ChildrenList>
+								<Action Name="" ID="{609458B3-0D88-437A-8BBC-2088C119A891}" ShortID="171913535">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ui_wood_panel_exit" ID="{B86DFBFB-3C1F-484A-AF6D-8D7C2D8B23B1}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Music" ID="{819F6A3E-695E-4964-B9FB-1F5E08D9B862}" ShortID="30761040">
+					<ChildrenList>
+						<Event Name="Music_Ambient_Drone" ID="{73E89B78-0A93-4FD3-9A4C-C9836485148B}">
+							<ChildrenList>
+								<Action Name="" ID="{F806D0A4-3489-478C-BE55-FE729345B149}" ShortID="192686045">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="music" ID="{5679D916-BC0E-4401-B7A2-A1F0C7ED5CF6}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Ambience" ID="{1ABA9297-6D2A-49D9-BAE6-F919317AE155}" ShortID="716805694">
+					<ChildrenList>
+						<Event Name="amb_fire" ID="{40EDF7AD-721D-40C0-BB17-48E2A16A206E}">
+							<ChildrenList>
+								<Action Name="" ID="{CC113AFF-7E0A-43B7-A8EE-C25047560269}" ShortID="769869838">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="amb_fire" ID="{9957A8AD-808A-4657-BD7D-FF6869E4E462}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

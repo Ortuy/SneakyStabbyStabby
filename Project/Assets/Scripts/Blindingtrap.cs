@@ -29,10 +29,9 @@ public class Blindingtrap : MonoBehaviourPunCallbacks
             {
                 //target.RPC("Blinded", RpcTarget.AllBuffered, !see);
                 StartCoroutine(BlindPlayer(target));
-                
+
             }
 
-            
             animator.SetBool("Activated", true);
 
             this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered);
@@ -43,7 +42,6 @@ public class Blindingtrap : MonoBehaviourPunCallbacks
     {
         yield return new WaitForSeconds(0.35f);
         player.RPC("Blinded", RpcTarget.AllBuffered, !see);
-        player.GetComponent<Health>().cFollow.ShakeCamera(1);
     }
 
 }

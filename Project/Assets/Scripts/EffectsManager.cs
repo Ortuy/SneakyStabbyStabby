@@ -22,27 +22,26 @@ public class EffectsManager : MonoBehaviour
 
     public void Fade()
     {
-        //StopAllCoroutines();
+        StopAllCoroutines();
         fadeScreen.Play("ScreenFade");
     }
 
     public void Unfade()
     {
-        //StopAllCoroutines();
+        StopAllCoroutines();
         fadeScreen.Play("ScreenUnfade");
     }
 
     public void FadeUnfade()
     {
-        //StopAllCoroutines();
-        fadeScreen.Play("ScreenFadeUnfade");
-        //StartCoroutine(FadeAndUnfade());
+        StopAllCoroutines();
+        StartCoroutine(FadeAndUnfade());
     }
 
-    //IEnumerator FadeAndUnfade()
-    //{
-    //    fadeScreen.Play("ScreenFadeUnfade");
-    //    //yield return new WaitForSeconds(0.3f);
-    //    //fadeScreen.Play("ScreenUnfade");
-    //}
+    IEnumerator FadeAndUnfade()
+    {
+        fadeScreen.Play("ScreenFade");
+        yield return new WaitForSeconds(0.49f);
+        fadeScreen.Play("ScreenUnfade");
+    }
 }
