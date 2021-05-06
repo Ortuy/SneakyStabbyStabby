@@ -541,8 +541,9 @@ public class Player : MonoBehaviourPunCallbacks
             rigidBody.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
         }
         
-        if (Input.GetKey(KeyCode.LeftShift)&& timeSprintRemaining !=0 && timerSprintRunning2)
+        if (Input.GetKey(KeyCode.LeftShift)&& timeSprintRemaining !=0 && timerSprintRunning2 && isTrapped == false)
         {
+
             rigidBody.velocity = new Vector2(moveDirection.x * sprint, moveDirection.y * sprint);
             timerSprintRunning = true;
         }
