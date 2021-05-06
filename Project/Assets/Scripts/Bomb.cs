@@ -39,6 +39,17 @@ public class Bomb : MonoBehaviourPunCallbacks
     IEnumerator DestroyByTime()
     {
         yield return new WaitForSeconds(time);
+
+        var allNearbyPlayers = Physics2D.OverlapCircleAll(transform.position, 5, LayerMask.GetMask("MeleeHurtable"));
+        
+        foreach (Collider2D collider in allNearbyPlayers)
+        {
+            if(collider.transform.parent.CompareTag("Player"))
+            {
+                collider.GetComponentInParent<Health>().cFollow.ShakeCamera(3);
+            }
+        }
+
         this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered);
         GameObject obj = PhotonNetwork.Instantiate(gasObject.name, new Vector2(gasExitPos.transform.position.x, gasExitPos.transform.position.y), rotatingItem.transform.rotation, 0);
     }

@@ -28,10 +28,11 @@ public class Geltrap : MonoBehaviourPunCallbacks
                 target.RPC("Shine", RpcTarget.AllBuffered, shine);
                 target.RPC("Paint", RpcTarget.AllBuffered, paint);
 
-
+                target.GetComponent<Health>().cFollow.ShakeCamera(1);
             }
 
             activateFX.Play();
+            
 
             this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered);
         }
