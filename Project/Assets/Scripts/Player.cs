@@ -837,6 +837,9 @@ public class Player : MonoBehaviourPunCallbacks
             playerViewCone2.SetActive(false);
             playerViewCone.SetActive(true);
             visionPotionActive = false;
+
+            inventory.currentPassive = null;
+            
             canUsePotion = true;
         }
     }
@@ -870,6 +873,9 @@ public class Player : MonoBehaviourPunCallbacks
         {
             timeSprintRemaining = 4;
             sprintPotionActive = false;
+
+            inventory.currentPassive = null;
+
             canUsePotion = true;
         }
     }
@@ -920,6 +926,7 @@ public class Player : MonoBehaviourPunCallbacks
             camo.SetActive(false);
         }
 
+        inventory.currentPassive = null;
         canUsePotion = true;
         camoNum = 0;
   

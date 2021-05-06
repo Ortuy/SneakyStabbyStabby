@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviourPunCallbacks
 {
-    //public bool[] isFull;
+
+
     public GameObject[] slotSelectionDisplays;
     public int selectedSlot;
     public Image[] itemImages;
@@ -188,7 +189,7 @@ public class Inventory : MonoBehaviourPunCallbacks
 
     public void UsePassiveItem()
     {
-        if (currentPassive != null && player.canUsePotion)
+        if (currentPassive != null & player.canUsePotion)
         {
             var effectID = currentPassive.effectID;
 
@@ -206,7 +207,10 @@ public class Inventory : MonoBehaviourPunCallbacks
                     break;
 
             }
-            currentPassive = null;
+
+
+
+            player.canUsePotion = false;
             itemImages[4].gameObject.SetActive(false);
         }
 
