@@ -49,6 +49,7 @@ public class MainMenu : MonoBehaviourPunCallbacks
 
     public void ToggleJoinPanel()
     {
+        AkSoundEngine.PostEvent("UIClickWoodPanel", gameObject,gameObject);
         if (joinPanel.activeInHierarchy)
         {
             joinPanel.SetActive(false);
@@ -63,6 +64,7 @@ public class MainMenu : MonoBehaviourPunCallbacks
 
     public void ToggleCreditsPanel()
     {
+        AkSoundEngine.PostEvent("UIClickWoodPanel", gameObject, gameObject);
         if (creditsPanel.activeInHierarchy)
         {
             creditsPanel.SetActive(false);
@@ -95,6 +97,7 @@ public class MainMenu : MonoBehaviourPunCallbacks
 
     public void ToggleHostPanel()
     {
+        AkSoundEngine.PostEvent("UIClickWoodPanel", gameObject, gameObject);
         if (hostPanel.activeInHierarchy)
         {
             hostPanel.SetActive(false);
@@ -125,12 +128,14 @@ public class MainMenu : MonoBehaviourPunCallbacks
 
     public void Exit()
     {
+        //AkSoundEngine.PostEvent("ui_click_wood_panel_exit", gameObject, gameObject);
         Application.Quit();
     }
 
     public void ToggleTutorial()
     {
-        if(tutorialPanel.activeInHierarchy)
+        AkSoundEngine.PostEvent("UIClickWoodPanel", gameObject, gameObject);
+        if (tutorialPanel.activeInHierarchy)
         {
             tutorialPanel.SetActive(false);
             mainPanel.SetActive(true);
@@ -144,6 +149,7 @@ public class MainMenu : MonoBehaviourPunCallbacks
 
     public void ToggleOptions()
     {
+        AkSoundEngine.PostEvent("UIClickWoodPanel", gameObject, gameObject);
         if (optionsPanel.activeInHierarchy)
         {
             optionsPanel.SetActive(false);

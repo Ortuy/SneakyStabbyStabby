@@ -8,7 +8,7 @@ using UnityEngine.Tilemaps;
 public class Player : MonoBehaviourPunCallbacks
 {
     public PhotonView photonView;
-    private CameraFollow cFollow;
+
     public Health health;
     public Rigidbody2D rigidBody;
     public GameObject mapIcon;
@@ -92,7 +92,7 @@ public class Player : MonoBehaviourPunCallbacks
     public SpriteRenderer[] nonRecolorSprites;
     public SpriteRenderer[] ghostSprites;
 
-    [SerializeField] public Animator legsAnimator, torsoAnimator;
+    [SerializeField] private Animator legsAnimator, torsoAnimator;
 
     public Inventory inventory;
     public Text stabCooldownText, potionCooldownText;
@@ -117,10 +117,12 @@ public class Player : MonoBehaviourPunCallbacks
 
         photonView = GetComponent<PhotonView>();
 
-        usedCameraComponent = playerCamera.GetComponentInChildren<Camera>();
+        usedCameraComponent = playerCamera.GetComponent<Camera>();
 
         if (photonView.IsMine)
         {
+            
+         
             playerCamera.SetActive(true);
             playerViewCone.SetActive(true);
             playerViewCone2.SetActive(false);
@@ -670,7 +672,7 @@ public class Player : MonoBehaviourPunCallbacks
 
     IEnumerator WaitAndDeactivateStab()
     {
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.3f);
         photonView.RPC("ActivateStabHitBox", RpcTarget.AllBuffered);
         yield return new WaitForSeconds(0.15f);
         photonView.RPC("DeactivateStab", RpcTarget.AllBuffered);
@@ -745,13 +747,6 @@ public class Player : MonoBehaviourPunCallbacks
 
     public void Shoot()
     {
-        if(cFollow == null)
-        {
-            cFollow = playerCamera.GetComponent<CameraFollow>();
-        }
-
-        cFollow.ShakeCamera(2);
-
         StartCoroutine(ShootCoroutine());
     }
 
@@ -773,8 +768,6 @@ public class Player : MonoBehaviourPunCallbacks
         yield return null;
         torsoAnimator.SetBool("Stab", false);
     }
-
-   
 
     public void SetCrossbowAnimation(bool value)
     {
