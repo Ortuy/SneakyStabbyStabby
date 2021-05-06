@@ -30,7 +30,7 @@ public class Tripwire : MonoBehaviourPunCallbacks
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+
 
         PhotonView target = collision.gameObject.GetComponent<PhotonView>();
         if (target != null)
@@ -54,10 +54,10 @@ public class Tripwire : MonoBehaviourPunCallbacks
                 StartCoroutine("DestroyByTime");
             }
 
-            
+
         }
     }
-    
+
     [PunRPC]
     private void SetFlipDirection(bool flip)
     {
@@ -86,7 +86,7 @@ public class Tripwire : MonoBehaviourPunCallbacks
                 GetComponent<PhotonView>().RPC("SetFlipDirection", RpcTarget.AllBuffered, flip);
 
                 target.RPC("Stop", RpcTarget.AllBuffered, start);
-               
+
             }
 
 
