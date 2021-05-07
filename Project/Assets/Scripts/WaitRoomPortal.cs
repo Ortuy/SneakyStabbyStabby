@@ -21,7 +21,7 @@ public class WaitRoomPortal : MonoBehaviourPunCallbacks
             Player = collision.GetComponent<Player>();
             gameManager.readyToStart = true;
             //target.RPC("TeleportToStart1", RpcTarget.AllBuffered);
-            if(gameManager.readyToStart == true && gameManager.readyToStart1 == true)
+            if (gameManager.readyToStart == true && gameManager.readyToStart1 == true)
             {
                 EffectsManager.instance.FadeUnfade();
                 StartCoroutine(Ready());
@@ -49,7 +49,7 @@ public class WaitRoomPortal : MonoBehaviourPunCallbacks
     }
     IEnumerator Ready()
     {
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(0.45f);
         timeSpawnEnd = true;
         Player.stabLock = false;
 

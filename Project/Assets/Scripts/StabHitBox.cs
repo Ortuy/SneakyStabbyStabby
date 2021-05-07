@@ -61,6 +61,7 @@ public class StabHitBox : MonoBehaviourPunCallbacks
                     target.GetComponent<Health>().hurtFX.transform.rotation = Quaternion.AngleAxis(newAngle, Vector3.forward);
 
                     target.RPC("ReduceHealth", RpcTarget.AllBuffered, damage);
+                    playerPV.RPC("HitStop", RpcTarget.AllBuffered);
                 }
                 
                 
@@ -81,7 +82,7 @@ public class StabHitBox : MonoBehaviourPunCallbacks
                 if (target1.CompareTag("Chest"))
                 {
                     target1.RandomItem();
-
+                transform.parent.GetComponentInParent<Health>().cFollow.ShakeCamera(1);
                 }
             }
         

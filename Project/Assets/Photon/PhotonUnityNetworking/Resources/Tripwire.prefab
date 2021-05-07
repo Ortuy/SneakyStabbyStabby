@@ -199,6 +199,8 @@ MonoBehaviour:
   upperPoint: {fileID: 5247399512489160219}
   web: {fileID: 2584511977506439007}
   player: {fileID: 5440725864618505864, guid: 8bbee6f82a5b23c4bb8ad53e8d910e2e, type: 3}
+  webBreakFX: {fileID: 1164357402647015258, guid: 80b2e661cf12a694ebabca72207b70ab,
+    type: 3}
 --- !u!95 &1249336086646011857
 Animator:
   serializedVersion: 3
