@@ -241,3 +241,8 @@
 - Hit stops for stabbing players
 ### Fixed
 - Camera transitions
+- Using multiple passives at once
+- Web trap
+## [0.2.9] - 2021-05-07
+### Fixed
+- Detector and Traps

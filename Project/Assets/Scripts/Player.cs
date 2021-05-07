@@ -12,6 +12,7 @@ public class Player : MonoBehaviourPunCallbacks
     public Health health;
     public Rigidbody2D rigidBody;
     public GameObject mapIcon;
+    public GameObject mapIconRadar;
     public GameObject playerCamera, playerViewCone, playerViewCone2, rotatingBody,pointLight2d,gel, legs, HUD, Shop,ColorSelect, Buyblind, BlindVignette;
     private Camera usedCameraComponent;
     public Camera mapCamera;
@@ -135,6 +136,7 @@ public class Player : MonoBehaviourPunCallbacks
             HUD.SetActive(true);
             ColorSelect.SetActive(false);
             mapIcon.SetActive(true);
+            mapIconRadar.SetActive(false);
             BlindVignette.SetActive(false);
 
 
