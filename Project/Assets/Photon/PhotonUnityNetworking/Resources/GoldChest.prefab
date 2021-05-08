@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chestIsActive: 0
-  spawnTime: 4
+  spawnTime: 60
   itemNum: 0
   dropPosNum: 5
   dropPos: {fileID: 4477751074548902837}

@@ -243,6 +243,14 @@
 - Camera transitions
 - Using multiple passives at once
 - Web trap
-## [0.2.9] - 2021-05-07
+
+## [0.2.10] - 2021-05-07
 ### Fixed
 - Detector and Traps
+
+## [0.2.11] - 2021-05-09
+### Added
+- Dev scene for loading maps
+- Basic layout of the 6 player map
+### Changed
+- Decluttered PhotonViews - Gold pickups and level decor lost photon view components. Hopefully this will help optimisation. Need to check if stuff works properly.

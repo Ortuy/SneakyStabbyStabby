@@ -427,8 +427,6 @@ GameObject:
   - component: {fileID: 5874997762060139228}
   - component: {fileID: 5874997762060139230}
   - component: {fileID: 5874997762060139229}
-  - component: {fileID: -6379925726150651373}
-  - component: {fileID: 2180805288202356431}
   m_Layer: 13
   m_Name: Fern
   m_TagString: Untagged
@@ -508,45 +506,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particles: {fileID: 1861291765022389591}
   moveParticlesToCollision: 0
---- !u!114 &-6379925726150651373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5874997762060139218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents:
-  - {fileID: 2180805288202356431}
-  sceneViewId: 0
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
---- !u!114 &2180805288202356431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5874997762060139218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 1
-  m_UseLocal: 1
 --- !u!1 &5874997762305292876
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,15 +984,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a945cd83ded9ff408f524622385159a, type: 3}
---- !u!198 &1861291765022389591 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5214198228148027339, guid: 0a945cd83ded9ff408f524622385159a,
-    type: 3}
-  m_PrefabInstance: {fileID: 5874997761203440284}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8023099036611050467 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4530596241280987519, guid: 0a945cd83ded9ff408f524622385159a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5874997761203440284}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1861291765022389591 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5214198228148027339, guid: 0a945cd83ded9ff408f524622385159a,
     type: 3}
   m_PrefabInstance: {fileID: 5874997761203440284}
   m_PrefabAsset: {fileID: 0}
