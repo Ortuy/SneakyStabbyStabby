@@ -254,3 +254,4 @@
 - Basic layout of the 6 player map
 ### Changed
 - Decluttered PhotonViews - Gold pickups and level decor lost photon view components. Hopefully this will help optimisation. Need to check if stuff works properly.
+- blink go throught windows and traps

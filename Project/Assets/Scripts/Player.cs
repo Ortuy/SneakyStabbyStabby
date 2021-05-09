@@ -414,6 +414,7 @@ public class Player : MonoBehaviourPunCallbacks
         disableInput = true;
         isBlinking = true;
 
+
         photonView.RPC("SetBlinkVisuals", RpcTarget.AllBuffered, true);
 
         while (durationLeft > 0)
@@ -545,6 +546,11 @@ public class Player : MonoBehaviourPunCallbacks
         if(!isBlinking)
         {
             rigidBody.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+            this.gameObject.layer = 0;
+        }
+        if(isBlinking)
+        {
+            this.gameObject.layer = 15;
         }
         
         if (Input.GetKey(KeyCode.LeftShift)&& timeSprintRemaining !=0 && timerSprintRunning2 && isTrapped == false)
