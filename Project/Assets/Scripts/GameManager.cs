@@ -231,7 +231,8 @@ public class GameManager : MonoBehaviourPunCallbacks
         if (PhotonNetwork.IsMasterClient)
         {
             //photonView.RPC("SpawnDecor", RpcTarget.AllBuffered);
-            PhotonNetwork.InstantiateRoomObject("DecorHolder", Vector3.zero, Quaternion.identity);
+            string tmp = "DecorHolder" + SceneManager.GetActiveScene().name;
+            PhotonNetwork.InstantiateRoomObject(tmp, Vector3.zero, Quaternion.identity);
             //SpawnDecor();
         }
 
