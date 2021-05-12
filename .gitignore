@@ -64,9 +64,7 @@ crashlytics-build.properties
 *.prof
 *.validationcache
 */Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset*
-*.wsettings
-*/DecodedBanks/
-*/.backup/
+
 
 
 
