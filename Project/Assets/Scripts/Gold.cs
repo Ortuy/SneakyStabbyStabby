@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class Gold : MonoBehaviourPunCallbacks
+public class Gold : MonoBehaviour
 {
     public Player player;
     public int goldAmount;

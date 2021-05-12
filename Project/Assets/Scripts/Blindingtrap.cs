@@ -10,14 +10,14 @@ public class Blindingtrap : MonoBehaviourPunCallbacks
     private Animator animator;
 
     public bool see = true;
-    
+
     [PunRPC]
     public void DestroyObject()
     {
         Destroy(this.gameObject, 1.4f);
     }
 
-    
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -32,16 +32,18 @@ public class Blindingtrap : MonoBehaviourPunCallbacks
 
             }
 
+
             animator.SetBool("Activated", true);
 
             this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered);
         }
     }
-    
+
     IEnumerator BlindPlayer(PhotonView player)
     {
         yield return new WaitForSeconds(0.35f);
         player.RPC("Blinded", RpcTarget.AllBuffered, !see);
+        player.GetComponent<Health>().cFollow.ShakeCamera(1);
     }
 
 }

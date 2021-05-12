@@ -30,7 +30,7 @@ public class Radar : InteractableObject
 
             foreach (Player player in playersTemp)
             {
-                player.mapIcon.SetActive(true);
+                player.mapIconRadar.SetActive(true);
             }
 
             photonView.RPC("StartCooldown", RpcTarget.AllBuffered);
@@ -55,7 +55,7 @@ public class Radar : InteractableObject
         {
             if(player != currentPlayer && !player.isByDetector)
             {
-                player.mapIcon.SetActive(false);
+                player.mapIconRadar.SetActive(false);
             }
             
         }

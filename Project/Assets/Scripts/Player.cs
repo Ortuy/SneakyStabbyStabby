@@ -12,6 +12,7 @@ public class Player : MonoBehaviourPunCallbacks
     public Health health;
     public Rigidbody2D rigidBody;
     public GameObject mapIcon;
+    public GameObject mapIconRadar;
     public GameObject playerCamera, playerViewCone, playerViewCone2, rotatingBody,pointLight2d,gel, legs, HUD, Shop,ColorSelect, Buyblind, BlindVignette;
     private Camera usedCameraComponent;
     public Camera mapCamera;
@@ -92,7 +93,7 @@ public class Player : MonoBehaviourPunCallbacks
     public SpriteRenderer[] nonRecolorSprites;
     public SpriteRenderer[] ghostSprites;
 
-    [SerializeField] private Animator legsAnimator, torsoAnimator;
+    [SerializeField] public Animator legsAnimator, torsoAnimator;
 
     public Inventory inventory;
     public Text stabCooldownText, potionCooldownText;
@@ -109,6 +110,8 @@ public class Player : MonoBehaviourPunCallbacks
     [SerializeField] private GameObject trapMarker;
     [SerializeField] private Sprite[] trapImages;
 
+    private CameraFollow cFollow;
+
     public bool visionPotionActive;
 
     private void Awake()
@@ -117,7 +120,7 @@ public class Player : MonoBehaviourPunCallbacks
 
         photonView = GetComponent<PhotonView>();
 
-        usedCameraComponent = playerCamera.GetComponent<Camera>();
+        usedCameraComponent = playerCamera.GetComponentInChildren<Camera>();
 
         if (photonView.IsMine)
         {
@@ -133,6 +136,7 @@ public class Player : MonoBehaviourPunCallbacks
             HUD.SetActive(true);
             ColorSelect.SetActive(false);
             mapIcon.SetActive(true);
+            mapIconRadar.SetActive(false);
             BlindVignette.SetActive(false);
 
 
@@ -412,6 +416,7 @@ public class Player : MonoBehaviourPunCallbacks
         disableInput = true;
         isBlinking = true;
 
+
         photonView.RPC("SetBlinkVisuals", RpcTarget.AllBuffered, true);
 
         while (durationLeft > 0)
@@ -543,10 +548,16 @@ public class Player : MonoBehaviourPunCallbacks
         if(!isBlinking)
         {
             rigidBody.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+            this.gameObject.layer = 0;
+        }
+        if(isBlinking)
+        {
+            this.gameObject.layer = 15;
         }
         
-        if (Input.GetKey(KeyCode.LeftShift)&& timeSprintRemaining !=0 && timerSprintRunning2)
+        if (Input.GetKey(KeyCode.LeftShift)&& timeSprintRemaining !=0 && timerSprintRunning2 && isTrapped == false)
         {
+
             rigidBody.velocity = new Vector2(moveDirection.x * sprint, moveDirection.y * sprint);
             timerSprintRunning = true;
         }
@@ -674,7 +685,7 @@ public class Player : MonoBehaviourPunCallbacks
 
     IEnumerator WaitAndDeactivateStab()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.4f);
         photonView.RPC("ActivateStabHitBox", RpcTarget.AllBuffered);
         yield return new WaitForSeconds(0.15f);
         photonView.RPC("DeactivateStab", RpcTarget.AllBuffered);
@@ -749,6 +760,13 @@ public class Player : MonoBehaviourPunCallbacks
 
     public void Shoot()
     {
+        if (cFollow == null)
+        {
+            cFollow = playerCamera.GetComponent<CameraFollow>();
+        }
+
+        cFollow.ShakeCamera(2);
+
         StartCoroutine(ShootCoroutine());
     }
 
@@ -842,6 +860,9 @@ public class Player : MonoBehaviourPunCallbacks
             playerViewCone2.SetActive(false);
             playerViewCone.SetActive(true);
             visionPotionActive = false;
+
+            inventory.currentPassive = null;
+            
             canUsePotion = true;
         }
     }
@@ -875,6 +896,9 @@ public class Player : MonoBehaviourPunCallbacks
         {
             timeSprintRemaining = 4;
             sprintPotionActive = false;
+
+            inventory.currentPassive = null;
+
             canUsePotion = true;
         }
     }
@@ -925,6 +949,7 @@ public class Player : MonoBehaviourPunCallbacks
             camo.SetActive(false);
         }
 
+        inventory.currentPassive = null;
         canUsePotion = true;
         camoNum = 0;
   

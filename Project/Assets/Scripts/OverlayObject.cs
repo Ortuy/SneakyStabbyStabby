@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class OverlayObject : MonoBehaviourPunCallbacks
+public class OverlayObject : MonoBehaviour
 {
     public float fadeDuration;
 

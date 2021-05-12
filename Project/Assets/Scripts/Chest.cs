@@ -62,7 +62,7 @@ public class Chest : MonoBehaviourPunCallbacks
     public void InitChest()
     {
         chestlIsActive = true;
-        if(PhotonNetwork.IsMasterClient)
+        if (PhotonNetwork.IsMasterClient)
         {
             var temp = Random.Range(0, 12);
             photonView.RPC("SyncItemNumber", RpcTarget.AllBuffered, temp);
@@ -72,19 +72,18 @@ public class Chest : MonoBehaviourPunCallbacks
 
     public void RandomItem()
     {
-        if(chestlIsActive)
+        if (chestlIsActive)
         {
             Debug.LogWarning(photonView.IsMine);
             CreateItem();
             chestFX.Play();
-
 
             photonView.RPC("StartItemCoolDown", RpcTarget.AllBuffered);
             var temp = Random.Range(0, 12);
             photonView.RPC("SyncItemNumber", RpcTarget.AllBuffered, temp);
         }
     }
-       
+
     [PunRPC]
     private void StartItemCoolDown()
     {
@@ -92,7 +91,7 @@ public class Chest : MonoBehaviourPunCallbacks
         chestlIsActive = false;
         lid.gameObject.SetActive(false);
         itemImage.gameObject.SetActive(false);
-        
+
     }
     [PunRPC]
     private void SyncItemNumber(int number)
@@ -102,77 +101,75 @@ public class Chest : MonoBehaviourPunCallbacks
 
     private void CreateItem()
     {
-        AkSoundEngine.PostEvent("sfx_box_destroy", gameObject, gameObject);
+
 
         if (itemNum == 0)
-            {
-                PhotonNetwork.Instantiate(pickup1.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
-            }
-            if (itemNum == 1)
-            {
-                PhotonNetwork.Instantiate(pickup2.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
-            }
-            if (itemNum == 2)
-            {
-                PhotonNetwork.Instantiate(pickup3.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
-            }
-            if (itemNum == 3)
-            {
-                PhotonNetwork.Instantiate(pickup4.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
-            }
-            if (itemNum == 4)
-            {
-                PhotonNetwork.Instantiate(pickup5.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
-            }
-            if (itemNum == 5)
-            {
-                PhotonNetwork.Instantiate(pickup6.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
-            }
-            if (itemNum == 6)
-            {
-                PhotonNetwork.Instantiate(pickup7.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
-            }
-            if (itemNum == 7)
-            {
-                PhotonNetwork.Instantiate(pickup8.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
-            }
-            if (itemNum == 8)
-            {
-                PhotonNetwork.Instantiate(pickup9.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
-            }
-            if (itemNum == 9)
-            {
-                PhotonNetwork.Instantiate(pickup10.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
-            }
-            if (itemNum == 10)
-            {
-                PhotonNetwork.Instantiate(pickup11.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
-            }
-            if (itemNum == 11)
-            {
-                PhotonNetwork.Instantiate(pickup12.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
-            }
-        AkSoundEngine.PostEvent("sfx_pickup_gold", gameObject, gameObject);
+        {
+            PhotonNetwork.Instantiate(pickup1.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
+        }
+        if (itemNum == 1)
+        {
+            PhotonNetwork.Instantiate(pickup2.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
+        }
+        if (itemNum == 2)
+        {
+            PhotonNetwork.Instantiate(pickup3.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
+        }
+        if (itemNum == 3)
+        {
+            PhotonNetwork.Instantiate(pickup4.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
+        }
+        if (itemNum == 4)
+        {
+            PhotonNetwork.Instantiate(pickup5.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
+        }
+        if (itemNum == 5)
+        {
+            PhotonNetwork.Instantiate(pickup6.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
+        }
+        if (itemNum == 6)
+        {
+            PhotonNetwork.Instantiate(pickup7.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
+        }
+        if (itemNum == 7)
+        {
+            PhotonNetwork.Instantiate(pickup8.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
+        }
+        if (itemNum == 8)
+        {
+            PhotonNetwork.Instantiate(pickup9.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
+        }
+        if (itemNum == 9)
+        {
+            PhotonNetwork.Instantiate(pickup10.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
+        }
+        if (itemNum == 10)
+        {
+            PhotonNetwork.Instantiate(pickup11.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
+        }
+        if (itemNum == 11)
+        {
+            PhotonNetwork.Instantiate(pickup12.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
+        }
+
 
     }
     IEnumerator ItemMaking()
     {
-        
         cooldownText.gameObject.SetActive(true);
         int timeLeft = spawnTime;
-        while(timeLeft > 0)
+        while (timeLeft > 0)
         {
             cooldownText.text = timeLeft.ToString();
             yield return new WaitForSeconds(1);
             timeLeft--;
         }
-        
+
         itemImage.gameObject.SetActive(true);
         cooldownText.gameObject.SetActive(false);
         lid.SetActive(true);
         itemImage.sprite = itemSprites[itemNum];
         chestlIsActive = true;
-        
     }
 
 }

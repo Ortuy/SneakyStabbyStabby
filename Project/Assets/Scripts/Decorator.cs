@@ -19,6 +19,7 @@ public class Decorator : MonoBehaviourPunCallbacks
     private int decorID;
     private float decorScale;
     private bool decorGenerated = true;
+    private float decorRotation;
 
     private GameObject newObj;
 
@@ -39,27 +40,39 @@ public class Decorator : MonoBehaviourPunCallbacks
             newObj.transform.parent = transform;
             newObj.transform.localScale = new Vector3(decorScale, decorScale, 1);
         }*/
-        if(true)
+        if(PhotonNetwork.IsMasterClient)
         {
-            pView.RPC("PlaceDecor", RpcTarget.AllBuffered);
-
-            if (decorGenerated)
-            {
-                newObj = PhotonNetwork.InstantiateRoomObject(decorPrefabs[decorID].name, transform.position, Quaternion.AngleAxis(Random.Range(0, 361), Vector3.forward));
-
-                if(newObj != null)
-                {
-                    //newObj.transform.parent = transform;
-                    newObj.transform.localScale = new Vector3(decorScale, decorScale, 1);
-                }
-               
-            }
+            //pView.RPC("PlaceDecor", RpcTarget.AllBuffered);
+            PlaceDecor();
+            pView.RPC("SyncDecor", RpcTarget.AllBuffered, decorID, decorGenerated, decorScale, decorRotation);
         }
-        
-        
+
+       
     }
 
     [PunRPC]
+    private void SyncDecor(int dID, bool isPlaced, float dScale, float dRot)
+    {
+        decorID = dID;
+        decorGenerated = isPlaced;
+        decorScale = dScale;
+        decorRotation = dRot;
+        if (decorGenerated)
+        {
+            //newObj = PhotonNetwork.InstantiateRoomObject(decorPrefabs[decorID].name, transform.position, Quaternion.AngleAxis(Random.Range(0, 361), Vector3.forward));
+            newObj = Instantiate(decorPrefabs[decorID], transform.position, Quaternion.AngleAxis(decorRotation, Vector3.forward));
+
+            if (newObj != null)
+            {
+                //newObj.transform.parent = transform;
+                Debug.Log(newObj.name);
+                newObj.transform.localScale = new Vector3(decorScale, decorScale, 1);
+            }
+
+        }
+    }
+
+    //[PunRPC]
     private void PlaceDecor()
     {
         //Debug.Log("AAAAAAA");
@@ -81,11 +94,15 @@ public class Decorator : MonoBehaviourPunCallbacks
 
             decorScale = Random.Range(minScale, maxScale) * decorScaleModifiers[decorID];
 
-           
+            decorRotation = Random.Range(0, 361);
         }
         else
         {
             decorGenerated = false;
+
+            decorScale = Random.Range(minScale, maxScale) * decorScaleModifiers[decorID];
+
+            decorRotation = Random.Range(0, 361);
         }
 
         //isDecorPlaced = true;

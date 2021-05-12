@@ -14,6 +14,8 @@ public class Health : MonoBehaviourPunCallbacks
     public bool isGhost = false;
     public float ghostTime = 3;
 
+    public CameraFollow cFollow;
+
     //public GameObject playerCanvas;
 
     public GameObject[] lifeMarkers;
@@ -26,17 +28,63 @@ public class Health : MonoBehaviourPunCallbacks
             GameManager.localInstance.localPlayer = this.gameObject;
         }
     }
-    
 
-    [PunRPC] public void ReduceHealth(float amount)
+
+    [PunRPC]
+    public void ReduceHealth(float amount)
     {
-        if(isGhost == false)
+        if (isGhost == false)
         {
             hurtFX.Play();
             ModifyHealth(amount);
+            StartCoroutine(StabHitStop(true, 0.5f));
+            //isGhost = true;
+            //StartCoroutine("GhostEnum");
+            //if (isGhost == true && healthAmount >0)
+            //{
+            //    Color playerColor = new Color(player.recolorSprites[0].color.r, player.recolorSprites[0].color.g, player.recolorSprites[0].color.b, 0);
+
+            //    //player.ghost.SetActive(true);
+            //    player.ghostSprites[0].color = new Color(1, 1, 1, 1);
+            //    player.ghostSprites[1].color = new Color(1, 1, 1, 1);
+            //    player.nonRecolorSprites[0].color = new Color(1, 1, 1, 0);
+            //    player.nonRecolorSprites[1].color = new Color(1, 1, 1, 0);
+            //    player.recolorSprites[0].color = playerColor;
+            //    player.recolorSprites[1].color = playerColor;
+
+            //    player.moveSpeed = 10;
+            //    player.stabReady = false;
+            //}
+
+
+        }
+
+    }
+
+    [PunRPC]
+    public void HitStop()
+    {
+        StartCoroutine(StabHitStop(false, 0.5f));
+    }
+
+    IEnumerator StabHitStop(bool hitTaken, float duration)
+    {
+        cFollow.ShakeCamera(0);
+        player.torsoAnimator.speed = 0;
+        player.legsAnimator.speed = 0;
+        player.isTrapped = true;
+
+        yield return new WaitForSeconds(duration);
+
+        player.torsoAnimator.speed = 1;
+        player.legsAnimator.speed = 1;
+        player.isTrapped = false;
+
+        if (hitTaken)
+        {
             isGhost = true;
             StartCoroutine("GhostEnum");
-            if (isGhost == true && healthAmount >0)
+            if (isGhost == true && healthAmount > 0)
             {
                 Color playerColor = new Color(player.recolorSprites[0].color.r, player.recolorSprites[0].color.g, player.recolorSprites[0].color.b, 0);
 
@@ -51,11 +99,9 @@ public class Health : MonoBehaviourPunCallbacks
                 player.moveSpeed = 10;
                 player.stabReady = false;
             }
-
-            
         }
-        
     }
+
     IEnumerator GhostEnum()
     {
         yield return new WaitForSeconds(ghostTime);
@@ -78,14 +124,14 @@ public class Health : MonoBehaviourPunCallbacks
         {
             plMove.disableInput = true;
             player.moveSpeed = 0;
-            
+
         }
 
     }
 
     private void CheckHealth()
     {
-        if(photonView.IsMine && healthAmount <= 0)
+        if (photonView.IsMine && healthAmount <= 0)
         {
             GameManager.localInstance.EnableRespawn();
             plMove.disableInput = true;
@@ -97,7 +143,7 @@ public class Health : MonoBehaviourPunCallbacks
     public void EnableInput()
     {
         plMove.disableInput = false;
-        
+
     }
 
     [PunRPC]
@@ -134,6 +180,6 @@ public class Health : MonoBehaviourPunCallbacks
         }
         CheckHealth();
     }
-    
-    
+
+
 }

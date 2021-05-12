@@ -15,16 +15,14 @@ public class WaitRoomPortal : MonoBehaviourPunCallbacks
     private void OnTriggerStay2D(Collider2D collision)
     {
         PhotonView target = collision.gameObject.GetComponent<PhotonView>();
-        
-        
+
         if (collision.tag == "Player")
         {
             Player = collision.GetComponent<Player>();
             gameManager.readyToStart = true;
             //target.RPC("TeleportToStart1", RpcTarget.AllBuffered);
-            if(gameManager.readyToStart == true && gameManager.readyToStart1 == true)
+            if (gameManager.readyToStart == true && gameManager.readyToStart1 == true)
             {
-                
                 EffectsManager.instance.FadeUnfade();
                 StartCoroutine(Ready());
             }
@@ -32,14 +30,11 @@ public class WaitRoomPortal : MonoBehaviourPunCallbacks
             {
                 Player.transform.position = new Vector2(StartPortal.transform.position.x, StartPortal.transform.position.y);
                 portalAnimator.SetBool("Open", true);
-
                 StartCoroutine(StopPortal());
             }
             if (Input.GetKeyDown(KeyCode.F))
             {
-                
                 StartCoroutine(Ready());
-                
             }
 
         }
@@ -54,8 +49,7 @@ public class WaitRoomPortal : MonoBehaviourPunCallbacks
     }
     IEnumerator Ready()
     {
-        yield return new WaitForSeconds(0.6f);
-        AkSoundEngine.PostEvent("sfx_teleport", gameObject, gameObject);
+        yield return new WaitForSeconds(0.45f);
         timeSpawnEnd = true;
         Player.stabLock = false;
 

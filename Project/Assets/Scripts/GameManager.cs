@@ -250,7 +250,10 @@ public class GameManager : MonoBehaviourPunCallbacks
         if (PhotonNetwork.IsMasterClient)
         {
             //photonView.RPC("SpawnDecor", RpcTarget.AllBuffered);
-            PhotonNetwork.InstantiateRoomObject("DecorHolder", Vector3.zero, Quaternion.identity);
+            string tmp = "DecorHolder" + SceneManager.GetActiveScene().name;
+            //PhotonNetwork.InstantiateRoomObject(tmp, Vector3.zero, Quaternion.identity);
+            
+            photonView.RPC("KeepOneDecorSet", RpcTarget.AllBuffered);
             //SpawnDecor();
         }
 
@@ -291,10 +294,11 @@ public class GameManager : MonoBehaviourPunCallbacks
         Debug.LogWarning("FUCKING WORK");
         var decors = FindObjectsOfType<DecorHolder>();
 
-        if(decors.Length > 1)
+        for (int i = 0; i < decors.Length; i++)
         {
-            //decors[1].gameObject.SetActive(false);
+            Destroy(decors[i].gameObject, 2f);
         }
+
     }
 
     IEnumerator SetPlayerColor()

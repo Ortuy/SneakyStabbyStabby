@@ -17,6 +17,9 @@ public class Tripwire : MonoBehaviourPunCallbacks
     private GameObject web;
     public Player player;
 
+    [SerializeField]
+    private ParticleSystem webBreakFX;
+
     [PunRPC]
     public void DestroyObject()
     {
@@ -30,7 +33,7 @@ public class Tripwire : MonoBehaviourPunCallbacks
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+
 
         PhotonView target = collision.gameObject.GetComponent<PhotonView>();
         if (target != null)
@@ -51,13 +54,14 @@ public class Tripwire : MonoBehaviourPunCallbacks
                 GetComponent<PhotonView>().RPC("SetFlipDirection", RpcTarget.AllBuffered, flip);
 
                 target.RPC("Stop", RpcTarget.AllBuffered, stop);
+                target.GetComponent<Health>().cFollow.ShakeCamera(1);
                 StartCoroutine("DestroyByTime");
             }
 
-            
+
         }
     }
-    
+
     [PunRPC]
     private void SetFlipDirection(bool flip)
     {
@@ -86,7 +90,7 @@ public class Tripwire : MonoBehaviourPunCallbacks
                 GetComponent<PhotonView>().RPC("SetFlipDirection", RpcTarget.AllBuffered, flip);
 
                 target.RPC("Stop", RpcTarget.AllBuffered, start);
-               
+
             }
 
 
@@ -120,6 +124,7 @@ public class Tripwire : MonoBehaviourPunCallbacks
     }
     public void DestroyWeb()
     {
+        Instantiate(webBreakFX, web.transform.position, Quaternion.identity);
         this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered);
     }
 }

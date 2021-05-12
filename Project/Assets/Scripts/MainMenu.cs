@@ -50,7 +50,7 @@ public class MainMenu : MonoBehaviourPunCallbacks
 
     public void ToggleJoinPanel()
     {
-        AkSoundEngine.PostEvent("UIClickWoodPanel", gameObject,gameObject);
+        AkSoundEngine.PostEvent("UIClickWoodPanel", gameObject, gameObject);
         if (joinPanel.activeInHierarchy)
         {
             joinPanel.SetActive(false);
@@ -90,7 +90,7 @@ public class MainMenu : MonoBehaviourPunCallbacks
             devCredits[r] = tmp;
         }
 
-        for(int i = 0; i < devCredits.Length; i++)
+        for (int i = 0; i < devCredits.Length; i++)
         {
             devCredits[i].transform.SetSiblingIndex(i);
         }
@@ -109,7 +109,7 @@ public class MainMenu : MonoBehaviourPunCallbacks
             char c = (char)('A' + Random.Range(0, 26));
             roomName = c.ToString();
 
-            for(int i = 0; i < 3; i++)
+            for (int i = 0; i < 3; i++)
             {
                 c = (char)('A' + Random.Range(0, 26));
                 roomName += c.ToString();

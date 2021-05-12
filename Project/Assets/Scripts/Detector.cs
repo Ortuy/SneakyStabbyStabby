@@ -8,7 +8,7 @@ public class Detector : MonoBehaviourPunCallbacks
     private Player lastMarkedPlayer, lastMarkedPlayerExit;
     [SerializeField] private Animator animator;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
         {
