@@ -55,8 +55,8 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
-Library\SourceAssetDB
-Library\ArtifactDB
+Library/SourceAssetDB
+Library/ArtifactDB
 
 # Crashlytics generated file
 crashlytics-build.properties
