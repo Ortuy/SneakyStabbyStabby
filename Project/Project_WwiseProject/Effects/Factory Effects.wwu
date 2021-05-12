@@ -621,7 +621,7 @@
 									<PropertyList>
 										<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
 										<Property Name="FilterTypeBand3" Type="int32" Value="0"/>
-										<Property Name="FrequencyBand3" Type="Real32" Value="20000"/>
+										<Property Name="FrequencyBand3" Type="Real32" Value="5091"/>
 										<Property Name="OnOffBand1" Type="bool" Value="False"/>
 										<Property Name="OnOffBand2" Type="bool" Value="False"/>
 									</PropertyList>
@@ -1276,6 +1276,7 @@
 										<Property Name="DecayTime" Type="Real32" Value="0.7"/>
 										<Property Name="Density" Type="Real32" Value="44"/>
 										<Property Name="Diffusion" Type="Real32" Value="46"/>
+										<Property Name="DryLevel" Type="Real32" Value="-8.3"/>
 										<Property Name="ERLevel" Type="Real32" Value="-23"/>
 										<Property Name="ERPattern" Type="int32" Value="22"/>
 										<Property Name="Filter1Freq" Type="Real32" Value="590"/>
@@ -1293,8 +1294,10 @@
 									<PropertyList>
 										<Property Name="DecayTime" Type="Real32" Value="1.1"/>
 										<Property Name="Density" Type="Real32" Value="72"/>
-										<Property Name="Diffusion" Type="Real32" Value="72"/>
+										<Property Name="Diffusion" Type="Real32" Value="49"/>
+										<Property Name="DryLevel" Type="Real32" Value="-1.3"/>
 										<Property Name="ERLevel" Type="Real32" Value="-23"/>
+										<Property Name="ERPattern" Type="int32" Value="1"/>
 										<Property Name="Filter1Freq" Type="Real32" Value="590"/>
 										<Property Name="Filter2Freq" Type="Real32" Value="6000"/>
 										<Property Name="Filter3Freq" Type="Real32" Value="8440"/>
@@ -1304,14 +1307,15 @@
 										<Property Name="Quality" Type="int32" Value="10"/>
 										<Property Name="ReverbLevel" Type="Real32" Value="-22"/>
 										<Property Name="RoomShape" Type="Real32" Value="55"/>
-										<Property Name="RoomSize" Type="Real32" Value="44"/>
-										<Property Name="StereoWidth" Type="Real32" Value="135"/>
+										<Property Name="RoomSize" Type="Real32" Value="37"/>
+										<Property Name="StereoWidth" Type="Real32" Value="99"/>
 									</PropertyList>
 								</Effect>
 								<Effect Name="Room_Medium_High_Absorbtion" ID="{E22DBBB6-7656-4B93-A28D-C003FD416889}" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
 									<PropertyList>
 										<Property Name="Density" Type="Real32" Value="70"/>
 										<Property Name="Diffusion" Type="Real32" Value="46"/>
+										<Property Name="DryLevel" Type="Real32" Value="-4.3"/>
 										<Property Name="ERLevel" Type="Real32" Value="-23"/>
 										<Property Name="Filter1Freq" Type="Real32" Value="590"/>
 										<Property Name="Filter2Freq" Type="Real32" Value="10520"/>

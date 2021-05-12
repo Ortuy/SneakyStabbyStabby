@@ -45,6 +45,8 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public Tilemap stoneMask;
 
+    private bool onoff = false;
+
     public void Awake()
     {
         localInstance = this;
@@ -81,6 +83,17 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         if(Input.GetKeyDown(KeyCode.Escape))
         {
+            onoff = !onoff; 
+
+            if (onoff)
+            {
+                AkSoundEngine.PostEvent("ui_wood_open_panel", gameObject, gameObject);
+            }
+            else
+            {
+               //sound for closing
+            }
+            
             TogglePauseMenu();
         }
 
@@ -88,6 +101,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public void TogglePauseMenu()
     {
+        
         Player player = localPlayer.GetComponent<Player>();
 
         if (pauseMenu.activeInHierarchy)
@@ -97,6 +111,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         }
         else if(!player.isInteracting)
         {
+            AkSoundEngine.PostEvent("UIClickWoodPanel", gameObject, gameObject);
             player.stabLock = true;
             pauseMenu.SetActive(true);
         }
@@ -104,6 +119,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public void QuitToMenu()
     {
+        AkSoundEngine.PostEvent("UIClickWoodPanel", gameObject, gameObject);
         TerminateLocalPlayer();
         PhotonNetwork.LeaveRoom();
         SceneManager.LoadScene(0);
@@ -111,6 +127,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public void QuitToDesktop()
     {
+        AkSoundEngine.PostEvent("ui_click_wood_panel_exit", gameObject, gameObject);
         TerminateLocalPlayer();
         PhotonNetwork.LeaveRoom();
         Application.Quit();
@@ -118,6 +135,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public void ToggleOptions()
     {
+        AkSoundEngine.PostEvent("UIClickWoodPanel", gameObject, gameObject);
         TogglePauseMenu();
         if(optionsMenu.activeInHierarchy)
         {
@@ -155,6 +173,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public void SpawnPlayer()
     {
+        
         EffectsManager.instance.Unfade();
 
         float randomValueX = Random.Range(-2f, 2f);
@@ -162,7 +181,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         spawnPortalAnimators[playerAmount].SetBool("Open", true);
         PhotonNetwork.Instantiate(playerPrefab.name, spawnPointsWait[playerAmount].transform.position, Quaternion.identity, 0);
-
+        
 
         gameCanvas.SetActive(false);
         StartCoroutine(SetPlayerColor());
@@ -284,6 +303,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         var c = playerColors[Random.Range(0, playerColors.Length)];
         localPlayer.GetComponent<PhotonView>().RPC("SetColor", RpcTarget.AllBuffered, c.r, c.g, c.b);
         spawnPortalAnimators[playerAmount - 1].SetBool("Open", false);
+
     }
     public void ToggleMap()
     {

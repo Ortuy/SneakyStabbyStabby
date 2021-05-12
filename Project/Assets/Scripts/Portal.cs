@@ -69,6 +69,7 @@ public class Portal : MonoBehaviourPunCallbacks
 
     IEnumerator WaitAndSpawnItems()
     {
+        
         yield return new WaitForSeconds(spawnTime);
 
         Debug.LogWarning("KILL ME");
@@ -126,6 +127,7 @@ public class Portal : MonoBehaviourPunCallbacks
 
     IEnumerator ItemMaking()
     {
+
         yield return new WaitForSeconds(spawnTime);
         if (itemNum == 1)
         {

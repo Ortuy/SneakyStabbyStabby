@@ -10564,6 +10564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particles: {fileID: 2216836620800308365}
+  moveParticlesToCollision: 0
 --- !u!58 &766778091705279825
 CircleCollider2D:
   m_ObjectHideFlags: 0

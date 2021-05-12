@@ -1,31 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>D:\Programowanie\Games\Unity\Stabby\SneakyStabby\Project\Project_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\Programowanie\Games\Unity\Stabby\SneakyStabby\Project\Project_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Programowanie\Games\Unity\Stabby\SneakyStabby\Project\Project_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>D:\Programowanie\Games\Unity\Stabby\SneakyStabby\Project\Project_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="3690994985">
+		<SoundBank Id="1355168291" Language="SFX" Hash="3012489554">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="3633544410">
+		<SoundBank Id="3161908922" Language="SFX" Hash="1166939527">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
-				<Event Id="3207324726" Name="amb_fire" ObjectPath="\Events\Default Work Unit\Ambience\amb_fire" MaxAttenuation="2800.000000" DurationType="OneShot" DurationMin="37.713364" DurationMax="37.713364">
+				<Event Id="2857601955" Name="amb_bush_rustle_enter" ObjectPath="\Events\Default Work Unit\Ambience\amb_bush_rustle_enter" DurationType="OneShot" DurationMin="0.950763" DurationMax="1.971997">
+					<IncludedMemoryFiles>
+						<File Id="1067845191" Language="SFX">
+							<ShortName>Vegetation, Dry Leaves Hit, Rustle Leaf SND7769 1.wav</ShortName>
+							<Path>SFX\Vegetation, Dry Leaves Hit, Rustle Leaf SND7769 1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3207324726" Name="amb_fire" ObjectPath="\Events\Default Work Unit\Ambience\amb_fire" MaxAttenuation="10.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="941754977" Language="SFX">
 							<ShortName>Fire, Burning, Wood, Soft Intensity SND8758 1.wav</ShortName>
-							<Path>SFX\Fire, Burning, Wood, Soft Intensity SND8758 1_10C4C929.wem</Path>
+							<Path>SFX\Fire, Burning, Wood, Soft Intensity SND8758 1_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="4025637178" Name="amb_schroom_enter" ObjectPath="\Events\Default Work Unit\Ambience\amb_schroom_enter" DurationType="OneShot" DurationMin="0.528148" DurationMax="0.830190">
+					<IncludedMemoryFiles>
+						<File Id="77449660" Language="SFX">
+							<ShortName>gore.wav</ShortName>
+							<Path>SFX\gore_805EBEA7.wem</Path>
+						</File>
+						<File Id="614058351" Language="SFX">
+							<ShortName>Gore, Stab, Impact, Vegetables, Slurps With Air, Bloody, Flesh 02 SND10415 3.wav</ShortName>
+							<Path>SFX\Gore, Stab, Impact, Vegetables, Slurps With Air, Bloody, Flesh 02 SND10415 3_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3862022932" Name="char_knife_swinging" ObjectPath="\Events\Default Work Unit\Character\char_knife_swinging" DurationType="OneShot" DurationMin="0.214808" DurationMax="0.284491">
+					<IncludedMemoryFiles>
+						<File Id="613104621" Language="SFX">
+							<ShortName>Knife, Swish, Air, Slash Movements SND34526 5.wav</ShortName>
+							<Path>SFX\Knife, Swish, Air, Slash Movements SND34526 5_10C4C929.wem</Path>
+						</File>
+						<File Id="655282332" Language="SFX">
+							<ShortName>Knife, Swish, Air, Slash Movements SND34526 4.wav</ShortName>
+							<Path>SFX\Knife, Swish, Air, Slash Movements SND34526 4_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -34,6 +66,94 @@
 						<File Id="27403535" Language="SFX">
 							<ShortName>Sound Design, Soundscape, Dark Ambience, City Of Dystopia 08 SND42224 1.wav</ShortName>
 							<Path>SFX\Sound Design, Soundscape, Dark Ambience, City Of Dystopia 08 SND42224 1_D79FB2B7.wem</Path>
+						</File>
+						<File Id="46155190" Language="SFX">
+							<ShortName>Wings, Bird, Wing Flaps, Low 2 SND11279 1.wav</ShortName>
+							<Path>SFX\Wings, Bird, Wing Flaps, Low 2 SND11279 1_10C4C929.wem</Path>
+						</File>
+						<File Id="112415401" Language="SFX">
+							<ShortName>Birds, Crow, Ravens, Raven Call 06 SND50092.wav</ShortName>
+							<Path>SFX\Birds, Crow, Ravens, Raven Call 06 SND50092_10C4C929.wem</Path>
+						</File>
+						<File Id="180403610" Language="SFX">
+							<ShortName>Birds, Crow, Ravens, Raven Call 04 SND50093 1.wav</ShortName>
+							<Path>SFX\Birds, Crow, Ravens, Raven Call 04 SND50093 1_10C4C929.wem</Path>
+						</File>
+						<File Id="407920327" Language="SFX">
+							<ShortName>Birds, Crow, Ravens, Raven Call 04 SND50093.wav</ShortName>
+							<Path>SFX\Birds, Crow, Ravens, Raven Call 04 SND50093_10C4C929.wem</Path>
+						</File>
+						<File Id="436950440" Language="SFX">
+							<ShortName>Birds, Crow, Ravens, Raven Call 02 SND50096.wav</ShortName>
+							<Path>SFX\Birds, Crow, Ravens, Raven Call 02 SND50096_10C4C929.wem</Path>
+						</File>
+						<File Id="506358734" Language="SFX">
+							<ShortName>Wings, Bird, Parrot, Wing Flaps 1 SND0864 1.wav</ShortName>
+							<Path>SFX\Wings, Bird, Parrot, Wing Flaps 1 SND0864 1_10C4C929.wem</Path>
+						</File>
+						<File Id="710639173" Language="SFX">
+							<ShortName>Wings, Bird, Parrot, Wing Flaps 1 SND0864.wav</ShortName>
+							<Path>SFX\Wings, Bird, Parrot, Wing Flaps 1 SND0864_10C4C929.wem</Path>
+						</File>
+						<File Id="939365507" Language="SFX">
+							<ShortName>Wings, Bird, Parrot, Wing Flaps 1 SND0864 2.wav</ShortName>
+							<Path>SFX\Wings, Bird, Parrot, Wing Flaps 1 SND0864 2_10C4C929.wem</Path>
+						</File>
+						<File Id="954311666" Language="SFX">
+							<ShortName>Wings, Bird, Wing Flaps, Low 1 SND11280 1.wav</ShortName>
+							<Path>SFX\Wings, Bird, Wing Flaps, Low 1 SND11280 1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="490354319" Name="sfx_box_destroy" ObjectPath="\Events\Default Work Unit\SFX\sfx_box_destroy" DurationType="OneShot" DurationMin="0.833845" DurationMax="0.993335">
+					<IncludedMemoryFiles>
+						<File Id="829195809" Language="SFX">
+							<ShortName>Destruction, Crash &amp; Debris, Wood,, Roof, Destroy SND58486.wav</ShortName>
+							<Path>SFX\Destruction, Crash &amp; Debris, Wood,, Roof, Destroy SND58486_10C4C929.wem</Path>
+						</File>
+						<File Id="937451939" Language="SFX">
+							<ShortName>Impact, Wood, Ukulele, Thin, Smash, Break 1 SND30370.wav</ShortName>
+							<Path>SFX\Impact, Wood, Ukulele, Thin, Smash, Break 1 SND30370_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2554305358" Name="sfx_buy_shop" ObjectPath="\Events\Default Work Unit\SFX\sfx_buy_shop" DurationType="OneShot" DurationMin="0.421882" DurationMax="0.421882">
+					<IncludedMemoryFiles>
+						<File Id="209144488" Language="SFX">
+							<ShortName>hitbuy.wav</ShortName>
+							<Path>SFX\hitbuy_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="171029537" Name="sfx_change_color" ObjectPath="\Events\Default Work Unit\SFX\sfx_change_color" DurationType="OneShot" DurationMin="0.811000" DurationMax="0.811000">
+					<IncludedMemoryFiles>
+						<File Id="193842192" Language="SFX">
+							<ShortName>Cloth, Flap, Whoosh SND36449 1.wav</ShortName>
+							<Path>SFX\Cloth, Flap, Whoosh SND36449 1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1509706435" Name="sfx_obj_pickup" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj_pickup" DurationType="OneShot" DurationMin="0.150615" DurationMax="0.150615">
+					<IncludedMemoryFiles>
+						<File Id="885430307" Language="SFX">
+							<ShortName>Gun, Rifle, Grab, Pick Up SND6244.wav</ShortName>
+							<Path>SFX\Gun, Rifle, Grab, Pick Up SND6244_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="237514306" Name="sfx_pickup_gold" ObjectPath="\Events\Default Work Unit\SFX\sfx_pickup_gold" DurationType="OneShot" DurationMin="0.198343" DurationMax="0.198343">
+					<IncludedMemoryFiles>
+						<File Id="568874121" Language="SFX">
+							<ShortName>Money, Australian Coins, Down On Soft Surface  SND18472.wav</ShortName>
+							<Path>SFX\Money, Australian Coins, Down On Soft Surface  SND18472_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="4028214536" Name="sfx_teleport" ObjectPath="\Events\Default Work Unit\SFX\sfx_teleport" DurationType="OneShot" DurationMin="1.974437" DurationMax="1.974437">
+					<IncludedMemoryFiles>
+						<File Id="770380962" Language="SFX">
+							<ShortName>Sci-Fi, Teleportation, Arrive SND32584.wav</ShortName>
+							<Path>SFX\Sci-Fi, Teleportation, Arrive SND32584_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -45,6 +165,46 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="2785568501" Name="ui_close_map" ObjectPath="\Events\Default Work Unit\UI\ui_close_map" DurationType="OneShot" DurationMin="0.125011" DurationMax="0.125011">
+					<IncludedMemoryFiles>
+						<File Id="187997657" Language="SFX">
+							<ShortName>closemap.wav</ShortName>
+							<Path>SFX\closemap_5128E34A.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="4294591936" Name="ui_interact" ObjectPath="\Events\Default Work Unit\UI\ui_interact" DurationType="OneShot" DurationMin="0.824604" DurationMax="0.824604">
+					<IncludedMemoryFiles>
+						<File Id="292243933" Language="SFX">
+							<ShortName>Bells, Handbell, Small, Decorative Bell, Ring 04 SND14935 1.wav</ShortName>
+							<Path>SFX\Bells, Handbell, Small, Decorative Bell, Ring 04 SND14935 1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2149148881" Name="ui_open_map" ObjectPath="\Events\Default Work Unit\UI\ui_open_map" DurationType="OneShot" DurationMin="1.187506" DurationMax="1.187506">
+					<IncludedMemoryFiles>
+						<File Id="23209238" Language="SFX">
+							<ShortName>openmap.wav</ShortName>
+							<Path>SFX\openmap_5128E34A.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3080149663" Name="ui_wood_open_panel" ObjectPath="\Events\Default Work Unit\UI\ui_wood_open_panel" DurationType="OneShot" DurationMin="0.413396" DurationMax="0.413396">
+					<IncludedMemoryFiles>
+						<File Id="126807708" Language="SFX">
+							<ShortName>Vegetation, Stick, Branch, Land On Forest Floor, Leaves 2 SND30270 1.wav</ShortName>
+							<Path>SFX\Vegetation, Stick, Branch, Land On Forest Floor, Leaves 2 SND30270 1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="601065099" Name="ui_wood_panel_options_checkbox" ObjectPath="\Events\Default Work Unit\UI\ui_wood_panel_options_checkbox" DurationType="OneShot" DurationMin="0.258479" DurationMax="0.258479">
+					<IncludedMemoryFiles>
+						<File Id="988337085" Language="SFX">
+							<ShortName>Coin, Ring, Gemstone, Short 2 SND5556.wav</ShortName>
+							<Path>SFX\Coin, Ring, Gemstone, Short 2 SND5556_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="2097608532" Name="UIClickWoodPanel" ObjectPath="\Events\Default Work Unit\UI\UIClickWoodPanel" DurationType="OneShot" DurationMin="0.458583" DurationMax="0.458583">
 					<IncludedMemoryFiles>
 						<File Id="125900082" Language="SFX">
@@ -53,7 +213,18 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="1537061107" Name="wind" ObjectPath="\Events\Default Work Unit\Ambience\wind" DurationType="Infinite"/>
 			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="209144488" Language="SFX">
+					<ShortName>hitbuy.wav</ShortName>
+					<Path>SFX\hitbuy_10C4C929.wem</Path>
+				</File>
+				<File Id="238898135" Language="SFX">
+					<ShortName>Ambience, Rural, Prairie, Light Wind, Flies SND1345 1.wav</ShortName>
+					<Path>SFX\Ambience, Rural, Prairie, Light Wind, Flies SND1345 1_D79FB2B7.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>

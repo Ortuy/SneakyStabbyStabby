@@ -13,10 +13,25 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID AMB_BUSH_RUSTLE_ENTER = 2857601955U;
         static const AkUniqueID AMB_FIRE = 3207324726U;
+        static const AkUniqueID AMB_SCHROOM_ENTER = 4025637178U;
+        static const AkUniqueID CHAR_KNIFE_SWINGING = 3862022932U;
         static const AkUniqueID MUSIC_AMBIENT_DRONE = 205229924U;
+        static const AkUniqueID SFX_BOX_DESTROY = 490354319U;
+        static const AkUniqueID SFX_BUY_SHOP = 2554305358U;
+        static const AkUniqueID SFX_CHANGE_COLOR = 171029537U;
+        static const AkUniqueID SFX_OBJ_PICKUP = 1509706435U;
+        static const AkUniqueID SFX_PICKUP_GOLD = 237514306U;
+        static const AkUniqueID SFX_TELEPORT = 4028214536U;
         static const AkUniqueID UI_CLICK_WOOD_PANEL_EXIT = 3464476944U;
+        static const AkUniqueID UI_CLOSE_MAP = 2785568501U;
+        static const AkUniqueID UI_INTERACT = 4294591936U;
+        static const AkUniqueID UI_OPEN_MAP = 2149148881U;
+        static const AkUniqueID UI_WOOD_OPEN_PANEL = 3080149663U;
+        static const AkUniqueID UI_WOOD_PANEL_OPTIONS_CHECKBOX = 601065099U;
         static const AkUniqueID UICLICKWOODPANEL = 2097608532U;
+        static const AkUniqueID WIND = 1537061107U;
     } // namespace EVENTS
 
     namespace SWITCHES

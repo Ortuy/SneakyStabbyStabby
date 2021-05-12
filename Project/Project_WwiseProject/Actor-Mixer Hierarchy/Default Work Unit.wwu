@@ -13,17 +13,6 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<RandomSequenceContainer Name="char_knife_swinging" ID="{24C78752-5284-40A3-8A94-6BF670E05726}" ShortID="394759914">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
-								</Reference>
-							</ReferenceList>
-							<ObjectLists/>
-						</RandomSequenceContainer>
 						<ActorMixer Name="char_footsteps" ID="{4D1A7866-4A33-4825-BE6E-84E3FE5CA717}" ShortID="404797347">
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -33,6 +22,41 @@
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="char_footstep_water" ID="{BC65FECA-F2A7-44EA-917D-56D229D2FC45}" ShortID="379240783">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="char_footstep_rocks" ID="{BB3688C8-ABD5-41F4-A43D-7561C636C11C}" ShortID="1069903954">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="char_footstep_mud_grass" ID="{62C67DFF-4E5A-49E0-A081-3C94015D1D90}" ShortID="777957488">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+							</ChildrenList>
 							<ObjectLists/>
 						</ActorMixer>
 						<ActorMixer Name="char_voice" ID="{47FF759B-80A7-4C7C-81BF-5A0B43B3B348}" ShortID="894113368">
@@ -133,6 +157,31 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
 										</Reference>
 									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Water, Drip, Large, Heavy SND19703" ID="{8F82E98B-CD5E-4773-B534-592E1C84B8D0}" ShortID="848193337">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Water, Drip, Large, Heavy SND19703" ID="{FBCD5B7D-4F60-4BD3-8F2F-ED3EBB9C431B}">
+													<Language>SFX</Language>
+													<AudioFile>Water, Drip, Large, Heavy SND19703.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="612718956"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Water, Drip, Large, Heavy SND19703" ID="{FBCD5B7D-4F60-4BD3-8F2F-ED3EBB9C431B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
 									<ObjectLists/>
 								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="char_sfx_knife_pull_out" ID="{ED9E1DD4-1ECC-4054-9E59-A65C3592B2DA}" ShortID="376107713">
@@ -179,9 +228,255 @@
 									</ReferenceList>
 									<ObjectLists/>
 								</RandomSequenceContainer>
+								<Sound Name="char_sfx_trap_create" ID="{F32BFF32-5097-44B3-B2F1-32B46B99E258}" ShortID="1050094125">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ObjectLists/>
+								</Sound>
+								<RandomSequenceContainer Name="char_sfx_drink_potion" ID="{9F9F6264-F5AB-40BE-A35C-632549A7969F}" ShortID="492763401">
+									<PropertyList>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+								<Sound Name="char_change_to_object" ID="{AAE7DBF3-43B6-44EB-AA02-38B0EA6182AC}" ShortID="1072199246">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ObjectLists/>
+								</Sound>
 							</ChildrenList>
 							<ObjectLists/>
 						</ActorMixer>
+						<Folder Name="Weapon" ID="{418D445E-9472-46CB-AD75-27A7F1A43A98}" ShortID="329957183">
+							<ChildrenList>
+								<RandomSequenceContainer Name="char_knife_swinging" ID="{24C78752-5284-40A3-8A94-6BF670E05726}" ShortID="394759914">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>30</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-710</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Knife, Swish, Air, Slash Movements SND34526 4" ID="{95F815DE-0AC0-44F4-B23A-CB306C20DF8E}" ShortID="1030647565">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Knife, Swish, Air, Slash Movements SND34526 4" ID="{433646F0-1E7B-4B2D-9027-F3C3CA82E7C2}">
+													<Language>SFX</Language>
+													<AudioFile>Knife, Swish, Air, Slash Movements SND34526 4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="655282332"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Knife, Swish, Air, Slash Movements SND34526 4" ID="{433646F0-1E7B-4B2D-9027-F3C3CA82E7C2}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Knife, Swish, Air, Slash Movements SND34526 5" ID="{F6C06229-4111-4E43-B7B6-7FA853FEDFF4}" ShortID="199345534">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Knife, Swish, Air, Slash Movements SND34526 5" ID="{77253F75-ACA7-4C89-9717-06AEADE4083F}">
+													<Language>SFX</Language>
+													<AudioFile>Knife, Swish, Air, Slash Movements SND34526 5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="613104621"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Knife, Swish, Air, Slash Movements SND34526 5" ID="{77253F75-ACA7-4C89-9717-06AEADE4083F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+								<Sound Name="char_load_crossbow" ID="{548EDEDF-3C72-4C09-BA26-2DB2BA749612}" ShortID="394303429">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Weapons, Crossbow, Draw, Load x2 SND42768" ID="{12926786-AD0D-4D2E-8F0A-08560B0B020D}">
+											<Language>SFX</Language>
+											<AudioFile>Weapons, Crossbow, Draw, Load x2 SND42768.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1054393053"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Weapons, Crossbow, Draw, Load x2 SND42768" ID="{12926786-AD0D-4D2E-8F0A-08560B0B020D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<RandomSequenceContainer Name="sfx_crossbow_shoot" ID="{18BEB031-DCCF-4B1F-9E6D-D9635CEE749D}" ShortID="337714950">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-9</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Weapons, Crossbow, Shoot x4 SND42767" ID="{EC558B13-6216-4246-B837-BB9A02F84825}" ShortID="493450092">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Weapons, Crossbow, Shoot x4 SND42767" ID="{16FBE329-F4F4-46AB-AB0A-49382BB20B51}">
+													<Language>SFX</Language>
+													<AudioFile>Weapons, Crossbow, Shoot x4 SND42767.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="399564613"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Weapons, Crossbow, Shoot x4 SND42767" ID="{16FBE329-F4F4-46AB-AB0A-49382BB20B51}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Weapons, Crossbow, Shoot x4 SND42767 1" ID="{CEC504AA-4672-4584-861A-3D6802C65BB0}" ShortID="244046953">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Weapons, Crossbow, Shoot x4 SND42767 1" ID="{A212CE53-1236-4614-9984-CB1C34BCDE2F}">
+													<Language>SFX</Language>
+													<AudioFile>Weapons, Crossbow, Shoot x4 SND42767 1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="331269381"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Weapons, Crossbow, Shoot x4 SND42767 1" ID="{A212CE53-1236-4614-9984-CB1C34BCDE2F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Weapons, Crossbow, Shoot x4 SND42767 2" ID="{179E9ED7-85C4-4333-8F8C-99C850E5D480}" ShortID="577235104">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Weapons, Crossbow, Shoot x4 SND42767 2" ID="{708B6D2F-6E4A-4710-9B5E-5E4187392139}">
+													<Language>SFX</Language>
+													<AudioFile>Weapons, Crossbow, Shoot x4 SND42767 2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="295155515"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Weapons, Crossbow, Shoot x4 SND42767 2" ID="{708B6D2F-6E4A-4710-9B5E-5E4187392139}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Weapons, Crossbow, Shoot x4 SND42767 3" ID="{249CEFF9-7B1B-4F39-89E4-AF6D28C2E3BF}" ShortID="236636909">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Weapons, Crossbow, Shoot x4 SND42767 3" ID="{0F4FE3E3-7E5B-4105-9FD3-CDA2A2CD8423}">
+													<Language>SFX</Language>
+													<AudioFile>Weapons, Crossbow, Shoot x4 SND42767 3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="526493561"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Weapons, Crossbow, Shoot x4 SND42767 3" ID="{0F4FE3E3-7E5B-4105-9FD3-CDA2A2CD8423}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 					<ObjectLists/>
 				</ActorMixer>
@@ -265,18 +560,190 @@
 								<ActiveSource Name="Wood, Impact, Hit, Table, Hard SND4258 6" ID="{C53F89CC-3874-4BA1-A88B-1503A9A6BC1A}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="ui_wood_panel_options_checkbox" ID="{D15C0C09-7B5E-4A5A-8876-31011CE0047E}" ShortID="592148627">
+							<PropertyList>
+								<Property Name="OverrideOutput" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Coin, Ring, Gemstone, Short 2 SND5556" ID="{640569C5-7687-4EA5-A0DB-92FCFB1FFB24}">
+									<Language>SFX</Language>
+									<AudioFile>Coin, Ring, Gemstone, Short 2 SND5556.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="988337085"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="Coin, Ring, Gemstone, Short 2 SND5556" ID="{640569C5-7687-4EA5-A0DB-92FCFB1FFB24}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="ui_wood_open_panel" ID="{BB57F0B2-1A3F-4569-A5FA-813913F82370}" ShortID="996810585">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Vegetation, Stick, Branch, Land On Forest Floor, Leaves 2 SND30270 1" ID="{B8F19FFD-0017-458B-88EE-7E64ADD0F842}">
+									<Language>SFX</Language>
+									<AudioFile>Vegetation, Stick, Branch, Land On Forest Floor, Leaves 2 SND30270 1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="126807708"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="Vegetation, Stick, Branch, Land On Forest Floor, Leaves 2 SND30270 1" ID="{B8F19FFD-0017-458B-88EE-7E64ADD0F842}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<RandomSequenceContainer Name="ui_wood_panel_chains_full" ID="{650F8D0D-38F9-4965-AC3F-47675C87D97F}" ShortID="616795765">
+							<PropertyList>
+								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<Sound Name="ui_open_map" ID="{893B507F-7207-4028-92E0-9F726DA6BF1D}" ShortID="573862442">
+							<PropertyList>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="RenderEffect0" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Room_Small" ID="{577F1466-A63B-47F7-98BD-C56E433F8B5D}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="openmap" ID="{7D1E5950-F6E0-4F38-B9BF-DCE21DB60C8F}">
+									<Language>SFX</Language>
+									<AudioFile>openmap.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="23209238"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="openmap" ID="{7D1E5950-F6E0-4F38-B9BF-DCE21DB60C8F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="ui_close_map" ID="{45C2329F-E0B0-4338-B236-D39A0522648B}" ShortID="719778272">
+							<PropertyList>
+								<Property Name="MakeUpGain" Type="Real64">
+									<ValueList>
+										<Value>6</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="RenderEffect0" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Room_Small" ID="{577F1466-A63B-47F7-98BD-C56E433F8B5D}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="closemap" ID="{F5A6FD10-0A6A-49DD-9876-CBDF6EA125C1}">
+									<Language>SFX</Language>
+									<AudioFile>closemap.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="187997657"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="closemap" ID="{F5A6FD10-0A6A-49DD-9876-CBDF6EA125C1}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="ui_interact" ID="{2F9CE473-57CE-4D1A-B133-22AAC0886495}" ShortID="194083262">
+							<PropertyList>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Room_Medium_Tiled" ID="{0C0A3A92-A571-4FDB-AB40-ACFED04E0217}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="Effect1" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Dirty_Washing_Machine" ID="{824764DD-7364-411D-AF50-DEDF8E3DCC48}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="Effect2" PluginName="Wwise Tremolo" CompanyID="0" PluginID="131" PluginType="3">
+									<ObjectRef Name="Fast_LF_Tremolo_No_Smoothing" ID="{D972718E-231C-4DBF-9288-FCAF4BF47B50}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Bells, Handbell, Small, Decorative Bell, Ring 04 SND14935 1" ID="{27E037C3-AB75-47A2-AE17-CDC424385DF4}">
+									<Language>SFX</Language>
+									<AudioFile>Bells, Handbell, Small, Decorative Bell, Ring 04 SND14935 1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="292243933"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="Bells, Handbell, Small, Decorative Bell, Ring 04 SND14935 1" ID="{27E037C3-AB75-47A2-AE17-CDC424385DF4}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
-					<ObjectLists/>
-				</ActorMixer>
-				<ActorMixer Name="SFX" ID="{212DC059-FC48-4174-B773-B214E24A64E3}" ShortID="254127967">
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
-						</Reference>
-					</ReferenceList>
 					<ObjectLists/>
 				</ActorMixer>
 				<ActorMixer Name="Ambient" ID="{53A34B64-E3B6-4734-98C7-F599917E4AB0}" ShortID="444913939">
@@ -291,9 +758,14 @@
 					<ChildrenList>
 						<Sound Name="amb_fire" ID="{9957A8AD-808A-4657-BD7D-FF6869E4E462}" ShortID="994326486">
 							<PropertyList>
-								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 								<Property Name="OverridePositioning" Type="bool" Value="True"/>
-								<Property Name="SpeakerPanning" Type="int16" Value="2"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-13</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -324,6 +796,1195 @@
 								<ActiveSource Name="Fire, Burning, Wood, Soft Intensity SND8758 1" ID="{DB4DB8B4-E572-4544-910A-0CB75817E20F}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="amb_wind" ID="{26F569F4-7B15-4A0C-BC8C-BCB8C27932F9}" ShortID="24346797">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-12</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Ambience, Rural, Prairie, Light Wind, Flies SND1345 1" ID="{32E3162C-613A-4334-9E9D-C117AC2CAB5B}">
+									<Language>SFX</Language>
+									<AudioFile>Ambience, Rural, Prairie, Light Wind, Flies SND1345 1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="238898135"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="Ambience, Rural, Prairie, Light Wind, Flies SND1345 1" ID="{32E3162C-613A-4334-9E9D-C117AC2CAB5B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<BlendContainer Name="amb_wind_place" ID="{122DF5D4-C551-4B31-ACD6-49EF1B175331}" ShortID="347078800">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</BlendContainer>
+						<RandomSequenceContainer Name="amb_raven" ID="{E77A975A-B831-4AC4-8E39-5CC6C1A3A886}" ShortID="761959113">
+							<PropertyList>
+								<Property Name="3DPosition" Type="int16" Value="2"/>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="IgnoreParentMaxSoundInstance" Type="bool" Value="True"/>
+								<Property Name="InitialDelay" Type="Real64">
+									<ValueList>
+										<Value>40</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{A5B041BF-B57F-49C6-B6DC-CC1B2957AF45}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>34</Value>
+									</ValueList>
+								</Property>
+								<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
+								<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="46"/>
+								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+								<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-17</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Birds, Crow, Ravens, Raven Call 06 SND50092" ID="{98A216A6-18C8-4F9E-8C4A-B6C337FF8354}" ShortID="743538393">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Birds, Crow, Ravens, Raven Call 06 SND50092" ID="{9D7E7FA5-B65E-406D-A0AB-561960002086}">
+											<Language>SFX</Language>
+											<AudioFile>Birds, Crow, Ravens, Raven Call 06 SND50092.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="112415401"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Birds, Crow, Ravens, Raven Call 06 SND50092" ID="{9D7E7FA5-B65E-406D-A0AB-561960002086}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Birds, Crow, Ravens, Raven Call 02 SND50096" ID="{EA94FCB5-7AD6-40BD-BBBE-4857B195C97E}" ShortID="884939778">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Birds, Crow, Ravens, Raven Call 02 SND50096" ID="{673BD6F1-17FD-4D47-910A-F4121ACBD3C3}">
+											<Language>SFX</Language>
+											<AudioFile>Birds, Crow, Ravens, Raven Call 02 SND50096.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="436950440"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Birds, Crow, Ravens, Raven Call 02 SND50096" ID="{673BD6F1-17FD-4D47-910A-F4121ACBD3C3}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Birds, Crow, Ravens, Raven Call 04 SND50093" ID="{21C08330-DC34-4101-BFCB-7F06A22E3DB6}" ShortID="297548101">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Birds, Crow, Ravens, Raven Call 04 SND50093" ID="{A47A3885-A516-4C88-8E36-EE9D03A392CD}">
+											<Language>SFX</Language>
+											<AudioFile>Birds, Crow, Ravens, Raven Call 04 SND50093.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="407920327"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Birds, Crow, Ravens, Raven Call 04 SND50093" ID="{A47A3885-A516-4C88-8E36-EE9D03A392CD}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Birds, Crow, Ravens, Raven Call 04 SND50093 1" ID="{C2216AA6-13E9-4585-AF83-E5ABC72EA984}" ShortID="277677854">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Birds, Crow, Ravens, Raven Call 04 SND50093 1" ID="{8B5BCC87-3BC7-4A4A-AFD9-4CEF5CCBE809}">
+											<Language>SFX</Language>
+											<AudioFile>Birds, Crow, Ravens, Raven Call 04 SND50093 1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="180403610"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Birds, Crow, Ravens, Raven Call 04 SND50093 1" ID="{8B5BCC87-3BC7-4A4A-AFD9-4CEF5CCBE809}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<PositioningInfo>
+								<Position Name="" ID="{46DC01FF-1D65-4425-813E-508CCA150391}">
+									<PropertyList>
+										<Property Name="NewPathForEachSound" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismRandomOrSequence" Type="int16" Value="1"/>
+									</PropertyList>
+									<ChildrenList>
+										<Path2D Name="amb_raven_Path" ID="{C121BC67-9963-4530-BF08-BA2DAAB91A0C}">
+											<PropertyList>
+												<Property Name="Duration" Type="Uint32" Value="1000"/>
+											</PropertyList>
+											<PointList>
+												<Point>
+													<XPos>-79.82262</XPos>
+													<YPos>76.40693</YPos>
+													<Flags>12</Flags>
+													<Time>0</Time>
+												</Point>
+												<Point>
+													<XPos>-77.8270509977827</XPos>
+													<YPos>-44.1558441558442</YPos>
+													<Flags>0</Flags>
+													<Time>1000</Time>
+												</Point>
+											</PointList>
+										</Path2D>
+										<Path2D Name="amb_raven_Path_01" ID="{537E073A-4E05-4712-A475-1A72A05038DB}">
+											<PropertyList>
+												<Property Name="Duration" Type="Uint32" Value="1000"/>
+												<Property Name="RandomX" Type="Real64" Value="22"/>
+												<Property Name="RandomY" Type="Real64" Value="27"/>
+												<Property Name="RandomZ" Type="Real64" Value="26"/>
+											</PropertyList>
+											<PointList>
+												<Point>
+													<XPos>-79.82262</XPos>
+													<YPos>76.40693</YPos>
+													<Flags>12</Flags>
+													<Time>0</Time>
+												</Point>
+												<Point>
+													<XPos>-42.35033</XPos>
+													<YPos>40.25974</YPos>
+													<Flags>0</Flags>
+													<Time>250</Time>
+												</Point>
+												<Point>
+													<XPos>5.98669623059868</XPos>
+													<YPos>-12.987012987013</YPos>
+													<Flags>0</Flags>
+													<Time>500</Time>
+												</Point>
+												<Point>
+													<XPos>29.490022172949</XPos>
+													<YPos>-38.0952380952381</YPos>
+													<Flags>0</Flags>
+													<Time>750</Time>
+												</Point>
+												<Point>
+													<XPos>68.9578713968958</XPos>
+													<YPos>-70.995670995671</YPos>
+													<Flags>0</Flags>
+													<Time>1000</Time>
+												</Point>
+											</PointList>
+										</Path2D>
+										<Path2D Name="amb_raven_Path_02" ID="{504DF632-3A6C-4F2B-A35A-06FCCEB72DC6}">
+											<PropertyList>
+												<Property Name="Duration" Type="Uint32" Value="1000"/>
+											</PropertyList>
+											<PointList>
+												<Point>
+													<XPos>-79.82262</XPos>
+													<YPos>76.40693</YPos>
+													<Flags>12</Flags>
+													<Time>0</Time>
+												</Point>
+												<Point>
+													<XPos>-63.1929</XPos>
+													<YPos>-72.72727</YPos>
+													<Flags>0</Flags>
+													<Time>333</Time>
+												</Point>
+												<Point>
+													<XPos>56.9844789356985</XPos>
+													<YPos>-67.965367965368</YPos>
+													<Flags>0</Flags>
+													<Time>666</Time>
+												</Point>
+												<Point>
+													<XPos>89.8004434589801</XPos>
+													<YPos>11.2554112554113</YPos>
+													<Flags>0</Flags>
+													<Time>1000</Time>
+												</Point>
+											</PointList>
+										</Path2D>
+										<Path2D Name="amb_raven_Path_03" ID="{5F4F0514-3B3A-49AA-92EF-CCA5E9C24518}">
+											<PropertyList>
+												<Property Name="Duration" Type="Uint32" Value="1000"/>
+											</PropertyList>
+											<PointList>
+												<Point>
+													<XPos>86.4745</XPos>
+													<YPos>82.90044</YPos>
+													<Flags>12</Flags>
+													<Time>0</Time>
+												</Point>
+												<Point>
+													<XPos>81.81819</XPos>
+													<YPos>45.02165</YPos>
+													<Flags>0</Flags>
+													<Time>333</Time>
+												</Point>
+												<Point>
+													<XPos>77.82705</XPos>
+													<YPos>5.19481</YPos>
+													<Flags>0</Flags>
+													<Time>666</Time>
+												</Point>
+												<Point>
+													<XPos>76.4966740576497</XPos>
+													<YPos>-64.5021645021645</YPos>
+													<Flags>0</Flags>
+													<Time>1000</Time>
+												</Point>
+											</PointList>
+										</Path2D>
+									</ChildrenList>
+								</Position>
+							</PositioningInfo>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="amb_wings" ID="{79B9D876-AD7E-46D6-BCEF-A845176658C0}" ShortID="164929185">
+							<PropertyList>
+								<Property Name="3DPosition" Type="int16" Value="2"/>
+								<Property Name="InitialDelay" Type="Real64">
+									<ValueList>
+										<Value>30</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
+								<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="35"/>
+								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+								<Property Name="SpeakerPanning" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-16</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Wings, Bird, Parrot, Wing Flaps 1 SND0864" ID="{D209D504-FB9A-40C6-9D87-3DE7CF9D9E51}" ShortID="921381001">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Wings, Bird, Parrot, Wing Flaps 1 SND0864" ID="{8F496A5A-0B25-4FAD-AB1C-0D0C6B853DEE}">
+											<Language>SFX</Language>
+											<AudioFile>Wings, Bird, Parrot, Wing Flaps 1 SND0864.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="710639173"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Wings, Bird, Parrot, Wing Flaps 1 SND0864" ID="{8F496A5A-0B25-4FAD-AB1C-0D0C6B853DEE}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Wings, Bird, Parrot, Wing Flaps 1 SND0864 1" ID="{6FEB5337-8988-49BC-A4B8-C540614E9D94}" ShortID="100852299">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Wings, Bird, Parrot, Wing Flaps 1 SND0864 1" ID="{24BC8D8E-D95E-4DCB-9DFF-EE957226C946}">
+											<Language>SFX</Language>
+											<AudioFile>Wings, Bird, Parrot, Wing Flaps 1 SND0864 1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="506358734"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Wings, Bird, Parrot, Wing Flaps 1 SND0864 1" ID="{24BC8D8E-D95E-4DCB-9DFF-EE957226C946}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Wings, Bird, Parrot, Wing Flaps 1 SND0864 2" ID="{C796A10B-3656-49E3-99FD-96D0FFB8A140}" ShortID="971387605">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Wings, Bird, Parrot, Wing Flaps 1 SND0864 2" ID="{761E9AC2-7C96-465C-97C6-EAB9428D74C0}">
+											<Language>SFX</Language>
+											<AudioFile>Wings, Bird, Parrot, Wing Flaps 1 SND0864 2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="939365507"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Wings, Bird, Parrot, Wing Flaps 1 SND0864 2" ID="{761E9AC2-7C96-465C-97C6-EAB9428D74C0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Wings, Bird, Wing Flaps, Low 2 SND11279 1" ID="{84FF2220-3921-41BD-AD25-5E5C3FC283DE}" ShortID="494113927">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Wings, Bird, Wing Flaps, Low 2 SND11279 1" ID="{B90D8FAB-350F-40A2-9DA7-8A221F861748}">
+											<Language>SFX</Language>
+											<AudioFile>Wings, Bird, Wing Flaps, Low 2 SND11279 1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="46155190"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Wings, Bird, Wing Flaps, Low 2 SND11279 1" ID="{B90D8FAB-350F-40A2-9DA7-8A221F861748}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Wings, Bird, Wing Flaps, Low 1 SND11280 1" ID="{C563184A-0440-4E0E-98AA-3BCA32867F6A}" ShortID="888218467">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Wings, Bird, Wing Flaps, Low 1 SND11280 1" ID="{2C920F04-A743-4C2C-953E-821010A2713C}">
+											<Language>SFX</Language>
+											<AudioFile>Wings, Bird, Wing Flaps, Low 1 SND11280 1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="954311666"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Wings, Bird, Wing Flaps, Low 1 SND11280 1" ID="{2C920F04-A743-4C2C-953E-821010A2713C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<PositioningInfo>
+								<Panner Name="" ID="{0E240E90-A638-4B04-99AB-90751B051C41}"/>
+								<Position Name="" ID="{D8A9F8B9-B08D-4EC4-B493-E08B1C833C03}">
+									<PropertyList>
+										<Property Name="PlayMechanismRandomOrSequence" Type="int16" Value="1"/>
+									</PropertyList>
+									<ChildrenList>
+										<Path2D Name="amb_wings_Path" ID="{B6B8F5E4-99CA-40BD-9828-7E9FE3AB21C8}">
+											<PropertyList>
+												<Property Name="Duration" Type="Uint32" Value="1000"/>
+												<Property Name="LinearTime" Type="bool" Value="False"/>
+											</PropertyList>
+											<PointList>
+												<Point>
+													<XPos>0</XPos>
+													<YPos>50</YPos>
+													<Flags>12</Flags>
+													<Time>0</Time>
+												</Point>
+												<Point>
+													<XPos>-53.880266075388</XPos>
+													<YPos>53.2467532467533</YPos>
+													<Flags>0</Flags>
+													<Time>250</Time>
+												</Point>
+												<Point>
+													<XPos>-63.1929046563193</XPos>
+													<YPos>24.2424242424242</YPos>
+													<Flags>0</Flags>
+													<Time>500</Time>
+												</Point>
+												<Point>
+													<XPos>-63.6363636363636</XPos>
+													<YPos>-25.5411255411255</YPos>
+													<Flags>0</Flags>
+													<Time>750</Time>
+												</Point>
+												<Point>
+													<XPos>-74.7228381374723</XPos>
+													<YPos>-43.2900432900433</YPos>
+													<Flags>0</Flags>
+													<Time>1000</Time>
+												</Point>
+											</PointList>
+										</Path2D>
+										<Path2D Name="amb_wings_Path_01" ID="{0A85549C-8D17-40AC-B127-BB08DB87CAC8}">
+											<PropertyList>
+												<Property Name="Duration" Type="Uint32" Value="1000"/>
+												<Property Name="RandomX" Type="Real64" Value="19"/>
+												<Property Name="RandomY" Type="Real64" Value="21"/>
+												<Property Name="RandomZ" Type="Real64" Value="19"/>
+											</PropertyList>
+											<PointList>
+												<Point>
+													<XPos>0</XPos>
+													<YPos>50</YPos>
+													<Flags>12</Flags>
+													<Time>0</Time>
+												</Point>
+												<Point>
+													<XPos>26.3858093126386</XPos>
+													<YPos>44.5887445887446</YPos>
+													<Flags>0</Flags>
+													<Time>250</Time>
+												</Point>
+												<Point>
+													<XPos>59.6452328159645</XPos>
+													<YPos>22.9437229437229</YPos>
+													<Flags>0</Flags>
+													<Time>500</Time>
+												</Point>
+												<Point>
+													<XPos>70.7317073170732</XPos>
+													<YPos>-12.5541125541125</YPos>
+													<Flags>0</Flags>
+													<Time>750</Time>
+												</Point>
+												<Point>
+													<XPos>80.9312638580931</XPos>
+													<YPos>-58.4415584415584</YPos>
+													<Flags>0</Flags>
+													<Time>1000</Time>
+												</Point>
+											</PointList>
+										</Path2D>
+										<Path2D Name="amb_wings_Path_02" ID="{DEB1A646-7C42-4108-B698-B1BE6598F644}">
+											<PropertyList>
+												<Property Name="Duration" Type="Uint32" Value="1000"/>
+											</PropertyList>
+											<PointList>
+												<Point>
+													<XPos>-87.80488</XPos>
+													<YPos>-96.75325</YPos>
+													<Flags>12</Flags>
+													<Time>0</Time>
+												</Point>
+												<Point>
+													<XPos>77.8270509977827</XPos>
+													<YPos>88.7445887445887</YPos>
+													<Flags>0</Flags>
+													<Time>1000</Time>
+												</Point>
+											</PointList>
+										</Path2D>
+										<Path2D Name="amb_wings_Path_03" ID="{B2E0A24A-355C-4853-9E33-DF64A20F7AA9}">
+											<PropertyList>
+												<Property Name="Duration" Type="Uint32" Value="1000"/>
+											</PropertyList>
+											<PointList>
+												<Point>
+													<XPos>-88.6918</XPos>
+													<YPos>83.33333</YPos>
+													<Flags>12</Flags>
+													<Time>0</Time>
+												</Point>
+												<Point>
+													<XPos>-41.9068736141907</XPos>
+													<YPos>11.6883116883117</YPos>
+													<Flags>0</Flags>
+													<Time>250</Time>
+												</Point>
+												<Point>
+													<XPos>29.0465631929047</XPos>
+													<YPos>-64.5021645021645</YPos>
+													<Flags>0</Flags>
+													<Time>500</Time>
+												</Point>
+												<Point>
+													<XPos>76.940133037694</XPos>
+													<YPos>-15.1515151515152</YPos>
+													<Flags>0</Flags>
+													<Time>750</Time>
+												</Point>
+												<Point>
+													<XPos>84.9223946784923</XPos>
+													<YPos>-90.9090909090909</YPos>
+													<Flags>0</Flags>
+													<Time>1000</Time>
+												</Point>
+											</PointList>
+										</Path2D>
+										<Path2D Name="amb_wings_Path_04" ID="{FCA04AB4-F06E-40F5-A266-D836BB1DBA83}">
+											<PropertyList>
+												<Property Name="Duration" Type="Uint32" Value="1000"/>
+											</PropertyList>
+											<PointList>
+												<Point>
+													<XPos>0</XPos>
+													<YPos>50</YPos>
+													<Flags>12</Flags>
+													<Time>0</Time>
+												</Point>
+											</PointList>
+										</Path2D>
+										<Path2D Name="amb_wings_Path_05" ID="{CD70DF87-7297-46CC-AA8C-C9B296D5DE66}">
+											<PropertyList>
+												<Property Name="Duration" Type="Uint32" Value="1000"/>
+											</PropertyList>
+											<PointList>
+												<Point>
+													<XPos>11.97339</XPos>
+													<YPos>70.34632</YPos>
+													<Flags>12</Flags>
+													<Time>0</Time>
+												</Point>
+												<Point>
+													<XPos>93.7915742793792</XPos>
+													<YPos>1.73160173160173</YPos>
+													<Flags>0</Flags>
+													<Time>250</Time>
+												</Point>
+												<Point>
+													<XPos>-0.665188470066511</XPos>
+													<YPos>-93.9393939393939</YPos>
+													<Flags>0</Flags>
+													<Time>500</Time>
+												</Point>
+												<Point>
+													<XPos>-90.6873614190687</XPos>
+													<YPos>-1.73160173160173</YPos>
+													<Flags>0</Flags>
+													<Time>750</Time>
+												</Point>
+												<Point>
+													<XPos>-7.76053215077604</XPos>
+													<YPos>73.1601731601732</YPos>
+													<Flags>0</Flags>
+													<Time>1000</Time>
+												</Point>
+											</PointList>
+										</Path2D>
+									</ChildrenList>
+								</Position>
+							</PositioningInfo>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="amb_wood_squeak" ID="{F000FCFB-E897-4DF3-AA19-D04CD98653A0}" ShortID="20781819">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<Sound Name="amb_eye_drone" ID="{33761098-CECD-4EFA-8BE6-A2B1AF5947E1}" ShortID="758403028">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</Sound>
+						<RandomSequenceContainer Name="amb_bush" ID="{7152A035-CBBD-4308-9A0E-B997F6917BE9}" ShortID="936414778">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>24</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{FB6BCAD1-DF63-418A-88EC-F3E10D48A975}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="30"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="InitialDelay" Type="Real64">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{529697B5-3E3C-4CDE-8274-EDD3234864F0}">
+												<PropertyList>
+													<Property Name="Max" Type="Real64" Value="4"/>
+													<Property Name="Min" Type="Real64" Value="-3"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{482550A0-F5C2-4E2B-AFC2-2DC07F96674F}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="606"/>
+													<Property Name="Min" Type="Real64" Value="-657"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-12</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="fire" ID="{BE8053A6-378D-43F3-BC77-7353EB91E1C3}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Room_Medium_High_Absorbtion" ID="{E22DBBB6-7656-4B93-A28D-C003FD416889}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="Effect1" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<ObjectRef Name="Low_Pass_20KHz" ID="{830124FB-B9D5-4AE8-846E-E94A74652666}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Vegetation, Dry Leaves Hit, Rustle Leaf SND7769 1" ID="{B892C247-90C8-46AC-A793-C323AB86DC39}" ShortID="426414442">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Vegetation, Dry Leaves Hit, Rustle Leaf SND7769 1" ID="{31CA0A34-0474-4259-9E0C-0FDBA97A8FFC}">
+											<Language>SFX</Language>
+											<AudioFile>Vegetation, Dry Leaves Hit, Rustle Leaf SND7769 1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1067845191"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Vegetation, Dry Leaves Hit, Rustle Leaf SND7769 1" ID="{31CA0A34-0474-4259-9E0C-0FDBA97A8FFC}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<Sound Name="amb_constatnt_bush_rustle" ID="{23C81832-E19C-485F-A308-4001D880FD83}" ShortID="155986193">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Room_Medium_High_Absorbtion" ID="{E22DBBB6-7656-4B93-A28D-C003FD416889}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="Effect1" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<ObjectRef Name="Low_Pass_20KHz" ID="{830124FB-B9D5-4AE8-846E-E94A74652666}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Vegetation, Dry Leaves Hit, Rustle Leaf SND7769 2" ID="{2295BDBE-D5C1-4859-AE6B-7946DE291620}">
+									<Language>SFX</Language>
+									<AudioFile>Vegetation, Dry Leaves Hit, Rustle Leaf SND7769 2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="304867206"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="Vegetation, Dry Leaves Hit, Rustle Leaf SND7769 2" ID="{2295BDBE-D5C1-4859-AE6B-7946DE291620}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Folder Name="amb_schroom" ID="{33D4B8D7-7510-4F41-B07D-9A2CB3779CF6}" ShortID="948681965">
+							<ChildrenList>
+								<Sound Name="amb_schroom_enter" ID="{2F12BB12-B89F-4211-A16F-290B434AED99}" ShortID="552657397">
+									<PropertyList>
+										<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>450</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{D3E53906-8CC6-4299-ACF6-9FDAECF06A47}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="606"/>
+															<Property Name="Min" Type="Real64" Value="-177"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-17</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+											<ObjectRef Name="Room_Medium_High_Absorbtion" ID="{E22DBBB6-7656-4B93-A28D-C003FD416889}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gore, Stab, Impact, Vegetables, Slurps With Air, Bloody, Flesh 02 SND10415 3" ID="{FD248A50-6D9A-497C-A8EF-18A369A4554A}">
+											<Language>SFX</Language>
+											<AudioFile>Gore, Stab, Impact, Vegetables, Slurps With Air, Bloody, Flesh 02 SND10415 3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="614058351"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gore, Stab, Impact, Vegetables, Slurps With Air, Bloody, Flesh 02 SND10415 3" ID="{FD248A50-6D9A-497C-A8EF-18A369A4554A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="gore" ID="{51B4F230-7547-4389-A0C3-AECBE0A7964D}" ShortID="36257201">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="gore" ID="{42C49309-5295-4445-8B47-8FBC1039954D}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.31226059210792"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.737354843548954"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>gore.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="77449660"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="gore" ID="{42C49309-5295-4445-8B47-8FBC1039954D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</Folder>
+						<RandomSequenceContainer Name="amb_rocks_falling" ID="{AAF84CFB-80B7-4F66-9944-6E0D9FAEECD4}" ShortID="774187420">
+							<PropertyList>
+								<Property Name="3DPosition" Type="int16" Value="2"/>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="IgnoreParentMaxSoundInstance" Type="bool" Value="True"/>
+								<Property Name="InitialDelay" Type="Real64">
+									<ValueList>
+										<Value>40</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{84E1B407-6EA8-4F5F-BD94-BEE6C1BF4EDE}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>34</Value>
+									</ValueList>
+								</Property>
+								<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
+								<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="46"/>
+								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+								<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-17</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Birds, Crow, Ravens, Raven Call 06 SND50092" ID="{2F2B7CDD-D983-4A47-AF74-744C6A5794D4}" ShortID="907152553">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Birds, Crow, Ravens, Raven Call 06 SND50092" ID="{C7FB2035-35AE-46C3-AD44-8B61484B3320}">
+											<Language>SFX</Language>
+											<AudioFile>Birds, Crow, Ravens, Raven Call 06 SND50092.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="112415401"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Birds, Crow, Ravens, Raven Call 06 SND50092" ID="{C7FB2035-35AE-46C3-AD44-8B61484B3320}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Birds, Crow, Ravens, Raven Call 02 SND50096" ID="{3E256697-8B6F-4173-BCE3-620D72B35004}" ShortID="912083529">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Birds, Crow, Ravens, Raven Call 02 SND50096" ID="{BC08AB1F-BAE0-4AD4-8842-2034136F59C2}">
+											<Language>SFX</Language>
+											<AudioFile>Birds, Crow, Ravens, Raven Call 02 SND50096.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="436950440"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Birds, Crow, Ravens, Raven Call 02 SND50096" ID="{BC08AB1F-BAE0-4AD4-8842-2034136F59C2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Birds, Crow, Ravens, Raven Call 04 SND50093" ID="{C98AE72B-73D9-4CE8-8BDC-AA5574BED05B}" ShortID="912904309">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Birds, Crow, Ravens, Raven Call 04 SND50093" ID="{EC3E1ADE-63E0-4DD2-9307-051F1EF5902B}">
+											<Language>SFX</Language>
+											<AudioFile>Birds, Crow, Ravens, Raven Call 04 SND50093.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="407920327"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Birds, Crow, Ravens, Raven Call 04 SND50093" ID="{EC3E1ADE-63E0-4DD2-9307-051F1EF5902B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Birds, Crow, Ravens, Raven Call 04 SND50093 1" ID="{B721E564-AB84-436F-B054-12BB8B57387C}" ShortID="293081786">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Birds, Crow, Ravens, Raven Call 04 SND50093 1" ID="{ABB878AB-B308-4027-9F24-47C1398DC64F}">
+											<Language>SFX</Language>
+											<AudioFile>Birds, Crow, Ravens, Raven Call 04 SND50093 1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="180403610"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Birds, Crow, Ravens, Raven Call 04 SND50093 1" ID="{ABB878AB-B308-4027-9F24-47C1398DC64F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<PositioningInfo>
+								<Position Name="" ID="{1867B137-71B9-4733-8D75-7FFDB2814993}">
+									<PropertyList>
+										<Property Name="NewPathForEachSound" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismRandomOrSequence" Type="int16" Value="1"/>
+									</PropertyList>
+									<ChildrenList>
+										<Path2D Name="amb_raven_Path" ID="{51255292-E92A-4E87-B373-B7D6B2A06F2C}">
+											<PropertyList>
+												<Property Name="Duration" Type="Uint32" Value="1000"/>
+											</PropertyList>
+											<PointList>
+												<Point>
+													<XPos>-79.82262</XPos>
+													<YPos>76.40693</YPos>
+													<Flags>12</Flags>
+													<Time>0</Time>
+												</Point>
+												<Point>
+													<XPos>-77.8270509977827</XPos>
+													<YPos>-44.1558441558442</YPos>
+													<Flags>0</Flags>
+													<Time>1000</Time>
+												</Point>
+											</PointList>
+										</Path2D>
+										<Path2D Name="amb_raven_Path_01" ID="{17E77A37-F005-4E7E-BE70-AA8C3FDB5408}">
+											<PropertyList>
+												<Property Name="Duration" Type="Uint32" Value="1000"/>
+												<Property Name="RandomX" Type="Real64" Value="22"/>
+												<Property Name="RandomY" Type="Real64" Value="27"/>
+												<Property Name="RandomZ" Type="Real64" Value="26"/>
+											</PropertyList>
+											<PointList>
+												<Point>
+													<XPos>-79.82262</XPos>
+													<YPos>76.40693</YPos>
+													<Flags>12</Flags>
+													<Time>0</Time>
+												</Point>
+												<Point>
+													<XPos>-42.35033</XPos>
+													<YPos>40.25974</YPos>
+													<Flags>0</Flags>
+													<Time>250</Time>
+												</Point>
+												<Point>
+													<XPos>5.98669623059868</XPos>
+													<YPos>-12.987012987013</YPos>
+													<Flags>0</Flags>
+													<Time>500</Time>
+												</Point>
+												<Point>
+													<XPos>29.490022172949</XPos>
+													<YPos>-38.0952380952381</YPos>
+													<Flags>0</Flags>
+													<Time>750</Time>
+												</Point>
+												<Point>
+													<XPos>68.9578713968958</XPos>
+													<YPos>-70.995670995671</YPos>
+													<Flags>0</Flags>
+													<Time>1000</Time>
+												</Point>
+											</PointList>
+										</Path2D>
+										<Path2D Name="amb_raven_Path_02" ID="{0EAFCB70-E6F3-4D85-9645-B4D191EAA2CA}">
+											<PropertyList>
+												<Property Name="Duration" Type="Uint32" Value="1000"/>
+											</PropertyList>
+											<PointList>
+												<Point>
+													<XPos>-79.82262</XPos>
+													<YPos>76.40693</YPos>
+													<Flags>12</Flags>
+													<Time>0</Time>
+												</Point>
+												<Point>
+													<XPos>-63.1929</XPos>
+													<YPos>-72.72727</YPos>
+													<Flags>0</Flags>
+													<Time>333</Time>
+												</Point>
+												<Point>
+													<XPos>56.9844789356985</XPos>
+													<YPos>-67.965367965368</YPos>
+													<Flags>0</Flags>
+													<Time>666</Time>
+												</Point>
+												<Point>
+													<XPos>89.8004434589801</XPos>
+													<YPos>11.2554112554113</YPos>
+													<Flags>0</Flags>
+													<Time>1000</Time>
+												</Point>
+											</PointList>
+										</Path2D>
+										<Path2D Name="amb_raven_Path_03" ID="{865FC3FF-E9E1-4F52-8615-1FF7D56BBC2D}">
+											<PropertyList>
+												<Property Name="Duration" Type="Uint32" Value="1000"/>
+											</PropertyList>
+											<PointList>
+												<Point>
+													<XPos>86.4745</XPos>
+													<YPos>82.90044</YPos>
+													<Flags>12</Flags>
+													<Time>0</Time>
+												</Point>
+												<Point>
+													<XPos>81.81819</XPos>
+													<YPos>45.02165</YPos>
+													<Flags>0</Flags>
+													<Time>333</Time>
+												</Point>
+												<Point>
+													<XPos>77.82705</XPos>
+													<YPos>5.19481</YPos>
+													<Flags>0</Flags>
+													<Time>666</Time>
+												</Point>
+												<Point>
+													<XPos>76.4966740576497</XPos>
+													<YPos>-64.5021645021645</YPos>
+													<Flags>0</Flags>
+													<Time>1000</Time>
+												</Point>
+											</PointList>
+										</Path2D>
+									</ChildrenList>
+								</Position>
+							</PositioningInfo>
+							<ObjectLists/>
+						</RandomSequenceContainer>
 					</ChildrenList>
 					<ObjectLists/>
 				</ActorMixer>
@@ -353,6 +2014,352 @@
 						<ActiveSource Name="Sound Design, Soundscape, Dark Ambience, City Of Dystopia 08 SND42224 1" ID="{2D846CE4-436A-4FBB-87F4-6EAA08C6E29F}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<ActorMixer Name="SFX" ID="{212DC059-FC48-4174-B773-B214E24A64E3}" ShortID="254127967">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<ActorMixer Name="sfx_object" ID="{2418070E-7AF4-41B6-A342-E5F845E54BF3}" ShortID="358638742">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</ActorMixer>
+						<Sound Name="sfx_gold_pickup" ID="{5891A8C4-B655-4076-884F-703C81C0BF4E}" ShortID="545814010">
+							<PropertyList>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-8</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Money, Australian Coins, Down On Soft Surface  SND18472" ID="{F5002845-E963-412E-B4CE-F929DACCB9E2}">
+									<Language>SFX</Language>
+									<AudioFile>Money, Australian Coins, Down On Soft Surface  SND18472.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="568874121"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="Money, Australian Coins, Down On Soft Surface  SND18472" ID="{F5002845-E963-412E-B4CE-F929DACCB9E2}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_teleport" ID="{C4EF1AC9-EED9-42B7-99BE-74478D337468}" ShortID="669206719">
+							<PropertyList>
+								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+								<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>3</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-11</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="My_Closet" ID="{384A82A1-3C92-4AC5-AFC2-474F2080642C}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sci-Fi, Teleportation, Arrive SND32584" ID="{B21CC649-2572-42F6-AB85-A51D3430B61C}">
+									<Language>SFX</Language>
+									<AudioFile>Sci-Fi, Teleportation, Arrive SND32584.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="770380962"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="Sci-Fi, Teleportation, Arrive SND32584" ID="{B21CC649-2572-42F6-AB85-A51D3430B61C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Folder Name="boxdestroy" ID="{5308E2D0-CD58-43CE-B986-F65F97B93BCB}" ShortID="867875015">
+							<ChildrenList>
+								<Sound Name="sfx_box_destroy" ID="{0CBA8F10-3F4F-4F7B-9EC9-BFA27F432040}" ShortID="298848910">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>30</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{E1D89753-215B-4B78-ADE6-440F9CF7A7A4}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="303"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Destruction, Crash &amp; Debris, Wood,, Roof, Destroy SND58486" ID="{E27A6753-F2A4-4A29-A230-D1ABF6465CCB}">
+											<Language>SFX</Language>
+											<AudioFile>Destruction, Crash &amp; Debris, Wood,, Roof, Destroy SND58486.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="829195809"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Destruction, Crash &amp; Debris, Wood,, Roof, Destroy SND58486" ID="{E27A6753-F2A4-4A29-A230-D1ABF6465CCB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Impact, Wood, Ukulele, Thin, Smash, Break 1 SND30370" ID="{6C9FC7BD-1A86-4B50-B527-EE257AE059FD}" ShortID="512846270">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{9B665498-4E31-409A-8957-A7ECD197AE3C}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="150"/>
+															<Property Name="Min" Type="Real64" Value="-50"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Impact, Wood, Ukulele, Thin, Smash, Break 1 SND30370" ID="{DAB53325-3235-4BC4-8026-B8601C687E4E}">
+											<Language>SFX</Language>
+											<AudioFile>Impact, Wood, Ukulele, Thin, Smash, Break 1 SND30370.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="937451939"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Impact, Wood, Ukulele, Thin, Smash, Break 1 SND30370" ID="{DAB53325-3235-4BC4-8026-B8601C687E4E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</Folder>
+						<Sound Name="sfx_object_pickup" ID="{457FB028-D29B-4FFD-A73F-A64EE8A5DA31}" ShortID="228845413">
+							<PropertyList>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Dirty_Washing_Machine" ID="{824764DD-7364-411D-AF50-DEDF8E3DCC48}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="Effect1" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Room_Medium_Tiled" ID="{0C0A3A92-A571-4FDB-AB40-ACFED04E0217}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Gun, Rifle, Grab, Pick Up SND6244" ID="{02BF7C15-608F-43D0-B144-D4EF2BF00507}">
+									<Language>SFX</Language>
+									<AudioFile>Gun, Rifle, Grab, Pick Up SND6244.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="885430307"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="Gun, Rifle, Grab, Pick Up SND6244" ID="{02BF7C15-608F-43D0-B144-D4EF2BF00507}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_buy_click" ID="{2FD7EECA-850D-490F-AA2D-3C27EDB8BB7B}" ShortID="301845846">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="4"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Room_Medium_Tiled" ID="{0C0A3A92-A571-4FDB-AB40-ACFED04E0217}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="hitbuy" ID="{17B6028F-11C7-4E9C-87D6-E82E489C868D}">
+									<Language>SFX</Language>
+									<AudioFile>hitbuy.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="209144488"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="hitbuy" ID="{17B6028F-11C7-4E9C-87D6-E82E489C868D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_change_color" ID="{B9167373-AA94-4A6E-9869-7F94E26002A3}" ShortID="32040433">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="4"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Room_Medium_Tiled" ID="{0C0A3A92-A571-4FDB-AB40-ACFED04E0217}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Cloth, Flap, Whoosh SND36449 1" ID="{EFAF4B89-B58D-4B62-9BEC-1808AE09B7E9}">
+									<Language>SFX</Language>
+									<AudioFile>Cloth, Flap, Whoosh SND36449 1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="193842192"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="Cloth, Flap, Whoosh SND36449 1" ID="{EFAF4B89-B58D-4B62-9BEC-1808AE09B7E9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<ObjectLists/>
+				</ActorMixer>
+				<ActorMixer Name="Seller" ID="{A3A10A43-81C1-45A0-A08C-8FF726A0E074}" ShortID="516708149">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="hello_there" ID="{0CE6B7DB-B2D2-4390-8F53-19A3F5F5E01C}" ShortID="831809748">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</Sound>
+						<Sound Name="hehehe" ID="{9B299822-6994-4832-9D04-258DEAA8CE23}" ShortID="458690384">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</Sound>
+						<Sound Name="your_welcome" ID="{21CCA003-0498-48D4-966F-DB8142B006C7}" ShortID="237999187">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</Sound>
+					</ChildrenList>
+					<ObjectLists/>
+				</ActorMixer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

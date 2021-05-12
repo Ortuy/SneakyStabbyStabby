@@ -25,6 +25,7 @@ public class Pickup : MonoBehaviourPunCallbacks
 
     private void DestroyPickup()
     {
+        AkSoundEngine.PostEvent("sfx_obj_pickup", gameObject, gameObject);
         var particle = Instantiate(particleEffect, transform.position, Quaternion.identity);
         Destroy(particle, 5f);
         Destroy(gameObject);
@@ -86,6 +87,7 @@ public class Pickup : MonoBehaviourPunCallbacks
 
             if(pickedUp)
             {
+                
                 DestroyPickup();
 
                 if (other.GetComponent<PhotonView>().IsMine)

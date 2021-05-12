@@ -31,6 +31,8 @@ public class ColourSelect : InteractableObject
     protected override void StartInteraction()
     {
         base.StartInteraction();
+        
+       
         targetPV.GetComponent<Player>().ColorSelect.SetActive(true);
     }
 

@@ -11,6 +11,7 @@ public class Vegetation : MonoBehaviour
 
     private bool animationPlaying;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,15 +20,25 @@ public class Vegetation : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!animationPlaying && !collision.CompareTag("ViewCone"))
+       
+        if (!animationPlaying && !collision.CompareTag("ViewCone"))
         {
+            
             animator.SetTrigger("Rustle");
             if(moveParticlesToCollision)
             {
+               
                 particles.transform.position = collision.transform.position;
             }
             particles.Play();
             animationPlaying = true;
+
+            
+            if (particles.ToString().Contains("Spores"))
+                AkSoundEngine.PostEvent("amb_schroom_enter", gameObject, gameObject);
+            else if (particles.ToString().Contains("PickupParticle"))
+                AkSoundEngine.PostEvent("amb_bush_rustle_enter", gameObject, gameObject);
+
         }
         
     }
@@ -36,4 +47,5 @@ public class Vegetation : MonoBehaviour
     {
         animationPlaying = false;
     }
+
 }

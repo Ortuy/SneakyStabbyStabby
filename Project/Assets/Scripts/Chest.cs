@@ -78,6 +78,7 @@ public class Chest : MonoBehaviourPunCallbacks
             CreateItem();
             chestFX.Play();
 
+
             photonView.RPC("StartItemCoolDown", RpcTarget.AllBuffered);
             var temp = Random.Range(0, 12);
             photonView.RPC("SyncItemNumber", RpcTarget.AllBuffered, temp);
@@ -101,9 +102,9 @@ public class Chest : MonoBehaviourPunCallbacks
 
     private void CreateItem()
     {
+        AkSoundEngine.PostEvent("sfx_box_destroy", gameObject, gameObject);
 
-
-            if (itemNum == 0)
+        if (itemNum == 0)
             {
                 PhotonNetwork.Instantiate(pickup1.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
             }
@@ -151,11 +152,12 @@ public class Chest : MonoBehaviourPunCallbacks
             {
                 PhotonNetwork.Instantiate(pickup12.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
             }
-
+        AkSoundEngine.PostEvent("sfx_pickup_gold", gameObject, gameObject);
 
     }
     IEnumerator ItemMaking()
     {
+        
         cooldownText.gameObject.SetActive(true);
         int timeLeft = spawnTime;
         while(timeLeft > 0)
@@ -170,6 +172,7 @@ public class Chest : MonoBehaviourPunCallbacks
         lid.SetActive(true);
         itemImage.sprite = itemSprites[itemNum];
         chestlIsActive = true;
+        
     }
 
 }

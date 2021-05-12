@@ -673,6 +673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particles: {fileID: 7005694373897359932}
+  moveParticlesToCollision: 0
 --- !u!114 &-790131804615309947
 MonoBehaviour:
   m_ObjectHideFlags: 0
