@@ -255,3 +255,8 @@
 ### Changed
 - Decluttered PhotonViews - Gold pickups and level decor lost photon view components. Hopefully this will help optimisation. Need to check if stuff works properly.
 - blink go throught windows and traps
+
+## [0.2.12] - 2021-05-13
+### Added
+- 90% complete 6 player map
+- Wood tiles

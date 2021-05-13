@@ -232,7 +232,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         {
             //photonView.RPC("SpawnDecor", RpcTarget.AllBuffered);
             string tmp = "DecorHolder" + SceneManager.GetActiveScene().name;
-            //PhotonNetwork.InstantiateRoomObject(tmp, Vector3.zero, Quaternion.identity);
+            PhotonNetwork.InstantiateRoomObject(tmp, Vector3.zero, Quaternion.identity);
             
             photonView.RPC("KeepOneDecorSet", RpcTarget.AllBuffered);
             //SpawnDecor();
