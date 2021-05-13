@@ -260,3 +260,5 @@
 ### Added
 - 90% complete 6 player map
 - Wood tiles
+### Fixed
+- The players are now able to leave games

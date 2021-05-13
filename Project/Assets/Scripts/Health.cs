@@ -172,7 +172,11 @@ public class Health : MonoBehaviourPunCallbacks
         if (photonView.IsMine)
         {
             healthAmount -= amount;
-            lifeMarkers[Mathf.FloorToInt(healthAmount)].SetActive(false);
+            if(healthAmount >= 0)
+            {
+                lifeMarkers[Mathf.FloorToInt(healthAmount)].SetActive(false);
+            }
+            
         }
         else
         {
