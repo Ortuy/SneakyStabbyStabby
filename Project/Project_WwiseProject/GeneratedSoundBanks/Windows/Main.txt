@@ -1,12 +1,62 @@
 Event	ID	Name			Wwise Object Path	Notes
+	171029537	sfx_change_color			\Default Work Unit\SFX\sfx_change_color	
 	205229924	Music_Ambient_Drone			\Default Work Unit\Music\Music_Ambient_Drone	
+	237514306	sfx_pickup_gold			\Default Work Unit\SFX\sfx_pickup_gold	
+	490354319	sfx_box_destroy			\Default Work Unit\SFX\sfx_box_destroy	
+	601065099	ui_wood_panel_options_checkbox			\Default Work Unit\UI\ui_wood_panel_options_checkbox	
+	1509706435	sfx_obj_pickup			\Default Work Unit\SFX\sfx_obj_pickup	
+	1537061107	wind			\Default Work Unit\Ambience\wind	
 	2097608532	UIClickWoodPanel			\Default Work Unit\UI\UIClickWoodPanel	
+	2149148881	ui_open_map			\Default Work Unit\UI\ui_open_map	
+	2554305358	sfx_buy_shop			\Default Work Unit\SFX\sfx_buy_shop	
+	2785568501	ui_close_map			\Default Work Unit\UI\ui_close_map	
+	2857601955	amb_bush_rustle_enter			\Default Work Unit\Ambience\amb_bush_rustle_enter	
+	3080149663	ui_wood_open_panel			\Default Work Unit\UI\ui_wood_open_panel	
 	3207324726	amb_fire			\Default Work Unit\Ambience\amb_fire	
 	3464476944	ui_click_wood_panel_exit			\Default Work Unit\UI\ui_click_wood_panel_exit	
+	3862022932	char_knife_swinging			\Default Work Unit\Character\char_knife_swinging	
+	4025637178	amb_schroom_enter			\Default Work Unit\Ambience\amb_schroom_enter	
+	4028214536	sfx_teleport			\Default Work Unit\SFX\sfx_teleport	
+	4294591936	ui_interact			\Default Work Unit\UI\ui_interact	
+
+Effect plug-ins	ID	Name	Type				Notes
+	4496003	Dirty_Washing_Machine	Wwise RoomVerb			
+	1008402193	Low_Pass_20KHz	Wwise Parametric EQ			
+	1159390747	Room_Medium_Tiled	Wwise RoomVerb			
+	2891462749	Room_Medium_High_Absorbtion	Wwise RoomVerb			
+	2945072214	My_Closet	Wwise RoomVerb			
+	3497757918	Fast_LF_Tremolo_No_Smoothing	Wwise Tremolo			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	27403535	music	D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Sound Design, Soundscape, Dark Ambience, City Of Dystopia 08 SND42224 1_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\music		32207896
-	125900082	ui_wood_panel_click	D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Wood, Impact, Hit, Table, Hard SND4258 6_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\ui_wood_panel_click		44088
-	620292358	ui_wood_panel_exit	D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Wood, Impact, Hit, Table, Hard SND4258 7_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\ui_wood_panel_exit		50378
-	941754977	amb_fire	D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Fire, Burning, Wood, Soft Intensity SND8758 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\amb_fire		7241028
+	23209238	ui_open_map	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\openmap_5128E34A.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\ui_open_map		335936
+	27403535	music	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Sound Design, Soundscape, Dark Ambience, City Of Dystopia 08 SND42224 1_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\music		32207896
+	46155190	Wings, Bird, Wing Flaps, Low 2 SND11279 1	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Wings, Bird, Wing Flaps, Low 2 SND11279 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\amb_wings\Wings, Bird, Wing Flaps, Low 2 SND11279 1		273496
+	77449660	gore	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\gore_805EBEA7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\amb_schroom\gore		75048
+	112415401	Birds, Crow, Ravens, Raven Call 06 SND50092	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Birds, Crow, Ravens, Raven Call 06 SND50092_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\amb_raven\Birds, Crow, Ravens, Raven Call 06 SND50092		337984
+	125900082	ui_wood_panel_click	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Wood, Impact, Hit, Table, Hard SND4258 6_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\ui_wood_panel_click		44088
+	126807708	ui_wood_open_panel	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Vegetation, Stick, Branch, Land On Forest Floor, Leaves 2 SND30270 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\ui_wood_open_panel		79436
+	180403610	Birds, Crow, Ravens, Raven Call 04 SND50093 1	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Birds, Crow, Ravens, Raven Call 04 SND50093 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\amb_raven\Birds, Crow, Ravens, Raven Call 04 SND50093 1		123852
+	187997657	ui_close_map	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\closemap_5128E34A.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\ui_close_map		151616
+	193842192	sfx_change_color	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Cloth, Flap, Whoosh SND36449 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\sfx_change_color		77920
+	209144488	sfx_buy_click	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\hitbuy_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\sfx_buy_click		74484
+	238898135	amb_wind	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Ambience, Rural, Prairie, Light Wind, Flies SND1345 1_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\amb_wind		1695492
+	292243933	ui_interact	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Bells, Handbell, Small, Decorative Bell, Ring 04 SND14935 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\ui_interact		158388
+	407920327	Birds, Crow, Ravens, Raven Call 04 SND50093	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Birds, Crow, Ravens, Raven Call 04 SND50093_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\amb_raven\Birds, Crow, Ravens, Raven Call 04 SND50093		109708
+	436950440	Birds, Crow, Ravens, Raven Call 02 SND50096	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Birds, Crow, Ravens, Raven Call 02 SND50096_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\amb_raven\Birds, Crow, Ravens, Raven Call 02 SND50096		373640
+	506358734	Wings, Bird, Parrot, Wing Flaps 1 SND0864 1	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Wings, Bird, Parrot, Wing Flaps 1 SND0864 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\amb_wings\Wings, Bird, Parrot, Wing Flaps 1 SND0864 1		160056
+	568874121	sfx_gold_pickup	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Money, Australian Coins, Down On Soft Surface  SND18472_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\sfx_gold_pickup		38256
+	613104621	Knife, Swish, Air, Slash Movements SND34526 5	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Knife, Swish, Air, Slash Movements SND34526 5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\Weapon\char_knife_swinging\Knife, Swish, Air, Slash Movements SND34526 5		27432
+	614058351	amb_schroom_enter	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Gore, Stab, Impact, Vegetables, Slurps With Air, Bloody, Flesh 02 SND10415 3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\amb_schroom\amb_schroom_enter		186684
+	620292358	ui_wood_panel_exit	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Wood, Impact, Hit, Table, Hard SND4258 7_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\ui_wood_panel_exit		50378
+	655282332	Knife, Swish, Air, Slash Movements SND34526 4	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Knife, Swish, Air, Slash Movements SND34526 4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\Weapon\char_knife_swinging\Knife, Swish, Air, Slash Movements SND34526 4		36308
+	710639173	Wings, Bird, Parrot, Wing Flaps 1 SND0864	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Wings, Bird, Parrot, Wing Flaps 1 SND0864_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\amb_wings\Wings, Bird, Parrot, Wing Flaps 1 SND0864		163536
+	770380962	sfx_teleport	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Sci-Fi, Teleportation, Arrive SND32584_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\sfx_teleport		189610
+	829195809	sfx_box_destroy	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Destruction, Crash & Debris, Wood,, Roof, Destroy SND58486_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\boxdestroy\sfx_box_destroy		194116
+	885430307	sfx_object_pickup	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Gun, Rifle, Grab, Pick Up SND6244_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\sfx_object_pickup		28980
+	937451939	Impact, Wood, Ukulele, Thin, Smash, Break 1 SND30370	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Impact, Wood, Ukulele, Thin, Smash, Break 1 SND30370_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\boxdestroy\Impact, Wood, Ukulele, Thin, Smash, Break 1 SND30370		143188
+	939365507	Wings, Bird, Parrot, Wing Flaps 1 SND0864 2	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Wings, Bird, Parrot, Wing Flaps 1 SND0864 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\amb_wings\Wings, Bird, Parrot, Wing Flaps 1 SND0864 2		187880
+	941754977	amb_fire	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Fire, Burning, Wood, Soft Intensity SND8758 1_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\amb_fire		7241028
+	954311666	Wings, Bird, Wing Flaps, Low 1 SND11280 1	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Wings, Bird, Wing Flaps, Low 1 SND11280 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\amb_wings\Wings, Bird, Wing Flaps, Low 1 SND11280 1		348372
+	988337085	ui_wood_panel_options_checkbox	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Coin, Ring, Gemstone, Short 2 SND5556_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\ui_wood_panel_options_checkbox		49692
+	1067845191	Vegetation, Dry Leaves Hit, Rustle Leaf SND7769 1	D:\Programowanie\Games\Unity\Stabby\Nowy folder\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Vegetation, Dry Leaves Hit, Rustle Leaf SND7769 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\amb_bush\Vegetation, Dry Leaves Hit, Rustle Leaf SND7769 1		259120
 

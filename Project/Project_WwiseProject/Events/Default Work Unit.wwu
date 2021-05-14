@@ -27,6 +27,61 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="ui_wood_panel_options_checkbox" ID="{05B0927E-DE95-4794-87A8-433C8930B6AC}">
+							<ChildrenList>
+								<Action Name="" ID="{E5E37FBB-BEE9-4426-A762-98382573C67E}" ShortID="562192272">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ui_wood_panel_options_checkbox" ID="{D15C0C09-7B5E-4A5A-8876-31011CE0047E}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="ui_wood_open_panel" ID="{F0A86999-9D1E-4D18-88CC-112A282C9992}">
+							<ChildrenList>
+								<Action Name="" ID="{F0E22157-908C-4A15-8F78-30CFF49E46DF}" ShortID="22875353">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ui_wood_open_panel" ID="{BB57F0B2-1A3F-4569-A5FA-813913F82370}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="ui_interact" ID="{31709220-795A-4191-9A9E-ED25D597199E}">
+							<ChildrenList>
+								<Action Name="" ID="{35D38FB8-8C3B-491B-BDA0-174060824DFA}" ShortID="655009105">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ui_interact" ID="{2F9CE473-57CE-4D1A-B133-22AAC0886495}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="ui_close_map" ID="{2324F4BB-A7F4-48BE-AB7E-02686B953BDE}">
+							<ChildrenList>
+								<Action Name="" ID="{A2C45A3B-D743-4D32-92C3-B16AE800C2E8}" ShortID="860222854">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ui_close_map" ID="{45C2329F-E0B0-4338-B236-D39A0522648B}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="ui_open_map" ID="{53C613CE-3210-4DC2-AE2B-FA8EF6246F37}">
+							<ChildrenList>
+								<Action Name="" ID="{6D1259DA-B3B7-4B96-BD91-D701245AB919}" ShortID="485096499">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ui_open_map" ID="{893B507F-7207-4028-92E0-9F726DA6BF1D}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Music" ID="{819F6A3E-695E-4964-B9FB-1F5E08D9B862}" ShortID="30761040">
@@ -37,6 +92,20 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="music" ID="{5679D916-BC0E-4401-B7A2-A1F0C7ED5CF6}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{C24273ED-BBCD-4C04-ABC9-4829C3DCA84E}" ShortID="722222788">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="amb_raven" ID="{E77A975A-B831-4AC4-8E39-5CC6C1A3A886}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{9CA05F6F-9345-411D-8CC0-341CDFCD68F5}" ShortID="972585995">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="amb_wings" ID="{79B9D876-AD7E-46D6-BCEF-A845176658C0}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -52,6 +121,138 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="amb_fire" ID="{9957A8AD-808A-4657-BD7D-FF6869E4E462}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="wind" ID="{BC69FAE3-84CE-4C9E-8F3A-46DEBFE7B52E}">
+							<ChildrenList>
+								<Action Name="" ID="{586201D7-4498-460B-892F-031DE6AD5900}" ShortID="626053578">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="amb_wind" ID="{26F569F4-7B15-4A0C-BC8C-BCB8C27932F9}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="amb_bush_rustle_enter" ID="{F935EEB7-99B8-4CC1-96DB-0966F73E091C}">
+							<ChildrenList>
+								<Action Name="" ID="{43542E12-9EE5-4160-B930-45A3D1167DF8}" ShortID="1070903659">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="amb_bush" ID="{7152A035-CBBD-4308-9A0E-B997F6917BE9}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="amb_schroom_enter" ID="{1718A224-7B4B-4C74-BA24-A07E050639EB}">
+							<ChildrenList>
+								<Action Name="" ID="{A4BC119C-4CEA-4B83-80C2-C1319EC7E632}" ShortID="997424946">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="amb_schroom_enter" ID="{2F12BB12-B89F-4211-A16F-290B434AED99}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{9EC83278-8F7D-4B98-A68B-8BD9198B32BA}" ShortID="921682880">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="gore" ID="{51B4F230-7547-4389-A0C3-AECBE0A7964D}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="SFX" ID="{975A747A-5318-4977-9ED0-14F5B538C135}" ShortID="987875646">
+					<ChildrenList>
+						<Event Name="sfx_pickup_gold" ID="{591F9E14-8B57-4E1D-A67E-335EA1F3695C}">
+							<ChildrenList>
+								<Action Name="" ID="{744E6753-18AA-4C31-B456-F309E5046AAD}" ShortID="661422313">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sfx_gold_pickup" ID="{5891A8C4-B655-4076-884F-703C81C0BF4E}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="sfx_teleport" ID="{CD65C80C-1F08-42CB-8DFE-5309DF061F6A}">
+							<ChildrenList>
+								<Action Name="" ID="{104C3C4B-7C34-4E4C-B9D7-E94D09F1601E}" ShortID="1051597250">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sfx_teleport" ID="{C4EF1AC9-EED9-42B7-99BE-74478D337468}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="sfx_box_destroy" ID="{E42C2DA8-AA4A-446E-ACBE-EB6FF0F75F54}">
+							<ChildrenList>
+								<Action Name="" ID="{51639A60-4DB2-4FB3-8D29-7E5A537B0549}" ShortID="529014000">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sfx_box_destroy" ID="{0CBA8F10-3F4F-4F7B-9EC9-BFA27F432040}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{DA923EA3-FA36-4F1B-B73E-92D068415380}" ShortID="326295773">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Impact, Wood, Ukulele, Thin, Smash, Break 1 SND30370" ID="{6C9FC7BD-1A86-4B50-B527-EE257AE059FD}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="sfx_obj_pickup" ID="{05E96D8B-FC9F-4B4E-A869-9CB5214ADE0E}">
+							<ChildrenList>
+								<Action Name="" ID="{CFB54B31-809D-408B-AA5D-AE72F1CA90A5}" ShortID="395610739">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sfx_object_pickup" ID="{457FB028-D29B-4FFD-A73F-A64EE8A5DA31}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="sfx_buy_shop" ID="{67C54A3C-845D-4C5D-A72B-433ACE9698F2}">
+							<ChildrenList>
+								<Action Name="" ID="{2BADCE61-75F7-46AB-8E61-F936B1F3C617}" ShortID="172030803">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sfx_buy_click" ID="{2FD7EECA-850D-490F-AA2D-3C27EDB8BB7B}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="sfx_change_color" ID="{A6DD9700-FD98-4BDA-905F-4FC69F59B3CE}">
+							<ChildrenList>
+								<Action Name="" ID="{3E1E31CB-A687-45A5-875E-A1BD5872D797}" ShortID="567062163">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sfx_change_color" ID="{B9167373-AA94-4A6E-9869-7F94E26002A3}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Character" ID="{5BAC89B6-9110-418F-B8C8-198DDACF428E}" ShortID="1071261050">
+					<ChildrenList>
+						<Event Name="char_knife_swinging" ID="{864A35CE-32B9-47A5-A72F-92EE6882F47A}">
+							<ChildrenList>
+								<Action Name="" ID="{8BA49A72-F19F-4143-A2DE-8DF1D70990E1}" ShortID="74502377">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="char_knife_swinging" ID="{24C78752-5284-40A3-8A94-6BF670E05726}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
