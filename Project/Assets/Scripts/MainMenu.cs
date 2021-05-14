@@ -18,6 +18,8 @@ public class MainMenu : MonoBehaviourPunCallbacks
     [SerializeField] private Text roomCodeText;
 
     private string roomName;
+    public int mapNum;
+    public byte playerNum = 2; 
 
     //[SerializeField] private GameObject startButton;
 
@@ -36,13 +38,13 @@ public class MainMenu : MonoBehaviourPunCallbacks
 
     public void CreateGame()
     {
-        PhotonNetwork.CreateRoom(roomName, new RoomOptions() { MaxPlayers = 2 }, null);
+        PhotonNetwork.CreateRoom(roomName, new RoomOptions() { MaxPlayers = playerNum }, null);
     }
 
     public void JoinGame()
     {
         RoomOptions roomOptions = new RoomOptions();
-        roomOptions.MaxPlayers = 2;
+        roomOptions.MaxPlayers = playerNum;
         //PhotonNetwork.JoinOrCreateRoom(joinGameInput.text, roomOptions, TypedLobby.Default);
         PhotonNetwork.JoinRoom(joinGameInput.text);
     }
@@ -123,7 +125,15 @@ public class MainMenu : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        PhotonNetwork.LoadLevel("Arena");
+        if (mapNum == 0)
+        {
+            PhotonNetwork.LoadLevel("Arena");
+        }
+        if (mapNum == 1)
+        {
+            PhotonNetwork.LoadLevel("ArenaLarge");
+        }
+
     }
 
     public void Exit()
@@ -163,4 +173,15 @@ public class MainMenu : MonoBehaviourPunCallbacks
             mainPanel.SetActive(false);
         }
     }
+    public void MapMinus()
+    {
+        mapNum = 0;
+        playerNum = 2;
+    }
+    public void MapPlus()
+    {
+        mapNum = 1;
+        playerNum = 6;
+    }
 }
+
