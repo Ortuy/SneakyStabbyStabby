@@ -17,6 +17,7 @@ public class Gold : MonoBehaviour
 
        if (collision.tag == "Player")
        {
+          AkSoundEngine.PostEvent("sfx_pickup_gold", gameObject, gameObject);
           player = collision.GetComponent<Player>();
           player.gold += goldAmount;
           Debug.Log("yee");
