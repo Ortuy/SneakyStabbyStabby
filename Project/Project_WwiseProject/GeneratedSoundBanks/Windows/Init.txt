@@ -1,3 +1,11 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	1427625975	bush			\Default Work Unit\bush	
+
+State	ID	Name	State Group			Notes
+	647611021	big	bush			
+	748895195	None	bush			
+	1846755610	small	bush			
+
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 
