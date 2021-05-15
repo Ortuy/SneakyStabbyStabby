@@ -15,6 +15,14 @@
 						<Switch Name="loud" ID="{E3C3477C-E741-4783-9EBB-69FACA38D18D}"/>
 					</ChildrenList>
 				</SwitchGroup>
+				<SwitchGroup Name="surface" ID="{3F33BA66-27D6-4EBA-BE42-01209FA4AB17}">
+					<ChildrenList>
+						<Switch Name="stone" ID="{4272D8B0-3125-45E8-A482-F2C2BB4F79AA}"/>
+						<Switch Name="wood" ID="{6540C3FB-D589-41C5-9BD6-D91CF46C97FD}"/>
+						<Switch Name="water" ID="{CEDE420E-0ADB-4D79-8299-1F25CBD822AB}"/>
+						<Switch Name="grass" ID="{AB212DBE-0836-40C8-A3B2-9A776F406A3C}"/>
+					</ChildrenList>
+				</SwitchGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</Switches>

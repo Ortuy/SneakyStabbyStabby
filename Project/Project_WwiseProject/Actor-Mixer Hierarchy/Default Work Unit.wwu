@@ -13,52 +13,6 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<ActorMixer Name="char_footsteps" ID="{4D1A7866-4A33-4825-BE6E-84E3FE5CA717}" ShortID="404797347">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<RandomSequenceContainer Name="char_footstep_water" ID="{BC65FECA-F2A7-44EA-917D-56D229D2FC45}" ShortID="379240783">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
-										</Reference>
-									</ReferenceList>
-									<ObjectLists/>
-								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="char_footstep_rocks" ID="{BB3688C8-ABD5-41F4-A43D-7561C636C11C}" ShortID="1069903954">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
-										</Reference>
-									</ReferenceList>
-									<ObjectLists/>
-								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="char_footstep_mud_grass" ID="{62C67DFF-4E5A-49E0-A081-3C94015D1D90}" ShortID="777957488">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
-										</Reference>
-									</ReferenceList>
-									<ObjectLists/>
-								</RandomSequenceContainer>
-							</ChildrenList>
-							<ObjectLists/>
-						</ActorMixer>
 						<ActorMixer Name="char_voice" ID="{47FF759B-80A7-4C7C-81BF-5A0B43B3B348}" ShortID="894113368">
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -78,7 +32,19 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
 										</Reference>
 									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Human, Cough, Male 03 SND12821 1" ID="{7057276B-CC93-4CEF-BF67-71F4ED9C79F2}">
+											<Language>SFX</Language>
+											<AudioFile>Human, Cough, Male 03 SND12821 1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="741292852"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
 									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Human, Cough, Male 03 SND12821 1" ID="{7057276B-CC93-4CEF-BF67-71F4ED9C79F2}" Platform="Linked"/>
+									</ActiveSourceList>
 								</Sound>
 								<RandomSequenceContainer Name="char_voice_death" ID="{9E45B668-723E-42C8-A5DA-F6B1ABBB8F03}" ShortID="769814096">
 									<ReferenceList>
@@ -477,6 +443,640 @@
 								</RandomSequenceContainer>
 							</ChildrenList>
 						</Folder>
+						<SwitchContainer Name="char_footstep" ID="{0EF189BF-4787-42E0-9A3B-4AE080500AB8}" ShortID="687802518">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-18</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="DefaultSwitchOrState">
+									<ObjectRef Name="stone" ID="{4272D8B0-3125-45E8-A482-F2C2BB4F79AA}" WorkUnitID="{999F8E5B-9A8C-4682-92A4-87227847F832}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+								<Reference Name="SwitchGroupOrStateGroup">
+									<ObjectRef Name="surface" ID="{3F33BA66-27D6-4EBA-BE42-01209FA4AB17}" WorkUnitID="{999F8E5B-9A8C-4682-92A4-87227847F832}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="char_footstep_stone" ID="{BB3688C8-ABD5-41F4-A43D-7561C636C11C}" ShortID="1069903954">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 5" ID="{C97DBEA8-38FF-4E86-920D-46CD8FADB928}" ShortID="1060256239">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 5" ID="{27F5D37C-E1BD-489A-B39D-E644F7B482C4}">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="924478928"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 5" ID="{27F5D37C-E1BD-489A-B39D-E644F7B482C4}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 6" ID="{27CB791D-3A64-4CC7-9399-7504912A5867}" ShortID="825449973">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 6" ID="{A3DAF59F-F3CA-436D-99D8-A26532548FDD}">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 6.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="716166893"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 6" ID="{A3DAF59F-F3CA-436D-99D8-A26532548FDD}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 7" ID="{BAD26A7C-C957-4238-AB29-4EADDAD6438D}" ShortID="614041473">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 7" ID="{A5AE1712-495F-4D3F-98C2-A6D0B4B93B26}">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 7.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="136970473"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 7" ID="{A5AE1712-495F-4D3F-98C2-A6D0B4B93B26}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 8" ID="{A5AB4C30-2D3B-4EAC-8AA2-E5AEDB95EC3D}" ShortID="376524009">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 8" ID="{6D34D950-69CF-43C3-8E17-4CC4021A388D}">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 8.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="916975936"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 8" ID="{6D34D950-69CF-43C3-8E17-4CC4021A388D}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 9" ID="{D4649454-1544-478B-A208-2FA3753849F9}" ShortID="599520652">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 9" ID="{3B4FCEEA-0A1B-4BF5-B39B-7063435546D7}">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 9.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="654784289"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 9" ID="{3B4FCEEA-0A1B-4BF5-B39B-7063435546D7}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 10" ID="{651726D2-0287-437C-8580-4131A6DF905E}" ShortID="523837100">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 10" ID="{84950F05-D48E-42E8-8A86-44F828C43BD3}">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 10.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="543537612"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 10" ID="{84950F05-D48E-42E8-8A86-44F828C43BD3}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="char_footstep_wood" ID="{62C67DFF-4E5A-49E0-A081-3C94015D1D90}" ShortID="777957488">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Footsteps, Human, Wood, Sneakers, Running SND1121" ID="{DDC6249E-D009-4C38-8834-9A25D732A44B}" ShortID="56185602">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Footsteps, Human, Wood, Sneakers, Running SND1121" ID="{0FF1C622-8F09-4D4B-A198-A1C4A74EF084}">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps, Human, Wood, Sneakers, Running SND1121.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="138755423"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Footsteps, Human, Wood, Sneakers, Running SND1121" ID="{0FF1C622-8F09-4D4B-A198-A1C4A74EF084}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Footsteps, Human, Wood, Sneakers, Running SND1121 1" ID="{583240E1-7D77-4451-A8C5-5BDAE07A0BC5}" ShortID="386292739">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Footsteps, Human, Wood, Sneakers, Running SND1121 1" ID="{B24D6754-3ECB-4662-8366-BDCC8E9468AA}">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps, Human, Wood, Sneakers, Running SND1121 1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1049102406"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Footsteps, Human, Wood, Sneakers, Running SND1121 1" ID="{B24D6754-3ECB-4662-8366-BDCC8E9468AA}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Footsteps, Human, Wood, Sneakers, Running SND1121 2" ID="{5E9AB89B-50D3-40FA-BF91-7F319055F42E}" ShortID="27593929">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Footsteps, Human, Wood, Sneakers, Running SND1121 2" ID="{4E19E6B2-3053-43E7-9C44-6E19A12B6F2D}">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps, Human, Wood, Sneakers, Running SND1121 2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="392090490"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Footsteps, Human, Wood, Sneakers, Running SND1121 2" ID="{4E19E6B2-3053-43E7-9C44-6E19A12B6F2D}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Footsteps, Human, Wood, Sneakers, Running SND1121 3" ID="{FE83761C-2A81-40D3-82A3-FE55B6E488A4}" ShortID="403885434">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Footsteps, Human, Wood, Sneakers, Running SND1121 3" ID="{4116B849-5A74-411C-9908-F0ADC4FA4E4F}">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps, Human, Wood, Sneakers, Running SND1121 3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="236070337"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Footsteps, Human, Wood, Sneakers, Running SND1121 3" ID="{4116B849-5A74-411C-9908-F0ADC4FA4E4F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="char_footstep_water" ID="{BC65FECA-F2A7-44EA-917D-56D229D2FC45}" ShortID="379240783">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{DEF7D1B9-FBD9-4E24-A246-D0BD514BBE04}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="253"/>
+															<Property Name="Min" Type="Real64" Value="-51"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-8</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Footsteps, Human, Boots, Wet, Squelchy, Out Of Water 1 SND17380" ID="{7210F7DB-4AF7-4D8C-A61E-0EC7DF1F6BF3}" ShortID="753691208">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Footsteps, Human, Boots, Wet, Squelchy, Out Of Water 1 SND17380" ID="{49F74570-AD74-461D-9643-27500279E65F}">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps, Human, Boots, Wet, Squelchy, Out Of Water 1 SND17380.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="542385257"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Footsteps, Human, Boots, Wet, Squelchy, Out Of Water 1 SND17380" ID="{49F74570-AD74-461D-9643-27500279E65F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Footsteps, Human, Boots, Wet, Squelchy, Out Of Water 2 SND17379" ID="{FF1BF575-8D78-4C1C-8962-B7EE28526E79}" ShortID="16206669">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Footsteps, Human, Boots, Wet, Squelchy, Out Of Water 2 SND17379" ID="{F87356E2-1A17-42CA-AD2B-404308A9A176}">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps, Human, Boots, Wet, Squelchy, Out Of Water 2 SND17379.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="815409904"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Footsteps, Human, Boots, Wet, Squelchy, Out Of Water 2 SND17379" ID="{F87356E2-1A17-42CA-AD2B-404308A9A176}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Footsteps, Human, Boots, Wet, Squelchy, Out Of Water 3 SND17378" ID="{3620AAE3-8E17-4C06-98D9-6AEB91796DAB}" ShortID="908895213">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Footsteps, Human, Boots, Wet, Squelchy, Out Of Water 3 SND17378" ID="{AC75E70C-7A1E-49C1-8D02-CAB91B5FB801}">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps, Human, Boots, Wet, Squelchy, Out Of Water 3 SND17378.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="16374533"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Footsteps, Human, Boots, Wet, Squelchy, Out Of Water 3 SND17378" ID="{AC75E70C-7A1E-49C1-8D02-CAB91B5FB801}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="char_footstep_grass" ID="{F257D78E-A100-415B-B2D8-036C306F7F71}" ShortID="923674585">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>2</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Footsteps, Human, Grass, Bare Foot, Slow SND1046 29" ID="{0EE7482D-F547-490A-B179-26CCBC1174AA}" ShortID="212902457">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Footsteps, Human, Grass, Bare Foot, Slow SND1046 29" ID="{6230BB4B-3F15-4F97-88E5-F404A52D6FFD}">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps, Human, Grass, Bare Foot, Slow SND1046 29.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="427917905"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Footsteps, Human, Grass, Bare Foot, Slow SND1046 29" ID="{6230BB4B-3F15-4F97-88E5-F404A52D6FFD}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Footsteps, Human, Grass, Bare Foot, Slow SND1046 30" ID="{516DD485-061A-4913-B610-A977A3C89A58}" ShortID="447218958">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Footsteps, Human, Grass, Bare Foot, Slow SND1046 30" ID="{29EB9B9B-FD18-43D6-B591-68620D09C43A}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.290925254452926"/>
+														<Property Name="LoopBegin" Type="Real64" Value="0"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Footsteps, Human, Grass, Bare Foot, Slow SND1046 30.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1043490922"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Footsteps, Human, Grass, Bare Foot, Slow SND1046 30" ID="{29EB9B9B-FD18-43D6-B591-68620D09C43A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Footsteps, Human, Grass, Bare Foot, Slow SND1046 32" ID="{C47295DD-1FF1-42B7-B93E-BAD9BC38FCCC}" ShortID="169073822">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Footsteps, Human, Grass, Bare Foot, Slow SND1046 32" ID="{2E469B08-56AC-438C-B4BD-59E5588DC52B}">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps, Human, Grass, Bare Foot, Slow SND1046 32.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="927981314"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Footsteps, Human, Grass, Bare Foot, Slow SND1046 32" ID="{2E469B08-56AC-438C-B4BD-59E5588DC52B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Footsteps, Human, Grass, Bare Foot, Slow SND1046 33" ID="{DB9FC8BA-8ABD-484B-8F37-0BF6AF84F707}" ShortID="532489709">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Footsteps, Human, Grass, Bare Foot, Slow SND1046 33" ID="{55897083-B9A5-4721-B754-73B963449BB9}">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps, Human, Grass, Bare Foot, Slow SND1046 33.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="871946633"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Footsteps, Human, Grass, Bare Foot, Slow SND1046 33" ID="{55897083-B9A5-4721-B754-73B963449BB9}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+							</ChildrenList>
+							<ObjectLists/>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="char_footstep_grass" ID="{F257D78E-A100-415B-B2D8-036C306F7F71}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="char_footstep_stone" ID="{BB3688C8-ABD5-41F4-A43D-7561C636C11C}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="char_footstep_water" ID="{BC65FECA-F2A7-44EA-917D-56D229D2FC45}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="char_footstep_wood" ID="{62C67DFF-4E5A-49E0-A081-3C94015D1D90}"/>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+								<GroupingList>
+									<Grouping>
+										<SwitchRef Name="water" ID="{CEDE420E-0ADB-4D79-8299-1F25CBD822AB}"/>
+										<ItemList>
+											<ItemRef Name="char_footstep_water" ID="{BC65FECA-F2A7-44EA-917D-56D229D2FC45}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="stone" ID="{4272D8B0-3125-45E8-A482-F2C2BB4F79AA}"/>
+										<ItemList>
+											<ItemRef Name="char_footstep_stone" ID="{BB3688C8-ABD5-41F4-A43D-7561C636C11C}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="grass" ID="{AB212DBE-0836-40C8-A3B2-9A776F406A3C}"/>
+										<ItemList>
+											<ItemRef Name="char_footstep_grass" ID="{F257D78E-A100-415B-B2D8-036C306F7F71}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="wood" ID="{6540C3FB-D589-41C5-9BD6-D91CF46C97FD}"/>
+										<ItemList>
+											<ItemRef Name="char_footstep_wood" ID="{62C67DFF-4E5A-49E0-A081-3C94015D1D90}"/>
+										</ItemList>
+									</Grouping>
+								</GroupingList>
+							</GroupingInfo>
+						</SwitchContainer>
+						<RandomSequenceContainer Name="char_footstep_dash" ID="{0B25B9D0-4D1E-4EEB-81DD-CDFC2F382B2B}" ShortID="776571586">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Fire, Torch, Whoosh, Movement, Medium, Double 01 SND8727" ID="{B5121EB9-8855-4EB8-98C8-F3F86EB18FE1}" ShortID="667070186">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Fire, Torch, Whoosh, Movement, Medium, Double 01 SND8727" ID="{4D59A150-70F1-4718-8481-684711583C27}">
+											<PropertyList>
+												<Property Name="VolumeOffset" Type="Real64">
+													<ValueList>
+														<Value>-2.8</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Fire, Torch, Whoosh, Movement, Medium, Double 01 SND8727.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="495203499"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Fire, Torch, Whoosh, Movement, Medium, Double 01 SND8727" ID="{4D59A150-70F1-4718-8481-684711583C27}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Fire, Torch, Whoosh, Movement, Medium, Double 01 SND8727 1" ID="{A7CBA764-7EBD-4831-8340-84F356DB396A}" ShortID="927174180">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Fire, Torch, Whoosh, Movement, Medium, Double 01 SND8727 1" ID="{AE4BDC88-5CD3-4290-A39B-0FE62F3C39B0}">
+											<PropertyList>
+												<Property Name="VolumeOffset" Type="Real64">
+													<ValueList>
+														<Value>-3.5</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Fire, Torch, Whoosh, Movement, Medium, Double 01 SND8727 1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="749911476"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Fire, Torch, Whoosh, Movement, Medium, Double 01 SND8727 1" ID="{AE4BDC88-5CD3-4290-A39B-0FE62F3C39B0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+							<Playlist>
+								<ItemRef Name="Fire, Torch, Whoosh, Movement, Medium, Double 01 SND8727" ID="{B5121EB9-8855-4EB8-98C8-F3F86EB18FE1}"/>
+								<ItemRef Name="Fire, Torch, Whoosh, Movement, Medium, Double 01 SND8727 1" ID="{A7CBA764-7EBD-4831-8340-84F356DB396A}"/>
+							</Playlist>
+						</RandomSequenceContainer>
 					</ChildrenList>
 					<ObjectLists/>
 				</ActorMixer>
@@ -1578,6 +2178,27 @@
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="bush" ID="{67CFB53F-A760-498E-B55A-17B0F100B1CD}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="small" ID="{C8B60011-CCB9-4A04-95DA-96CE63B6A535}"/>
+										<CustomState Name="" ID="{C4A4610F-775D-4051-B92D-DFDA6854E678}" ShortID="262125158">
+											<PropertyList>
+												<Property Name="Highpass" Type="int16" Value="24"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="big" ID="{6867632E-8D2C-4D98-BBE6-E7AA3A5A9D78}"/>
+										<CustomState Name="" ID="{583F682F-4440-4A24-9574-A46DE3819990}" ShortID="145380201"/>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
 							<ObjectLists/>
 						</RandomSequenceContainer>
 						<Sound Name="amb_constatnt_bush_rustle" ID="{23C81832-E19C-485F-A308-4001D880FD83}" ShortID="155986193">
@@ -2033,6 +2654,339 @@
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="sfx_obj_tripwire" ID="{FA1B7E69-A355-41F6-BAF2-F044D03ED7F7}" ShortID="184394533">
+									<PropertyList>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+											<ObjectRef Name="Room_Medium_Tiled" ID="{0C0A3A92-A571-4FDB-AB40-ACFED04E0217}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Rocks, Impact, Throw And Roll, Small Thump SND0788 2" ID="{F311361A-127D-4A94-9465-BD45EA50E633}">
+											<Language>SFX</Language>
+											<AudioFile>Rocks, Impact, Throw And Roll, Small Thump SND0788 2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="263152886"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Rocks, Impact, Throw And Roll, Small Thump SND0788 2" ID="{F311361A-127D-4A94-9465-BD45EA50E633}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_obj_camo" ID="{D71D94A3-6A79-4E26-B372-09A329AC92BA}" ShortID="31297213">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-18</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Rocks, Impact, Throw And Roll, Small Thump SND0788 1" ID="{0352344E-DAC4-4F6C-8325-F7640EF1A4A1}">
+											<Language>SFX</Language>
+											<AudioFile>Rocks, Impact, Throw And Roll, Small Thump SND0788 1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="301789713"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Rocks, Impact, Throw And Roll, Small Thump SND0788 1" ID="{0352344E-DAC4-4F6C-8325-F7640EF1A4A1}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_obj_detector" ID="{E685708D-1705-4DF8-8608-29B9158D106A}" ShortID="589482298">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>63</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+											<ObjectRef Name="Room_Medium_Tiled" ID="{0C0A3A92-A571-4FDB-AB40-ACFED04E0217}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Creatures, Monster, Deep, Snarl 08 SND41909 1" ID="{182C977F-0F7C-4BA0-AF59-903281733C8E}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.515771840542833"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="1.18766921119593"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Creatures, Monster, Deep, Snarl 08 SND41909 1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1045580639"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Creatures, Monster, Deep, Snarl 08 SND41909 1" ID="{182C977F-0F7C-4BA0-AF59-903281733C8E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_obj_spikepit" ID="{E1908537-C88C-4986-A0BC-ECBB7323A4B9}" ShortID="958640199">
+									<PropertyList>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-7</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+											<ObjectRef Name="Room_Medium_Tiled" ID="{0C0A3A92-A571-4FDB-AB40-ACFED04E0217}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Ice, Impact, Spike, Snowy SND31449" ID="{8279D0EF-BD92-49CB-A779-A47E5FADDFF8}">
+											<Language>SFX</Language>
+											<AudioFile>Ice, Impact, Spike, Snowy SND31449.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="103699206"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Ice, Impact, Spike, Snowy SND31449" ID="{8279D0EF-BD92-49CB-A779-A47E5FADDFF8}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_obj_gel" ID="{30F10008-C93F-4A0B-BA9D-41CB4551C03C}" ShortID="31375104">
+									<PropertyList>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+											<ObjectRef Name="Room_Medium_Tiled" ID="{0C0A3A92-A571-4FDB-AB40-ACFED04E0217}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Ambient Hits, Mid, Gong Like, Bright Shimmer End SND41467" ID="{47E56401-BF9A-4FAF-B33A-7096C9BE1A40}">
+											<Language>SFX</Language>
+											<AudioFile>Ambient Hits, Mid, Gong Like, Bright Shimmer End SND41467.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="325261215"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Ambient Hits, Mid, Gong Like, Bright Shimmer End SND41467" ID="{47E56401-BF9A-4FAF-B33A-7096C9BE1A40}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_obj_tripwire_activate" ID="{EE85370D-C5F9-4208-AE94-3A8931E44726}" ShortID="219308629">
+									<PropertyList>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+											<ObjectRef Name="Room_Medium_Tiled" ID="{0C0A3A92-A571-4FDB-AB40-ACFED04E0217}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Cloth, Misc, Hits And Grabs SND4053" ID="{3C6F42FA-73C5-40CC-8A35-5EAB12CD8138}">
+											<Language>SFX</Language>
+											<AudioFile>Cloth, Misc, Hits And Grabs SND4053.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="533416541"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Cloth, Misc, Hits And Grabs SND4053" ID="{3C6F42FA-73C5-40CC-8A35-5EAB12CD8138}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_obj_throw" ID="{8F475F36-FE5F-4C51-A1CA-9D257D481F31}" ShortID="503633926">
+									<PropertyList>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-13</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+											<ObjectRef Name="Room_Medium_Tiled" ID="{0C0A3A92-A571-4FDB-AB40-ACFED04E0217}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Cushion, Throw Down On Sofa SND24959 1" ID="{4FDFF8B0-5148-4AB9-A983-677EE4496747}">
+											<Language>SFX</Language>
+											<AudioFile>Cushion, Throw Down On Sofa SND24959 1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="925787624"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Cushion, Throw Down On Sofa SND24959 1" ID="{4FDFF8B0-5148-4AB9-A983-677EE4496747}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_obj_gas" ID="{EA5E97D0-6678-403F-9B9D-BD57E51D6363}" ShortID="653680369">
+									<PropertyList>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-9</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+											<ObjectRef Name="Room_Medium_Tiled" ID="{0C0A3A92-A571-4FDB-AB40-ACFED04E0217}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Fire, Burst, Gas Leak, Short Burst 02 SND5845" ID="{C73DEE41-DA60-4D63-8564-7977D25F0D9B}">
+											<Language>SFX</Language>
+											<AudioFile>Fire, Burst, Gas Leak, Short Burst 02 SND5845.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1055944537"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Fire, Burst, Gas Leak, Short Burst 02 SND5845" ID="{C73DEE41-DA60-4D63-8564-7977D25F0D9B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_obj_visionpotion" ID="{C049F07A-F55E-42B3-8BC0-99EE44B145C4}" ShortID="939769350">
+									<PropertyList>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-2</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+											<ObjectRef Name="Room_Medium_Tiled" ID="{0C0A3A92-A571-4FDB-AB40-ACFED04E0217}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Human, Breath, Male, Single SND23271" ID="{EE1F89CA-F883-4DBA-B54B-34FE6EEAFF37}">
+											<Language>SFX</Language>
+											<AudioFile>Human, Breath, Male, Single SND23271.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="255652779"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Human, Breath, Male, Single SND23271" ID="{EE1F89CA-F883-4DBA-B54B-34FE6EEAFF37}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_obj_speedpotion" ID="{E621125A-CB4B-43E3-AE99-3F181E97A104}" ShortID="272551328">
+									<PropertyList>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-10</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+											<ObjectRef Name="Room_Medium_Tiled" ID="{0C0A3A92-A571-4FDB-AB40-ACFED04E0217}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Vehicles, Car, Hyundai Trajet 2006, Fan Speed Dial, Turn 01 SND38992" ID="{A672C50C-CC80-4A5D-BC43-9F978D58EFD5}">
+											<Language>SFX</Language>
+											<AudioFile>Vehicles, Car, Hyundai Trajet 2006, Fan Speed Dial, Turn 01 SND38992.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1054244652"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Vehicles, Car, Hyundai Trajet 2006, Fan Speed Dial, Turn 01 SND38992" ID="{A672C50C-CC80-4A5D-BC43-9F978D58EFD5}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
 							<ObjectLists/>
 						</ActorMixer>
 						<Sound Name="sfx_gold_pickup" ID="{5891A8C4-B655-4076-884F-703C81C0BF4E}" ShortID="545814010">
@@ -2042,6 +2996,7 @@
 										<Value>5</Value>
 									</ValueList>
 								</Property>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
 								<Property Name="Pitch" Type="int32">
 									<ValueList>
 										<Value>5</Value>
@@ -2057,12 +3012,19 @@
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
 								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Room_Medium_Tiled" ID="{0C0A3A92-A571-4FDB-AB40-ACFED04E0217}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="Money, Australian Coins, Down On Soft Surface  SND18472" ID="{F5002845-E963-412E-B4CE-F929DACCB9E2}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.0227767175572519"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>Money, Australian Coins, Down On Soft Surface  SND18472.wav</AudioFile>
 									<MediaIDList>
