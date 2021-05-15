@@ -262,3 +262,8 @@
 - Wood tiles
 ### Fixed
 - The players are now able to leave games
+
+## [0.2.13] - 2021-05-15
+### Added
+- UI animations
+- A way to differentiate between different types of vegetation objects in code

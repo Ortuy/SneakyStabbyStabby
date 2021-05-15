@@ -503,6 +503,7 @@ public class ShopEnter : InteractableObject
     {
         player = targetPV.GetComponent<Player>();
         Shop.SetActive(true);
+        Shop.GetComponent<UIAnimator>().Show();
         player.stabLock = true;
         base.StartInteraction();
     }
@@ -510,7 +511,7 @@ public class ShopEnter : InteractableObject
     protected override void EndInteraction()
     {
         player = targetPV.GetComponent<Player>();
-        Shop.SetActive(false);
+        Shop.GetComponent<UIAnimator>().Hide();
         player.stabLock = false;
         base.EndInteraction();
     }

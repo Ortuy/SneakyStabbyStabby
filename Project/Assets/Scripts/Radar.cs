@@ -21,7 +21,7 @@ public class Radar : InteractableObject
             base.StartInteraction();
             currentPlayer = targetPV.GetComponent<Player>();
 
-            if (!GameManager.localInstance.mapPanel.activeInHierarchy)
+            if (!GameManager.localInstance.mapOut)
             {
                 GameManager.localInstance.ToggleMap();
             }
@@ -44,7 +44,7 @@ public class Radar : InteractableObject
     protected override void EndInteraction()
     {
         base.EndInteraction();
-        if (GameManager.localInstance.mapPanel.activeInHierarchy)
+        if (GameManager.localInstance.mapOut)
         {
             GameManager.localInstance.ToggleMap();
         }

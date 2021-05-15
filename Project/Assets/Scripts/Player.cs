@@ -341,7 +341,7 @@ public class Player : MonoBehaviourPunCallbacks
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             GameManager.localInstance.ToggleMap();
-            if(GameManager.localInstance.mapPanel.activeInHierarchy)
+            if(GameManager.localInstance.mapOut)
             {
                 AkSoundEngine.PostEvent("ui_open_map", gameObject, gameObject);
                 stabLock = true;
