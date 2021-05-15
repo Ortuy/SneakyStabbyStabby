@@ -26,6 +26,7 @@ public class Vegetation : MonoBehaviour
             {
                 particles.transform.position = collision.transform.position;
             }
+            PlayVegetationSound(particles);
             particles.Play();
             animationPlaying = true;
         }
@@ -35,5 +36,13 @@ public class Vegetation : MonoBehaviour
     public void MarkAnimationEnd()
     {
         animationPlaying = false;
+    }
+
+    public void PlayVegetationSound(ParticleSystem particles)
+    {
+        if (particles.ToString().Contains("Spores"))
+            AkSoundEngine.PostEvent("amb_schroom_enter", gameObject, gameObject);
+        else if (particles.ToString().Contains("PickupParticle"))
+            AkSoundEngine.PostEvent("amb_bush_rustle_enter", gameObject, gameObject);
     }
 }

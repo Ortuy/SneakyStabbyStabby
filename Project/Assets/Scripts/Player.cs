@@ -343,12 +343,14 @@ public class Player : MonoBehaviourPunCallbacks
             GameManager.localInstance.ToggleMap();
             if(GameManager.localInstance.mapPanel.activeInHierarchy)
             {
+                AkSoundEngine.PostEvent("ui_open_map", gameObject, gameObject);
                 stabLock = true;
                 torsoAnimator.SetBool("Map", true);
             }
             else
             {
                 stabLock = false;
+                AkSoundEngine.PostEvent("ui_close_map", gameObject, gameObject);
                 torsoAnimator.SetBool("Map", false);
             }
         }
@@ -660,6 +662,7 @@ public class Player : MonoBehaviourPunCallbacks
     {
         if (stabLock == false)
         {
+            AkSoundEngine.PostEvent("char_knife_swinging", gameObject, gameObject);
             StartCoroutine(LockStabbing());
             StartCoroutine(HandleStabAnimation());
             StartCoroutine(WaitAndDeactivateStab());
@@ -954,41 +957,49 @@ public class Player : MonoBehaviourPunCallbacks
     
     public void ColourSet()
     {
+        AkSoundEngine.PostEvent("sfx_change_color", gameObject, gameObject);
         photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet.r, colorToSet.g, colorToSet.b);
         //SetColor(colorToSet.r, colorToSet.g, colorToSet.b);
     }
     public void ColourSet1()
     {
+        AkSoundEngine.PostEvent("sfx_change_color", gameObject, gameObject);
         photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet1.r, colorToSet1.g, colorToSet1.b);
         //SetColor(colorToSet1.r, colorToSet1.g, colorToSet1.b);
     }
     public void ColourSet2()
     {
+        AkSoundEngine.PostEvent("sfx_change_color", gameObject, gameObject);
         photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet2.r, colorToSet2.g, colorToSet2.b);
         //SetColor(colorToSet2.r, colorToSet2.g, colorToSet2.b);
     }
     public void ColourSet3()
     {
+        AkSoundEngine.PostEvent("sfx_change_color", gameObject, gameObject);
         photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet3.r, colorToSet3.g, colorToSet3.b);
         //SetColor(colorToSet3.r, colorToSet3.g, colorToSet3.b);
     }
     public void ColourSet4()
     {
+        AkSoundEngine.PostEvent("sfx_change_color", gameObject, gameObject);
         photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet4.r, colorToSet4.g, colorToSet4.b);
         //SetColor(colorToSet4.r, colorToSet4.g, colorToSet4.b);
     }
     public void ColourSet5()
     {
+        AkSoundEngine.PostEvent("sfx_change_color", gameObject, gameObject);
         photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet5.r, colorToSet5.g, colorToSet5.b);
         //SetColor(colorToSet5.r, colorToSet5.g, colorToSet5.b);
     }
     public void ColourSet6()
     {
+        AkSoundEngine.PostEvent("sfx_change_color", gameObject, gameObject);
         photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet6.r, colorToSet6.g, colorToSet6.b);
         //SetColor(colorToSet6.r, colorToSet6.g, colorToSet6.b);
     }
     public void ColourSet7()
     {
+        AkSoundEngine.PostEvent("sfx_change_color", gameObject, gameObject);
         photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet7.r, colorToSet7.g, colorToSet7.b);
         //SetColor(colorToSet7.r, colorToSet7.g, colorToSet7.b);
     }
