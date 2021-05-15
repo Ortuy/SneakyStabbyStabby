@@ -674,6 +674,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particles: {fileID: 7005694373897359932}
   moveParticlesToCollision: 0
+  vegetationType: 1
 --- !u!212 &2027395547338602421
 SpriteRenderer:
   m_ObjectHideFlags: 0
