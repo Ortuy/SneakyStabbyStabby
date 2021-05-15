@@ -408,6 +408,7 @@ public class Player : MonoBehaviourPunCallbacks
 
     IEnumerator Blink()
     {
+        AkSoundEngine.PostEvent("char_footstep_dash", gameObject, gameObject);
         var durationLeft = 0.2f;
         var blinkDirection = GetDirectionFromMouse();
         var blinkSpeed = distance / durationLeft;
@@ -489,10 +490,14 @@ public class Player : MonoBehaviourPunCallbacks
         var intPosition = new Vector3Int(Mathf.FloorToInt(transform.position.x), Mathf.FloorToInt(transform.position.y), 0);
         if(GameManager.localInstance.stoneMask.GetTile(intPosition))
         {
+            AkSoundEngine.SetSwitch("surface", "stone", gameObject);
+            AkSoundEngine.PostEvent("char_footsteps", gameObject, gameObject);
             footstepStone.Play();
         }
         else
         {
+            AkSoundEngine.SetSwitch("surface", "grass", gameObject);
+            AkSoundEngine.PostEvent("char_footsteps", gameObject, gameObject);
             footstep.Play();
         }
         
@@ -515,7 +520,10 @@ public class Player : MonoBehaviourPunCallbacks
             //foot.GetComponent<SpriteRenderer>().flipX = legs.GetComponent<SpriteRenderer>().flipX;
             //Destroy(foot, 16);
             float f = 16f;
+            
             foot.GetComponent<PhotonView>().RPC("SetFootstep", RpcTarget.AllBuffered, legs.GetComponent<SpriteRenderer>().flipX, f);
+            
+            
         }
         
     }
@@ -740,6 +748,7 @@ public class Player : MonoBehaviourPunCallbacks
     [PunRPC]
     public void Shine(bool amount)
     {
+        AkSoundEngine.PostEvent("sfx_teleport", gameObject, gameObject);
         gel.SetActive(amount);
         timerShineRunning = true;
         
@@ -776,6 +785,7 @@ public class Player : MonoBehaviourPunCallbacks
         torsoAnimator.SetBool("Stab", true);
         yield return new WaitForSeconds(0.08f);
         crossbowFX.Play();
+        AkSoundEngine.PostEvent("sfx_crossbow_shoot", gameObject, gameObject);
         StartCoroutine(LockStabbing());
         GameObject obj = PhotonNetwork.Instantiate(boltObject.name, new Vector2(firePos.transform.position.x, firePos.transform.position.y), rotatingBody.transform.rotation, 0);
         Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
@@ -796,21 +806,25 @@ public class Player : MonoBehaviourPunCallbacks
 
     public void Spikepit()
     {
+        AkSoundEngine.PostEvent("sfx_obj_spikepit", gameObject, gameObject);
         GameObject obj = PhotonNetwork.Instantiate(spikePitObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
     public void Tripwire()
     {
+        AkSoundEngine.PostEvent("sfx_obj_tripwire", gameObject, gameObject);
         GameObject obj = PhotonNetwork.Instantiate(tripwireObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
     public void Blindingtrap()
     {
+        AkSoundEngine.PostEvent("sfx_obj_throw", gameObject, gameObject);
         GameObject obj = PhotonNetwork.Instantiate(blidingtrapObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
     public void Bomb()
     {
+        AkSoundEngine.PostEvent("sfx_obj_throw", gameObject, gameObject);
         GameObject obj = PhotonNetwork.Instantiate(bombObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
@@ -821,6 +835,7 @@ public class Player : MonoBehaviourPunCallbacks
     }
     public void Detector()
     {
+        AkSoundEngine.PostEvent("sfx_obj_detector", gameObject, gameObject);
         GameObject obj = PhotonNetwork.Instantiate("Detector", new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
@@ -834,6 +849,7 @@ public class Player : MonoBehaviourPunCallbacks
         if (photonView.IsMine)
         {
             visionFX.Play();
+            AkSoundEngine.PostEvent("sfx_obj_visionpotion", gameObject, gameObject);
             playerViewCone.SetActive(false);
             playerViewCone2.SetActive(true);
             visionPotionActive = true;
@@ -872,6 +888,7 @@ public class Player : MonoBehaviourPunCallbacks
         if (photonView.IsMine)
         {
             stimFX.Play();
+            AkSoundEngine.PostEvent("sfx_obj_speedpotion", gameObject, gameObject);
             timeSprintRemaining = 8;
             sprintPotionActive = true;
             StartCoroutine("PotionStopWorking2");
@@ -905,7 +922,9 @@ public class Player : MonoBehaviourPunCallbacks
     [PunRPC]
     public void CamoSpell(int variant)
     {
+
         camoFX.Play();
+        AkSoundEngine.PostEvent("sfx_obj_camo", gameObject, gameObject);
 
         camoObjects[variant].SetActive(true);
 

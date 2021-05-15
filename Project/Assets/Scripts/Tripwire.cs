@@ -40,6 +40,7 @@ public class Tripwire : MonoBehaviourPunCallbacks
         {
             if (target.tag == "Player")
             {
+                AkSoundEngine.PostEvent("sfx_obj_tripwire_activate", gameObject, gameObject);
                 player = collision.GetComponent<Player>();
                 //player.settingTrap = true;
                 player.isTrapped = true;

@@ -68,6 +68,7 @@ public class Gas : MonoBehaviourPunCallbacks
                 timerInhaleRunning = true;
                 if(ded == true)
                 {
+                    AkSoundEngine.PostEvent("char_cough_gas", gameObject, gameObject);
                     target.RPC("ReduceHealth", RpcTarget.AllBuffered, toxinDamage);
                 }
 
