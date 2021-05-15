@@ -102,7 +102,7 @@ public class Chest : MonoBehaviourPunCallbacks
     private void CreateItem()
     {
 
-
+        AkSoundEngine.PostEvent("sfx_box_destroy", gameObject, gameObject);
         if (itemNum == 0)
         {
             PhotonNetwork.Instantiate(pickup1.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);

@@ -43,6 +43,7 @@ public class MainMenu : MonoBehaviourPunCallbacks
 
     public void JoinGame()
     {
+        AkSoundEngine.PostEvent("ui_click_wood_panel_exit", gameObject, gameObject);
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = playerNum;
         //PhotonNetwork.JoinOrCreateRoom(joinGameInput.text, roomOptions, TypedLobby.Default);
@@ -138,7 +139,6 @@ public class MainMenu : MonoBehaviourPunCallbacks
 
     public void Exit()
     {
-        AkSoundEngine.PostEvent("ui_click_wood_panel_exit", gameObject, gameObject);
         AkSoundEngine.PostEvent("ui_click_wood_panel_exit", gameObject, gameObject);
 
         Application.Quit();

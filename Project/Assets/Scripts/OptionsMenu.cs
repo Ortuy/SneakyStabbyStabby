@@ -99,6 +99,7 @@ public class OptionsMenu : MonoBehaviour
 
     public void SetPostProcessing(bool value)
     {
+        AkSoundEngine.PostEvent("ui_wood_panel_options_checkbox", gameObject, gameObject);
         postProcessingOn = value;
         
         PlayerPrefs.SetInt("postprocess", value ? 1 : 0);
@@ -126,6 +127,7 @@ public class OptionsMenu : MonoBehaviour
 
     public void SetFullscreen(bool value)
     {
+        AkSoundEngine.PostEvent("ui_wood_panel_options_checkbox", gameObject, gameObject);
         Screen.fullScreen = value;
         PlayerPrefs.SetInt("fullscreen", value ? 1 : 0);
     }
