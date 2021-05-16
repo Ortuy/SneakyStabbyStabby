@@ -8,7 +8,7 @@ public class Inventory : MonoBehaviourPunCallbacks
 {
 
 
-    public GameObject[] slotSelectionDisplays;
+    public Animator[] slotSelectionDisplays;
     public int selectedSlot;
     public Image[] itemImages;
     public Player player;
@@ -23,6 +23,7 @@ public class Inventory : MonoBehaviourPunCallbacks
     public void SetActiveItem(int slotID, Item newItem)
     {
         itemImages[slotID].gameObject.SetActive(true);
+        itemImages[slotID].GetComponentInParent<Animator>().Play("ItemPickUp0");
         itemImages[slotID].sprite = newItem.itemImage;
         currentActives[slotID] = newItem;
         
@@ -44,6 +45,7 @@ public class Inventory : MonoBehaviourPunCallbacks
     public void SetPassiveItem(Item newItem)
     {
         itemImages[4].gameObject.SetActive(true);
+        itemImages[4].GetComponentInParent<Animator>().Play("ItemPickUp0");
         itemImages[4].sprite = newItem.itemImage;
         currentPassive = newItem;
     }
@@ -59,7 +61,7 @@ public class Inventory : MonoBehaviourPunCallbacks
     {
         if(direction > 0)
         {
-            slotSelectionDisplays[selectedSlot].SetActive(false);
+            slotSelectionDisplays[selectedSlot].gameObject.SetActive(false);
             selectedSlot++;
 
             if(selectedSlot >= currentActives.Length)
@@ -83,11 +85,12 @@ public class Inventory : MonoBehaviourPunCallbacks
                 player.SetCrossbowAnimation(false);
             }
 
-            slotSelectionDisplays[selectedSlot].SetActive(true);
+            slotSelectionDisplays[selectedSlot].gameObject.SetActive(true);
+            slotSelectionDisplays[selectedSlot].Play("SwitchFromLeft");
         }
         else
         {
-            slotSelectionDisplays[selectedSlot].SetActive(false);
+            slotSelectionDisplays[selectedSlot].gameObject.SetActive(false);
             selectedSlot--;
 
             if (selectedSlot < 0)
@@ -111,7 +114,8 @@ public class Inventory : MonoBehaviourPunCallbacks
                 player.SetCrossbowAnimation(false);
             }
 
-            slotSelectionDisplays[selectedSlot].SetActive(true);
+            slotSelectionDisplays[selectedSlot].gameObject.SetActive(true);
+            slotSelectionDisplays[selectedSlot].Play("SwitchFromRight");
         }
     }
 

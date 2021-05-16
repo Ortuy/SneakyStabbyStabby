@@ -18,7 +18,7 @@ public class Health : MonoBehaviourPunCallbacks
 
     //public GameObject playerCanvas;
 
-    public GameObject[] lifeMarkers;
+    public UIAnimator[] lifeMarkers;
     public ParticleSystem deathFX, hurtFX;
 
     private void Awake()
@@ -174,7 +174,7 @@ public class Health : MonoBehaviourPunCallbacks
             healthAmount -= amount;
             if(healthAmount >= 0)
             {
-                lifeMarkers[Mathf.FloorToInt(healthAmount)].SetActive(false);
+                lifeMarkers[Mathf.FloorToInt(healthAmount)].Hide();
             }
             
         }
