@@ -271,3 +271,6 @@
 ## [0.2.14] - 2021-05-16
 ### Added
 - HUD animations
+## [0.2.15] - 2021-05-17
+### Changed
+- Lives and winning game 

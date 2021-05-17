@@ -136,10 +136,14 @@ public class MainMenu : MonoBehaviourPunCallbacks
         if (mapNum == 0)
         {
             PhotonNetwork.LoadLevel("Arena");
+            GameManager.localInstance.map1 = true;
+            GameManager.localInstance.map1 = false;
         }
         if (mapNum == 1)
         {
             PhotonNetwork.LoadLevel("ArenaLarge");
+            GameManager.localInstance.map1 = false;
+            GameManager.localInstance.map1 = true;
         }
 
     }
@@ -188,16 +192,14 @@ public class MainMenu : MonoBehaviourPunCallbacks
     {
         mapNum = 0;
         playerNum = 2;
-        GameManager.localInstance.numerOfPlayers = 0;
-        GameManager.localInstance.numerOfPlayers1 = 1;
+
     }
 
     public void MapPlus()
     {
         mapNum = 1;
         playerNum = 6;
-        GameManager.localInstance.numerOfPlayers = 0;
-        GameManager.localInstance.numerOfPlayers1 = 5;
+
     }
 }
 

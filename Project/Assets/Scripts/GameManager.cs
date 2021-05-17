@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     public GameObject waitRoomPortal1;
     private float timerAmount = 5f;
     public int numerOfPlayers = 0;
-    public int numerOfPlayers1;
+    public int numerOfPlayers1 = 1;
     private bool runSpawnTimer = false;
     public bool readyToStart = false;
     public bool readyToStart1 = false;
@@ -336,9 +336,21 @@ public class GameManager : MonoBehaviourPunCallbacks
     }
     public void MapWin()
     {
-        if(numerOfPlayers == numerOfPlayers1)
+        if(map1 = true)
         {
-            EnableRespawn();
+            if (numerOfPlayers == 1)
+            {
+                EnableRespawn();
+            }
         }
+
+        if (map2 = true)
+        {
+            if (numerOfPlayers == 5)
+            {
+                EnableRespawn();
+            }
+        }
+            
     }
 }

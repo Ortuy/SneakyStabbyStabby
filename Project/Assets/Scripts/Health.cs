@@ -152,7 +152,7 @@ public class Health : MonoBehaviourPunCallbacks
     {
         GameManager.localInstance.victoryText.gameObject.SetActive(true);
         GameManager.localInstance.victoryText.text = "Player " + GetComponent<Player>().playerID + " vanquished!";
-        GameManager.localInstance.numerOfPlayers = +1;
+        GameManager.localInstance.numerOfPlayers++;
         GameManager.localInstance.MapWin();
         deathFX.Play();
         //cc.enabled = false;
