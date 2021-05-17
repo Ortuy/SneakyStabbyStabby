@@ -17,9 +17,13 @@ public class GameManager : MonoBehaviourPunCallbacks
     public GameObject waitRoomPortal;
     public GameObject waitRoomPortal1;
     private float timerAmount = 5f;
+    public int numerOfPlayers = 0;
+    public int numerOfPlayers1;
     private bool runSpawnTimer = false;
     public bool readyToStart = false;
     public bool readyToStart1 = false;
+    public bool map1 = false;
+    public bool map2 = false;
     public GameObject mapPanel;
     public GameObject mapCamera;
 
@@ -328,6 +332,13 @@ public class GameManager : MonoBehaviourPunCallbacks
             mapPanel.GetComponent<UIAnimator>().Show();
             mapCamera.SetActive(true);
             mapOut = true;
+        }
+    }
+    public void MapWin()
+    {
+        if(numerOfPlayers == numerOfPlayers1)
+        {
+            EnableRespawn();
         }
     }
 }

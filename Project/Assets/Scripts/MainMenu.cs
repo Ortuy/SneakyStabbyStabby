@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviourPunCallbacks
     [SerializeField] private Text roomCodeText;
 
     private string roomName;
-    public int mapNum;
+    public int mapNum = 1;
     public byte playerNum = 2; 
 
     //[SerializeField] private GameObject startButton;
@@ -188,12 +188,16 @@ public class MainMenu : MonoBehaviourPunCallbacks
     {
         mapNum = 0;
         playerNum = 2;
+        GameManager.localInstance.numerOfPlayers = 0;
+        GameManager.localInstance.numerOfPlayers1 = 1;
     }
 
     public void MapPlus()
     {
         mapNum = 1;
         playerNum = 6;
+        GameManager.localInstance.numerOfPlayers = 0;
+        GameManager.localInstance.numerOfPlayers1 = 5;
     }
 }
 
