@@ -23,7 +23,7 @@ public class Inventory : MonoBehaviourPunCallbacks
     public void SetActiveItem(int slotID, Item newItem)
     {
         itemImages[slotID].gameObject.SetActive(true);
-        itemImages[slotID].GetComponentInParent<Animator>().Play("ItemPickUp0");
+        //itemImages[slotID].GetComponentInParent<Animator>().Play("ItemPickUp0");
         itemImages[slotID].sprite = newItem.itemImage;
         currentActives[slotID] = newItem;
         
@@ -45,7 +45,7 @@ public class Inventory : MonoBehaviourPunCallbacks
     public void SetPassiveItem(Item newItem)
     {
         itemImages[4].gameObject.SetActive(true);
-        itemImages[4].GetComponentInParent<Animator>().Play("ItemPickUp0");
+        //itemImages[4].GetComponentInParent<Animator>().Play("ItemPickUp0");
         itemImages[4].sprite = newItem.itemImage;
         currentPassive = newItem;
     }
