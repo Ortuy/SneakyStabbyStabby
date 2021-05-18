@@ -120,9 +120,9 @@ MonoBehaviour:
     width: 2048
     height: 1019
   m_MinSize: {x: 678, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
+  m_MaxSize: {x: 14001, y: 14042}
   vertical: 0
-  controlID: 18401
+  controlID: 5567
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,10 +144,10 @@ MonoBehaviour:
     y: 0
     width: 1484.8
     height: 1019
-  m_MinSize: {x: 402, y: 492}
+  m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 18406
+  controlID: 5538
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,10 +169,10 @@ MonoBehaviour:
     y: 0
     width: 1484.8
     height: 616
-  m_MinSize: {x: 402, y: 221}
-  m_MaxSize: {x: 8002, y: 4021}
+  m_MinSize: {x: 403, y: 221}
+  m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 18407
+  controlID: 5539
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -404,7 +404,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: de94f9ffa8c0fbffb6e8ffff56fbffff
+      m_ExpandedIDs: 0a9aecff7e9aecff589cecff5aefecff4222edff5222edffa4c7edff18c8edfff2c9edfff41ceeffdc4feeffec4feeff36f6eeffaaf6eeff84f8eeff864befff6e7eefff7e7eefffd824f0ff4c25f0ff2627f0ff287af0ff10adf0ff20adf0ff9254f1ff0655f1ffe056f1ffe2a9f1ffcadcf1ffdadcf1ff8c7ff2ff0080f2ffda81f2ffdcd4f2ffc407f3ffd407f3ffa6baf3ff1abbf3fff4bcf3fff60ff4ffde42f4ffee42f4ff7438f5ffe838f5ffc23af5ffc48df5ffacc0f5ffbcc0f5ff9a65f6ff0e66f6ffe867f6ffeabaf6ffd2edf6ffe2edf6ffbe91f7ff3292f7ff0c94f7ff0ee7f7fff619f8ff061af8ffc4bef8ff38bff8ff12c1f8ff1414f9fffc46f9ff0c47f9ff2cebf9ffa0ebf9ff7eedf9ff8440faff7073faff8273faffcc22fbff4023fbff1a25fbff1c78fbff04abfbff24abfbff4e6dfcffc26dfcff9c6ffcff9ec2fcff86f5fcff94f5fcff0ea6fdff82a6fdff5ca8fdff5efbfdff462efeff542efeffbe52ffff3253ffff0c55ffff0ea8fffff6daffff06dbffffa4f0ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -759,21 +759,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Scenes
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 71
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Scenes
   m_LastFoldersGridSize: 71
   m_LastProjectPath: C:\Users\mimix\OneDrive\Dokumenty\GitHub\SneakyStabbyStabby\Project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 74}
-    m_SelectedIDs: ee5b0000
-    m_LastClickedID: 23534
-    m_ExpandedIDs: 00000000ca5b0000cc5b0000ce5b000000ca9a3b
+    m_SelectedIDs: 4c680000
+    m_LastClickedID: 26700
+    m_ExpandedIDs: 0000000000680000026800000468000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -801,7 +801,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ca5b0000cc5b0000ce5b000000ca9a3b
+    m_ExpandedIDs: 0000000000680000026800000468000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -911,7 +911,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 210928
+  m_LastSelectedObjectID: 243530
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52

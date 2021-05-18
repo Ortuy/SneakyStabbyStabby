@@ -33,11 +33,14 @@ public class Health : MonoBehaviourPunCallbacks
     [PunRPC]
     public void ReduceHealth(float amount)
     {
+        
         if (isGhost == false)
         {
             hurtFX.Play();
-            ModifyHealth(amount);
+            //StopAllCoroutines();
             StartCoroutine(StabHitStop(true, 0.5f));
+            ModifyHealth(amount);
+            
             //isGhost = true;
             //StartCoroutine("GhostEnum");
             //if (isGhost == true && healthAmount >0)
@@ -62,13 +65,18 @@ public class Health : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    public void HitStop()
+    public void HitStop(bool damageTaken)
     {
-        StartCoroutine(StabHitStop(false, 0.5f));
+        StartCoroutine(StabHitStop(damageTaken, 0.5f));
     }
 
     IEnumerator StabHitStop(bool hitTaken, float duration)
     {
+        //if(hitTaken)
+        //{
+        //    yield return new WaitForSeconds(0.1f);
+        //}
+
         cFollow.ShakeCamera(0);
         player.torsoAnimator.speed = 0;
         player.legsAnimator.speed = 0;
