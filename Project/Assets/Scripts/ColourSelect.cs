@@ -32,11 +32,12 @@ public class ColourSelect : InteractableObject
     {
         base.StartInteraction();
         targetPV.GetComponent<Player>().ColorSelect.SetActive(true);
+        targetPV.GetComponent<Player>().ColorSelect.GetComponent<UIAnimator>().Show();
     }
 
     protected override void EndInteraction()
     {
-        targetPV.GetComponent<Player>().ColorSelect.SetActive(false);
+        targetPV.GetComponent<Player>().ColorSelect.GetComponent<UIAnimator>().Hide();
         base.EndInteraction();
         
     }

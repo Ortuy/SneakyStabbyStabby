@@ -47,6 +47,8 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     private bool onoff = false;
 
+    public bool mapOut;
+
     public void Awake()
     {
         localInstance = this;
@@ -107,13 +109,15 @@ public class GameManager : MonoBehaviourPunCallbacks
         if (pauseMenu.activeInHierarchy)
         {
             player.stabLock = false;
-            pauseMenu.SetActive(false);
+            //pauseMenu.SetActive(false);
+            pauseMenu.GetComponent<UIAnimator>().Hide();
         }
         else if(!player.isInteracting)
         {
             AkSoundEngine.PostEvent("UIClickWoodPanel", gameObject, gameObject);
             player.stabLock = true;
             pauseMenu.SetActive(true);
+            pauseMenu.GetComponent<UIAnimator>().Show();
         }
     }
 
@@ -139,11 +143,13 @@ public class GameManager : MonoBehaviourPunCallbacks
         TogglePauseMenu();
         if(optionsMenu.activeInHierarchy)
         {
-            optionsMenu.SetActive(false);
+            //optionsMenu.SetActive(false);
+            optionsMenu.GetComponent<UIAnimator>().Hide();
         }
         else
         {
             optionsMenu.SetActive(true);
+            optionsMenu.GetComponent<UIAnimator>().Show();
         }
     }
 
@@ -311,13 +317,17 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         if (mapPanel.activeInHierarchy)
         {
-            mapPanel.SetActive(false);
+            //mapPanel.SetActive(false);
+            mapPanel.GetComponent<UIAnimator>().Hide();
+            mapOut = false;
             mapCamera.SetActive(false);
         }
         else
         {
             mapPanel.SetActive(true);
+            mapPanel.GetComponent<UIAnimator>().Show();
             mapCamera.SetActive(true);
+            mapOut = true;
         }
     }
 }

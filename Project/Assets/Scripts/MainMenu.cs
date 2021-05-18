@@ -13,7 +13,8 @@ public class MainMenu : MonoBehaviourPunCallbacks
     //[SerializeField] private InputField createGameInput;
     [SerializeField] private InputField joinGameInput;
 
-    [SerializeField] private GameObject loadingPanel, tutorialPanel, joinPanel, hostPanel, mainPanel, creditsPanel, optionsPanel;
+    [SerializeField] private GameObject loadingPanel;
+    [SerializeField] private UIAnimator tutorialPanel, joinPanel, hostPanel, mainPanel, creditsPanel, optionsPanel;
     [SerializeField] private GameObject[] devCredits;
     [SerializeField] private Text roomCodeText;
 
@@ -32,7 +33,7 @@ public class MainMenu : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.JoinLobby(TypedLobby.Default);
-        loadingPanel.SetActive(false);
+        loadingPanel.gameObject.SetActive(false);
         Debug.Log("I'm Connected!");
     }
 
@@ -53,31 +54,35 @@ public class MainMenu : MonoBehaviourPunCallbacks
     public void ToggleJoinPanel()
     {
         AkSoundEngine.PostEvent("UIClickWoodPanel", gameObject, gameObject);
-        if (joinPanel.activeInHierarchy)
+        if (joinPanel.gameObject.activeInHierarchy)
         {
-            joinPanel.SetActive(false);
-            mainPanel.SetActive(true);
+            joinPanel.Hide();
+            mainPanel.gameObject.SetActive(true);
+            mainPanel.Show();
         }
         else
         {
-            joinPanel.SetActive(true);
-            mainPanel.SetActive(false);
+            joinPanel.gameObject.SetActive(true);
+            joinPanel.Show();
+            mainPanel.Hide();
         }
     }
 
     public void ToggleCreditsPanel()
     {
         AkSoundEngine.PostEvent("UIClickWoodPanel", gameObject, gameObject);
-        if (creditsPanel.activeInHierarchy)
+        if (creditsPanel.gameObject.activeInHierarchy)
         {
-            creditsPanel.SetActive(false);
-            mainPanel.SetActive(true);
+            creditsPanel.Hide();
+            mainPanel.gameObject.SetActive(true);
+            mainPanel.Show();
         }
         else
         {
             ReshuffleDevs();
-            creditsPanel.SetActive(true);
-            mainPanel.SetActive(false);
+            creditsPanel.gameObject.SetActive(true);
+            creditsPanel.Show();
+            mainPanel.Hide();
         }
     }
 
@@ -101,10 +106,11 @@ public class MainMenu : MonoBehaviourPunCallbacks
     public void ToggleHostPanel()
     {
         AkSoundEngine.PostEvent("UIClickWoodPanel", gameObject, gameObject);
-        if (hostPanel.activeInHierarchy)
+        if (hostPanel.gameObject.activeInHierarchy)
         {
-            hostPanel.SetActive(false);
-            mainPanel.SetActive(true);
+            hostPanel.Hide();
+            mainPanel.gameObject.SetActive(true);
+            mainPanel.Show();
         }
         else
         {
@@ -119,8 +125,9 @@ public class MainMenu : MonoBehaviourPunCallbacks
 
             roomCodeText.text = roomName;
 
-            hostPanel.SetActive(true);
-            mainPanel.SetActive(false);
+            hostPanel.gameObject.SetActive(true);
+            hostPanel.Show();
+            mainPanel.Hide();
         }
     }
 
@@ -147,37 +154,42 @@ public class MainMenu : MonoBehaviourPunCallbacks
     public void ToggleTutorial()
     {
         AkSoundEngine.PostEvent("UIClickWoodPanel", gameObject, gameObject);
-        if (tutorialPanel.activeInHierarchy)
+        if (tutorialPanel.gameObject.activeInHierarchy)
         {
-            tutorialPanel.SetActive(false);
-            mainPanel.SetActive(true);
+            tutorialPanel.gameObject.SetActive(false);
+            mainPanel.gameObject.SetActive(true);
+            mainPanel.Show();
         }
         else
         {
-            tutorialPanel.SetActive(true);
-            mainPanel.SetActive(false);
+            tutorialPanel.gameObject.SetActive(true);
+            mainPanel.Hide();
         }
     }
 
     public void ToggleOptions()
     {
         AkSoundEngine.PostEvent("UIClickWoodPanel", gameObject, gameObject);
-        if (optionsPanel.activeInHierarchy)
+        if (optionsPanel.gameObject.activeInHierarchy)
         {
-            optionsPanel.SetActive(false);
-            mainPanel.SetActive(true);
+            optionsPanel.Hide();
+            mainPanel.gameObject.SetActive(true);
+            mainPanel.Show();
         }
         else
         {
-            optionsPanel.SetActive(true);
-            mainPanel.SetActive(false);
+            optionsPanel.gameObject.SetActive(true);
+            optionsPanel.Show();
+            mainPanel.Hide();
         }
     }
+
     public void MapMinus()
     {
         mapNum = 0;
         playerNum = 2;
     }
+
     public void MapPlus()
     {
         mapNum = 1;
