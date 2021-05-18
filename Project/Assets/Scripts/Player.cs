@@ -693,7 +693,7 @@ public class Player : MonoBehaviourPunCallbacks
 
     IEnumerator WaitAndDeactivateStab()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.4f);
         photonView.RPC("ActivateStabHitBox", RpcTarget.AllBuffered);
         yield return new WaitForSeconds(0.15f);
         photonView.RPC("DeactivateStab", RpcTarget.AllBuffered);
@@ -702,7 +702,7 @@ public class Player : MonoBehaviourPunCallbacks
     [PunRPC]
     private void DeactivateStab()
     {
-        //stabHitBox.SetActive(false);
+        stabHitBox.SetActive(false);
         destroyWeb = false;
     }
 
@@ -719,7 +719,7 @@ public class Player : MonoBehaviourPunCallbacks
     private void ActivateStabHitBox()
     {
         torsoAnimator.SetBool("Stab", false);
-        //stabHitBox.SetActive(true);
+        stabHitBox.SetActive(true);
         destroyWeb = true;
 
         var hBox = stabHitBox.GetComponent<StabHitBox>();

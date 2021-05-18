@@ -67,16 +67,18 @@ public class Health : MonoBehaviourPunCallbacks
     [PunRPC]
     public void HitStop(bool damageTaken)
     {
+        
         StartCoroutine(StabHitStop(damageTaken, 0.5f));
     }
 
     IEnumerator StabHitStop(bool hitTaken, float duration)
     {
-        //if(hitTaken)
-        //{
-        //    yield return new WaitForSeconds(0.1f);
-        //}
+        if(!hitTaken && !photonView.IsMine)
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
 
+        Debug.LogFormat(hitTaken + " hit stop");
         cFollow.ShakeCamera(0);
         player.torsoAnimator.speed = 0;
         player.legsAnimator.speed = 0;
