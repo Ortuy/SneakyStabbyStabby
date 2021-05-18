@@ -77,6 +77,11 @@ public class Health : MonoBehaviourPunCallbacks
         {
             yield return new WaitForSeconds(0.1f);
         }
+        
+        if(hitTaken)
+        {
+            isGhost = true;
+        }
 
         Debug.LogFormat(hitTaken + " hit stop");
         cFollow.ShakeCamera(0);
