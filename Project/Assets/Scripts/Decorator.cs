@@ -5,6 +5,8 @@ using Photon.Pun;
 
 public class Decorator : MonoBehaviourPunCallbacks
 {
+    public int decoratorTypeOffset;
+
     public bool isDecorPlaced;
 
     public GameObject[] decorPrefabs;
@@ -15,67 +17,14 @@ public class Decorator : MonoBehaviourPunCallbacks
 
     public int blankPercentChance;
 
-    private PhotonView pView;
-    private int decorID;
-    private float decorScale;
-    private bool decorGenerated = true;
-    private float decorRotation;
-
-    private GameObject newObj;
-
-    // Start is called before the first frame update
-    void Start()
+    //private PhotonView pView;
+    public int decorID;
+    public float decorScale;
+    public bool decorGenerated = true;
+    public float decorRotation;
+    
+    public void ChooseDecor()
     {
-        pView = GetComponent<PhotonView>();
-        //photonView.RPC("PlaceDecor", RpcTarget.AllBuffered);
-
-        //Debug.Log(Physics2D.OverlapCircle(transform.position, 0.2f, LayerMask.GetMask("Decor")));
-        /*
-        if (pView.IsMine)
-        {
-            pView.RPC("PlaceDecor", RpcTarget.AllBuffered);
-
-            var newObj = PhotonNetwork.Instantiate(decorPrefabs[decorID].name, transform.position, Quaternion.AngleAxis(Random.Range(0, 361), Vector3.forward));
-
-            newObj.transform.parent = transform;
-            newObj.transform.localScale = new Vector3(decorScale, decorScale, 1);
-        }*/
-        if(PhotonNetwork.IsMasterClient)
-        {
-            //pView.RPC("PlaceDecor", RpcTarget.AllBuffered);
-            PlaceDecor();
-            pView.RPC("SyncDecor", RpcTarget.AllBuffered, decorID, decorGenerated, decorScale, decorRotation);
-        }
-
-       
-    }
-
-    [PunRPC]
-    private void SyncDecor(int dID, bool isPlaced, float dScale, float dRot)
-    {
-        decorID = dID;
-        decorGenerated = isPlaced;
-        decorScale = dScale;
-        decorRotation = dRot;
-        if (decorGenerated)
-        {
-            //newObj = PhotonNetwork.InstantiateRoomObject(decorPrefabs[decorID].name, transform.position, Quaternion.AngleAxis(Random.Range(0, 361), Vector3.forward));
-            newObj = Instantiate(decorPrefabs[decorID], transform.position, Quaternion.AngleAxis(decorRotation, Vector3.forward));
-
-            if (newObj != null)
-            {
-                //newObj.transform.parent = transform;
-                Debug.Log(newObj.name);
-                newObj.transform.localScale = new Vector3(decorScale, decorScale, 1);
-            }
-
-        }
-    }
-
-    //[PunRPC]
-    private void PlaceDecor()
-    {
-        //Debug.Log("AAAAAAA");
         if(Random.Range(0, 100) > blankPercentChance)
         {
             List<int> weightedDecorPool = new List<int>();
@@ -104,8 +53,5 @@ public class Decorator : MonoBehaviourPunCallbacks
 
             decorRotation = Random.Range(0, 361);
         }
-
-        //isDecorPlaced = true;
-        //Destroy(gameObject);
     }
 }
