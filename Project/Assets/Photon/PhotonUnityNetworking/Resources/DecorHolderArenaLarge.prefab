@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3019213453743951363}
   - component: {fileID: 3349932715164141289}
+  - component: {fileID: -1846414067402265465}
   m_Layer: 0
   m_Name: DecorHolderArenaLarge
   m_TagString: DecorHolder
@@ -46,6 +47,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c5837684c3fa34e90904cc9f24aab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  decorPrefabs:
+  - {fileID: 264716889687014912, guid: 686abc98fdd83e844831d53b3e39d703, type: 3}
+  - {fileID: 5874997762060139218, guid: 34b3b1dda41df854ca9cd449056619e0, type: 3}
+  - {fileID: 2982988532237136252, guid: 32983d5f96fb62a489f639431b45e9e0, type: 3}
+  - {fileID: 1025203636576575596, guid: 38cf9939bb69ecd4db43926175f5ad4b, type: 3}
+  - {fileID: 1025203636576575596, guid: 965805a0942e53c4d8917b1934f458f5, type: 3}
+  - {fileID: 1025203636576575596, guid: a9e2a2fe2cfbd464eac7f859b09890ba, type: 3}
+  - {fileID: 1025203636576575596, guid: 28c3092188f1da644aac0ecb93b125d1, type: 3}
+  - {fileID: 1025203636576575596, guid: 06ac48b09989fc744bedea6da13b7119, type: 3}
+  - {fileID: 1025203636576575596, guid: d56a117341ce6bf43bd468aea1e9d222, type: 3}
+  - {fileID: 1025203636576575596, guid: 38cf9939bb69ecd4db43926175f5ad4b, type: 3}
+  - {fileID: 1025203636576575596, guid: 965805a0942e53c4d8917b1934f458f5, type: 3}
+  - {fileID: 1025203636576575596, guid: a9e2a2fe2cfbd464eac7f859b09890ba, type: 3}
+  - {fileID: 1025203636576575596, guid: eebe67a0e7f989649abde3da38ade392, type: 3}
+  - {fileID: 1025203636576575596, guid: 18b1441be141aaf4b9bbe172d21384e0, type: 3}
+  - {fileID: 1025203636576575596, guid: 8639ca7150af1624ea8d61fad920bf45, type: 3}
+  - {fileID: 8791672585073947281, guid: 2203b8f728884bd459781ff9169e770e, type: 3}
+--- !u!114 &-1846414067402265465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3019213453743951362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &4911548532076730804
 GameObject:
   m_ObjectHideFlags: 0
