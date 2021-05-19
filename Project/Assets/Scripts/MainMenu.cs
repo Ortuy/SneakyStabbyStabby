@@ -39,7 +39,7 @@ public class MainMenu : MonoBehaviourPunCallbacks
 
     public void CreateGame()
     {
-        PhotonNetwork.CreateRoom(roomName, new RoomOptions() { MaxPlayers = 2 }, null);
+        PhotonNetwork.CreateRoom(roomName, new RoomOptions() { MaxPlayers = playerNum }, null);
     }
 
     public void JoinGame()
@@ -136,14 +136,14 @@ public class MainMenu : MonoBehaviourPunCallbacks
         if (mapNum == 0)
         {
             PhotonNetwork.LoadLevel("Arena");
-            //GameManager.localInstance.map1 = true;
-            //GameManager.localInstance.map1 = false;
+            GameManager.localInstance.map1 = true;
+            GameManager.localInstance.map1 = false;
         }
         if (mapNum == 1)
         {
             PhotonNetwork.LoadLevel("ArenaLarge");
-            //GameManager.localInstance.map1 = false;
-            //GameManager.localInstance.map1 = true;
+            GameManager.localInstance.map1 = false;
+            GameManager.localInstance.map1 = true;
         }
 
     }

@@ -16,12 +16,24 @@ public class GameManager : MonoBehaviourPunCallbacks
     public GameObject respawnMenu, pauseMenu, optionsMenu;
     public GameObject waitRoomPortal;
     public GameObject waitRoomPortal1;
+    public GameObject waitRoom1Portal;
+    public GameObject waitRoom1Portal1;
+    public GameObject waitRoom1Portal2;
+    public GameObject waitRoom1Portal3;
+    public GameObject waitRoom1Portal4;
+    public GameObject waitRoom1Portal5;
     private float timerAmount = 5f;
     public int numerOfPlayers = 0;
     public int numerOfPlayers1 = 1;
     private bool runSpawnTimer = false;
     public bool readyToStart = false;
     public bool readyToStart1 = false;
+    public bool readyToStart3 = false;
+    public bool readyToStart4 = false;
+    public bool readyToStart5 = false;
+    public bool readyToStart6 = false;
+    public bool readyToStart7= false;
+    public bool readyToStart8 = false;
     public bool map1 = false;
     public bool map2 = false;
     public GameObject mapPanel;
@@ -78,6 +90,10 @@ public class GameManager : MonoBehaviourPunCallbacks
         }
 
         if (!countdownStarted && /*playerAmount > 1*/ readyToStart == true && readyToStart1 == true)
+        {
+            StartCoroutine(StartCountdown());
+        }
+        if (!countdownStarted && /*playerAmount > 1*/ readyToStart3 == true && readyToStart4 == true && readyToStart5 == true && readyToStart6 == true && readyToStart7 == true && readyToStart8 == true)
         {
             StartCoroutine(StartCountdown());
         }
@@ -336,7 +352,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     }
     public void MapWin()
     {
-        if(map1 = true)
+        if(map1 == true)
         {
             if (numerOfPlayers == 1)
             {
@@ -344,7 +360,7 @@ public class GameManager : MonoBehaviourPunCallbacks
             }
         }
 
-        if (map2 = true)
+        if (map2 == true)
         {
             if (numerOfPlayers == 5)
             {
