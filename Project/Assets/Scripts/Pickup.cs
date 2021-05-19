@@ -88,6 +88,11 @@ public class Pickup : MonoBehaviourPunCallbacks
             if(pickedUp)
             {
                 DestroyPickup();
+                if (photonView.IsMine)
+                {
+                    PhotonNetwork.Destroy(gameObject);
+                }
+                
 
                 if(photonView.IsMine)
                 {

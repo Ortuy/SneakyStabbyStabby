@@ -242,7 +242,6 @@ public class GameManager : MonoBehaviourPunCallbacks
     {        
         //spawnPoints[0].gameObject.SetActive(false);
         //spawnPoints[1].gameObject.SetActive(false);
-
         foreach(GameObject spawnPoint in spawnPoints)
         {
             spawnPoint.SetActive(false);
