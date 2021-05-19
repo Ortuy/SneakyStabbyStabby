@@ -240,8 +240,13 @@ public class GameManager : MonoBehaviourPunCallbacks
     [PunRPC]
     public void DissolveStartPoints()
     {        
-        spawnPoints[0].gameObject.SetActive(false);
-        spawnPoints[1].gameObject.SetActive(false);
+        //spawnPoints[0].gameObject.SetActive(false);
+        //spawnPoints[1].gameObject.SetActive(false);
+
+        foreach(GameObject spawnPoint in spawnPoints)
+        {
+            spawnPoint.SetActive(false);
+        }
     }
 
     public void ReloadScene()
