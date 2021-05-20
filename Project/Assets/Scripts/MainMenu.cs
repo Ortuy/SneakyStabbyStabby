@@ -18,8 +18,14 @@ public class MainMenu : MonoBehaviourPunCallbacks
     [SerializeField] private GameObject[] devCredits;
     [SerializeField] private Text roomCodeText;
 
+    [SerializeField] private Text mapNameText, mapPlayersText;
+    [SerializeField] private Image mapImage;
+
+    [SerializeField] private string[] mapNames, mapPlayerCounts;
+    [SerializeField] private Sprite[] mapSprites;
+
     private string roomName;
-    public int mapNum = 1;
+    public int mapNum = 0;
     public byte playerNum = 2; 
 
     //[SerializeField] private GameObject startButton;
@@ -190,14 +196,18 @@ public class MainMenu : MonoBehaviourPunCallbacks
     {
         mapNum = 0;
         playerNum = 2;
-
+        mapNameText.text = mapNames[0];
+        mapPlayersText.text = mapPlayerCounts[0];
+        mapImage.sprite = mapSprites[0];
     }
 
     public void MapPlus()
     {
         mapNum = 1;
         playerNum = 6;
-
+        mapNameText.text = mapNames[1];
+        mapPlayersText.text = mapPlayerCounts[1];
+        mapImage.sprite = mapSprites[1];
     }
 }
 
