@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     public GameObject waitRoom1Portal5;
     private float timerAmount = 5f;
     public int numerOfPlayers = 0;
+    public int numerOfPlayers1 = 1;
     private bool runSpawnTimer = false;
     public bool readyToStart = false;
     public bool readyToStart1 = false;
