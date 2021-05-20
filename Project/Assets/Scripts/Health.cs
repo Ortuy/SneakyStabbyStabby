@@ -95,11 +95,11 @@ public class Health : MonoBehaviourPunCallbacks
         player.legsAnimator.speed = 1;
         player.isTrapped = false;
 
-        if (hitTaken)
+        if (hitTaken & healthAmount > 0)
         {
             isGhost = true;
             StartCoroutine("GhostEnum");
-            if (isGhost == true && healthAmount > 0)
+            if (isGhost == true & healthAmount > 0)
             {
                 Color playerColor = new Color(player.recolorSprites[0].color.r, player.recolorSprites[0].color.g, player.recolorSprites[0].color.b, 0);
 
@@ -146,11 +146,11 @@ public class Health : MonoBehaviourPunCallbacks
 
     private void CheckHealth()
     {
-        if (photonView.IsMine && healthAmount <= 0)
+        if (photonView.IsMine & healthAmount <= 0)
         {
             //GameManager.localInstance.EnableRespawn();
-            plMove.disableInput = true;
-            plMove.moveSpeed = 0;
+            //plMove.disableInput = true;
+            //plMove.moveSpeed = 0;
             this.GetComponent<PhotonView>().RPC("Dead", RpcTarget.AllBuffered);
 
         }
@@ -170,6 +170,19 @@ public class Health : MonoBehaviourPunCallbacks
         GameManager.localInstance.numerOfPlayers++;
         GameManager.localInstance.MapWin();
         deathFX.Play();
+        isGhost = true;
+        Color playerColor = new Color(player.recolorSprites[0].color.r, player.recolorSprites[0].color.g, player.recolorSprites[0].color.b, 0);
+
+        //player.ghost.SetActive(true);
+        player.ghostSprites[0].color = new Color(1, 1, 1, 1);
+        player.ghostSprites[1].color = new Color(1, 1, 1, 1);
+        player.nonRecolorSprites[0].color = new Color(1, 1, 1, 0);
+        player.nonRecolorSprites[1].color = new Color(1, 1, 1, 0);
+        player.recolorSprites[0].color = playerColor;
+        player.recolorSprites[1].color = playerColor;
+
+        player.moveSpeed = 10;
+        player.stabReady = false;
         //cc.enabled = false;
         //sr.enabled = false;
         //playerCanvas.SetActive(false);

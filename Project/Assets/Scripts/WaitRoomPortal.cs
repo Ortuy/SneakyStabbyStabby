@@ -11,7 +11,14 @@ public class WaitRoomPortal : MonoBehaviourPunCallbacks
     public bool timeSpawnEnd = false;
 
     [SerializeField] private Animator portalAnimator;
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            gameManager.map1 = true;
+        }
 
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         PhotonView target = collision.gameObject.GetComponent<PhotonView>();
