@@ -28,10 +28,16 @@ public class Health : MonoBehaviourPunCallbacks
         if (photonView.IsMine)
         {
             GameManager.localInstance.localPlayer = this.gameObject;
-            playerName = PlayerPrefs.GetString("playername");
+            //playerName = PlayerPrefs.GetString("playername");
+            photonView.RPC("SyncName", RpcTarget.AllBuffered, PlayerPrefs.GetString("playername"));
         }
     }
 
+    [PunRPC]
+    private void SyncName(string nameToSync)
+    {
+        playerName = nameToSync;
+    }
 
     [PunRPC]
     public void ReduceHealth(float amount)
@@ -169,7 +175,7 @@ public class Health : MonoBehaviourPunCallbacks
     private void Dead()
     {
         GameManager.localInstance.victoryText.gameObject.SetActive(true);
-        GameManager.localInstance.victoryText.text = "Player " + GetComponent<Player>().playerID + " vanquished!";
+        GameManager.localInstance.victoryText.text = playerName + " is dead!";
         GameManager.localInstance.numerOfPlayers++;
         GameManager.localInstance.MapWin();
         deathFX.Play();

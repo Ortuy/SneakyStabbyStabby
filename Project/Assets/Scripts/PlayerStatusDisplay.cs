@@ -15,6 +15,7 @@ public class PlayerStatusDisplay : MonoBehaviourPunCallbacks
 
     public void InitDisplay(Health playerToTrack)
     {
+        needsRefreshing = true;
         myPlayerHealth = playerToTrack;
         playerColourImage.color = myPlayerHealth.GetComponent<Player>().recolorSprites[0].color;
         playerNameText.text = myPlayerHealth.playerName;
