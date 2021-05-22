@@ -22,6 +22,9 @@ public class OptionsMenu : MonoBehaviour
     private Resolution[] resolutions;
 
     [SerializeField]
+    private InputField nameSelect;
+
+    [SerializeField]
     private GameObject optionsMenu;
 
     // Start is called before the first frame update
@@ -39,6 +42,12 @@ public class OptionsMenu : MonoBehaviour
             PlayerPrefs.SetInt("fullscreen", 1);
             PlayerPrefs.SetInt("resX", Screen.currentResolution.width);
             PlayerPrefs.SetInt("resY", Screen.currentResolution.width);
+        }
+
+        if (!PlayerPrefs.HasKey("playername"))
+        {            
+            PlayerPrefs.SetString("playername", "Unknown Assassin");
+            GetComponent<MainMenu>().ToggleNamePanel();
         }
 
         int resX = PlayerPrefs.GetInt("resX");
@@ -140,6 +149,11 @@ public class OptionsMenu : MonoBehaviour
         PlayerPrefs.SetInt("resY", res.height);
     }
 
+    public void SetName(string value)
+    {
+        PlayerPrefs.SetString("playername", value);
+    }
+
     public void ToggleOptions()
     {
         if (optionsMenu.activeInHierarchy)
@@ -149,6 +163,14 @@ public class OptionsMenu : MonoBehaviour
         else
         {
             optionsMenu.SetActive(true);
+        }
+    }
+
+    public void ShowCurrentName()
+    {
+        if(nameSelect != null)
+        {
+            nameSelect.text = PlayerPrefs.GetString("playername");
         }
     }
 }

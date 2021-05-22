@@ -5,6 +5,8 @@ using Photon.Pun;
 
 public class Health : MonoBehaviourPunCallbacks
 {
+    public string playerName;
+
     public Player plMove;
     public Player player;
     public float healthAmount;
@@ -26,6 +28,7 @@ public class Health : MonoBehaviourPunCallbacks
         if (photonView.IsMine)
         {
             GameManager.localInstance.localPlayer = this.gameObject;
+            playerName = PlayerPrefs.GetString("playername");
         }
     }
 

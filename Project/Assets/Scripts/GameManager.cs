@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     public bool map2 = false;
     public GameObject mapPanel;
     public GameObject mapCamera;
+    public PlayerStatusDisplay[] statusPanels;
 
     public Text victoryText;
     public Text secondaryText;
@@ -63,6 +64,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     private bool onoff = false;
 
     public bool mapOut;
+    private bool gameStarted, mapInitialised;
 
     public void Awake()
     {
@@ -312,6 +314,8 @@ public class GameManager : MonoBehaviourPunCallbacks
             }
         }
 
+        gameStarted = true;
+
         photonView.RPC("DissolveStartPoints", RpcTarget.AllBuffered);
 
     }
@@ -351,6 +355,28 @@ public class GameManager : MonoBehaviourPunCallbacks
             mapPanel.GetComponent<UIAnimator>().Show();
             mapCamera.SetActive(true);
             mapOut = true;
+
+            if (gameStarted)
+            {
+                if (!mapInitialised)
+                {
+                    var players = FindObjectsOfType<Health>();
+                    for (int i = 0; i < players.Length; i++)
+                    {
+                        statusPanels[i].gameObject.SetActive(true);
+                        statusPanels[i].InitDisplay(players[i]);
+                    }
+                    mapInitialised = true;
+                }
+
+                for (int i = 0; i < statusPanels.Length; i++)
+                {
+                    if (statusPanels[i].gameObject.activeInHierarchy)
+                    {
+                        statusPanels[i].StartTracking();
+                    }
+                }
+            }  
         }
     }
     public void MapWin()

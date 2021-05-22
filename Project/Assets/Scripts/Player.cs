@@ -75,7 +75,7 @@ public class Player : MonoBehaviourPunCallbacks
     public Color colorToSet6;
     public Color colorToSet7;
     public int gold;
-    public Text goldText;
+    public Text goldText, mapNameText, mapNameTextRadar;
     public bool destroyWeb = false;
     public bool isTrapped;
 
@@ -116,7 +116,7 @@ public class Player : MonoBehaviourPunCallbacks
 
     private void Awake()
     {
-
+        health = GetComponent<Health>();
 
         photonView = GetComponent<PhotonView>();
 
@@ -124,8 +124,8 @@ public class Player : MonoBehaviourPunCallbacks
 
         if (photonView.IsMine)
         {
-            
-         
+
+            StartCoroutine(WaitAFrameAndSetName());
             playerCamera.SetActive(true);
             playerViewCone.SetActive(true);
             playerViewCone2.SetActive(false);
@@ -158,6 +158,20 @@ public class Player : MonoBehaviourPunCallbacks
 
         //playerCamera.transform.SetParent(null);
     }
+
+    IEnumerator WaitAFrameAndSetName()
+    {
+        yield return null;
+        photonView.RPC("SetMapName", RpcTarget.AllBuffered);
+    }
+
+    [PunRPC]
+    private void SetMapName()
+    {
+        mapNameText.text = health.playerName;
+        mapNameTextRadar.text = health.playerName;
+    }
+
     private void Start()
     {
         Physics2D.queriesStartInColliders = false;
