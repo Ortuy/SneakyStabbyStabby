@@ -98,7 +98,7 @@ public class Player : MonoBehaviourPunCallbacks
     public Inventory inventory;
     public Text stabCooldownText, potionCooldownText;
 
-    public ParticleSystem footstep, footstepStone, camoFX, stimFX, visionFX, blinkFX, crossbowFX, trapFX;
+    public ParticleSystem footstep, footstepStone, footstepWood, camoFX, stimFX, visionFX, blinkFX, crossbowFX, trapFX;
     public SpriteRenderer glowingFootstep;
 
     [SerializeField] private Slider staminaBar;
@@ -502,18 +502,47 @@ public class Player : MonoBehaviourPunCallbacks
     public void PlayFootstep()
     {
         var intPosition = new Vector3Int(Mathf.FloorToInt(transform.position.x), Mathf.FloorToInt(transform.position.y), 0);
-        if(GameManager.localInstance.stoneMask.GetTile(intPosition))
+
+        if(timerSprintRunning || timerSprintRunning2)
         {
-            AkSoundEngine.SetSwitch("surface", "stone", gameObject);
-            AkSoundEngine.PostEvent("char_footsteps", gameObject, gameObject);
-            footstepStone.Play();
+            if (GameManager.localInstance.stoneMask.GetTile(intPosition))
+            {
+                //Play stone sprint footstep here
+                footstepStone.Play();
+            }
+            else if (GameManager.localInstance.woodMask.GetTile(intPosition))
+            {
+                //Play wood sprint footsteps here
+                footstepWood.Play();
+            }
+            else
+            {
+                //Play sprint footsteps here
+                footstep.Play();
+            }
         }
         else
         {
-            AkSoundEngine.SetSwitch("surface", "grass", gameObject);
-            AkSoundEngine.PostEvent("char_footsteps", gameObject, gameObject);
-            footstep.Play();
+            if (GameManager.localInstance.stoneMask.GetTile(intPosition))
+            {
+                AkSoundEngine.SetSwitch("surface", "stone", gameObject);
+                AkSoundEngine.PostEvent("char_footsteps", gameObject, gameObject);
+                footstepStone.Play();
+            }
+            else if (GameManager.localInstance.woodMask.GetTile(intPosition))
+            {
+                //Play wood footsteps here
+                footstepWood.Play();
+            }
+            else
+            {
+                AkSoundEngine.SetSwitch("surface", "grass", gameObject);
+                AkSoundEngine.PostEvent("char_footsteps", gameObject, gameObject);
+                footstep.Play();
+            }
         }
+        
+        
         
 
         if(timerPaintRunning2)

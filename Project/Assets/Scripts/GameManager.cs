@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     private IEnumerator currentBigTextCoroutine;
 
-    public Tilemap stoneMask;
+    public Tilemap stoneMask, woodMask;
 
     private bool onoff = false;
 
