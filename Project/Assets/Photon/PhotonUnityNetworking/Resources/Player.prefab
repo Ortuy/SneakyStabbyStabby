@@ -58838,7 +58838,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ec25d5c197c52fa49a6e3d2b8f72226b, type: 3}
   - {fileID: 21300000, guid: ec25d5c197c52fa49a6e3d2b8f72226b, type: 3}
   - {fileID: 21300000, guid: ec25d5c197c52fa49a6e3d2b8f72226b, type: 3}
-  - {fileID: 7800013291351675066, guid: 79f8c2d8d2c8899499ac883898db9d80, type: 3}
+  - {fileID: 21300000, guid: 4dcfc4fd26cd62a4caa657f3afd71e92, type: 3}
   visionPotionActive: 0
 --- !u!114 &5440725864618505865
 MonoBehaviour:
