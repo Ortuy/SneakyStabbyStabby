@@ -58692,7 +58692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   photonView: {fileID: 5440725864618505865}
-  health: {fileID: 0}
+  health: {fileID: 9090583457795101815}
   rigidBody: {fileID: 5440725864618505866}
   mapIcon: {fileID: 8942310127030866685}
   mapIconRadar: {fileID: 4861294991103009168}

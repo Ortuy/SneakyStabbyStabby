@@ -329,7 +329,7 @@ public class Player : MonoBehaviourPunCallbacks
         }
 
 
-        if (Input.GetButtonDown("Fire2") && !settingTrap)
+        if (Input.GetButtonDown("Fire2") && !settingTrap && !health.isGhost)
         {
             //Shoot();
             inventory.UseItem();
@@ -348,7 +348,7 @@ public class Player : MonoBehaviourPunCallbacks
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && !health.isGhost)
         {
             inventory.UsePassiveItem();
         }
@@ -1036,7 +1036,10 @@ public class Player : MonoBehaviourPunCallbacks
         photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet7.r, colorToSet7.g, colorToSet7.b);
         //SetColor(colorToSet7.r, colorToSet7.g, colorToSet7.b);
     }
-    
+    public void ChangeTag()
+    {
+        this.gameObject.tag = "Ghost";
+    }
 
 
 

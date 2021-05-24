@@ -174,6 +174,7 @@ public class Health : MonoBehaviourPunCallbacks
     [PunRPC]
     private void Dead()
     {
+        player.ChangeTag();
         GameManager.localInstance.victoryText.gameObject.SetActive(true);
         GameManager.localInstance.victoryText.text = playerName + " is dead!";
         GameManager.localInstance.numerOfPlayers++;
