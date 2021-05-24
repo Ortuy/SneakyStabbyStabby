@@ -1036,9 +1036,13 @@ public class Player : MonoBehaviourPunCallbacks
         photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet7.r, colorToSet7.g, colorToSet7.b);
         //SetColor(colorToSet7.r, colorToSet7.g, colorToSet7.b);
     }
-    public void ChangeTag()
+    public void ChangeTagGhost()
     {
         this.gameObject.tag = "Ghost";
+    }
+    public void ChangeTagPlayer()
+    {
+        this.gameObject.tag = "Player";
     }
 
 

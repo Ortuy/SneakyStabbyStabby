@@ -251,7 +251,17 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public void ReloadScene()
     {
-        PhotonNetwork.LoadLevel("Arena");
+        if (map1)
+        {
+            PhotonNetwork.LoadLevel("Arena");
+        }
+        if (map2)
+        {
+            PhotonNetwork.LoadLevel("ArenaLarge");
+        }
+
+
+
     }
 
     public void DisappearText(float time)

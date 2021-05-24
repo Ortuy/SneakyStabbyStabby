@@ -107,6 +107,7 @@ public class Health : MonoBehaviourPunCallbacks
         if (hitTaken & healthAmount > 0)
         {
             isGhost = true;
+            player.ChangeTagGhost();
             StartCoroutine("GhostEnum");
             if (isGhost == true & healthAmount > 0)
             {
@@ -130,7 +131,7 @@ public class Health : MonoBehaviourPunCallbacks
     {
         yield return new WaitForSeconds(ghostTime);
         isGhost = false;
-
+        player.ChangeTagPlayer();
         Color playerColor = new Color(player.recolorSprites[0].color.r, player.recolorSprites[0].color.g, player.recolorSprites[0].color.b, 1);
 
         player.ghostSprites[0].color = new Color(1, 1, 1, 0);
@@ -174,7 +175,7 @@ public class Health : MonoBehaviourPunCallbacks
     [PunRPC]
     private void Dead()
     {
-        player.ChangeTag();
+        player.ChangeTagGhost();
         GameManager.localInstance.victoryText.gameObject.SetActive(true);
         GameManager.localInstance.victoryText.text = playerName + " is dead!";
         GameManager.localInstance.numerOfPlayers++;
