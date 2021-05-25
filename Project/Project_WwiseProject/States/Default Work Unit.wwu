@@ -10,6 +10,14 @@
 						<State Name="big" ID="{6867632E-8D2C-4D98-BBE6-E7AA3A5A9D78}"/>
 					</ChildrenList>
 				</StateGroup>
+				<StateGroup Name="footstep" ID="{CD912003-14DB-4380-A48E-C84D3AC5479B}">
+					<ChildrenList>
+						<State Name="None" ID="{FA994ED2-81F2-4155-96C1-0F4BA198EAEF}"/>
+						<State Name="inaudible" ID="{1F6A937C-FB6E-41F9-AAC9-66E86AF0A10D}"/>
+						<State Name="normal" ID="{0AB6B812-2F3D-469E-8B95-B20F7D69A8B7}"/>
+						<State Name="speed" ID="{5DF7B4C4-7532-4909-9FE7-4103A0A47FC1}"/>
+					</ChildrenList>
+				</StateGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</States>

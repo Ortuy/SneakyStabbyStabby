@@ -501,10 +501,12 @@ public class Player : MonoBehaviourPunCallbacks
 
     public void PlayFootstep()
     {
+        
         var intPosition = new Vector3Int(Mathf.FloorToInt(transform.position.x), Mathf.FloorToInt(transform.position.y), 0);
 
         if(timerSprintRunning || timerSprintRunning2)
         {
+
             if (GameManager.localInstance.stoneMask.GetTile(intPosition))
             {
                 //Play stone sprint footstep here
@@ -525,8 +527,10 @@ public class Player : MonoBehaviourPunCallbacks
         {
             if (GameManager.localInstance.stoneMask.GetTile(intPosition))
             {
-                AkSoundEngine.SetSwitch("surface", "stone", gameObject);
-                AkSoundEngine.PostEvent("char_footsteps", gameObject, gameObject);
+                AkSoundEngine.SetState("footstep", "normal");
+				AkSoundEngine.SetSwitch("surface", "stone", gameObject);
+				AkSoundEngine.PostEvent("char_footsteps", gameObject, gameObject);
+				
                 footstepStone.Play();
             }
             else if (GameManager.localInstance.woodMask.GetTile(intPosition))
@@ -536,10 +540,13 @@ public class Player : MonoBehaviourPunCallbacks
             }
             else
             {
+				AkSoundEngine.SetState("footstep", "normal");
                 AkSoundEngine.SetSwitch("surface", "grass", gameObject);
                 AkSoundEngine.PostEvent("char_footsteps", gameObject, gameObject);
+				
                 footstep.Play();
             }
+
         }
         
         
@@ -547,6 +554,7 @@ public class Player : MonoBehaviourPunCallbacks
 
         if(timerPaintRunning2)
         {
+            
             //photonView.RPC("SpawnGlowingFootstep", RpcTarget.AllBuffered);
             SpawnGlowingFootstep();
         }
@@ -559,6 +567,7 @@ public class Player : MonoBehaviourPunCallbacks
 
         if(photonView.IsMine)
         {
+            AkSoundEngine.SetState("footstep", "inaudible");
             foot = PhotonNetwork.Instantiate/*RoomObject*/(glowingFootstep.name, transform.position, legs.transform.rotation);
             //foot.GetComponent<SpriteRenderer>().flipX = legs.GetComponent<SpriteRenderer>().flipX;
             //Destroy(foot, 16);
@@ -608,7 +617,7 @@ public class Player : MonoBehaviourPunCallbacks
         
         if (Input.GetKey(KeyCode.LeftShift)&& timeSprintRemaining !=0 && timerSprintRunning2 && isTrapped == false)
         {
-
+            AkSoundEngine.SetState("footstep", "speed");
             rigidBody.velocity = new Vector2(moveDirection.x * sprint, moveDirection.y * sprint);
             timerSprintRunning = true;
         }

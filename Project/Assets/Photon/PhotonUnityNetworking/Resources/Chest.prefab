@@ -7347,7 +7347,7 @@ MonoBehaviour:
   chestlIsActive: 1
   spawnTime: 60
   dropPos: {fileID: 7113226272059822217}
-  pickup1: {fileID: 6016474575503332140, guid: d0096c7395cd4a14590a80fa508a7d80, type: 3}
+  pickup1: {fileID: 6016474575503332140, guid: e783a91ac1908a343a1bef5fbeae7a8d, type: 3}
   pickup2: {fileID: 6016474575503332140, guid: c66d80d1ed6802d48ba62afbd367f5e2, type: 3}
   pickup3: {fileID: 6016474575503332140, guid: 9dd5822f9fb932a4ea124131a2735652, type: 3}
   pickup4: {fileID: 6016474575503332140, guid: c872a01f6838bed419b7d1da564979a4, type: 3}
