@@ -20,6 +20,7 @@ namespace AK
         static const AkUniqueID CHAR_FOOTSTEP_DASH = 3864694805U;
         static const AkUniqueID CHAR_FOOTSTEPS = 3331452589U;
         static const AkUniqueID CHAR_KNIFE_SWINGING = 3862022932U;
+        static const AkUniqueID CHAR_TAKING_DAMAGE = 120190188U;
         static const AkUniqueID MUSIC_AMBIENT_DRONE = 205229924U;
         static const AkUniqueID SFX_BOX_DESTROY = 490354319U;
         static const AkUniqueID SFX_BUY_SHOP = 2554305358U;
@@ -62,6 +63,19 @@ namespace AK
             } // namespace STATE
         } // namespace BUSH
 
+        namespace FOOTSTEP
+        {
+            static const AkUniqueID GROUP = 1866025847U;
+
+            namespace STATE
+            {
+                static const AkUniqueID INAUDIBLE = 2437297550U;
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID NORMAL = 1160234136U;
+                static const AkUniqueID SPEED = 640949982U;
+            } // namespace STATE
+        } // namespace FOOTSTEP
+
     } // namespace STATES
 
     namespace SWITCHES
@@ -103,6 +117,11 @@ namespace AK
 
     } // namespace SWITCHES
 
+    namespace GAME_PARAMETERS
+    {
+        static const AkUniqueID NEW_GAME_PARAMETER = 3671138082U;
+    } // namespace GAME_PARAMETERS
+
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
@@ -112,6 +131,7 @@ namespace AK
     namespace BUSSES
     {
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
+        static const AkUniqueID NEW_AUDIO_BUS = 2255513057U;
     } // namespace BUSSES
 
     namespace AUDIO_DEVICES

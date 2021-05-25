@@ -53,6 +53,7 @@ public class Tripwire : MonoBehaviourPunCallbacks
                 animator.SetBool("Snap", true);
                 web.transform.position = target.transform.position;
                 GetComponent<PhotonView>().RPC("SetFlipDirection", RpcTarget.AllBuffered, flip);
+                AkSoundEngine.PostEvent("sfx_obj_tripwire", gameObject, gameObject);
 
                 target.RPC("Stop", RpcTarget.AllBuffered, stop);
                 target.GetComponent<Health>().cFollow.ShakeCamera(1);

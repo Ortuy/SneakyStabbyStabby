@@ -58,6 +58,13 @@
 									<ObjectLists/>
 								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="char_voice_taking_damage" ID="{5667ADDC-576C-469C-8486-3F9EDC652A15}" ShortID="680957148">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-23</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -66,6 +73,123 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
 										</Reference>
 									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="hit5" ID="{7CED1BF6-8BA6-4250-AED2-B0A32473AF96}" ShortID="510531824">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="hit5" ID="{49B2DB7E-887F-4229-BA39-514C53A2C2D5}">
+													<Language>SFX</Language>
+													<AudioFile>hit5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="507201161"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="hit5" ID="{49B2DB7E-887F-4229-BA39-514C53A2C2D5}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="hit1" ID="{3F267BE2-49B8-4279-8660-2FB18EA5CBCA}" ShortID="664417140">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="hit1" ID="{586D9F7B-492A-47C0-945D-E3C26DD054D0}">
+													<Language>SFX</Language>
+													<AudioFile>hit1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="169371736"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="hit1" ID="{586D9F7B-492A-47C0-945D-E3C26DD054D0}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="hit2" ID="{D6D1FE23-E6A8-4E4A-B369-13D481926EBF}" ShortID="752303549">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="hit2" ID="{4279C369-A203-4A5B-8F41-B88D4A7AC1DF}">
+													<Language>SFX</Language>
+													<AudioFile>hit2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="69224226"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="hit2" ID="{4279C369-A203-4A5B-8F41-B88D4A7AC1DF}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="hit3" ID="{0A29FA32-BD90-487D-B348-6609205E835E}" ShortID="227209808">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="hit3" ID="{E92C1C2E-0BD3-4D95-B7F4-38906FD305DB}">
+													<Language>SFX</Language>
+													<AudioFile>hit3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="25123832"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="hit3" ID="{E92C1C2E-0BD3-4D95-B7F4-38906FD305DB}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="hit4" ID="{3947B219-CD9E-46CF-99EB-123D57E92B8F}" ShortID="653285740">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="hit4" ID="{E10F1049-83FE-4B13-AE97-33BDB0EE364C}">
+													<Language>SFX</Language>
+													<AudioFile>hit4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="130197865"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="hit4" ID="{E10F1049-83FE-4B13-AE97-33BDB0EE364C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
 									<ObjectLists/>
 								</RandomSequenceContainer>
 							</ChildrenList>
@@ -331,6 +455,8 @@
 								</Sound>
 								<RandomSequenceContainer Name="sfx_crossbow_shoot" ID="{18BEB031-DCCF-4B1F-9E6D-D9635CEE749D}" ShortID="337714950">
 									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
 												<Value>-9</Value>
@@ -338,6 +464,9 @@
 										</Property>
 									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="fire" ID="{BE8053A6-378D-43F3-BC77-7353EB91E1C3}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
 										</Reference>
@@ -445,6 +574,36 @@
 						</Folder>
 						<SwitchContainer Name="char_footstep" ID="{0EF189BF-4787-42E0-9A3B-4AE080500AB8}" ShortID="687802518">
 							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="InitialDelay" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{D834C777-E516-46E9-9D60-13E9B0FE1830}" ShortID="414128892">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="New_Game_Parameter" ID="{4833582D-4A11-4F46-961E-0CC21A51F96C}" WorkUnitID="{5AEB738E-4A47-4896-A893-71D1B41523C8}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{0918A01A-DEFB-4698-BCEF-FCA7507DFD72}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="1"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>0</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>0</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-18</Value>
@@ -452,6 +611,9 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="fire" ID="{BE8053A6-378D-43F3-BC77-7353EB91E1C3}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
 								</Reference>
@@ -956,6 +1118,36 @@
 									<ObjectLists/>
 								</RandomSequenceContainer>
 							</ChildrenList>
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="footstep" ID="{CD912003-14DB-4380-A48E-C84D3AC5479B}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="inaudible" ID="{1F6A937C-FB6E-41F9-AAC9-66E86AF0A10D}"/>
+										<CustomState Name="" ID="{88B293F1-5F74-4A19-B40C-968BBB617EEA}" ShortID="497704397">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-108"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="normal" ID="{0AB6B812-2F3D-469E-8B95-B20F7D69A8B7}"/>
+										<CustomState Name="" ID="{35F3C65E-6576-44F4-9FA4-5E34838D7721}" ShortID="423627847"/>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="speed" ID="{5DF7B4C4-7532-4909-9FE7-4103A0A47FC1}"/>
+										<CustomState Name="" ID="{A9EA673C-76DC-481A-AE61-89A54BEC7182}" ShortID="527128047">
+											<PropertyList>
+												<Property Name="Highpass" Type="int16" Value="37"/>
+												<Property Name="Volume" Type="Real64" Value="7"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
 							<ObjectLists/>
 							<GroupingInfo>
 								<GroupingBehaviorList>
@@ -1001,7 +1193,14 @@
 							</GroupingInfo>
 						</SwitchContainer>
 						<RandomSequenceContainer Name="char_footstep_dash" ID="{0B25B9D0-4D1E-4EEB-81DD-CDFC2F382B2B}" ShortID="776571586">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="fire" ID="{BE8053A6-378D-43F3-BC77-7353EB91E1C3}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
 								</Reference>
@@ -1163,6 +1362,11 @@
 						<Sound Name="ui_wood_panel_options_checkbox" ID="{D15C0C09-7B5E-4A5A-8876-31011CE0047E}" ShortID="592148627">
 							<PropertyList>
 								<Property Name="OverrideOutput" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-9</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -1190,7 +1394,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-4</Value>
+										<Value>-9</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1277,6 +1481,11 @@
 										<Value>True</Value>
 									</ValueList>
 								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -1308,7 +1517,7 @@
 								<Property Name="OverrideEffect" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-10</Value>
+										<Value>-2</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -2612,6 +2821,11 @@
 				<Sound Name="music" ID="{5679D916-BC0E-4401-B7A2-A1F0C7ED5CF6}" ShortID="490648344">
 					<PropertyList>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-4</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -2646,7 +2860,14 @@
 					</ReferenceList>
 					<ChildrenList>
 						<ActorMixer Name="sfx_object" ID="{2418070E-7AF4-41B6-A342-E5F845E54BF3}" ShortID="358638742">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="fire" ID="{BE8053A6-378D-43F3-BC77-7353EB91E1C3}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
 								</Reference>
@@ -2686,13 +2907,18 @@
 								</Sound>
 								<Sound Name="sfx_obj_camo" ID="{D71D94A3-6A79-4E26-B372-09A329AC92BA}" ShortID="31297213">
 									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-18</Value>
+												<Value>-11</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="fire" ID="{BE8053A6-378D-43F3-BC77-7353EB91E1C3}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
 										</Reference>
@@ -2716,14 +2942,19 @@
 								</Sound>
 								<Sound Name="sfx_obj_detector" ID="{E685708D-1705-4DF8-8608-29B9158D106A}" ShortID="589482298">
 									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
 										<Property Name="Lowpass" Type="int16">
 											<ValueList>
 												<Value>63</Value>
 											</ValueList>
 										</Property>
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
 									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="fire" ID="{BE8053A6-378D-43F3-BC77-7353EB91E1C3}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
 										</Reference>
@@ -2758,7 +2989,7 @@
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-7</Value>
+												<Value>-8</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -2855,7 +3086,7 @@
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-13</Value>
+												<Value>-8</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -2865,6 +3096,16 @@
 										</Reference>
 										<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
 											<ObjectRef Name="Room_Medium_Tiled" ID="{0C0A3A92-A571-4FDB-AB40-ACFED04E0217}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+										<Reference Name="Effect1">
+											<Custom>
+												<Effect Name="Wwise Parametric EQ (Custom)" ID="{961B4BE2-C2C9-45B5-B6A7-B3BFC678D56B}" ShortID="790223115" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+													<PropertyList>
+														<Property Name="FrequencyBand3" Type="Real32" Value="907"/>
+														<Property Name="GainBand3" Type="Real32" Value="6.5"/>
+													</PropertyList>
+												</Effect>
+											</Custom>
 										</Reference>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
@@ -2886,7 +3127,9 @@
 								</Sound>
 								<Sound Name="sfx_obj_gas" ID="{EA5E97D0-6678-403F-9B9D-BD57E51D6363}" ShortID="653680369">
 									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
 												<Value>-9</Value>
@@ -2894,6 +3137,9 @@
 										</Property>
 									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="fire" ID="{BE8053A6-378D-43F3-BC77-7353EB91E1C3}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
 										</Reference>
@@ -2923,7 +3169,7 @@
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-2</Value>
+												<Value>-9</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -2954,7 +3200,9 @@
 								</Sound>
 								<Sound Name="sfx_obj_speedpotion" ID="{E621125A-CB4B-43E3-AE99-3F181E97A104}" ShortID="272551328">
 									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
 												<Value>-10</Value>
@@ -2962,6 +3210,9 @@
 										</Property>
 									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="fire" ID="{BE8053A6-378D-43F3-BC77-7353EB91E1C3}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
 										</Reference>
@@ -3004,7 +3255,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-8</Value>
+										<Value>-17</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -3049,7 +3300,7 @@
 								<Property Name="OverrideEffect" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-11</Value>
+										<Value>-17</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>

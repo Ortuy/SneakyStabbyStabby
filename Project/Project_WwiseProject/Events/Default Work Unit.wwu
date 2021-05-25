@@ -416,6 +416,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="char_taking_damage" ID="{55D8738E-2575-4230-A5DF-D77F98522596}">
+							<ChildrenList>
+								<Action Name="" ID="{74B60F41-51CD-468A-A2B3-007B9ED96AFC}" ShortID="485316040">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="char_voice_taking_damage" ID="{5667ADDC-576C-469C-8486-3F9EDC652A15}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

@@ -9,6 +9,11 @@
 							<ObjectRef Name="System" ID="{775CB707-7720-4AC3-984E-F860448F26E6}" WorkUnitID="{D98DFFE0-B00C-48CB-B1A2-2980A5C8992F}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<Bus Name="New Audio Bus" ID="{EA5A071B-65C8-4E94-A79B-1000E4483837}">
+							<ObjectLists/>
+						</Bus>
+					</ChildrenList>
 					<ObjectLists/>
 				</Bus>
 			</ChildrenList>

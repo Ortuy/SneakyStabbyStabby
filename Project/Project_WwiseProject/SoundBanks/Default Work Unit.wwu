@@ -10,6 +10,7 @@
 						<ObjectRef Name="ui_interact" ID="{31709220-795A-4191-9A9E-ED25D597199E}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="sfx_obj_tripwire_activate" ID="{EE85370D-C5F9-4208-AE94-3A8931E44726}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="sfx_crossbow_shoot" ID="{7D427882-91E6-421C-A20C-506FE4AAFDA7}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="char_taking_damage" ID="{55D8738E-2575-4230-A5DF-D77F98522596}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="UIClickWoodPanel" ID="{5409B217-A9DA-4270-B72B-C3F455BB605B}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="sfx_teleport" ID="{CD65C80C-1F08-42CB-8DFE-5309DF061F6A}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="sfx_obj_tripwire_activate" ID="{9279F124-4F60-4414-9556-EB11794142B2}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
