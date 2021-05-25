@@ -77,7 +77,7 @@ public class Player : MonoBehaviourPunCallbacks
     public int gold;
     public Text goldText, mapNameText, mapNameTextRadar;
     public bool destroyWeb = false;
-    public bool isTrapped;
+    public bool isTrapped, isSprinting;
 
 
 
@@ -504,7 +504,7 @@ public class Player : MonoBehaviourPunCallbacks
         
         var intPosition = new Vector3Int(Mathf.FloorToInt(transform.position.x), Mathf.FloorToInt(transform.position.y), 0);
 
-        if(timerSprintRunning || timerSprintRunning2)
+        if(timerSprintRunning)
         {
 
             if (GameManager.localInstance.stoneMask.GetTile(intPosition))
@@ -530,12 +530,13 @@ public class Player : MonoBehaviourPunCallbacks
                 AkSoundEngine.SetState("footstep", "normal");
 				AkSoundEngine.SetSwitch("surface", "stone", gameObject);
 				AkSoundEngine.PostEvent("char_footsteps", gameObject, gameObject);
-				
+                Debug.Log("Stone Footstep!");
                 footstepStone.Play();
             }
             else if (GameManager.localInstance.woodMask.GetTile(intPosition))
             {
                 //Play wood footsteps here
+                Debug.Log("Wood Footstep");
                 footstepWood.Play();
             }
             else

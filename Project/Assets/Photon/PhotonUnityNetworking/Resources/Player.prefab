@@ -58785,6 +58785,7 @@ MonoBehaviour:
   mapNameTextRadar: {fileID: 2282089492938926216}
   destroyWeb: 0
   isTrapped: 0
+  isSprinting: 0
   moveSpeed: 3
   shootSpeed: 18
   playerID: 0
