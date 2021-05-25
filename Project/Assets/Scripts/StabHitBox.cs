@@ -61,7 +61,10 @@ public class StabHitBox : MonoBehaviourPunCallbacks
                     target.GetComponent<Health>().hurtFX.transform.rotation = Quaternion.AngleAxis(newAngle, Vector3.forward);
 
                     target.RPC("ReduceHealth", RpcTarget.AllBuffered, damage);
-                    playerPV.RPC("HitStop", RpcTarget.AllBuffered);
+                    //target.GetComponent<Health>().HitStop(true);
+                    playerPV.RPC("HitStop", RpcTarget.AllBuffered, false);
+                    //target.RPC("HitStop", RpcTarget.AllBuffered, true);
+                    //playerPV.GetComponent<Health>().HitStop(false);
                 }
                 
                 

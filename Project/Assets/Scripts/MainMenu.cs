@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviourPunCallbacks
     [SerializeField] private Text roomCodeText;
 
     private string roomName;
-    public int mapNum;
+    public int mapNum = 1;
     public byte playerNum = 2; 
 
     //[SerializeField] private GameObject startButton;
@@ -136,10 +136,14 @@ public class MainMenu : MonoBehaviourPunCallbacks
         if (mapNum == 0)
         {
             PhotonNetwork.LoadLevel("Arena");
+            GameManager.localInstance.map1 = true;
+            GameManager.localInstance.map1 = false;
         }
         if (mapNum == 1)
         {
             PhotonNetwork.LoadLevel("ArenaLarge");
+            GameManager.localInstance.map1 = false;
+            GameManager.localInstance.map1 = true;
         }
 
     }
@@ -188,12 +192,14 @@ public class MainMenu : MonoBehaviourPunCallbacks
     {
         mapNum = 0;
         playerNum = 2;
+
     }
 
     public void MapPlus()
     {
         mapNum = 1;
         playerNum = 6;
+
     }
 }
 
