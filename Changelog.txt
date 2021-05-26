@@ -290,3 +290,17 @@
 - Improved the Sprawling Weald wait room
 ### Fixed
 - The life system works properly for more than 2 players
+
+## [0.3.1] - 2021-05-26
+### Added
+- More decorations for the 6 player map
+- Player status displays
+- Outlines for objects with collisions
+### Changed
+- Improved the layout and aesthetic of the 6 player map
+- Updated the map display to reflect those changes
+- Improved the item descriptions
+- Tweaked the player view cone
+### Fixed
+- (Hopefully) fixed the bugs with joining the 6 player map
+- Fixed the dead player ghosts interacting with objects

@@ -205,7 +205,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         float randomValueX = Random.Range(-2f, 2f);
         float randomValueY = Random.Range(-2f, 2f);
 
-        spawnPortalAnimators[playerAmount].SetBool("Open", true);
+        //spawnPortalAnimators[playerAmount].SetBool("Open", true);
         PhotonNetwork.Instantiate(playerPrefab.name, spawnPointsWait[playerAmount].transform.position, Quaternion.identity, 0);
 
 

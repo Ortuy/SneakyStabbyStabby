@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemImage: {fileID: 21300000, guid: b5446573a49994445883914bcc64a4e4, type: 3}
   itemName: Spike Pit
-  itemDesc: Set a fatal ambush for your foe
+  itemDesc: Set a fatal ambush
   itemType: 0
   effectID: 0
   maxUses: 1
