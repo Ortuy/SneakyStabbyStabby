@@ -17870,6 +17870,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (612)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8448651578527982505 stripped
@@ -20798,12 +20803,12 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: adb2b1621ec7c2a43924e5bfd02bea7f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.48
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: adb2b1621ec7c2a43924e5bfd02bea7f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.91
+      value: 19.65
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: adb2b1621ec7c2a43924e5bfd02bea7f,
         type: 3}
@@ -22733,12 +22738,12 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.57
+      value: -1.11
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 23.02
+      value: 23.48
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -29663,12 +29668,12 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.46
+      value: 5.61
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 21.59
+      value: 21.51
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -35769,6 +35774,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (610)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -44520,6 +44530,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (611)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8448651580037837861 stripped
@@ -45164,6 +45179,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorWoods (152)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: adb2b1621ec7c2a43924e5bfd02bea7f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adb2b1621ec7c2a43924e5bfd02bea7f, type: 3}
