@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6690595851526954887
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6690595851526954886}
+  - component: {fileID: 6690595851526954885}
+  m_Layer: 0
+  m_Name: DecorRuins
+  m_TagString: Untagged
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6690595851526954886
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6690595851526954887}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -18.53, y: -2.96, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6690595851526954885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6690595851526954887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1a852e8ac6269a4a97ef07ff9b2a23a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  decoratorTypeOffset: 9
+  isDecorPlaced: 0
+  decorPrefabs:
+  - {fileID: 1025203636576575596, guid: 38cf9939bb69ecd4db43926175f5ad4b, type: 3}
+  - {fileID: 1025203636576575596, guid: 965805a0942e53c4d8917b1934f458f5, type: 3}
+  - {fileID: 1025203636576575596, guid: a9e2a2fe2cfbd464eac7f859b09890ba, type: 3}
+  - {fileID: 1025203636576575596, guid: eebe67a0e7f989649abde3da38ade392, type: 3}
+  - {fileID: 1025203636576575596, guid: 18b1441be141aaf4b9bbe172d21384e0, type: 3}
+  - {fileID: 1025203636576575596, guid: 8639ca7150af1624ea8d61fad920bf45, type: 3}
+  - {fileID: 8791672585073947281, guid: 2203b8f728884bd459781ff9169e770e, type: 3}
+  decorWeights: 02000000020000000100000003000000030000000100000002000000
+  decorScaleModifiers:
+  - 0.7
+  - 0.7
+  - 0.8
+  - 0.9
+  - 0.9
+  - 1
+  - 1
+  maxScale: 1.2
+  minScale: 0.9
+  blankPercentChance: 20
+  decorID: 0
+  decorScale: 0
+  decorGenerated: 1
+  decorRotation: 0

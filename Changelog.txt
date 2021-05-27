@@ -271,6 +271,36 @@
 ## [0.2.14] - 2021-05-16
 ### Added
 - HUD animations
+
 ## [0.2.15] - 2021-05-17
 ### Changed
 - Lives and winning game 
+
+## [0.2.16] - 2021-05-19
+### Fixed
+- Chests now sync again
+- Stab animation hit stops sync properly
+- Optimised decor generation
+
+## [0.3.0] - 2021-05-20
+### Added
+- Dead players staying as ghosts
+- Proper map select system
+### Changed
+- Improved the Sprawling Weald wait room
+### Fixed
+- The life system works properly for more than 2 players
+
+## [0.3.1] - 2021-05-26
+### Added
+- More decorations for the 6 player map
+- Player status displays
+- Outlines for objects with collisions
+### Changed
+- Improved the layout and aesthetic of the 6 player map
+- Updated the map display to reflect those changes
+- Improved the item descriptions
+- Tweaked the player view cone
+### Fixed
+- (Hopefully) fixed the bugs with joining the 6 player map
+- Fixed the dead player ghosts interacting with objects

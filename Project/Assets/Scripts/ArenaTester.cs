@@ -24,7 +24,7 @@ public class ArenaTester : MonoBehaviourPunCallbacks
 
     public override void OnJoinedLobby()
     {
-        PhotonNetwork.CreateRoom("DUPA", new RoomOptions() { MaxPlayers = 2 }, null);
+        PhotonNetwork.JoinOrCreateRoom("DUPA", new RoomOptions() { MaxPlayers = 2 }, null);
     }
 
     public override void OnJoinedRoom()

@@ -75,9 +75,9 @@ public class Player : MonoBehaviourPunCallbacks
     public Color colorToSet6;
     public Color colorToSet7;
     public int gold;
-    public Text goldText;
+    public Text goldText, mapNameText, mapNameTextRadar;
     public bool destroyWeb = false;
-    public bool isTrapped;
+    public bool isTrapped, isSprinting;
 
 
 
@@ -98,7 +98,7 @@ public class Player : MonoBehaviourPunCallbacks
     public Inventory inventory;
     public Text stabCooldownText, potionCooldownText;
 
-    public ParticleSystem footstep, footstepStone, camoFX, stimFX, visionFX, blinkFX, crossbowFX, trapFX;
+    public ParticleSystem footstep, footstepStone, footstepWood, camoFX, stimFX, visionFX, blinkFX, crossbowFX, trapFX;
     public SpriteRenderer glowingFootstep;
 
     [SerializeField] private Slider staminaBar;
@@ -116,7 +116,7 @@ public class Player : MonoBehaviourPunCallbacks
 
     private void Awake()
     {
-
+        health = GetComponent<Health>();
 
         photonView = GetComponent<PhotonView>();
 
@@ -124,8 +124,8 @@ public class Player : MonoBehaviourPunCallbacks
 
         if (photonView.IsMine)
         {
-            
-         
+
+            StartCoroutine(WaitAFrameAndSetName());
             playerCamera.SetActive(true);
             playerViewCone.SetActive(true);
             playerViewCone2.SetActive(false);
@@ -158,6 +158,20 @@ public class Player : MonoBehaviourPunCallbacks
 
         //playerCamera.transform.SetParent(null);
     }
+
+    IEnumerator WaitAFrameAndSetName()
+    {
+        yield return null;
+        photonView.RPC("SetMapName", RpcTarget.AllBuffered);
+    }
+
+    [PunRPC]
+    private void SetMapName()
+    {
+        mapNameText.text = health.playerName;
+        mapNameTextRadar.text = health.playerName;
+    }
+
     private void Start()
     {
         Physics2D.queriesStartInColliders = false;
@@ -315,7 +329,7 @@ public class Player : MonoBehaviourPunCallbacks
         }
 
 
-        if (Input.GetButtonDown("Fire2") && !settingTrap)
+        if (Input.GetButtonDown("Fire2") && !settingTrap && !health.isGhost)
         {
             //Shoot();
             inventory.UseItem();
@@ -334,7 +348,7 @@ public class Player : MonoBehaviourPunCallbacks
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && !health.isGhost)
         {
             inventory.UsePassiveItem();
         }
@@ -489,21 +503,54 @@ public class Player : MonoBehaviourPunCallbacks
     {
         
         var intPosition = new Vector3Int(Mathf.FloorToInt(transform.position.x), Mathf.FloorToInt(transform.position.y), 0);
-        if(GameManager.localInstance.stoneMask.GetTile(intPosition))
+
+        if(timerSprintRunning)
         {
-            AkSoundEngine.SetState("footstep", "normal");
-            AkSoundEngine.SetSwitch("surface", "stone", gameObject);
-            AkSoundEngine.PostEvent("char_footsteps", gameObject, gameObject);
-           
-            footstepStone.Play();
+
+            if (GameManager.localInstance.stoneMask.GetTile(intPosition))
+            {
+                //Play stone sprint footstep here
+                footstepStone.Play();
+            }
+            else if (GameManager.localInstance.woodMask.GetTile(intPosition))
+            {
+                //Play wood sprint footsteps here
+                footstepWood.Play();
+            }
+            else
+            {
+                //Play sprint footsteps here
+                footstep.Play();
+            }
         }
         else
         {
-            AkSoundEngine.SetState("footstep", "normal");
-            AkSoundEngine.SetSwitch("surface", "grass", gameObject);
-            AkSoundEngine.PostEvent("char_footsteps", gameObject, gameObject);
-            footstep.Play();
+            if (GameManager.localInstance.stoneMask.GetTile(intPosition))
+            {
+                AkSoundEngine.SetState("footstep", "normal");
+				AkSoundEngine.SetSwitch("surface", "stone", gameObject);
+				AkSoundEngine.PostEvent("char_footsteps", gameObject, gameObject);
+                Debug.Log("Stone Footstep!");
+                footstepStone.Play();
+            }
+            else if (GameManager.localInstance.woodMask.GetTile(intPosition))
+            {
+                //Play wood footsteps here
+                Debug.Log("Wood Footstep");
+                footstepWood.Play();
+            }
+            else
+            {
+				AkSoundEngine.SetState("footstep", "normal");
+                AkSoundEngine.SetSwitch("surface", "grass", gameObject);
+                AkSoundEngine.PostEvent("char_footsteps", gameObject, gameObject);
+				
+                footstep.Play();
+            }
+
         }
+        
+        
         
 
         if(timerPaintRunning2)
@@ -1028,7 +1075,14 @@ public class Player : MonoBehaviourPunCallbacks
         photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet7.r, colorToSet7.g, colorToSet7.b);
         //SetColor(colorToSet7.r, colorToSet7.g, colorToSet7.b);
     }
-    
+    public void ChangeTagGhost()
+    {
+        this.gameObject.tag = "Ghost";
+    }
+    public void ChangeTagPlayer()
+    {
+        this.gameObject.tag = "Player";
+    }
 
 
 

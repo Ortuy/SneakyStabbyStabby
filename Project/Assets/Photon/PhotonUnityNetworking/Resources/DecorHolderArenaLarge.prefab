@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3019213453743951363}
   - component: {fileID: 3349932715164141289}
+  - component: {fileID: -1846414067402265465}
   m_Layer: 0
   m_Name: DecorHolderArenaLarge
   m_TagString: DecorHolder
@@ -46,6 +47,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c5837684c3fa34e90904cc9f24aab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  decorPrefabs:
+  - {fileID: 264716889687014912, guid: 686abc98fdd83e844831d53b3e39d703, type: 3}
+  - {fileID: 5874997762060139218, guid: 34b3b1dda41df854ca9cd449056619e0, type: 3}
+  - {fileID: 2982988532237136252, guid: 32983d5f96fb62a489f639431b45e9e0, type: 3}
+  - {fileID: 1025203636576575596, guid: 38cf9939bb69ecd4db43926175f5ad4b, type: 3}
+  - {fileID: 1025203636576575596, guid: 965805a0942e53c4d8917b1934f458f5, type: 3}
+  - {fileID: 1025203636576575596, guid: a9e2a2fe2cfbd464eac7f859b09890ba, type: 3}
+  - {fileID: 1025203636576575596, guid: 28c3092188f1da644aac0ecb93b125d1, type: 3}
+  - {fileID: 1025203636576575596, guid: 06ac48b09989fc744bedea6da13b7119, type: 3}
+  - {fileID: 1025203636576575596, guid: d56a117341ce6bf43bd468aea1e9d222, type: 3}
+  - {fileID: 1025203636576575596, guid: 38cf9939bb69ecd4db43926175f5ad4b, type: 3}
+  - {fileID: 1025203636576575596, guid: 965805a0942e53c4d8917b1934f458f5, type: 3}
+  - {fileID: 1025203636576575596, guid: a9e2a2fe2cfbd464eac7f859b09890ba, type: 3}
+  - {fileID: 1025203636576575596, guid: eebe67a0e7f989649abde3da38ade392, type: 3}
+  - {fileID: 1025203636576575596, guid: 18b1441be141aaf4b9bbe172d21384e0, type: 3}
+  - {fileID: 1025203636576575596, guid: 8639ca7150af1624ea8d61fad920bf45, type: 3}
+  - {fileID: 8791672585073947281, guid: 2203b8f728884bd459781ff9169e770e, type: 3}
+--- !u!114 &-1846414067402265465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3019213453743951362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 34
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &4911548532076730804
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,6 +203,16 @@ Transform:
   - {fileID: 5467713727104989059}
   - {fileID: 7665981211006534522}
   - {fileID: 2122655637871610626}
+  - {fileID: 6690595852713046786}
+  - {fileID: 6690595851839806998}
+  - {fileID: 6690595853068170990}
+  - {fileID: 9020629678355430452}
+  - {fileID: 535447736016945084}
+  - {fileID: 4811478084335400237}
+  - {fileID: 4664062936405831096}
+  - {fileID: 6690595851434931120}
+  - {fileID: 6690595852038123665}
+  - {fileID: 6690595851399188005}
   m_Father: {fileID: 3019213453743951363}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1063,6 +1113,166 @@ Transform:
   m_Father: {fileID: 3019213453743951363}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &195989923
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 56922737014969028}
+    m_Modifications:
+    - target: {fileID: 6690595851526954884, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 835
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 30.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_Name
+      value: DecorRuins (99)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a7a2d395f19ef71458fe1f0962af36b1, type: 3}
+--- !u!4 &6690595851399188005 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 195989923}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &227306550
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 56922737014969028}
+    m_Modifications:
+    - target: {fileID: 6690595851526954884, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 835
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 30.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 97
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_Name
+      value: DecorRuins (97)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a7a2d395f19ef71458fe1f0962af36b1, type: 3}
+--- !u!4 &6690595851434931120 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 227306550}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &299395821
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1223,6 +1433,86 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 304472776}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &359285136
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 56922737014969028}
+    m_Modifications:
+    - target: {fileID: 6690595851526954884, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 932
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -48.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -13.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 91
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_Name
+      value: DecorRuins (91)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a7a2d395f19ef71458fe1f0962af36b1, type: 3}
+--- !u!4 &6690595851839806998 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 359285136}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &459155404
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1382,6 +1672,86 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
     type: 3}
   m_PrefabInstance: {fileID: 498854105}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &563638039
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 56922737014969028}
+    m_Modifications:
+    - target: {fileID: 6690595851526954884, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 835
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 28.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 98
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_Name
+      value: DecorRuins (98)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a7a2d395f19ef71458fe1f0962af36b1, type: 3}
+--- !u!4 &6690595852038123665 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 563638039}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &692632059
 PrefabInstance:
@@ -2183,6 +2553,86 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1430831486}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1499393156
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 56922737014969028}
+    m_Modifications:
+    - target: {fileID: 6690595851526954884, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 920
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -49.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_Name
+      value: DecorRuins (90)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a7a2d395f19ef71458fe1f0962af36b1, type: 3}
+--- !u!4 &6690595852713046786 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1499393156}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1518043566
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2422,6 +2872,86 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
     type: 3}
   m_PrefabInstance: {fileID: 1781744734}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1814243688
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 56922737014969028}
+    m_Modifications:
+    - target: {fileID: 6690595851526954884, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 940
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -46.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -22.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 92
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_Name
+      value: DecorRuins (92)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a7a2d395f19ef71458fe1f0962af36b1, type: 3}
+--- !u!4 &6690595853068170990 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1814243688}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1852792835
 PrefabInstance:
@@ -4015,6 +4545,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (218)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &6875346595947632585 stripped
@@ -4335,6 +4870,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (206)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &6394845033830891652 stripped
@@ -4358,12 +4898,12 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.41
+      value: -25.21
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -35.21
+      value: -37.28
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -4574,6 +5114,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (486)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -5055,6 +5600,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (364)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &6511608987877934647 stripped
@@ -5134,6 +5684,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (212)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -5535,6 +6090,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (163)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &6082603430020153476 stripped
@@ -5614,6 +6174,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -6094,6 +6659,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (321)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -6815,6 +7385,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (187)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &6295908095390584554 stripped
@@ -7054,6 +7629,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (257)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -7398,7 +7978,7 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.33
+      value: 25.65
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -7854,6 +8434,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (186)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -8575,6 +9160,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (210)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &5486263569382360243 stripped
@@ -8678,12 +9268,12 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24.15
+      value: 24.52
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -25.57
+      value: -25.82
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -8975,6 +9565,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (211)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &5674735433451490613 stripped
@@ -9078,12 +9673,12 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.61
+      value: -5.15
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18.43
+      value: -18.37
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -9214,6 +9809,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (268)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -10975,6 +11575,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (166)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &4917049077311445532 stripped
@@ -11134,6 +11739,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (267)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -11534,6 +12144,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -11943,6 +12558,86 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2043113123977994900}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2045709540573295166
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 56922737014969028}
+    m_Modifications:
+    - target: {fileID: 6690595851526954884, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 96
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_Name
+      value: DecorRuins (96)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a7a2d395f19ef71458fe1f0962af36b1, type: 3}
+--- !u!4 &4664062936405831096 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2045709540573295166}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2045906112101631200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12278,12 +12973,12 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 26.69
+      value: 27.13
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -32.56
+      value: -32.1
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -12422,6 +13117,86 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
     type: 3}
   m_PrefabInstance: {fileID: 2138419769706142249}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2169618645726276267
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 56922737014969028}
+    m_Modifications:
+    - target: {fileID: 6690595851526954884, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 854
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 17.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 95
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_Name
+      value: DecorRuins (95)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a7a2d395f19ef71458fe1f0962af36b1, type: 3}
+--- !u!4 &4811478084335400237 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2169618645726276267}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2182573606890443787
 PrefabInstance:
@@ -12763,7 +13538,7 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -24.55
+      value: -25.01
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -13535,6 +14310,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (156)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &9020105761128321860 stripped
@@ -13542,6 +14322,86 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
     type: 3}
   m_PrefabInstance: {fileID: 2446614705800039618}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2447270564148011954
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 56922737014969028}
+    m_Modifications:
+    - target: {fileID: 6690595851526954884, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 854
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -12.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 93
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_Name
+      value: DecorRuins (93)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a7a2d395f19ef71458fe1f0962af36b1, type: 3}
+--- !u!4 &9020629678355430452 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2447270564148011954}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2457190560070656688
 PrefabInstance:
@@ -13775,6 +14635,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (360)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &9083559076531297013 stripped
@@ -13934,6 +14799,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (182)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -14278,12 +15148,12 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.04
+      value: 8.23
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 26.54
+      value: 25.83
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
         type: 3}
@@ -14415,6 +15285,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (237)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8650428378255664160 stripped
@@ -14494,6 +15369,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (273)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -15055,6 +15935,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (357)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8721869473502769983 stripped
@@ -15534,6 +16419,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (362)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -16335,6 +17225,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (217)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8405362243239984881 stripped
@@ -16975,6 +17870,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (612)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8448651578527982505 stripped
@@ -17054,6 +17954,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorWoods (104)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: adb2b1621ec7c2a43924e5bfd02bea7f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adb2b1621ec7c2a43924e5bfd02bea7f, type: 3}
@@ -17215,6 +18120,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (497)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8448651578557363846 stripped
@@ -17238,12 +18148,12 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.01
+      value: 28.17
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.22
+      value: 11.72
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -17935,6 +18845,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (614)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8448651578638291612 stripped
@@ -18014,6 +18929,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (618)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -18335,6 +19255,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (633)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8448651578439923099 stripped
@@ -18598,12 +19523,12 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.84
+      value: -1.6
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.45
+      value: 27.69
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -19878,12 +20803,12 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: adb2b1621ec7c2a43924e5bfd02bea7f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.48
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: adb2b1621ec7c2a43924e5bfd02bea7f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.91
+      value: 19.65
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: adb2b1621ec7c2a43924e5bfd02bea7f,
         type: 3}
@@ -20094,6 +21019,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (630)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -20843,12 +21773,12 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.42
+      value: -5.01
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 21.13
+      value: 20.98
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -21700,6 +22630,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (632)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8448651578652814787 stripped
@@ -21803,12 +22738,12 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.57
+      value: -1.11
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 23.02
+      value: 23.48
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -22419,6 +23354,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (623)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -23220,6 +24160,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (540)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8448651578759546498 stripped
@@ -23459,6 +24404,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (545)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -25220,6 +26170,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (492)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8448651579148233158 stripped
@@ -25460,6 +26415,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (599)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8448651578943950853 stripped
@@ -25620,6 +26580,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (498)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8448651578929211179 stripped
@@ -25699,6 +26664,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (631)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -25963,7 +26933,7 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.7
+      value: 7.62
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -26019,6 +26989,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (609)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -26420,6 +27395,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (628)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8448651578955829402 stripped
@@ -26523,12 +27503,12 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.12
+      value: 5.62
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.48
+      value: 26.16
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -27620,6 +28600,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (619)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8448651579030330336 stripped
@@ -28683,12 +29668,12 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.46
+      value: 5.61
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 21.59
+      value: 21.51
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -29619,6 +30604,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (495)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -30825,6 +31815,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (603)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8448651579259771730 stripped
@@ -30985,6 +31980,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (613)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8448651579257564133 stripped
@@ -31093,7 +32093,7 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: adb2b1621ec7c2a43924e5bfd02bea7f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.74
+      value: 7.18
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: adb2b1621ec7c2a43924e5bfd02bea7f,
         type: 3}
@@ -31144,6 +32144,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorWoods (101)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: adb2b1621ec7c2a43924e5bfd02bea7f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adb2b1621ec7c2a43924e5bfd02bea7f, type: 3}
@@ -32190,6 +33195,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (601)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8448651579644598412 stripped
@@ -32269,6 +33279,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (602)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -32829,6 +33844,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (604)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -33629,6 +34649,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (622)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -34750,6 +35775,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (610)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8448651579489382961 stripped
@@ -35498,7 +36528,7 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.8
+      value: 9.52
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -35629,6 +36659,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (620)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -37470,6 +38505,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (629)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8448651579977920659 stripped
@@ -37869,6 +38909,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (607)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -38990,6 +40035,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (600)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8448651579758913241 stripped
@@ -39309,6 +40359,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (500)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -40270,6 +41325,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (634)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8448651580140514181 stripped
@@ -41093,12 +42153,12 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -40.96
+      value: -41.22
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.13
+      value: 18.92
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
         type: 3}
@@ -43173,7 +44233,7 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.98
+      value: 34.53
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -43469,6 +44529,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (611)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -43870,6 +44935,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (508)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8448651580074105507 stripped
@@ -44109,6 +45179,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorWoods (152)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: adb2b1621ec7c2a43924e5bfd02bea7f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adb2b1621ec7c2a43924e5bfd02bea7f, type: 3}
@@ -45070,6 +46145,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (496)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8448651580401325105 stripped
@@ -45389,6 +46469,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (617)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -45870,6 +46955,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (597)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8448651580468400302 stripped
@@ -46293,12 +47383,12 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.44
+      value: 26.16
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.96
+      value: 6.24
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -46589,6 +47679,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (494)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -49230,6 +50325,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (190)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8549025818938407848 stripped
@@ -49389,6 +50489,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (160)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -49790,6 +50895,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (207)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8606541419439796338 stripped
@@ -49949,6 +51059,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (354)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -50590,6 +51705,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (213)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &8266533081021475060 stripped
@@ -50829,6 +51949,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (260)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -52693,12 +53818,12 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.07
+      value: -6.76
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18.24
+      value: -18.49
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -52989,6 +54114,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (353)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -53710,6 +54840,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (172)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &7310009904332602862 stripped
@@ -53869,6 +55004,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (205)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -54213,12 +55353,12 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -47.83
+      value: -48.3
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.33
+      value: -11.15
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -55790,6 +56930,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (262)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &2159150518977120022 stripped
@@ -55869,6 +57014,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (320)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -56190,6 +57340,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (171)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &2232074565410844833 stripped
@@ -56453,7 +57608,7 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -24.95
+      value: -24.36
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -56509,6 +57664,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (269)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -56989,6 +58149,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (195)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -58990,6 +60155,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &1242901577752223910 stripped
@@ -59229,6 +60399,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (159)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -61070,6 +62245,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (266)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &583091388591991926 stripped
@@ -61870,6 +63050,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (270)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &819165037847545848 stripped
@@ -61949,6 +63134,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -62750,6 +63940,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (157)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &436570917510618710 stripped
@@ -62910,6 +64105,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (185)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &555442612169702309 stripped
@@ -62917,6 +64117,86 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
     type: 3}
   m_PrefabInstance: {fileID: 6587800224063431715}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6608908876436004922
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 56922737014969028}
+    m_Modifications:
+    - target: {fileID: 6690595851526954884, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 854
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 23.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 94
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: a7a2d395f19ef71458fe1f0962af36b1,
+        type: 3}
+      propertyPath: m_Name
+      value: DecorRuins (94)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a7a2d395f19ef71458fe1f0962af36b1, type: 3}
+--- !u!4 &535447736016945084 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6690595851526954886, guid: a7a2d395f19ef71458fe1f0962af36b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 6608908876436004922}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6612734982519782732
 PrefabInstance:
@@ -63790,6 +65070,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (193)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &283059635006870029 stripped
@@ -64590,6 +65875,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (194)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &4415255510661611527 stripped
@@ -64749,6 +66039,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (263)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -65069,6 +66364,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (264)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -66430,6 +67730,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (180)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &4309072337645029248 stripped
@@ -67338,7 +68643,7 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -31.27
+      value: -30.88
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -68133,7 +69438,7 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.89
+      value: -11.41
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -70058,7 +71363,7 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -36.14
+      value: -35.91
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -70109,6 +71414,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (265)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -70189,6 +71499,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (158)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -70373,12 +71688,12 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.5
+      value: -14.43
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.64
+      value: -3.57
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -70430,6 +71745,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorVegetation (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
 --- !u!4 &3375950391555953130 stripped
@@ -70453,7 +71773,7 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.19
+      value: -23.3
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -70773,7 +72093,7 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.08
+      value: 25.31
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -70909,6 +72229,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (181)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -72538,12 +73863,12 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.53
+      value: 12.34
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -38.6
+      value: -38.28
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -72754,6 +74079,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (161)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -72994,6 +74324,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (261)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}
@@ -73583,7 +74918,7 @@ PrefabInstance:
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -24.31
+      value: -24.83
       objectReference: {fileID: 0}
     - target: {fileID: 6690595851526954886, guid: 0e1a989063a03ec46aebf2ba92b0e278,
         type: 3}
@@ -74354,6 +75689,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DecorVegetation (174)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690595851526954887, guid: 0e1a989063a03ec46aebf2ba92b0e278,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1a989063a03ec46aebf2ba92b0e278, type: 3}

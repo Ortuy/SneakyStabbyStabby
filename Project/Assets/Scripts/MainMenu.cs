@@ -14,18 +14,27 @@ public class MainMenu : MonoBehaviourPunCallbacks
     [SerializeField] private InputField joinGameInput;
 
     [SerializeField] private GameObject loadingPanel;
-    [SerializeField] private UIAnimator tutorialPanel, joinPanel, hostPanel, mainPanel, creditsPanel, optionsPanel;
+    [SerializeField] private UIAnimator tutorialPanel, joinPanel, hostPanel, mainPanel, creditsPanel, optionsPanel, nameChoicePanel;
     [SerializeField] private GameObject[] devCredits;
     [SerializeField] private Text roomCodeText;
 
+    [SerializeField] private Text mapNameText, mapPlayersText;
+    [SerializeField] private Image mapImage;
+
+    [SerializeField] private string[] mapNames, mapPlayerCounts;
+    [SerializeField] private Sprite[] mapSprites;
+
     private string roomName;
-    public int mapNum = 1;
-    public byte playerNum = 2; 
+    public int mapNum = 0;
+    public byte playerNum = 2;
+
+    [SerializeField] private OptionsMenu optionsMenu;
 
     //[SerializeField] private GameObject startButton;
 
     private void Awake()
     {
+        optionsMenu = GetComponent<OptionsMenu>();
         PhotonNetwork.ConnectUsingSettings();
     }
 
@@ -64,6 +73,23 @@ public class MainMenu : MonoBehaviourPunCallbacks
         {
             joinPanel.gameObject.SetActive(true);
             joinPanel.Show();
+            mainPanel.Hide();
+        }
+    }
+
+    public void ToggleNamePanel()
+    {
+        AkSoundEngine.PostEvent("UIClickWoodPanel", gameObject, gameObject);
+        if (nameChoicePanel.gameObject.activeInHierarchy)
+        {
+            nameChoicePanel.Hide();
+            mainPanel.gameObject.SetActive(true);
+            mainPanel.Show();
+        }
+        else
+        {
+            nameChoicePanel.gameObject.SetActive(true);
+            nameChoicePanel.Show();
             mainPanel.Hide();
         }
     }
@@ -136,14 +162,12 @@ public class MainMenu : MonoBehaviourPunCallbacks
         if (mapNum == 0)
         {
             PhotonNetwork.LoadLevel("Arena");
-            GameManager.localInstance.map1 = true;
-            GameManager.localInstance.map1 = false;
+
         }
         if (mapNum == 1)
         {
             PhotonNetwork.LoadLevel("ArenaLarge");
-            GameManager.localInstance.map1 = false;
-            GameManager.localInstance.map1 = true;
+
         }
 
     }
@@ -182,8 +206,11 @@ public class MainMenu : MonoBehaviourPunCallbacks
         }
         else
         {
+            optionsMenu.ShowCurrentName();
+
             optionsPanel.gameObject.SetActive(true);
             optionsPanel.Show();
+            
             mainPanel.Hide();
         }
     }
@@ -192,14 +219,18 @@ public class MainMenu : MonoBehaviourPunCallbacks
     {
         mapNum = 0;
         playerNum = 2;
-
+        mapNameText.text = mapNames[0];
+        mapPlayersText.text = mapPlayerCounts[0];
+        mapImage.sprite = mapSprites[0];
     }
 
     public void MapPlus()
     {
         mapNum = 1;
         playerNum = 6;
-
+        mapNameText.text = mapNames[1];
+        mapPlayersText.text = mapPlayerCounts[1];
+        mapImage.sprite = mapSprites[1];
     }
 }
 

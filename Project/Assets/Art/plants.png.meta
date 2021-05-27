@@ -23,6 +23,15 @@ TextureImporter:
   - first:
       213: -4350115279957141132
     second: plants_6
+  - first:
+      213: -810785574404401188
+    second: plants_7
+  - first:
+      213: -3030608088069509471
+    second: plants_8
+  - first:
+      213: -5568842699155709627
+    second: plants_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -264,6 +273,69 @@ TextureImporter:
       bones: []
       spriteID: 479d726633941a3c0800000000000000
       internalID: -4350115279957141132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plants_7
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 102
+        width: 77
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd75d98d0d28fb4f0800000000000000
+      internalID: -810785574404401188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plants_8
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 143
+        width: 24
+        height: 30
+      alignment: 9
+      pivot: {x: 0.68152744, y: 0.17898153}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aee031300e11f5d0800000000000000
+      internalID: -3030608088069509471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plants_9
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 143
+        width: 23
+        height: 28
+      alignment: 9
+      pivot: {x: 0.6694807, y: 0.20518711}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 541ebc2f11f77b2b0800000000000000
+      internalID: -5568842699155709627
       vertices: []
       indices: 
       edges: []

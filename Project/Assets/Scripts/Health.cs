@@ -5,6 +5,8 @@ using Photon.Pun;
 
 public class Health : MonoBehaviourPunCallbacks
 {
+    public string playerName;
+
     public Player plMove;
     public Player player;
     public float healthAmount;
@@ -26,9 +28,16 @@ public class Health : MonoBehaviourPunCallbacks
         if (photonView.IsMine)
         {
             GameManager.localInstance.localPlayer = this.gameObject;
+            //playerName = PlayerPrefs.GetString("playername");
+            photonView.RPC("SyncName", RpcTarget.AllBuffered, PlayerPrefs.GetString("playername"));
         }
     }
 
+    [PunRPC]
+    private void SyncName(string nameToSync)
+    {
+        playerName = nameToSync;
+    }
 
     [PunRPC]
     public void ReduceHealth(float amount)
@@ -77,6 +86,11 @@ public class Health : MonoBehaviourPunCallbacks
         {
             yield return new WaitForSeconds(0.1f);
         }
+        
+        if(hitTaken)
+        {
+            isGhost = true;
+        }
 
         Debug.LogFormat(hitTaken + " hit stop");
         cFollow.ShakeCamera(0);
@@ -90,11 +104,12 @@ public class Health : MonoBehaviourPunCallbacks
         player.legsAnimator.speed = 1;
         player.isTrapped = false;
 
-        if (hitTaken)
+        if (hitTaken & healthAmount > 0)
         {
             isGhost = true;
+            player.ChangeTagGhost();
             StartCoroutine("GhostEnum");
-            if (isGhost == true && healthAmount > 0)
+            if (isGhost == true & healthAmount > 0)
             {
                 Color playerColor = new Color(player.recolorSprites[0].color.r, player.recolorSprites[0].color.g, player.recolorSprites[0].color.b, 0);
 
@@ -116,7 +131,7 @@ public class Health : MonoBehaviourPunCallbacks
     {
         yield return new WaitForSeconds(ghostTime);
         isGhost = false;
-
+        player.ChangeTagPlayer();
         Color playerColor = new Color(player.recolorSprites[0].color.r, player.recolorSprites[0].color.g, player.recolorSprites[0].color.b, 1);
 
         player.ghostSprites[0].color = new Color(1, 1, 1, 0);
@@ -141,11 +156,11 @@ public class Health : MonoBehaviourPunCallbacks
 
     private void CheckHealth()
     {
-        if (photonView.IsMine && healthAmount <= 0)
+        if (photonView.IsMine & healthAmount <= 0)
         {
             //GameManager.localInstance.EnableRespawn();
-            plMove.disableInput = true;
-            plMove.moveSpeed = 0;
+            //plMove.disableInput = true;
+            //plMove.moveSpeed = 0;
             this.GetComponent<PhotonView>().RPC("Dead", RpcTarget.AllBuffered);
 
         }
@@ -160,11 +175,25 @@ public class Health : MonoBehaviourPunCallbacks
     [PunRPC]
     private void Dead()
     {
+        player.ChangeTagGhost();
         GameManager.localInstance.victoryText.gameObject.SetActive(true);
-        GameManager.localInstance.victoryText.text = "Player " + GetComponent<Player>().playerID + " vanquished!";
+        GameManager.localInstance.victoryText.text = playerName + " is dead!";
         GameManager.localInstance.numerOfPlayers++;
         GameManager.localInstance.MapWin();
         deathFX.Play();
+        isGhost = true;
+        Color playerColor = new Color(player.recolorSprites[0].color.r, player.recolorSprites[0].color.g, player.recolorSprites[0].color.b, 0);
+
+        //player.ghost.SetActive(true);
+        player.ghostSprites[0].color = new Color(1, 1, 1, 1);
+        player.ghostSprites[1].color = new Color(1, 1, 1, 1);
+        player.nonRecolorSprites[0].color = new Color(1, 1, 1, 0);
+        player.nonRecolorSprites[1].color = new Color(1, 1, 1, 0);
+        player.recolorSprites[0].color = playerColor;
+        player.recolorSprites[1].color = playerColor;
+
+        player.moveSpeed = 10;
+        player.stabReady = false;
         //cc.enabled = false;
         //sr.enabled = false;
         //playerCanvas.SetActive(false);

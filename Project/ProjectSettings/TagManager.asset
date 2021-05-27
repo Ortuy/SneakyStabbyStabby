@@ -9,6 +9,7 @@ TagManager:
   - Pickup
   - Chest
   - ViewCone
+  - Ghost
   layers:
   - Default
   - TransparentFX

@@ -27,9 +27,9 @@ public class OverlayObject : MonoBehaviour
         while(spriteRenderer.color.a > fadeOutLevel)
         {
             yield return null;
-            spriteRenderer.color = new Color(1, 1, 1, spriteRenderer.color.a - (Time.deltaTime / fadeDuration));            
+            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, spriteRenderer.color.a - (Time.deltaTime / fadeDuration));            
         }
-        spriteRenderer.color = new Color(1, 1, 1, fadeOutLevel);
+        spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, fadeOutLevel);
     }
 
     IEnumerator FadeOutExtra(SpriteRenderer extraRenderer)
@@ -48,7 +48,7 @@ public class OverlayObject : MonoBehaviour
         while (spriteRenderer.color.a < 1)
         {
             yield return null;
-            spriteRenderer.color = new Color(1, 1, 1, spriteRenderer.color.a + (Time.deltaTime / fadeDuration));
+            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, spriteRenderer.color.a + (Time.deltaTime / fadeDuration));
         }
     }
 

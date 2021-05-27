@@ -28,13 +28,14 @@ public class SpikePit : MonoBehaviourPunCallbacks
                 if (target.tag == "Player")
                 {
                     target.RPC("ReduceHealth", RpcTarget.AllBuffered, spikeDamage);
+                    animator.SetBool("Activated", true);
+                    activateFX.Play();
+
+                    this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered, 3f);
+                    usedUp = true;
                 }
 
-                animator.SetBool("Activated", true);
-                activateFX.Play();
 
-                this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered, 3f);
-                usedUp = true;
             }
         }
         
