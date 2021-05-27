@@ -53,6 +53,6 @@ public class Bomb : MonoBehaviourPunCallbacks
 
         this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered);
         GameObject obj = PhotonNetwork.Instantiate(gasObject.name, new Vector2(gasExitPos.transform.position.x, gasExitPos.transform.position.y), rotatingItem.transform.rotation, 0);
-        AkSoundEngine.PostEvent("sfx_obj_gas", gameObject, gameObject);
+        //AkSoundEngine.PostEvent("sfx_obj_gas", gameObject, gameObject);
     }
 }
