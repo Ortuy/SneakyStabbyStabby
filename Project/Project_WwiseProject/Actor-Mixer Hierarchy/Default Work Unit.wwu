@@ -24,7 +24,14 @@
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="char_voice_gas_choking" ID="{5D3FC3B3-E017-4F87-9C70-E0C6BFA923B5}" ShortID="746116335">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
 										</Reference>
@@ -47,7 +54,14 @@
 									</ActiveSourceList>
 								</Sound>
 								<RandomSequenceContainer Name="char_voice_death" ID="{9E45B668-723E-42C8-A5DA-F6B1ABBB8F03}" ShortID="769814096">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="fire" ID="{BE8053A6-378D-43F3-BC77-7353EB91E1C3}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
 										</Reference>
@@ -59,6 +73,7 @@
 								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="char_voice_taking_damage" ID="{5667ADDC-576C-469C-8486-3F9EDC652A15}" ShortID="680957148">
 									<PropertyList>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
 												<Value>-23</Value>
@@ -66,6 +81,9 @@
 										</Property>
 									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
 										</Reference>
@@ -361,11 +379,13 @@
 							<ChildrenList>
 								<RandomSequenceContainer Name="char_knife_swinging" ID="{24C78752-5284-40A3-8A94-6BF670E05726}" ShortID="394759914">
 									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
 										<Property Name="Lowpass" Type="int16">
 											<ValueList>
 												<Value>30</Value>
 											</ValueList>
 										</Property>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
 										<Property Name="Pitch" Type="int32">
 											<ValueList>
 												<Value>-710</Value>
@@ -373,6 +393,9 @@
 										</Property>
 									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
 										</Reference>
@@ -431,7 +454,13 @@
 									<ObjectLists/>
 								</RandomSequenceContainer>
 								<Sound Name="char_load_crossbow" ID="{548EDEDF-3C72-4C09-BA26-2DB2BA749612}" ShortID="394303429">
+									<PropertyList>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
 										</Reference>
@@ -465,7 +494,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
-											<ObjectRef Name="fire" ID="{BE8053A6-378D-43F3-BC77-7353EB91E1C3}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -612,7 +641,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="fire" ID="{BE8053A6-378D-43F3-BC77-7353EB91E1C3}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+									<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -1199,7 +1228,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="fire" ID="{BE8053A6-378D-43F3-BC77-7353EB91E1C3}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+									<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -1556,6 +1585,13 @@
 					<ObjectLists/>
 				</ActorMixer>
 				<ActorMixer Name="Ambient" ID="{53A34B64-E3B6-4734-98C7-F599917E4AB0}" ShortID="444913939">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -2296,7 +2332,8 @@
 						</Sound>
 						<RandomSequenceContainer Name="amb_bush" ID="{7152A035-CBBD-4308-9A0E-B997F6917BE9}" ShortID="936414778">
 							<PropertyList>
-								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="3DPosition" Type="int16" Value="1"/>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
 								<Property Name="Highpass" Type="int16">
 									<ValueList>
 										<Value>24</Value>
@@ -2325,6 +2362,7 @@
 									</ModifierList>
 								</Property>
 								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
 								<Property Name="Pitch" Type="int32">
 									<ModifierList>
 										<ModifierInfo>
@@ -2347,7 +2385,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="fire" ID="{BE8053A6-378D-43F3-BC77-7353EB91E1C3}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+									<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -2387,6 +2425,9 @@
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
+							<PositioningInfo>
+								<Position Name="" ID="{2AB09CF0-DFFD-447B-8821-8661A4AE5F63}"/>
+							</PositioningInfo>
 							<StateInfo>
 								<StateGroupList>
 									<StateGroupInfo>
@@ -2443,6 +2484,7 @@
 							<ChildrenList>
 								<Sound Name="amb_schroom_enter" ID="{2F12BB12-B89F-4211-A16F-290B434AED99}" ShortID="552657397">
 									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
 										<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 										<Property Name="MaxSoundPerInstance" Type="int16">
 											<ValueList>
@@ -2450,6 +2492,7 @@
 											</ValueList>
 										</Property>
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
 										<Property Name="Pitch" Type="int32">
 											<ValueList>
 												<Value>450</Value>
@@ -2478,6 +2521,9 @@
 										</Property>
 									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="fire" ID="{BE8053A6-378D-43F3-BC77-7353EB91E1C3}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
 										</Reference>
@@ -2503,7 +2549,15 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="gore" ID="{51B4F230-7547-4389-A0C3-AECBE0A7964D}" ShortID="36257201">
+									<PropertyList>
+										<Property Name="3DPosition" Type="int16" Value="1"/>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
 										</Reference>
@@ -2525,6 +2579,9 @@
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
+									<PositioningInfo>
+										<Position Name="" ID="{4C4D3712-A6D6-42C5-9C6F-B300A66807DB}"/>
+									</PositioningInfo>
 									<ObjectLists/>
 									<ActiveSourceList>
 										<ActiveSource Name="gore" ID="{42C49309-5295-4445-8B47-8FBC1039954D}" Platform="Linked"/>
@@ -2823,7 +2880,7 @@
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-4</Value>
+								<Value>-96</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -2866,7 +2923,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="fire" ID="{BE8053A6-378D-43F3-BC77-7353EB91E1C3}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+									<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -2878,9 +2935,14 @@
 							<ChildrenList>
 								<Sound Name="sfx_obj_tripwire" ID="{FA1B7E69-A355-41F6-BAF2-F044D03ED7F7}" ShortID="184394533">
 									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
 									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
 										</Reference>
@@ -2917,7 +2979,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
-											<ObjectRef Name="fire" ID="{BE8053A6-378D-43F3-BC77-7353EB91E1C3}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -2953,7 +3015,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
-											<ObjectRef Name="fire" ID="{BE8053A6-378D-43F3-BC77-7353EB91E1C3}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -2986,7 +3048,9 @@
 								</Sound>
 								<Sound Name="sfx_obj_spikepit" ID="{E1908537-C88C-4986-A0BC-ECBB7323A4B9}" ShortID="958640199">
 									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
 												<Value>-8</Value>
@@ -2994,6 +3058,9 @@
 										</Property>
 									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
 										</Reference>
@@ -3020,7 +3087,9 @@
 								</Sound>
 								<Sound Name="sfx_obj_gel" ID="{30F10008-C93F-4A0B-BA9D-41CB4551C03C}" ShortID="31375104">
 									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
 												<Value>-5</Value>
@@ -3028,6 +3097,9 @@
 										</Property>
 									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
 										</Reference>
@@ -3055,8 +3127,12 @@
 								<Sound Name="sfx_obj_tripwire_activate" ID="{EE85370D-C5F9-4208-AE94-3A8931E44726}" ShortID="219308629">
 									<PropertyList>
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
 									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
 										</Reference>
@@ -3083,7 +3159,9 @@
 								</Sound>
 								<Sound Name="sfx_obj_throw" ID="{8F475F36-FE5F-4C51-A1CA-9D257D481F31}" ShortID="503633926">
 									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
 												<Value>-8</Value>
@@ -3091,6 +3169,9 @@
 										</Property>
 									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
 										</Reference>
@@ -3138,7 +3219,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
-											<ObjectRef Name="fire" ID="{BE8053A6-378D-43F3-BC77-7353EB91E1C3}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -3166,7 +3247,9 @@
 								</Sound>
 								<Sound Name="sfx_obj_visionpotion" ID="{C049F07A-F55E-42B3-8BC0-99EE44B145C4}" ShortID="939769350">
 									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
 												<Value>-9</Value>
@@ -3174,6 +3257,9 @@
 										</Property>
 									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
 										</Reference>
@@ -3211,7 +3297,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
-											<ObjectRef Name="fire" ID="{BE8053A6-378D-43F3-BC77-7353EB91E1C3}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -3242,12 +3328,14 @@
 						</ActorMixer>
 						<Sound Name="sfx_gold_pickup" ID="{5891A8C4-B655-4076-884F-703C81C0BF4E}" ShortID="545814010">
 							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
 								<Property Name="MaxSoundPerInstance" Type="int16">
 									<ValueList>
 										<Value>5</Value>
 									</ValueList>
 								</Property>
 								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
 								<Property Name="Pitch" Type="int32">
 									<ValueList>
 										<Value>5</Value>
@@ -3260,6 +3348,9 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="fire" ID="{BE8053A6-378D-43F3-BC77-7353EB91E1C3}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
 								</Reference>
@@ -3290,6 +3381,7 @@
 						</Sound>
 						<Sound Name="sfx_teleport" ID="{C4EF1AC9-EED9-42B7-99BE-74478D337468}" ShortID="669206719">
 							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
 								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
 								<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 								<Property Name="MaxSoundPerInstance" Type="int16">
@@ -3298,6 +3390,7 @@
 									</ValueList>
 								</Property>
 								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-17</Value>
@@ -3305,6 +3398,9 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
 								</Reference>
@@ -3333,6 +3429,8 @@
 							<ChildrenList>
 								<Sound Name="sfx_box_destroy" ID="{0CBA8F10-3F4F-4F7B-9EC9-BFA27F432040}" ShortID="298848910">
 									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
 										<Property Name="Pitch" Type="int32">
 											<ValueList>
 												<Value>30</Value>
@@ -3350,6 +3448,9 @@
 										</Property>
 									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="fire" ID="{BE8053A6-378D-43F3-BC77-7353EB91E1C3}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
 										</Reference>
@@ -3419,8 +3520,12 @@
 						<Sound Name="sfx_object_pickup" ID="{457FB028-D29B-4FFD-A73F-A64EE8A5DA31}" ShortID="228845413">
 							<PropertyList>
 								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
 								</Reference>
