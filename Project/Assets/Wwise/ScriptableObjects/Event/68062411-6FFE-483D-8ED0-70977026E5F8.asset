@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad16299598dfd314094e2f8273b593c3, type: 3}
+  m_Name: 68062411-6FFE-483D-8ED0-70977026E5F8
+  m_EditorClassIdentifier: 
+  objectName: sfx_obj_gas
+  id: 1107926442
+  guid: 68062411-6FFE-483D-8ED0-70977026E5F8

@@ -185,8 +185,8 @@ public class Health : MonoBehaviourPunCallbacks
         Color playerColor = new Color(player.recolorSprites[0].color.r, player.recolorSprites[0].color.g, player.recolorSprites[0].color.b, 0);
 
         //player.ghost.SetActive(true);
-        player.ghostSprites[0].color = new Color(1, 1, 1, 1);
-        player.ghostSprites[1].color = new Color(1, 1, 1, 1);
+        player.ghostSprites[0].color = new Color(1, 0, 0, 1);
+        player.ghostSprites[1].color = new Color(1, 0, 0, 1);
         player.nonRecolorSprites[0].color = new Color(1, 1, 1, 0);
         player.nonRecolorSprites[1].color = new Color(1, 1, 1, 0);
         player.recolorSprites[0].color = playerColor;
