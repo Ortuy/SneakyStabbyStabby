@@ -6,33 +6,53 @@ using UnityEngine.UI;
 
 public class ColourSelect : InteractableObject
 {
-    //public Player player;
+    public bool[] colourLocked;
 
-    //public void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    PhotonView target = collision.gameObject.GetComponent<PhotonView>();
-    //    if (collision.tag == "Player")
-    //    {
-    //        player = collision.GetComponent<Player>();
-    //        player.ColorSelect.SetActive(true);
-    //    }
+    public PhotonView publicPhotonView;
 
-    //}
-    //public void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    if (collision.tag == "Player")
-    //    {
-    //        player = collision.GetComponent<Player>();
-    //        player.ColorSelect.SetActive(false);
-    //    }
 
-    //}
+
+    private void Awake()
+    {
+        publicPhotonView = photonView;
+        FindLockedColours();
+    }
+
+    public void FindLockedColours()
+    {
+        var players = FindObjectsOfType<Player>();
+
+        foreach(Player player in players)
+        {
+            if(!player.photonView.IsMine)
+            {
+                colourLocked[player.currentColourID] = true;
+            }
+        }
+    }
+
+    [PunRPC]
+    public void LockColour(int colour)
+    {
+        colourLocked[colour] = true;        
+    }
+
+    [PunRPC]
+    public void UnlockColour(int colour)
+    {
+        colourLocked[colour] = false;
+    }
 
     protected override void StartInteraction()
     {
         base.StartInteraction();
-        targetPV.GetComponent<Player>().ColorSelect.SetActive(true);
-        targetPV.GetComponent<Player>().ColorSelect.GetComponent<UIAnimator>().Show();
+
+        var playertemp = targetPV.GetComponent<Player>();
+
+        playertemp.ColorSelect.SetActive(true);
+        playertemp.RefreshColourDisplays();
+        playertemp.ShowGuildDescription(playertemp.currentColourID);
+        playertemp.ColorSelect.GetComponent<UIAnimator>().Show();
     }
 
     protected override void EndInteraction()

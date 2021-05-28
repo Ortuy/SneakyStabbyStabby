@@ -13,7 +13,7 @@ public class Player : MonoBehaviourPunCallbacks
     public Rigidbody2D rigidBody;
     public GameObject mapIcon;
     public GameObject mapIconRadar;
-    public GameObject playerCamera, playerViewCone, playerViewCone2, rotatingBody,pointLight2d,gel, legs, HUD, Shop,ColorSelect, Buyblind, BlindVignette, audioObject;
+    public GameObject playerCamera, playerViewCone, playerViewCone2, rotatingBody, pointLight2d, gel, legs, HUD, Shop, ColorSelect, Buyblind, BlindVignette, audioObject;
     private Camera usedCameraComponent;
     public Camera mapCamera;
     private Vector2 moveDirection;
@@ -65,6 +65,7 @@ public class Player : MonoBehaviourPunCallbacks
     public float B;
     public bool colourChange = false;
     public GameObject Colour;
+    public int currentColourID;
     public bool stabLock = true;
     public Color colorToSet;
     public Color colorToSet1;
@@ -83,7 +84,7 @@ public class Player : MonoBehaviourPunCallbacks
 
 
     private int selectedTrapID;
-    
+
 
     public float moveSpeed, shootSpeed;
 
@@ -110,9 +111,14 @@ public class Player : MonoBehaviourPunCallbacks
     [SerializeField] private GameObject trapMarker;
     [SerializeField] private Sprite[] trapImages;
 
+    private ColourSelect colourSelectOnLevel;
     private CameraFollow cFollow;
 
     public bool visionPotionActive;
+
+    public GameObject[] colourSelectDisplays, colourLockDisplays;
+    public Text guildNameText, guildDescText;
+    public string[] guildNames, guildDescriptions;
 
     private void Awake()
     {
@@ -146,7 +152,7 @@ public class Player : MonoBehaviourPunCallbacks
             }
 
             photonView.RPC("RegisterPlayer", RpcTarget.AllBuffered);
-            
+
         }
 
         //legsAnimator = GetComponent<Animator>();
@@ -155,6 +161,38 @@ public class Player : MonoBehaviourPunCallbacks
         stabLock = true;
         destroyWeb = false;
 
+        colourSelectOnLevel = FindObjectOfType<ColourSelect>();
+
+        if (PlayerPrefs.HasKey("playerColour"))
+        {
+            var colourTemp = PlayerPrefs.GetInt("playerColour");
+            if (!colourSelectOnLevel.colourLocked[colourTemp])
+            {
+                SetColourID(colourTemp);
+            }
+            else
+            {
+                for (int i = 0; i < 8; i++)
+                {
+                    if (!colourSelectOnLevel.colourLocked[i])
+                    {
+                        SetColourID(i);
+                        PlayerPrefs.SetInt("playerColour", i);
+                    }
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                if (!colourSelectOnLevel.colourLocked[i])
+                {
+                    SetColourID(i);
+                    PlayerPrefs.SetInt("playerColour", i);
+                }
+            }
+        }
 
         //playerCamera.transform.SetParent(null);
     }
@@ -188,16 +226,16 @@ public class Player : MonoBehaviourPunCallbacks
         {
             CheckInput();
         }
-        if (photonView.IsMine &&timerBlindedRunning)
+        if (photonView.IsMine && timerBlindedRunning)
         {
             if (timeBlindedRemaining > 0)
             {
                 timeBlindedRemaining -= Time.deltaTime;
-                
+
             }
             else
             {
-                
+
                 timeBlindedRemaining = 3;
                 timerBlindedRunning = false;
                 BlindVignette.SetActive(false);
@@ -218,7 +256,7 @@ public class Player : MonoBehaviourPunCallbacks
                 timeShineRemaining = 3;
                 timerShineRunning = false;
                 gel.SetActive(false);
-                
+
             }
         }
         if (photonView.IsMine && timerPaintRunning2)
@@ -226,7 +264,7 @@ public class Player : MonoBehaviourPunCallbacks
             timerPaintRunning = true;
             if (timePaintRemaining2 > 0)
             {
-                
+
                 timePaintRemaining2 -= Time.deltaTime;
 
             }
@@ -282,7 +320,7 @@ public class Player : MonoBehaviourPunCallbacks
             }
 
         }
-        
+
     }
     private void FixedUpdate()
     {
@@ -334,15 +372,15 @@ public class Player : MonoBehaviourPunCallbacks
             //Shoot();
             inventory.UseItem();
         }
-        
-        if(Input.GetButtonUp("Fire2") && waitingForTrap && !settingTrap)
+
+        if (Input.GetButtonUp("Fire2") && waitingForTrap && !settingTrap)
         {
             torsoAnimator.SetBool("Stab", true);
             waitingForTrap = false;
             StartCoroutine(SetTrap());
         }
 
-        if(Input.GetButtonDown("Fire1") && stabReady && !waitingForTrap && !settingTrap)
+        if (Input.GetButtonDown("Fire1") && stabReady && !waitingForTrap && !settingTrap)
         {
             Stab();
 
@@ -355,7 +393,7 @@ public class Player : MonoBehaviourPunCallbacks
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             GameManager.localInstance.ToggleMap();
-            if(GameManager.localInstance.mapOut)
+            if (GameManager.localInstance.mapOut)
             {
                 AkSoundEngine.PostEvent("ui_open_map", gameObject, gameObject);
                 stabLock = true;
@@ -449,7 +487,7 @@ public class Player : MonoBehaviourPunCallbacks
     [PunRPC]
     public void SetBlinkVisuals(bool isBlinkOn)
     {
-        if(isBlinkOn)
+        if (isBlinkOn)
         {
             Color playerColor = new Color(recolorSprites[0].color.r, recolorSprites[0].color.g, recolorSprites[0].color.b, 0);
 
@@ -488,7 +526,7 @@ public class Player : MonoBehaviourPunCallbacks
         stabCooldownText.transform.parent.gameObject.SetActive(true);
         stabCooldownText.text = stabCooldown.ToString();
         stabReady = false;
-        for(int i = 0; i < stabCooldown; i++)
+        for (int i = 0; i < stabCooldown; i++)
         {
             yield return new WaitForSeconds(1f);
             stabCooldownText.text = (stabCooldown - i - 1).ToString();
@@ -501,10 +539,10 @@ public class Player : MonoBehaviourPunCallbacks
 
     public void PlayFootstep()
     {
-        
+
         var intPosition = new Vector3Int(Mathf.FloorToInt(transform.position.x), Mathf.FloorToInt(transform.position.y), 0);
 
-        if(timerSprintRunning)
+        if (timerSprintRunning)
         {
 
             if (GameManager.localInstance.stoneMask.GetTile(intPosition))
@@ -528,8 +566,8 @@ public class Player : MonoBehaviourPunCallbacks
             if (GameManager.localInstance.stoneMask.GetTile(intPosition))
             {
                 AkSoundEngine.SetState("footstep", "normal");
-				AkSoundEngine.SetSwitch("surface", "stone", gameObject);
-				AkSoundEngine.PostEvent("char_footsteps", gameObject, gameObject);
+                AkSoundEngine.SetSwitch("surface", "stone", gameObject);
+                AkSoundEngine.PostEvent("char_footsteps", gameObject, gameObject);
                 Debug.Log("Stone Footstep!");
                 footstepStone.Play();
             }
@@ -541,21 +579,21 @@ public class Player : MonoBehaviourPunCallbacks
             }
             else
             {
-				AkSoundEngine.SetState("footstep", "normal");
+                AkSoundEngine.SetState("footstep", "normal");
                 AkSoundEngine.SetSwitch("surface", "grass", gameObject);
                 AkSoundEngine.PostEvent("char_footsteps", gameObject, gameObject);
-				
+
                 footstep.Play();
             }
 
         }
-        
-        
-        
 
-        if(timerPaintRunning2)
+
+
+
+        if (timerPaintRunning2)
         {
-            
+
             //photonView.RPC("SpawnGlowingFootstep", RpcTarget.AllBuffered);
             SpawnGlowingFootstep();
         }
@@ -566,19 +604,19 @@ public class Player : MonoBehaviourPunCallbacks
     {
         GameObject foot = null;
 
-        if(photonView.IsMine)
+        if (photonView.IsMine)
         {
             AkSoundEngine.SetState("footstep", "inaudible");
             foot = PhotonNetwork.Instantiate/*RoomObject*/(glowingFootstep.name, transform.position, legs.transform.rotation);
             //foot.GetComponent<SpriteRenderer>().flipX = legs.GetComponent<SpriteRenderer>().flipX;
             //Destroy(foot, 16);
             float f = 16f;
-            
+
             foot.GetComponent<PhotonView>().RPC("SetFootstep", RpcTarget.AllBuffered, legs.GetComponent<SpriteRenderer>().flipX, f);
-            
-            
+
+
         }
-        
+
     }
 
     private Vector2 GetDirectionFromMouse()
@@ -606,17 +644,17 @@ public class Player : MonoBehaviourPunCallbacks
 
     private void Move()
     {
-        if(!isBlinking)
+        if (!isBlinking)
         {
             rigidBody.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
             this.gameObject.layer = 0;
         }
-        if(isBlinking)
+        if (isBlinking)
         {
             this.gameObject.layer = 15;
         }
-        
-        if (Input.GetKey(KeyCode.LeftShift)&& timeSprintRemaining !=0 && timerSprintRunning2 && isTrapped == false)
+
+        if (Input.GetKey(KeyCode.LeftShift) && timeSprintRemaining != 0 && timerSprintRunning2 && isTrapped == false)
         {
             AkSoundEngine.SetState("footstep", "speed");
             rigidBody.velocity = new Vector2(moveDirection.x * sprint, moveDirection.y * sprint);
@@ -626,8 +664,8 @@ public class Player : MonoBehaviourPunCallbacks
         {
             timerSprintRunning = false;
         }
-        
-        if(moveDirection != Vector2.zero)
+
+        if (moveDirection != Vector2.zero)
         {
             legsAnimator.SetBool("Moving", true);
             var newAngle = Mathf.Rad2Deg * Mathf.Atan2(moveDirection.y, moveDirection.x) - 90;
@@ -663,18 +701,18 @@ public class Player : MonoBehaviourPunCallbacks
 
 
             }
-            
+
 
         }
-        if (photonView.IsMine && timerSprintRunning==false)
+        if (photonView.IsMine && timerSprintRunning == false)
         {
             timerSprintRunning2 = false;
-            
+
             timeSprintRemaining += Time.deltaTime;
 
             float value;
 
-            if(sprintPotionActive)
+            if (sprintPotionActive)
             {
                 value = timeSprintRemaining / 8;
             }
@@ -683,8 +721,8 @@ public class Player : MonoBehaviourPunCallbacks
                 value = timeSprintRemaining / 4;
             }
 
-            
-            if (timeSprintRemaining >=8 && canUsePotion == false)
+
+            if (timeSprintRemaining >= 8 && canUsePotion == false)
             {
 
                 timeSprintRemaining = 8;
@@ -708,9 +746,10 @@ public class Player : MonoBehaviourPunCallbacks
     }
     //tutej//
     [PunRPC]
-    public void SetColor(float newR, float newG, float newB)
+    public void SetColor(float newR, float newG, float newB, int ID)
     {
-        foreach(SpriteRenderer renderer in recolorSprites)
+        currentColourID = ID;
+        foreach (SpriteRenderer renderer in recolorSprites)
         {
             renderer.color = new Color(newR, newG, newB);
 
@@ -728,7 +767,7 @@ public class Player : MonoBehaviourPunCallbacks
             StartCoroutine(HandleStabAnimation());
             StartCoroutine(WaitAndDeactivateStab());
         }
-             
+
     }
 
     IEnumerator HandleStabAnimation()
@@ -762,8 +801,8 @@ public class Player : MonoBehaviourPunCallbacks
     [PunRPC]
     private void RegisterPlayer()
     {
-        
-        
+
+
         GameManager.localInstance.playerAmount++;
         playerID = GameManager.localInstance.playerAmount;
     }
@@ -796,7 +835,7 @@ public class Player : MonoBehaviourPunCallbacks
     {
         BlindVignette.SetActive(amount);
         timerBlindedRunning = true;
-        
+
     }
     [PunRPC]
     public void Shine(bool amount)
@@ -804,13 +843,13 @@ public class Player : MonoBehaviourPunCallbacks
         AkSoundEngine.PostEvent("sfx_teleport", gameObject, gameObject);
         gel.SetActive(amount);
         timerShineRunning = true;
-        
+
     }
     [PunRPC]
     public void Paint(bool amount)
     {
 
-        
+
         timerPaintRunning2 = amount;
 
 
@@ -834,7 +873,7 @@ public class Player : MonoBehaviourPunCallbacks
 
     IEnumerator ShootCoroutine()
     {
-        
+
         torsoAnimator.SetBool("Stab", true);
         yield return new WaitForSeconds(0.08f);
         crossbowFX.Play();
@@ -908,12 +947,12 @@ public class Player : MonoBehaviourPunCallbacks
             visionPotionActive = true;
             StartCoroutine("PotionStopWorking");
         }
-            
+
     }
     IEnumerator PotionStopWorking()
     {
         int timeLeft = Mathf.FloorToInt(pasiveItemTimeWorking);
-        potionCooldownText.transform.parent.gameObject.SetActive(true);       
+        potionCooldownText.transform.parent.gameObject.SetActive(true);
 
         while (timeLeft > 0)
         {
@@ -931,7 +970,7 @@ public class Player : MonoBehaviourPunCallbacks
             visionPotionActive = false;
 
             inventory.currentPassive = null;
-            
+
             canUsePotion = true;
         }
     }
@@ -1016,7 +1055,7 @@ public class Player : MonoBehaviourPunCallbacks
         }
 
 
-        foreach(GameObject camo in camoObjects)
+        foreach (GameObject camo in camoObjects)
         {
             camo.SetActive(false);
         }
@@ -1024,57 +1063,186 @@ public class Player : MonoBehaviourPunCallbacks
         inventory.currentPassive = null;
         canUsePotion = true;
         camoNum = 0;
-  
+
     }
-    
+
+    private void SetColourID(int value)
+    {
+        switch (value)
+        {
+            case 0:
+                ColourSet();
+                break;
+            case 1:
+                ColourSet1();
+                break;
+            case 2:
+                ColourSet2();
+                break;
+            case 3:
+                ColourSet3();
+                break;
+            case 4:
+                ColourSet4();
+                break;
+            case 5:
+                ColourSet5();
+                break;
+            case 6:
+                ColourSet6();
+                break;
+            case 7:
+                ColourSet7();
+                break;
+        }
+    }
+
+
     public void ColourSet()
     {
-        AkSoundEngine.PostEvent("sfx_change_color", gameObject, gameObject);
-        photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet.r, colorToSet.g, colorToSet.b);
+        if (!colourSelectOnLevel.colourLocked[0])
+        {
+            ShowGuildDescription(0);
+            PlayerPrefs.SetInt("playerColour", 0);
+            colourSelectOnLevel.publicPhotonView.RPC("UnlockColour", RpcTarget.AllBuffered, currentColourID);
+            SelectColourDisplay(0);
+            AkSoundEngine.PostEvent("sfx_change_color", gameObject, gameObject);
+            photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet.r, colorToSet.g, colorToSet.b, 0);
+            colourSelectOnLevel.publicPhotonView.RPC("LockColour", RpcTarget.AllBuffered, 0);
+            RefreshColourDisplays();
+        }
+
+
         //SetColor(colorToSet.r, colorToSet.g, colorToSet.b);
     }
     public void ColourSet1()
     {
-        AkSoundEngine.PostEvent("sfx_change_color", gameObject, gameObject);
-        photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet1.r, colorToSet1.g, colorToSet1.b);
+        if (!colourSelectOnLevel.colourLocked[1])
+        {
+            ShowGuildDescription(1);
+            PlayerPrefs.SetInt("playerColour", 1);
+            colourSelectOnLevel.publicPhotonView.RPC("UnlockColour", RpcTarget.AllBuffered, currentColourID);
+            SelectColourDisplay(1);
+            AkSoundEngine.PostEvent("sfx_change_color", gameObject, gameObject);
+            photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet1.r, colorToSet1.g, colorToSet1.b, 1);
+            colourSelectOnLevel.publicPhotonView.RPC("LockColour", RpcTarget.AllBuffered, 1);
+            RefreshColourDisplays();
+        }
         //SetColor(colorToSet1.r, colorToSet1.g, colorToSet1.b);
     }
     public void ColourSet2()
     {
-        AkSoundEngine.PostEvent("sfx_change_color", gameObject, gameObject);
-        photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet2.r, colorToSet2.g, colorToSet2.b);
-        //SetColor(colorToSet2.r, colorToSet2.g, colorToSet2.b);
+        if (!colourSelectOnLevel.colourLocked[2])
+        {
+            ShowGuildDescription(2);
+            PlayerPrefs.SetInt("playerColour", 2);
+            colourSelectOnLevel.publicPhotonView.RPC("UnlockColour", RpcTarget.AllBuffered, currentColourID);
+            SelectColourDisplay(2);
+            AkSoundEngine.PostEvent("sfx_change_color", gameObject, gameObject);
+            photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet2.r, colorToSet2.g, colorToSet2.b, 2);
+            colourSelectOnLevel.publicPhotonView.RPC("LockColour", RpcTarget.AllBuffered, 2);
+            RefreshColourDisplays();
+        }
     }
     public void ColourSet3()
     {
-        AkSoundEngine.PostEvent("sfx_change_color", gameObject, gameObject);
-        photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet3.r, colorToSet3.g, colorToSet3.b);
-        //SetColor(colorToSet3.r, colorToSet3.g, colorToSet3.b);
+        if (!colourSelectOnLevel.colourLocked[3])
+        {
+            ShowGuildDescription(3);
+            PlayerPrefs.SetInt("playerColour", 3);
+            colourSelectOnLevel.publicPhotonView.RPC("UnlockColour", RpcTarget.AllBuffered, currentColourID);
+            SelectColourDisplay(3);
+            AkSoundEngine.PostEvent("sfx_change_color", gameObject, gameObject);
+            photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet3.r, colorToSet3.g, colorToSet3.b, 3);
+            colourSelectOnLevel.publicPhotonView.RPC("LockColour", RpcTarget.AllBuffered, 3);
+            RefreshColourDisplays();
+        }
     }
     public void ColourSet4()
     {
-        AkSoundEngine.PostEvent("sfx_change_color", gameObject, gameObject);
-        photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet4.r, colorToSet4.g, colorToSet4.b);
-        //SetColor(colorToSet4.r, colorToSet4.g, colorToSet4.b);
+        if (!colourSelectOnLevel.colourLocked[4])
+        {
+            ShowGuildDescription(4);
+            PlayerPrefs.SetInt("playerColour", 4);
+            colourSelectOnLevel.publicPhotonView.RPC("UnlockColour", RpcTarget.AllBuffered, currentColourID);
+            SelectColourDisplay(4);
+            AkSoundEngine.PostEvent("sfx_change_color", gameObject, gameObject);
+            photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet4.r, colorToSet4.g, colorToSet4.b, 4);
+            colourSelectOnLevel.publicPhotonView.RPC("LockColour", RpcTarget.AllBuffered, 4);
+            RefreshColourDisplays();
+        }
     }
     public void ColourSet5()
     {
-        AkSoundEngine.PostEvent("sfx_change_color", gameObject, gameObject);
-        photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet5.r, colorToSet5.g, colorToSet5.b);
-        //SetColor(colorToSet5.r, colorToSet5.g, colorToSet5.b);
+        if (!colourSelectOnLevel.colourLocked[5])
+        {
+            ShowGuildDescription(5);
+            PlayerPrefs.SetInt("playerColour", 5);
+            colourSelectOnLevel.publicPhotonView.RPC("UnlockColour", RpcTarget.AllBuffered, currentColourID);
+            SelectColourDisplay(5);
+            AkSoundEngine.PostEvent("sfx_change_color", gameObject, gameObject);
+            photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet5.r, colorToSet5.g, colorToSet5.b, 5);
+            colourSelectOnLevel.publicPhotonView.RPC("LockColour", RpcTarget.AllBuffered, 5);
+            RefreshColourDisplays();
+        }
     }
     public void ColourSet6()
     {
-        AkSoundEngine.PostEvent("sfx_change_color", gameObject, gameObject);
-        photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet6.r, colorToSet6.g, colorToSet6.b);
-        //SetColor(colorToSet6.r, colorToSet6.g, colorToSet6.b);
+        if (!colourSelectOnLevel.colourLocked[6])
+        {
+            PlayerPrefs.SetInt("playerColour", 6);
+            ShowGuildDescription(6);
+            colourSelectOnLevel.publicPhotonView.RPC("UnlockColour", RpcTarget.AllBuffered, currentColourID);
+            SelectColourDisplay(6);
+            AkSoundEngine.PostEvent("sfx_change_color", gameObject, gameObject);
+            photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet6.r, colorToSet6.g, colorToSet6.b, 6);
+            colourSelectOnLevel.publicPhotonView.RPC("LockColour", RpcTarget.AllBuffered, 6);
+            RefreshColourDisplays();
+        }
     }
     public void ColourSet7()
     {
-        AkSoundEngine.PostEvent("sfx_change_color", gameObject, gameObject);
-        photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet7.r, colorToSet7.g, colorToSet7.b);
-        //SetColor(colorToSet7.r, colorToSet7.g, colorToSet7.b);
+        if (!colourSelectOnLevel.colourLocked[7])
+        {
+            PlayerPrefs.SetInt("playerColour", 7);
+            ShowGuildDescription(7);
+            colourSelectOnLevel.publicPhotonView.RPC("UnlockColour", RpcTarget.AllBuffered, currentColourID);
+            SelectColourDisplay(7);
+            AkSoundEngine.PostEvent("sfx_change_color", gameObject, gameObject);
+            photonView.RPC("SetColor", RpcTarget.AllBuffered, colorToSet7.r, colorToSet7.g, colorToSet7.b, 7);
+            colourSelectOnLevel.publicPhotonView.RPC("LockColour", RpcTarget.AllBuffered, 7);
+
+            RefreshColourDisplays();
+        }
     }
+
+    public void RefreshColourDisplays()
+    {
+        for (int i = 0; i < colourLockDisplays.Length; i++)
+        {
+            colourLockDisplays[i].SetActive(colourSelectOnLevel.colourLocked[i]);
+        }
+    }
+
+    public void SelectColourDisplay(int colour)
+    {
+        for (int i = 0; i < colourSelectDisplays.Length; i++)
+        {
+            colourSelectDisplays[i].SetActive(false);
+        }
+
+        if (!colourSelectOnLevel.colourLocked[colour])
+        {
+            colourSelectDisplays[colour].SetActive(true);
+        }
+    }
+
+    public void ShowGuildDescription(int guild)
+    {
+        guildNameText.text = guildNames[guild];
+        guildDescText.text = guildDescriptions[guild];
+    }
+
     public void ChangeTagGhost()
     {
         this.gameObject.tag = "Ghost";

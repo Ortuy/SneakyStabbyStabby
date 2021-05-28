@@ -303,6 +303,9 @@ public class GameManager : MonoBehaviourPunCallbacks
             chest.InitChest();
         }
 
+        pingText.gameObject.SetActive(false);
+        gameStarted = true;
+
         countdownStarted = true;
         victoryText.gameObject.SetActive(true);
         victoryText.text = "3";
@@ -324,7 +327,7 @@ public class GameManager : MonoBehaviourPunCallbacks
             }
         }
 
-        gameStarted = true;
+        
 
         photonView.RPC("DissolveStartPoints", RpcTarget.AllBuffered);
 
@@ -346,8 +349,8 @@ public class GameManager : MonoBehaviourPunCallbacks
     IEnumerator SetPlayerColor()
     {
         yield return null;
-        var c = playerColors[Random.Range(0, playerColors.Length)];
-        localPlayer.GetComponent<PhotonView>().RPC("SetColor", RpcTarget.AllBuffered, c.r, c.g, c.b);
+        //var c = playerColors[Random.Range(0, playerColors.Length)];
+        //localPlayer.GetComponent<PhotonView>().RPC("SetColor", RpcTarget.AllBuffered, c.r, c.g, c.b);
         spawnPortalAnimators[playerAmount - 1].SetBool("Open", false);
     }
     public void ToggleMap()
