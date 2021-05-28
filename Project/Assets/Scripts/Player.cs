@@ -13,7 +13,7 @@ public class Player : MonoBehaviourPunCallbacks
     public Rigidbody2D rigidBody;
     public GameObject mapIcon;
     public GameObject mapIconRadar;
-    public GameObject playerCamera, playerViewCone, playerViewCone2, rotatingBody,pointLight2d,gel, legs, HUD, Shop,ColorSelect, Buyblind, BlindVignette;
+    public GameObject playerCamera, playerViewCone, playerViewCone2, rotatingBody,pointLight2d,gel, legs, HUD, Shop,ColorSelect, Buyblind, BlindVignette, audioObject;
     private Camera usedCameraComponent;
     public Camera mapCamera;
     private Vector2 moveDirection;
@@ -138,7 +138,7 @@ public class Player : MonoBehaviourPunCallbacks
             mapIcon.SetActive(true);
             mapIconRadar.SetActive(false);
             BlindVignette.SetActive(false);
-
+            audioObject.SetActive(true);
 
             if (GameManager.localInstance.playerAmount == 0)
             {

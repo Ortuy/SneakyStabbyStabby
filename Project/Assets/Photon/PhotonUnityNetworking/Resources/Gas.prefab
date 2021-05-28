@@ -181,7 +181,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 4329755955214362212}
   timerInhaleRunning: 0
-  timeInhelRemaining: 5
+  timeInhaleRemaining: 1
+  timeInhaleBase: 1
   toxinDamage: 1
   ded: 0
 --- !u!1 &193481966478858134

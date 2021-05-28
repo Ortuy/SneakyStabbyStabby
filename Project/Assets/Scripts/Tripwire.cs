@@ -116,6 +116,7 @@ public class Tripwire : MonoBehaviourPunCallbacks
                 player = collision.GetComponent<Player>();
                 if (player.destroyWeb == true)
                 {
+                    target.GetComponent<Health>().cFollow.ShakeCamera(1);
                     DestroyWeb();
                 }
 
@@ -126,6 +127,7 @@ public class Tripwire : MonoBehaviourPunCallbacks
     }
     public void DestroyWeb()
     {
+        
         Instantiate(webBreakFX, web.transform.position, Quaternion.identity);
         this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered);
     }

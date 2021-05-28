@@ -9,10 +9,11 @@ public class Gas : MonoBehaviourPunCallbacks
     //public GameObject gas;
     private Vector3 scaleChange;
     public bool timerInhaleRunning = false;
-    public float timeInhelRemaining;
+    public float timeInhaleRemaining, timeInhaleBase;
     public float toxinDamage = 1;
     public bool ded = false;
-    
+
+    private Health playerInGas;
 
     [PunRPC]
     public void DestroyObject()
@@ -41,15 +42,21 @@ public class Gas : MonoBehaviourPunCallbacks
         
         if (timerInhaleRunning == true)
         {
-            if (timeInhelRemaining > 0)
-            {
-                timeInhelRemaining -= Time.deltaTime;
+            if (timeInhaleRemaining > 0)
+            {               
+                timeInhaleRemaining -= Time.deltaTime;
+
+                if (playerInGas != null)
+                {
+                    playerInGas.breathMeter.SetValue(timeInhaleRemaining / timeInhaleBase);
+                }
+
                 ded = false;
             }
             else
             {
-
-                timeInhelRemaining = 5;
+                playerInGas.breathMeter.gameObject.SetActive(false);
+                timeInhaleRemaining = timeInhaleBase;
                 timerInhaleRunning = false;
                 ded = true;
                 
@@ -58,6 +65,25 @@ public class Gas : MonoBehaviourPunCallbacks
 
 
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        PhotonView target = collision.gameObject.GetComponent<PhotonView>();
+        if (target != null)
+        {
+            if (target.tag == "Player")
+            {
+                playerInGas = target.GetComponent<Health>();
+                if(target.IsMine)
+                {
+                    playerInGas.breathMeter.gameObject.SetActive(true);
+                }
+                
+                timerInhaleRunning = true;
+            }
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         PhotonView target = collision.gameObject.GetComponent<PhotonView>();
@@ -80,6 +106,7 @@ public class Gas : MonoBehaviourPunCallbacks
         
         
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         PhotonView target = collision.gameObject.GetComponent<PhotonView>();
@@ -87,9 +114,10 @@ public class Gas : MonoBehaviourPunCallbacks
         {
             if (target.tag == "Player")
             {
+                playerInGas.breathMeter.gameObject.SetActive(false);
                 timerInhaleRunning = false;
                 ded = false;
-                timeInhelRemaining = 5;
+                timeInhaleRemaining = timeInhaleBase;
 
 
 

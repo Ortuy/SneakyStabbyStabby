@@ -23,6 +23,8 @@ public class Health : MonoBehaviourPunCallbacks
     public UIAnimator[] lifeMarkers;
     public ParticleSystem deathFX, hurtFX;
 
+    public RadialProgressBar breathMeter;
+
     private void Awake()
     {
         if (photonView.IsMine)
