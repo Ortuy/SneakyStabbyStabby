@@ -82,6 +82,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="ui_countdown" ID="{96A368E0-C6BD-4909-A00D-02442F027445}">
+							<ChildrenList>
+								<Action Name="" ID="{0043C32A-7DAB-48F7-8520-64901F1E39ED}" ShortID="326666620">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ui_countdown" ID="{78D0B6A1-7E90-454D-9A75-C6BFB86C86B7}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Music" ID="{819F6A3E-695E-4964-B9FB-1F5E08D9B862}" ShortID="30761040">
@@ -161,6 +172,39 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="gore" ID="{51B4F230-7547-4389-A0C3-AECBE0A7964D}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="amb_waterfall" ID="{DE87115A-CB09-49D9-8E8D-CD0C36FF2656}">
+							<ChildrenList>
+								<Action Name="" ID="{22FA8E0F-9919-4336-8563-ACFB88B2823F}" ShortID="726900051">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="amb_waterfall" ID="{94CAE844-DEAD-405E-9DBD-0BAF80ADC5EB}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="amb_flying_birds" ID="{D8F2A8F8-9497-4B37-9457-C42ABB0B42B8}">
+							<ChildrenList>
+								<Action Name="" ID="{33E36E98-0DEA-4EAF-8933-C1F0296DD311}" ShortID="868334293">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="amb_flying_birds" ID="{FAC568BE-2D69-4DC7-992B-EC1BF3EA7758}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="amb_birds" ID="{C6A99A6C-653C-4D90-8B48-FD7558465477}">
+							<ChildrenList>
+								<Action Name="" ID="{E0898C41-9FB0-454D-A868-2A1882670486}" ShortID="644587119">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="amb_birds" ID="{2746DA4E-6E85-4484-92F2-389F7C6E35E3}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -291,10 +335,10 @@
 								</Event>
 								<Event Name="sfx_obj_gel" ID="{71C044A0-5976-46B9-ADFB-107CC11A9B24}">
 									<ChildrenList>
-										<Action Name="" ID="{4102D179-D962-42BC-BC0B-9A20D841A1D2}" ShortID="180152133">
+										<Action Name="" ID="{B018ADBE-0F34-4F5D-B9A3-9A6A16080641}" ShortID="148286485">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="sfx_obj_gel" ID="{30F10008-C93F-4A0B-BA9D-41CB4551C03C}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+													<ObjectRef Name="sfx_obj_setting_gel_trap" ID="{30F10008-C93F-4A0B-BA9D-41CB4551C03C}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -331,6 +375,16 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
+										<Action Name="" ID="{135D7B17-3F73-4591-984D-D89BAB0FFE36}" ShortID="232505061">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="sfx_obj_burning_fuse" ID="{5D53042C-9375-495B-AF56-DC22FD1D8276}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
 								</Event>
 								<Event Name="sfx_obj_visionpotion" ID="{0F11C71C-11A1-4C55-A594-4ADF4FD05809}">
@@ -355,6 +409,72 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="sfx_obj_burning_fuse" ID="{B0BF4AE0-A979-4F7F-B57A-7313DA82468C}">
+									<ChildrenList>
+										<Action Name="" ID="{31AAE541-5848-40AD-896C-7428DCFBE044}" ShortID="1031142424">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="sfx_obj_burning_fuse" ID="{5D53042C-9375-495B-AF56-DC22FD1D8276}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="sfx_obj_radar_use" ID="{3794FE84-7285-4E64-A340-6AE7CF1D0DF5}">
+									<ChildrenList>
+										<Action Name="" ID="{1E005ED2-7189-445C-A2B7-D82169398A8E}" ShortID="414855018">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="sfx_obj_radar_use" ID="{CACF1103-8202-47A9-B8AC-5D68631A76F9}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="sfx_obj_getting_into_gel_trap" ID="{2F3CBA34-9EB3-4A65-AC9F-4EE909A94888}">
+									<ChildrenList>
+										<Action Name="" ID="{C9A78B00-D96E-4C26-B1AC-2D374375D200}" ShortID="821007099">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="sfx_obj_getting_into_gel_trap" ID="{136B0D8A-DD34-4B8D-AB37-E7C63C6FB3BB}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="sfx_obj_setting_gel_trap" ID="{1EE2DD18-995B-4864-B72E-8BC8577839FD}">
+									<ChildrenList>
+										<Action Name="" ID="{9087934C-692F-4FA5-871F-1429B5A158AB}" ShortID="214265583">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="sfx_obj_setting_gel_trap" ID="{30F10008-C93F-4A0B-BA9D-41CB4551C03C}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="sfx_obj_getting_into_binding_trap" ID="{85A8DFA5-65C4-42CF-BE44-F8A46A2E6A80}">
+									<ChildrenList>
+										<Action Name="" ID="{4E98A5E0-53B1-44CE-95B1-F9262F1686B5}" ShortID="856094306">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="sfx_obj_getting_into_binding_trap" ID="{BFB7A58D-DD89-480A-BC01-2222BE17C44E}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="sfx_obj_spike_trap_activate" ID="{16592A10-A8F0-4C0E-A172-F6634811323F}">
+									<ChildrenList>
+										<Action Name="" ID="{1D8E878C-963B-4CA7-9EB4-CC8A55724706}" ShortID="436538303">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="sfx_obj_spike_trap_activate" ID="{FF085CE6-8ED5-42FB-9387-CB1DC1B5743F}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Event Name="sfx_crossbow_shoot" ID="{7D427882-91E6-421C-A20C-506FE4AAFDA7}">
@@ -363,6 +483,28 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="sfx_crossbow_shoot" ID="{18BEB031-DCCF-4B1F-9E6D-D9635CEE749D}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="sfx_supplies" ID="{96614B12-0B6C-4547-A368-B5E48D97F1BA}">
+							<ChildrenList>
+								<Action Name="" ID="{45CDE087-074F-42B9-BE16-8B04CE09F31C}" ShortID="848557666">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sfx_supplies" ID="{D2026D39-40C1-4DE3-8667-68E2698269C4}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="sfx_end_attack_cooldown" ID="{4A5C7DAB-16DD-4124-A59F-55AC5A484168}">
+							<ChildrenList>
+								<Action Name="" ID="{D228C81A-1CEE-4359-929C-056C383C1E06}" ShortID="218719526">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sfx_end_attack_cooldown" ID="{F1E25031-7305-45F2-8748-8E4C12ACDCAA}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -422,6 +564,17 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="char_voice_taking_damage" ID="{5667ADDC-576C-469C-8486-3F9EDC652A15}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="char_voice_death" ID="{896B73B3-166E-43A9-BA43-2BE558C45617}">
+							<ChildrenList>
+								<Action Name="" ID="{3788CE96-ECC4-4A8A-946C-95B87C900052}" ShortID="243667539">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="char_voice_death" ID="{9E45B668-723E-42C8-A5DA-F6B1ABBB8F03}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

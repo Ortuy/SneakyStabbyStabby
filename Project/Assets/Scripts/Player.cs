@@ -548,16 +548,24 @@ public class Player : MonoBehaviourPunCallbacks
 
             if (GameManager.localInstance.stoneMask.GetTile(intPosition))
             {
-                //Play stone sprint footstep here
+                AkSoundEngine.SetState("footstep", "speed");
+                AkSoundEngine.SetSwitch("surface", "stone", gameObject);
+                AkSoundEngine.PostEvent("char_footsteps", gameObject, gameObject);
                 footstepStone.Play();
             }
             else if (GameManager.localInstance.woodMask.GetTile(intPosition))
             {
+                AkSoundEngine.SetState("footstep", "speed");
+                AkSoundEngine.SetSwitch("surface", "wood", gameObject);
+                AkSoundEngine.PostEvent("char_footsteps", gameObject, gameObject);
                 //Play wood sprint footsteps here
                 footstepWood.Play();
             }
             else
             {
+                AkSoundEngine.SetState("footstep", "speed");
+                AkSoundEngine.SetSwitch("surface", "grass", gameObject);
+                AkSoundEngine.PostEvent("char_footsteps", gameObject, gameObject);
                 //Play sprint footsteps here
                 footstep.Play();
             }
@@ -574,7 +582,9 @@ public class Player : MonoBehaviourPunCallbacks
             }
             else if (GameManager.localInstance.woodMask.GetTile(intPosition))
             {
-                //Play wood footsteps here
+                AkSoundEngine.SetState("footstep", "normal");
+                AkSoundEngine.SetSwitch("surface", "wood", gameObject);
+                AkSoundEngine.PostEvent("char_footsteps", gameObject, gameObject);
                 Debug.Log("Wood Footstep");
                 footstepWood.Play();
             }
@@ -935,11 +945,13 @@ public class Player : MonoBehaviourPunCallbacks
     public void Bomb()
     {
         AkSoundEngine.PostEvent("sfx_obj_throw", gameObject, gameObject);
+        AkSoundEngine.PostEvent("sfx_obj_burning_fuse", gameObject, gameObject);
         GameObject obj = PhotonNetwork.Instantiate(bombObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
     public void Geltrap()
     {
+        AkSoundEngine.PostEvent("sfx_obj_setting_gel_trap", gameObject, gameObject);
         GameObject obj = PhotonNetwork.Instantiate(gelTrapObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }

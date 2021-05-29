@@ -20,6 +20,7 @@ public class Geltrap : MonoBehaviourPunCallbacks
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
+        AkSoundEngine.PostEvent("sfx_obj_getting_into_gel_trap", gameObject, gameObject);
         PhotonView target = collision.gameObject.GetComponent<PhotonView>();
         if (target != null)
         {

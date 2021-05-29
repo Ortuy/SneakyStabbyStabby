@@ -27,6 +27,7 @@ public class Blindingtrap : MonoBehaviourPunCallbacks
         {
             if (target.tag == "Player")
             {
+                AkSoundEngine.PostEvent("sfx_obj_getting_into_binding_trap", gameObject, gameObject);
                 //target.RPC("Blinded", RpcTarget.AllBuffered, !see);
                 StartCoroutine(BlindPlayer(target));
 

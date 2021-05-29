@@ -47,6 +47,7 @@ public class Health : MonoBehaviourPunCallbacks
         
         if (isGhost == false)
         {
+            AkSoundEngine.PostEvent("char_taking_damage", gameObject, gameObject);
             hurtFX.Play();
             //StopAllCoroutines();
             StartCoroutine(StabHitStop(true, 0.5f));
@@ -182,6 +183,8 @@ public class Health : MonoBehaviourPunCallbacks
         GameManager.localInstance.victoryText.text = playerName + " is dead!";
         GameManager.localInstance.numerOfPlayers++;
         GameManager.localInstance.MapWin();
+        
+        AkSoundEngine.PostEvent("char_voice_death", gameObject, gameObject);
         deathFX.Play();
         isGhost = true;
         Color playerColor = new Color(player.recolorSprites[0].color.r, player.recolorSprites[0].color.g, player.recolorSprites[0].color.b, 0);

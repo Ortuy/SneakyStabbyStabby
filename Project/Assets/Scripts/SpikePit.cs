@@ -27,6 +27,8 @@ public class SpikePit : MonoBehaviourPunCallbacks
             {
                 if (target.tag == "Player")
                 {
+                    
+                    AkSoundEngine.PostEvent("sfx_obj_spike_trap_activate", gameObject, gameObject);
                     target.RPC("ReduceHealth", RpcTarget.AllBuffered, spikeDamage);
                     animator.SetBool("Activated", true);
                     activateFX.Play();
