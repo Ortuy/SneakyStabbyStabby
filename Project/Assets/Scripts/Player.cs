@@ -744,7 +744,24 @@ public class Player : MonoBehaviourPunCallbacks
             staminaBar.value = value;
 
         }
+        if (Input.GetKey(KeyCode.Alpha1))
+        {
+            inventory.Slot();
+        }
+        if (Input.GetKey(KeyCode.Alpha2))
+        {
+            inventory.Slot1();
+        }
+        if (Input.GetKey(KeyCode.Alpha3))
+        {
+            inventory.Slot2();
+        }
+        if (Input.GetKey(KeyCode.Alpha4))
+        {
+            inventory.Slot3();
+        }
     }
+    
     //tutej//
     [PunRPC]
     public void SetColor(float newR, float newG, float newB, int ID)

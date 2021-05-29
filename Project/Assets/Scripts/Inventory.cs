@@ -118,7 +118,106 @@ public class Inventory : MonoBehaviourPunCallbacks
             slotSelectionDisplays[selectedSlot].Play("SwitchFromRight");
         }
     }
+    public void Slot()
+    {
+        selectedSlot = 0;
+        slotSelectionDisplays[1].gameObject.SetActive(false);
+        slotSelectionDisplays[2].gameObject.SetActive(false);
+        slotSelectionDisplays[3].gameObject.SetActive(false);
+        //slotSelectionDisplays[selectedSlot].gameObject.SetActive(false);
+        if (currentActives[selectedSlot] != null)
+        {
+            if (currentActives[selectedSlot].effectID == 5)
+            {
+                player.SetCrossbowAnimation(true);
+            }
+            else
+            {
+                player.SetCrossbowAnimation(false);
+            }
+        }
+        else
+        {
+            player.SetCrossbowAnimation(false);
+        }
 
+        slotSelectionDisplays[selectedSlot].gameObject.SetActive(true);
+    }
+    public void Slot1()
+    {
+        selectedSlot = 1;
+        slotSelectionDisplays[0].gameObject.SetActive(false);
+        slotSelectionDisplays[2].gameObject.SetActive(false);
+        slotSelectionDisplays[3].gameObject.SetActive(false);
+        //slotSelectionDisplays[selectedSlot].gameObject.SetActive(false);
+        if (currentActives[selectedSlot] != null)
+        {
+            if (currentActives[selectedSlot].effectID == 5)
+            {
+                player.SetCrossbowAnimation(true);
+            }
+            else
+            {
+                player.SetCrossbowAnimation(false);
+            }
+        }
+        else
+        {
+            player.SetCrossbowAnimation(false);
+        }
+
+        slotSelectionDisplays[selectedSlot].gameObject.SetActive(true);
+    }
+    public void Slot2()
+    {
+        selectedSlot = 2;
+        slotSelectionDisplays[0].gameObject.SetActive(false);
+        slotSelectionDisplays[1].gameObject.SetActive(false);
+        slotSelectionDisplays[3].gameObject.SetActive(false);
+        //slotSelectionDisplays[selectedSlot].gameObject.SetActive(false);
+        if (currentActives[selectedSlot] != null)
+        {
+            if (currentActives[selectedSlot].effectID == 5)
+            {
+                player.SetCrossbowAnimation(true);
+            }
+            else
+            {
+                player.SetCrossbowAnimation(false);
+            }
+        }
+        else
+        {
+            player.SetCrossbowAnimation(false);
+        }
+
+        slotSelectionDisplays[selectedSlot].gameObject.SetActive(true);
+    }
+    public void Slot3()
+    {
+        selectedSlot = 3;
+        slotSelectionDisplays[0].gameObject.SetActive(false);
+        slotSelectionDisplays[1].gameObject.SetActive(false);
+        slotSelectionDisplays[2].gameObject.SetActive(false);
+        //slotSelectionDisplays[selectedSlot].gameObject.SetActive(false);
+        if (currentActives[selectedSlot] != null)
+        {
+            if (currentActives[selectedSlot].effectID == 5)
+            {
+                player.SetCrossbowAnimation(true);
+            }
+            else
+            {
+                player.SetCrossbowAnimation(false);
+            }
+        }
+        else
+        {
+            player.SetCrossbowAnimation(false);
+        }
+
+        slotSelectionDisplays[selectedSlot].gameObject.SetActive(true);
+    }
     public void UseItem()
     {
         if (currentActives[selectedSlot] != null)

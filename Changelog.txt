@@ -307,5 +307,7 @@
 ## [0.3.2] - 2021-05-29
 ### Added
 - Silent potion
+- Choosing slots by number keys 
+- Pickups dissapear over time 
 ### Fixed
 - Empty item from the chest

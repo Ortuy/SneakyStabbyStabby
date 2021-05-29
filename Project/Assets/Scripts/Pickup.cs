@@ -12,9 +12,11 @@ public class Pickup : MonoBehaviourPunCallbacks
     public Item item;
 
     public GameObject particleEffect;
+    public float destroyTime = 60;
 
     private void Start()
     {
+        StartCoroutine("Destroy");
         var temp = item;
         item = ScriptableObject.CreateInstance<Item>();
         item.SetParameters(temp);
@@ -39,7 +41,7 @@ public class Pickup : MonoBehaviourPunCallbacks
 
             bool pickedUp = false;
 
-            switch(item.itemType)
+            switch (item.itemType)
             {
                 case ItemType.ACTIVE:
                     for (int i = 0; i < inventory.currentActives.Length; i++)
@@ -57,12 +59,12 @@ public class Pickup : MonoBehaviourPunCallbacks
                     }
                     break;
                 case ItemType.PASSIVE:
-                    if(inventory.currentPassive == null)
+                    if (inventory.currentPassive == null)
                     {
                         inventory.SetPassiveItem(item);
                         pickedUp = true;
                     }
-                    break;                
+                    break;
                 case ItemType.TRAP:
                     /*if (inventory.currentTrap == null)
                     {
@@ -82,29 +84,29 @@ public class Pickup : MonoBehaviourPunCallbacks
                             break;
                         }
                     }
-                    break;               
+                    break;
             }
 
-            if(pickedUp)
+            if (pickedUp)
             {
                 DestroyPickup();
                 if (photonView.IsMine)
                 {
                     PhotonNetwork.Destroy(gameObject);
                 }
-                
 
-                if(photonView.IsMine)
+
+                if (photonView.IsMine)
                 {
                     PhotonNetwork.Destroy(gameObject);
-                }               
+                }
 
                 if (other.GetComponent<PhotonView>().IsMine)
                 {
                     ShowItemText();
                 }
             }
-            
+
 
             /*
             for (int i = 0; i < inventory.slots.Length; i++)
@@ -128,5 +130,10 @@ public class Pickup : MonoBehaviourPunCallbacks
         GameManager.localInstance.secondaryText.gameObject.SetActive(true);
         GameManager.localInstance.secondaryText.text = item.itemDesc;
         GameManager.localInstance.DisappearText(2.4f);
+    }
+    IEnumerator Destroy()
+    {
+        yield return new WaitForSeconds(destroyTime);
+        Destroy(this.gameObject);
     }
 }
