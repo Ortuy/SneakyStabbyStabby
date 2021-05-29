@@ -541,6 +541,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup1.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= blidingtrapprice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buyBlinding.SetActive(false);
             photonView.RPC("SyncBuyBlinding", RpcTarget.AllBuffered);
             RandomItem();
@@ -553,6 +554,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup2.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= blinkPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buyBlink.SetActive(false);
             photonView.RPC("SyncBuyBlink", RpcTarget.AllBuffered);
             RandomItem();
@@ -565,6 +567,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup3.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= bombPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buyBomb.SetActive(false);
             photonView.RPC("SyncBuyBomb", RpcTarget.AllBuffered);
             RandomItem();
@@ -577,6 +580,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup4.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= camoPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buyCamo.SetActive(false);
             photonView.RPC("SyncBuyCamo", RpcTarget.AllBuffered);
             RandomItem();
@@ -589,6 +593,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup5.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= crossbowPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buyCrossbow.SetActive(false);
             photonView.RPC("SyncBuyCrossbow", RpcTarget.AllBuffered);
             RandomItem();
@@ -601,6 +606,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup6.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= detectorPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buyDetector.SetActive(false);
             photonView.RPC("SyncBuyDetector", RpcTarget.AllBuffered);
             RandomItem();
@@ -613,6 +619,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup7.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= silentPotionPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buySilentPotion.SetActive(false);
             photonView.RPC("SyncBuySilentPotion", RpcTarget.AllBuffered);
             RandomItem();
@@ -625,6 +632,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup8.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= gelTrapPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buyGelTrap.SetActive(false);
             photonView.RPC("SyncBuyGelTrap", RpcTarget.AllBuffered);
             RandomItem();
@@ -637,6 +645,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup9.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= spikePitPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buySpikePit.SetActive(false);
             photonView.RPC("SyncBuySpikePit", RpcTarget.AllBuffered);
             RandomItem();
@@ -649,6 +658,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup10.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= tripWireTrapPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buyTripWire.SetActive(false);
             photonView.RPC("SyncBuyTripWire", RpcTarget.AllBuffered);
             RandomItem();
@@ -661,6 +671,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup11.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= seePotionPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buySeePotion.SetActive(false);
             photonView.RPC("SyncBuySeePotion", RpcTarget.AllBuffered);
             RandomItem();
@@ -673,6 +684,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup12.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= speedPotionPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buySpeedPotion.SetActive(false);
             photonView.RPC("SyncBuySpeedPotion", RpcTarget.AllBuffered);
             RandomItem();
@@ -685,6 +697,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup1.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= blidingtrapprice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buyBlinding1.SetActive(false);
             photonView.RPC("SyncBuyBlinding1", RpcTarget.AllBuffered);
             RandomItem1();
@@ -697,6 +710,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup2.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= blinkPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buyBlink1.SetActive(false);
             photonView.RPC("SyncBuyBlink1", RpcTarget.AllBuffered);
             RandomItem1();
@@ -709,6 +723,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup3.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= bombPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buyBomb1.SetActive(false);
             photonView.RPC("SyncBuyBomb1", RpcTarget.AllBuffered);
             RandomItem1();
@@ -721,6 +736,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup4.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= camoPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buyCamo1.SetActive(false);
             photonView.RPC("SyncBuyCamo1", RpcTarget.AllBuffered);
             RandomItem1();
@@ -733,6 +749,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup5.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= crossbowPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buyCrossbow1.SetActive(false);
             photonView.RPC("SyncBuyCrossbow1", RpcTarget.AllBuffered);
             RandomItem1();
@@ -745,6 +762,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup6.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= detectorPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buyDetector1.SetActive(false);
             photonView.RPC("SyncBuyDetector1", RpcTarget.AllBuffered);
             RandomItem1();
@@ -757,6 +775,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup7.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= silentPotionPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buySilentPotion1.SetActive(false);
             photonView.RPC("SyncBuySilentPotion1", RpcTarget.AllBuffered);
             RandomItem1();
@@ -769,6 +788,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup8.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= gelTrapPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buyGelTrap1.SetActive(false);
             photonView.RPC("SyncBuyGelTrap1", RpcTarget.AllBuffered);
             RandomItem1();
@@ -781,6 +801,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup9.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= spikePitPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buySpikePit1.SetActive(false);
             photonView.RPC("SyncBuySpikePit1", RpcTarget.AllBuffered);
             RandomItem1();
@@ -793,6 +814,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup10.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= tripWireTrapPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buyTripWire1.SetActive(false);
             photonView.RPC("SyncBuyTripWire1", RpcTarget.AllBuffered);
             RandomItem1();
@@ -805,6 +827,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup11.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= seePotionPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buySeePotion1.SetActive(false);
             photonView.RPC("SyncBuySeePotion1", RpcTarget.AllBuffered);
             RandomItem1();
@@ -817,6 +840,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup12.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= speedPotionPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buySpeedPotion1.SetActive(false);
             photonView.RPC("SyncBuySpeedPotion1", RpcTarget.AllBuffered);
             RandomItem1();
@@ -829,6 +853,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup1.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= blidingtrapprice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buyBlinding2.SetActive(false);
             photonView.RPC("SyncBuyBlinding2", RpcTarget.AllBuffered);
             RandomItem2();
@@ -841,6 +866,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup2.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= blinkPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buyBlink2.SetActive(false);
             photonView.RPC("SyncBuyBlink2", RpcTarget.AllBuffered);
             RandomItem2();
@@ -853,6 +879,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup3.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= bombPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buyBomb2.SetActive(false);
             photonView.RPC("SyncBuyBomb2", RpcTarget.AllBuffered);
             RandomItem2();
@@ -865,6 +892,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup4.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= camoPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buyCamo2.SetActive(false);
             photonView.RPC("SyncBuyCamo2", RpcTarget.AllBuffered);
             RandomItem2();
@@ -877,6 +905,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup5.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= crossbowPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buyCrossbow2.SetActive(false);
             photonView.RPC("SyncBuyCrossbow2", RpcTarget.AllBuffered);
             RandomItem2();
@@ -889,6 +918,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup6.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= detectorPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buyDetector2.SetActive(false);
             photonView.RPC("SyncBuyDetector2", RpcTarget.AllBuffered);
             RandomItem2();
@@ -901,6 +931,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup7.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= silentPotionPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buySilentPotion2.SetActive(false);
             photonView.RPC("SyncBuySilentPotion2", RpcTarget.AllBuffered);
             RandomItem2();
@@ -913,6 +944,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup8.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= gelTrapPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buyGelTrap2.SetActive(false);
             photonView.RPC("SyncBuyGelTrap2", RpcTarget.AllBuffered);
             RandomItem2();
@@ -925,6 +957,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup9.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= spikePitPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buySpikePit2.SetActive(false);
             photonView.RPC("SyncBuySpikePit2", RpcTarget.AllBuffered);
             RandomItem2();
@@ -937,6 +970,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup10.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= tripWireTrapPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buyTripWire2.SetActive(false);
             photonView.RPC("SyncBuyTripWire2", RpcTarget.AllBuffered);
             RandomItem2();
@@ -949,6 +983,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup11.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= seePotionPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buySeePotion2.SetActive(false);
             photonView.RPC("SyncBuySeePotion2", RpcTarget.AllBuffered);
             RandomItem2();
@@ -961,6 +996,7 @@ public class ShopEnter : InteractableObject
         {
             PhotonNetwork.Instantiate(player.pickup12.name, new Vector2(player.paintPos.transform.position.x, player.paintPos.transform.position.y), Quaternion.identity, 0);
             player.gold -= speedPotionPrice;
+            AkSoundEngine.PostEvent("sfx_buy_shop", gameObject, gameObject);
             buySpeedPotion2.SetActive(false);
             photonView.RPC("SyncBuySpeedPotion2", RpcTarget.AllBuffered);
             RandomItem2();

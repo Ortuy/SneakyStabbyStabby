@@ -16,12 +16,28 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="4112847892">
+		<SoundBank Id="3161908922" Language="SFX" Hash="251891979">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
-				<Event Id="2857601955" Name="amb_bush_rustle_enter" ObjectPath="\Events\Default Work Unit\Ambience\amb_bush_rustle_enter" MaxAttenuation="5.000000" DurationType="OneShot" DurationMin="0.950763" DurationMax="1.971997">
+				<Event Id="1573457378" Name="amb_birds" ObjectPath="\Events\Default Work Unit\Ambience\amb_birds" DurationType="OneShot" DurationMin="2.362031" DurationMax="3.489635">
+					<IncludedMemoryFiles>
+						<File Id="393212323" Language="SFX">
+							<ShortName>Birds, Crow, Ravens, Chirp, Wings, Fly By SND50106.wav</ShortName>
+							<Path>SFX\Birds, Crow, Ravens, Chirp, Wings, Fly By SND50106_10C4C929.wem</Path>
+						</File>
+						<File Id="502453705" Language="SFX">
+							<ShortName>Birds, Crow, Ravens, Multiple, Wings, Fly By, Lots Of Call, Response 02 SND50000 1.wav</ShortName>
+							<Path>SFX\Birds, Crow, Ravens, Multiple, Wings, Fly By, Lots Of Call, Response 02 SND50000 1_10C4C929.wem</Path>
+						</File>
+						<File Id="573470350" Language="SFX">
+							<ShortName>Birds, Crow, Ravens, Multiple, Wings, Fly By, Lots Of Call, Response 02 SND50000.wav</ShortName>
+							<Path>SFX\Birds, Crow, Ravens, Multiple, Wings, Fly By, Lots Of Call, Response 02 SND50000_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2857601955" Name="amb_bush_rustle_enter" ObjectPath="\Events\Default Work Unit\Ambience\amb_bush_rustle_enter" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.950763" DurationMax="1.971997">
 					<IncludedMemoryFiles>
 						<File Id="1067845191" Language="SFX">
 							<ShortName>Vegetation, Dry Leaves Hit, Rustle Leaf SND7769 1.wav</ShortName>
@@ -37,7 +53,15 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="4025637178" Name="amb_schroom_enter" ObjectPath="\Events\Default Work Unit\Ambience\amb_schroom_enter" MaxAttenuation="10.000000" DurationType="OneShot" DurationMin="0.528148" DurationMax="0.830190">
+				<Event Id="3910014366" Name="amb_flying_birds" ObjectPath="\Events\Default Work Unit\Ambience\amb_flying_birds" DurationType="OneShot" DurationMin="3.195469" DurationMax="3.195469">
+					<IncludedMemoryFiles>
+						<File Id="393212323" Language="SFX">
+							<ShortName>Birds, Crow, Ravens, Chirp, Wings, Fly By SND50106.wav</ShortName>
+							<Path>SFX\Birds, Crow, Ravens, Chirp, Wings, Fly By SND50106_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="4025637178" Name="amb_schroom_enter" ObjectPath="\Events\Default Work Unit\Ambience\amb_schroom_enter" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.528148" DurationMax="0.830190">
 					<IncludedMemoryFiles>
 						<File Id="77449660" Language="SFX">
 							<ShortName>gore.wav</ShortName>
@@ -49,15 +73,23 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2562373584" Name="char_cough_gas" ObjectPath="\Events\Default Work Unit\Character\char_cough_gas" MaxAttenuation="5.000000" DurationType="OneShot" DurationMin="1.750573" DurationMax="1.750573">
+				<Event Id="3871099588" Name="amb_waterfall" ObjectPath="\Events\Default Work Unit\Ambience\amb_waterfall" DurationType="Infinite">
 					<IncludedMemoryFiles>
-						<File Id="741292852" Language="SFX">
-							<ShortName>Human, Cough, Male 03 SND12821 1.wav</ShortName>
-							<Path>SFX\Human, Cough, Male 03 SND12821 1_10C4C929.wem</Path>
+						<File Id="864051607" Language="SFX">
+							<ShortName>Water, River, Medium Size, Close 2 SND3355.wav</ShortName>
+							<Path>SFX\Water, River, Medium Size, Close 2 SND3355_D79FB2B7.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3864694805" Name="char_footstep_dash" ObjectPath="\Events\Default Work Unit\Character\char_footstep_dash" MaxAttenuation="5.000000" DurationType="OneShot" DurationMin="0.305646" DurationMax="0.545385">
+				<Event Id="2562373584" Name="char_cough_gas" ObjectPath="\Events\Default Work Unit\Character\char_cough_gas" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="1.104687" DurationMax="1.104687">
+					<IncludedMemoryFiles>
+						<File Id="741292852" Language="SFX">
+							<ShortName>Human, Cough, Male 03 SND12821 1.wav</ShortName>
+							<Path>SFX\Human, Cough, Male 03 SND12821 1_BB4752F4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3864694805" Name="char_footstep_dash" ObjectPath="\Events\Default Work Unit\Character\char_footstep_dash" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.305646" DurationMax="0.545385">
 					<IncludedMemoryFiles>
 						<File Id="495203499" Language="SFX">
 							<ShortName>Fire, Torch, Whoosh, Movement, Medium, Double 01 SND8727.wav</ShortName>
@@ -69,7 +101,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3331452589" Name="char_footsteps" ObjectPath="\Events\Default Work Unit\Character\char_footsteps" MaxAttenuation="5.000000" DurationType="OneShot" DurationMin="0.220062" DurationMax="0.543104">
+				<Event Id="3331452589" Name="char_footsteps" ObjectPath="\Events\Default Work Unit\Character\char_footsteps" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.220062" DurationMax="0.543104">
 					<IncludedMemoryFiles>
 						<File Id="16374533" Language="SFX">
 							<ShortName>Footsteps, Human, Boots, Wet, Squelchy, Out Of Water 3 SND17378.wav</ShortName>
@@ -177,7 +209,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="3862022932" Name="char_knife_swinging" ObjectPath="\Events\Default Work Unit\Character\char_knife_swinging" MaxAttenuation="5.000000" DurationType="OneShot" DurationMin="0.214808" DurationMax="0.284491">
+				<Event Id="3862022932" Name="char_knife_swinging" ObjectPath="\Events\Default Work Unit\Character\char_knife_swinging" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.214808" DurationMax="0.284491">
 					<IncludedMemoryFiles>
 						<File Id="613104621" Language="SFX">
 							<ShortName>Knife, Swish, Air, Slash Movements SND34526 5.wav</ShortName>
@@ -189,7 +221,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="120190188" Name="char_taking_damage" ObjectPath="\Events\Default Work Unit\Character\char_taking_damage" MaxAttenuation="5.000000" DurationType="OneShot" DurationMin="0.250000" DurationMax="0.375000">
+				<Event Id="120190188" Name="char_taking_damage" ObjectPath="\Events\Default Work Unit\Character\char_taking_damage" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.250000" DurationMax="0.375000">
 					<IncludedMemoryFiles>
 						<File Id="25123832" Language="SFX">
 							<ShortName>hit3.wav</ShortName>
@@ -210,6 +242,14 @@
 						<File Id="507201161" Language="SFX">
 							<ShortName>hit5.wav</ShortName>
 							<Path>SFX\hit5_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3627586745" Name="char_voice_death" ObjectPath="\Events\Default Work Unit\Character\char_voice_death" MaxAttenuation="10.000000" DurationType="OneShot" DurationMin="3.105479" DurationMax="3.105479">
+					<IncludedMemoryFiles>
+						<File Id="440425359" Language="SFX">
+							<ShortName>Deathmagic by taure Id-568438.wav</ShortName>
+							<Path>SFX\Deathmagic by taure Id-568438_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -285,7 +325,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3500565137" Name="sfx_crossbow_shoot" ObjectPath="\Events\Default Work Unit\SFX\sfx_crossbow_shoot" MaxAttenuation="5.000000" DurationType="OneShot" DurationMin="0.343531" DurationMax="0.508937">
+				<Event Id="3500565137" Name="sfx_crossbow_shoot" ObjectPath="\Events\Default Work Unit\SFX\sfx_crossbow_shoot" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.343531" DurationMax="0.508937">
 					<IncludedMemoryFiles>
 						<File Id="295155515" Language="SFX">
 							<ShortName>Weapons, Crossbow, Shoot x4 SND42767 2.wav</ShortName>
@@ -305,7 +345,23 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="4108944039" Name="sfx_obj_camo" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_camo" MaxAttenuation="5.000000" DurationType="OneShot" DurationMin="0.695167" DurationMax="0.695167">
+				<Event Id="3677607289" Name="sfx_end_attack_cooldown" ObjectPath="\Events\Default Work Unit\SFX\sfx_end_attack_cooldown" DurationType="OneShot" DurationMin="0.220767" DurationMax="0.220767">
+					<IncludedMemoryFiles>
+						<File Id="328130194" Language="SFX">
+							<ShortName>Cooking, Knife, Slide In Plastic Protective Cover Sheath 2 SND26936.wav</ShortName>
+							<Path>SFX\Cooking, Knife, Slide In Plastic Protective Cover Sheath 2 SND26936_52807907.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3544644124" Name="sfx_obj_burning_fuse" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_burning_fuse" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="2.522063" DurationMax="2.522063">
+					<IncludedMemoryFiles>
+						<File Id="575544239" Language="SFX">
+							<ShortName>Fire, Burning, Textures, Fuse On Fire, Dark Rumble SND42944.wav</ShortName>
+							<Path>SFX\Fire, Burning, Textures, Fuse On Fire, Dark Rumble SND42944_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="4108944039" Name="sfx_obj_camo" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_camo" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.695167" DurationMax="0.695167">
 					<IncludedMemoryFiles>
 						<File Id="301789713" Language="SFX">
 							<ShortName>Rocks, Impact, Throw And Roll, Small Thump SND0788 1.wav</ShortName>
@@ -313,15 +369,15 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="919196649" Name="sfx_obj_detector" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_detector" MaxAttenuation="5.000000" DurationType="OneShot" DurationMin="2.191333" DurationMax="2.191333">
+				<Event Id="919196649" Name="sfx_obj_detector" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_detector" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="1.823323" DurationMax="1.823323">
 					<IncludedMemoryFiles>
 						<File Id="1045580639" Language="SFX">
 							<ShortName>Creatures, Monster, Deep, Snarl 08 SND41909 1.wav</ShortName>
-							<Path>SFX\Creatures, Monster, Deep, Snarl 08 SND41909 1_850AD4E8.wem</Path>
+							<Path>SFX\Creatures, Monster, Deep, Snarl 08 SND41909 1_3C470B36.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1107926442" Name="sfx_obj_gas" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_gas" MaxAttenuation="10.000000" DurationType="OneShot" DurationMin="0.484260" DurationMax="0.484260">
+				<Event Id="1107926442" Name="sfx_obj_gas" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_gas" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.484260" DurationMax="0.484260">
 					<IncludedMemoryFiles>
 						<File Id="1055944537" Language="SFX">
 							<ShortName>Fire, Burst, Gas Leak, Short Burst 02 SND5845.wav</ShortName>
@@ -329,15 +385,31 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1175037001" Name="sfx_obj_gel" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_gel" MaxAttenuation="5.000000" DurationType="OneShot" DurationMin="4.082844" DurationMax="4.082844">
+				<Event Id="1175037001" Name="sfx_obj_gel" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_gel" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.285625" DurationMax="0.285625">
 					<IncludedMemoryFiles>
-						<File Id="325261215" Language="SFX">
-							<ShortName>Ambient Hits, Mid, Gong Like, Bright Shimmer End SND41467.wav</ShortName>
-							<Path>SFX\Ambient Hits, Mid, Gong Like, Bright Shimmer End SND41467_10C4C929.wem</Path>
+						<File Id="409538277" Language="SFX">
+							<ShortName>Hygiene, Shaving Gel Can, Lid Off 02 SND27576 1.wav</ShortName>
+							<Path>SFX\Hygiene, Shaving Gel Can, Lid Off 02 SND27576 1_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1509706435" Name="sfx_obj_pickup" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj_pickup" MaxAttenuation="5.000000" DurationType="OneShot" DurationMin="0.150615" DurationMax="0.150615">
+				<Event Id="3736381994" Name="sfx_obj_getting_into_binding_trap" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_getting_into_binding_trap" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="2.338000" DurationMax="2.338000">
+					<IncludedMemoryFiles>
+						<File Id="432200479" Language="SFX">
+							<ShortName>Designed, Bass Dive, Trailer Sub, Fall Down, Medium, Clean 01 SND35979.wav</ShortName>
+							<Path>SFX\Designed, Bass Dive, Trailer Sub, Fall Down, Medium, Clean 01 SND35979_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="4186763055" Name="sfx_obj_getting_into_gel_trap" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_getting_into_gel_trap" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.415528" DurationMax="0.415528">
+					<IncludedMemoryFiles>
+						<File Id="11930197" Language="SFX">
+							<ShortName>Hygiene, Hair Gel, Squeeze From Plastic Pouch, Squirt 01 SND26041.wav</ShortName>
+							<Path>SFX\Hygiene, Hair Gel, Squeeze From Plastic Pouch, Squirt 01 SND26041_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1509706435" Name="sfx_obj_pickup" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj_pickup" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.150615" DurationMax="0.150615">
 					<IncludedMemoryFiles>
 						<File Id="885430307" Language="SFX">
 							<ShortName>Gun, Rifle, Grab, Pick Up SND6244.wav</ShortName>
@@ -345,7 +417,23 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2639401961" Name="sfx_obj_speedpotion" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_speedpotion" MaxAttenuation="5.000000" DurationType="OneShot" DurationMin="0.380708" DurationMax="0.380708">
+				<Event Id="601085705" Name="sfx_obj_radar_use" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_radar_use" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="1.475398" DurationMax="1.475398">
+					<IncludedMemoryFiles>
+						<File Id="49311639" Language="SFX">
+							<ShortName>Aircraft, Radio Controlled, Drone, Nano, Pass Fast SND29506 1.wav</ShortName>
+							<Path>SFX\Aircraft, Radio Controlled, Drone, Nano, Pass Fast SND29506 1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1201681274" Name="sfx_obj_setting_gel_trap" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_setting_gel_trap" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.285625" DurationMax="0.285625">
+					<IncludedMemoryFiles>
+						<File Id="409538277" Language="SFX">
+							<ShortName>Hygiene, Shaving Gel Can, Lid Off 02 SND27576 1.wav</ShortName>
+							<Path>SFX\Hygiene, Shaving Gel Can, Lid Off 02 SND27576 1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2639401961" Name="sfx_obj_speedpotion" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_speedpotion" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.380708" DurationMax="0.380708">
 					<IncludedMemoryFiles>
 						<File Id="1054244652" Language="SFX">
 							<ShortName>Vehicles, Car, Hyundai Trajet 2006, Fan Speed Dial, Turn 01 SND38992.wav</ShortName>
@@ -353,7 +441,15 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2667521114" Name="sfx_obj_spikepit" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_spikepit" MaxAttenuation="5.000000" DurationType="OneShot" DurationMin="0.539510" DurationMax="0.539510">
+				<Event Id="4116042345" Name="sfx_obj_spike_trap_activate" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_spike_trap_activate" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.403283" DurationMax="0.403283">
+					<IncludedMemoryFiles>
+						<File Id="640247824" Language="SFX">
+							<ShortName>Gore, Bone, Break, Snap 01 SND22229.wav</ShortName>
+							<Path>SFX\Gore, Bone, Break, Snap 01 SND22229_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2667521114" Name="sfx_obj_spikepit" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_spikepit" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.539510" DurationMax="0.539510">
 					<IncludedMemoryFiles>
 						<File Id="103699206" Language="SFX">
 							<ShortName>Ice, Impact, Spike, Snowy SND31449.wav</ShortName>
@@ -361,7 +457,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3927170345" Name="sfx_obj_throw" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_throw" MaxAttenuation="5.000000" DurationType="OneShot" DurationMin="0.140167" DurationMax="0.140167">
+				<Event Id="3927170345" Name="sfx_obj_throw" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_throw" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.140167" DurationMax="0.140167">
 					<IncludedMemoryFiles>
 						<File Id="925787624" Language="SFX">
 							<ShortName>Cushion, Throw Down On Sofa SND24959 1.wav</ShortName>
@@ -369,7 +465,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="4163172313" Name="sfx_obj_tripwire" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_tripwire" MaxAttenuation="5.000000" DurationType="OneShot" DurationMin="0.403479" DurationMax="0.403479">
+				<Event Id="4163172313" Name="sfx_obj_tripwire" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_tripwire" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.403479" DurationMax="0.403479">
 					<IncludedMemoryFiles>
 						<File Id="263152886" Language="SFX">
 							<ShortName>Rocks, Impact, Throw And Roll, Small Thump SND0788 2.wav</ShortName>
@@ -377,7 +473,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3325140479" Name="sfx_obj_tripwire_activate" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_tripwire_activate" MaxAttenuation="5.000000" DurationType="OneShot" DurationMin="0.145063" DurationMax="0.145063">
+				<Event Id="3325140479" Name="sfx_obj_tripwire_activate" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_tripwire_activate" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.145063" DurationMax="0.145063">
 					<IncludedMemoryFiles>
 						<File Id="533416541" Language="SFX">
 							<ShortName>Cloth, Misc, Hits And Grabs SND4053.wav</ShortName>
@@ -385,7 +481,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="4096920342" Name="sfx_obj_visionpotion" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_visionpotion" MaxAttenuation="5.000000" DurationType="OneShot" DurationMin="1.598167" DurationMax="1.598167">
+				<Event Id="4096920342" Name="sfx_obj_visionpotion" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_visionpotion" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="1.598167" DurationMax="1.598167">
 					<IncludedMemoryFiles>
 						<File Id="255652779" Language="SFX">
 							<ShortName>Human, Breath, Male, Single SND23271.wav</ShortName>
@@ -401,7 +497,15 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="4028214536" Name="sfx_teleport" ObjectPath="\Events\Default Work Unit\SFX\sfx_teleport" MaxAttenuation="5.000000" DurationType="OneShot" DurationMin="1.974437" DurationMax="1.974437">
+				<Event Id="136158832" Name="sfx_supplies" ObjectPath="\Events\Default Work Unit\SFX\sfx_supplies" DurationType="OneShot" DurationMin="4.082844" DurationMax="4.082844">
+					<IncludedMemoryFiles>
+						<File Id="325261215" Language="SFX">
+							<ShortName>Ambient Hits, Mid, Gong Like, Bright Shimmer End SND41467.wav</ShortName>
+							<Path>SFX\Ambient Hits, Mid, Gong Like, Bright Shimmer End SND41467_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="4028214536" Name="sfx_teleport" ObjectPath="\Events\Default Work Unit\SFX\sfx_teleport" DurationType="OneShot" DurationMin="1.974437" DurationMax="1.974437">
 					<IncludedMemoryFiles>
 						<File Id="770380962" Language="SFX">
 							<ShortName>Sci-Fi, Teleportation, Arrive SND32584.wav</ShortName>
@@ -422,6 +526,14 @@
 						<File Id="187997657" Language="SFX">
 							<ShortName>closemap.wav</ShortName>
 							<Path>SFX\closemap_5128E34A.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3267870591" Name="ui_countdown" ObjectPath="\Events\Default Work Unit\UI\ui_countdown" DurationType="OneShot" DurationMin="0.170188" DurationMax="0.170188">
+					<IncludedMemoryFiles>
+						<File Id="718312060" Language="SFX">
+							<ShortName>Gore, Stab, Knife, Flesh 02 SND22493.wav</ShortName>
+							<Path>SFX\Gore, Stab, Knife, Flesh 02 SND22493_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -465,7 +577,14 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1537061107" Name="wind" ObjectPath="\Events\Default Work Unit\Ambience\wind" DurationType="Infinite"/>
+				<Event Id="1537061107" Name="wind" ObjectPath="\Events\Default Work Unit\Ambience\wind" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="238898135" Language="SFX">
+							<ShortName>Ambience, Rural, Prairie, Light Wind, Flies SND1345 1.wav</ShortName>
+							<Path>SFX\Ambience, Rural, Prairie, Light Wind, Flies SND1345 1_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="209144488" Language="SFX">

@@ -13,34 +13,47 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID AMB_BIRDS = 1573457378U;
         static const AkUniqueID AMB_BUSH_RUSTLE_ENTER = 2857601955U;
         static const AkUniqueID AMB_FIRE = 3207324726U;
+        static const AkUniqueID AMB_FLYING_BIRDS = 3910014366U;
         static const AkUniqueID AMB_SCHROOM_ENTER = 4025637178U;
+        static const AkUniqueID AMB_WATERFALL = 3871099588U;
         static const AkUniqueID CHAR_COUGH_GAS = 2562373584U;
         static const AkUniqueID CHAR_FOOTSTEP_DASH = 3864694805U;
         static const AkUniqueID CHAR_FOOTSTEPS = 3331452589U;
         static const AkUniqueID CHAR_KNIFE_SWINGING = 3862022932U;
         static const AkUniqueID CHAR_TAKING_DAMAGE = 120190188U;
+        static const AkUniqueID CHAR_VOICE_DEATH = 3627586745U;
         static const AkUniqueID MUSIC_AMBIENT_DRONE = 205229924U;
         static const AkUniqueID SFX_BOX_DESTROY = 490354319U;
         static const AkUniqueID SFX_BUY_SHOP = 2554305358U;
         static const AkUniqueID SFX_CHANGE_COLOR = 171029537U;
         static const AkUniqueID SFX_CROSSBOW_SHOOT = 3500565137U;
+        static const AkUniqueID SFX_END_ATTACK_COOLDOWN = 3677607289U;
+        static const AkUniqueID SFX_OBJ_BURNING_FUSE = 3544644124U;
         static const AkUniqueID SFX_OBJ_CAMO = 4108944039U;
         static const AkUniqueID SFX_OBJ_DETECTOR = 919196649U;
         static const AkUniqueID SFX_OBJ_GAS = 1107926442U;
         static const AkUniqueID SFX_OBJ_GEL = 1175037001U;
+        static const AkUniqueID SFX_OBJ_GETTING_INTO_BINDING_TRAP = 3736381994U;
+        static const AkUniqueID SFX_OBJ_GETTING_INTO_GEL_TRAP = 4186763055U;
         static const AkUniqueID SFX_OBJ_PICKUP = 1509706435U;
+        static const AkUniqueID SFX_OBJ_RADAR_USE = 601085705U;
+        static const AkUniqueID SFX_OBJ_SETTING_GEL_TRAP = 1201681274U;
         static const AkUniqueID SFX_OBJ_SPEEDPOTION = 2639401961U;
+        static const AkUniqueID SFX_OBJ_SPIKE_TRAP_ACTIVATE = 4116042345U;
         static const AkUniqueID SFX_OBJ_SPIKEPIT = 2667521114U;
         static const AkUniqueID SFX_OBJ_THROW = 3927170345U;
         static const AkUniqueID SFX_OBJ_TRIPWIRE = 4163172313U;
         static const AkUniqueID SFX_OBJ_TRIPWIRE_ACTIVATE = 3325140479U;
         static const AkUniqueID SFX_OBJ_VISIONPOTION = 4096920342U;
         static const AkUniqueID SFX_PICKUP_GOLD = 237514306U;
+        static const AkUniqueID SFX_SUPPLIES = 136158832U;
         static const AkUniqueID SFX_TELEPORT = 4028214536U;
         static const AkUniqueID UI_CLICK_WOOD_PANEL_EXIT = 3464476944U;
         static const AkUniqueID UI_CLOSE_MAP = 2785568501U;
+        static const AkUniqueID UI_COUNTDOWN = 3267870591U;
         static const AkUniqueID UI_INTERACT = 4294591936U;
         static const AkUniqueID UI_OPEN_MAP = 2149148881U;
         static const AkUniqueID UI_WOOD_OPEN_PANEL = 3080149663U;

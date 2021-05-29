@@ -15,8 +15,10 @@ public class Radar : InteractableObject
     [SerializeField] private int refreshTime;
 
     protected override void StartInteraction()
-    {        
-        if(isAvaliable)
+    {
+        
+        AkSoundEngine.PostEvent("sfx_obj_radar_use", gameObject, gameObject);
+        if (isAvaliable)
         {
             base.StartInteraction();
             currentPlayer = targetPV.GetComponent<Player>();

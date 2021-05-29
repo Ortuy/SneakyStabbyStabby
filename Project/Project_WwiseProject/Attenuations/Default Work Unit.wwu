@@ -100,14 +100,14 @@
 						</FocusUsage>
 					</CurveUsageInfoList>
 				</Attenuation>
-				<Attenuation Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" ShortID="695776609">
+				<Attenuation Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" ShortID="695776609">
 					<PropertyList>
 						<Property Name="HeightSpreadEnable" Type="bool">
 							<ValueList>
 								<Value>False</Value>
 							</ValueList>
 						</Property>
-						<Property Name="RadiusMax" Type="Real64" Value="5"/>
+						<Property Name="RadiusMax" Type="Real64" Value="12"/>
 					</PropertyList>
 					<CurveUsageInfoList>
 						<VolumeDryUsage>
@@ -123,17 +123,17 @@
 											<Flags>5</Flags>
 										</Point>
 										<Point>
-											<XPos>1.08516</XPos>
+											<XPos>4.36182</XPos>
 											<YPos>0</YPos>
 											<Flags>0</Flags>
 										</Point>
 										<Point>
-											<XPos>4.0103</XPos>
+											<XPos>9.62472</XPos>
 											<YPos>-14.7463</YPos>
 											<Flags>0</Flags>
 										</Point>
 										<Point>
-											<XPos>5</XPos>
+											<XPos>12</XPos>
 											<YPos>-200</YPos>
 											<Flags>37</Flags>
 										</Point>
@@ -163,7 +163,7 @@
 											<Flags>5</Flags>
 										</Point>
 										<Point>
-											<XPos>5</XPos>
+											<XPos>12</XPos>
 											<YPos>43</YPos>
 											<Flags>37</Flags>
 										</Point>
@@ -184,12 +184,12 @@
 											<Flags>5</Flags>
 										</Point>
 										<Point>
-											<XPos>2.62755</XPos>
+											<XPos>6.30612</XPos>
 											<YPos>100</YPos>
 											<Flags>0</Flags>
 										</Point>
 										<Point>
-											<XPos>5</XPos>
+											<XPos>12</XPos>
 											<YPos>0</YPos>
 											<Flags>37</Flags>
 										</Point>

@@ -30,7 +30,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
-											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+											<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -41,6 +41,12 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="Human, Cough, Male 03 SND12821 1" ID="{7057276B-CC93-4CEF-BF67-71F4ED9C79F2}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.701565481870229"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.106905216284987"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.21159245122986"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Human, Cough, Male 03 SND12821 1.wav</AudioFile>
 											<MediaIDList>
@@ -69,6 +75,31 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
 										</Reference>
 									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Deathmagic by taure Id-568438" ID="{B5695A79-5E33-429B-905B-3B5FB3AC0C1D}" ShortID="958045369">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Deathmagic by taure Id-568438" ID="{099DB1CA-B255-414F-A91C-175847F6BCB2}">
+													<Language>SFX</Language>
+													<AudioFile>Deathmagic by taure Id-568438.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="440425359"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Deathmagic by taure Id-568438" ID="{099DB1CA-B255-414F-A91C-175847F6BCB2}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
 									<ObjectLists/>
 								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="char_voice_taking_damage" ID="{5667ADDC-576C-469C-8486-3F9EDC652A15}" ShortID="680957148">
@@ -76,13 +107,13 @@
 										<Property Name="OverridePositioning" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-23</Value>
+												<Value>-13</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
-											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+											<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -394,7 +425,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
-											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+											<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -459,7 +490,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
-											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+											<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -494,7 +525,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
-											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+											<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -641,7 +672,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+									<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -1170,8 +1201,9 @@
 										<StateRef Name="speed" ID="{5DF7B4C4-7532-4909-9FE7-4103A0A47FC1}"/>
 										<CustomState Name="" ID="{A9EA673C-76DC-481A-AE61-89A54BEC7182}" ShortID="527128047">
 											<PropertyList>
-												<Property Name="Highpass" Type="int16" Value="37"/>
-												<Property Name="Volume" Type="Real64" Value="7"/>
+												<Property Name="Highpass" Type="int16" Value="46"/>
+												<Property Name="MakeUpGain" Type="Real64" Value="4"/>
+												<Property Name="Volume" Type="Real64" Value="8"/>
 											</PropertyList>
 										</CustomState>
 									</CustomState>
@@ -1228,7 +1260,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+									<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -1579,6 +1611,36 @@
 							<ObjectLists/>
 							<ActiveSourceList>
 								<ActiveSource Name="Bells, Handbell, Small, Decorative Bell, Ring 04 SND14935 1" ID="{27E037C3-AB75-47A2-AE17-CDC424385DF4}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="ui_countdown" ID="{78D0B6A1-7E90-454D-9A75-C6BFB86C86B7}" ShortID="341367613">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Gore, Stab, Knife, Flesh 02 SND22493" ID="{F547329F-B8B6-41EB-9E79-A510820545F3}">
+									<Language>SFX</Language>
+									<AudioFile>Gore, Stab, Knife, Flesh 02 SND22493.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="718312060"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="Gore, Stab, Knife, Flesh 02 SND22493" ID="{F547329F-B8B6-41EB-9E79-A510820545F3}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
@@ -2385,7 +2447,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+									<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -2556,7 +2618,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
-											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+											<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -2872,6 +2934,129 @@
 							</PositioningInfo>
 							<ObjectLists/>
 						</RandomSequenceContainer>
+						<Sound Name="amb_waterfall" ID="{94CAE844-DEAD-405E-9DBD-0BAF80ADC5EB}" ShortID="699473288">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Water, River, Medium Size, Close 2 SND3355" ID="{4E3CAE59-3DE2-4136-B21E-75130F261273}">
+									<Language>SFX</Language>
+									<AudioFile>Water, River, Medium Size, Close 2 SND3355.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="864051607"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="Water, River, Medium Size, Close 2 SND3355" ID="{4E3CAE59-3DE2-4136-B21E-75130F261273}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<RandomSequenceContainer Name="amb_birds" ID="{2746DA4E-6E85-4484-92F2-389F7C6E35E3}" ShortID="50685475">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-27</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="fire" ID="{BE8053A6-378D-43F3-BC77-7353EB91E1C3}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Room_Medium_Tiled" ID="{0C0A3A92-A571-4FDB-AB40-ACFED04E0217}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="amb_flying_birds" ID="{FAC568BE-2D69-4DC7-992B-EC1BF3EA7758}" ShortID="782325282">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Birds, Crow, Ravens, Chirp, Wings, Fly By SND50106" ID="{66B77F79-EF04-4487-937B-EE2A379444C5}">
+											<Language>SFX</Language>
+											<AudioFile>Birds, Crow, Ravens, Chirp, Wings, Fly By SND50106.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="393212323"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Birds, Crow, Ravens, Chirp, Wings, Fly By SND50106" ID="{66B77F79-EF04-4487-937B-EE2A379444C5}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Birds, Crow, Ravens, Multiple, Wings, Fly By, Lots Of Call, Response 02 SND50000" ID="{AB735D00-825B-478D-BFAB-EE8CC4068B2F}" ShortID="10896901">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Birds, Crow, Ravens, Multiple, Wings, Fly By, Lots Of Call, Response 02 SND50000" ID="{5D831BF2-6DDF-46C5-A128-10AE82338C54}">
+											<Language>SFX</Language>
+											<AudioFile>Birds, Crow, Ravens, Multiple, Wings, Fly By, Lots Of Call, Response 02 SND50000.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="573470350"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Birds, Crow, Ravens, Multiple, Wings, Fly By, Lots Of Call, Response 02 SND50000" ID="{5D831BF2-6DDF-46C5-A128-10AE82338C54}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Birds, Crow, Ravens, Multiple, Wings, Fly By, Lots Of Call, Response 02 SND50000 1" ID="{53D9EC30-8EB6-4106-9A72-300317B0641C}" ShortID="301126635">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Birds, Crow, Ravens, Multiple, Wings, Fly By, Lots Of Call, Response 02 SND50000 1" ID="{0266DF48-AC61-4160-8A2F-57356261CB0C}">
+											<Language>SFX</Language>
+											<AudioFile>Birds, Crow, Ravens, Multiple, Wings, Fly By, Lots Of Call, Response 02 SND50000 1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="502453705"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Birds, Crow, Ravens, Multiple, Wings, Fly By, Lots Of Call, Response 02 SND50000 1" ID="{0266DF48-AC61-4160-8A2F-57356261CB0C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
 					</ChildrenList>
 					<ObjectLists/>
 				</ActorMixer>
@@ -2880,7 +3065,7 @@
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-96</Value>
+								<Value>-8</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -2923,7 +3108,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+									<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -2941,7 +3126,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
-											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+											<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -2979,7 +3164,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
-											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+											<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -3015,7 +3200,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
-											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+											<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -3033,6 +3218,7 @@
 												<Property Name="FadeInDuration" Type="Real64" Value="0.515771840542833"/>
 												<Property Name="FadeOutDuration" Type="Real64" Value="1.18766921119593"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.368010178117048"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Creatures, Monster, Deep, Snarl 08 SND41909 1.wav</AudioFile>
@@ -3059,7 +3245,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
-											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+											<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -3085,7 +3271,7 @@
 										<ActiveSource Name="Ice, Impact, Spike, Snowy SND31449" ID="{8279D0EF-BD92-49CB-A779-A47E5FADDFF8}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name="sfx_obj_gel" ID="{30F10008-C93F-4A0B-BA9D-41CB4551C03C}" ShortID="31375104">
+								<Sound Name="sfx_obj_setting_gel_trap" ID="{30F10008-C93F-4A0B-BA9D-41CB4551C03C}" ShortID="31375104">
 									<PropertyList>
 										<Property Name="3DSpatialization" Type="int16" Value="2"/>
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
@@ -3098,7 +3284,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
-											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+											<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -3111,27 +3297,28 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="Ambient Hits, Mid, Gong Like, Bright Shimmer End SND41467" ID="{47E56401-BF9A-4FAF-B33A-7096C9BE1A40}">
+										<AudioFileSource Name="Hygiene, Shaving Gel Can, Lid Off 02 SND27576 1" ID="{D8A29CA2-05B0-48B7-A00E-5DCDA9F53712}">
 											<Language>SFX</Language>
-											<AudioFile>Ambient Hits, Mid, Gong Like, Bright Shimmer End SND41467.wav</AudioFile>
+											<AudioFile>Hygiene, Shaving Gel Can, Lid Off 02 SND27576 1.wav</AudioFile>
 											<MediaIDList>
-												<MediaID ID="325261215"/>
+												<MediaID ID="409538277"/>
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
 									<ObjectLists/>
 									<ActiveSourceList>
-										<ActiveSource Name="Ambient Hits, Mid, Gong Like, Bright Shimmer End SND41467" ID="{47E56401-BF9A-4FAF-B33A-7096C9BE1A40}" Platform="Linked"/>
+										<ActiveSource Name="Hygiene, Shaving Gel Can, Lid Off 02 SND27576 1" ID="{D8A29CA2-05B0-48B7-A00E-5DCDA9F53712}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="sfx_obj_tripwire_activate" ID="{EE85370D-C5F9-4208-AE94-3A8931E44726}" ShortID="219308629">
 									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
 										<Property Name="OverridePositioning" Type="bool" Value="True"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
-											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+											<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -3164,13 +3351,13 @@
 										<Property Name="OverridePositioning" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-8</Value>
+												<Value>-5</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
-											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+											<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -3219,7 +3406,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
-											<ObjectRef Name="fire" ID="{BE8053A6-378D-43F3-BC77-7353EB91E1C3}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+											<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -3258,7 +3445,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
-											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+											<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -3297,7 +3484,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
-											<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+											<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -3321,6 +3508,321 @@
 									<ObjectLists/>
 									<ActiveSourceList>
 										<ActiveSource Name="Vehicles, Car, Hyundai Trajet 2006, Fan Speed Dial, Turn 01 SND38992" ID="{A672C50C-CC80-4A5D-BC43-9F978D58EFD5}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_obj_getting_into_gel_trap" ID="{136B0D8A-DD34-4B8D-AB37-E7C63C6FB3BB}" ShortID="283681195">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-350</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+											<ObjectRef Name="Room_Medium_Tiled" ID="{0C0A3A92-A571-4FDB-AB40-ACFED04E0217}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Hygiene, Hair Gel, Squeeze From Plastic Pouch, Squirt 01 SND26041" ID="{6438876E-D3F5-4B64-9263-CF49A3FCEA6D}">
+											<Language>SFX</Language>
+											<AudioFile>Hygiene, Hair Gel, Squeeze From Plastic Pouch, Squirt 01 SND26041.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="11930197"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Hygiene, Hair Gel, Squeeze From Plastic Pouch, Squirt 01 SND26041" ID="{6438876E-D3F5-4B64-9263-CF49A3FCEA6D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_obj_getting_into_binding_trap" ID="{BFB7A58D-DD89-480A-BC01-2222BE17C44E}" ShortID="432869515">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-7</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+											<ObjectRef Name="Room_Medium_Tiled" ID="{0C0A3A92-A571-4FDB-AB40-ACFED04E0217}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Designed, Bass Dive, Trailer Sub, Fall Down, Medium, Clean 01 SND35979" ID="{6306ED63-5767-4220-BE48-11F3E0EFA476}">
+											<Language>SFX</Language>
+											<AudioFile>Designed, Bass Dive, Trailer Sub, Fall Down, Medium, Clean 01 SND35979.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="432200479"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Designed, Bass Dive, Trailer Sub, Fall Down, Medium, Clean 01 SND35979" ID="{6306ED63-5767-4220-BE48-11F3E0EFA476}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_obj_setting_binding_trap" ID="{C005F39E-A3BA-4425-969D-BA1ED25A0A8B}" ShortID="258970777">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+											<ObjectRef Name="Room_Medium_Tiled" ID="{0C0A3A92-A571-4FDB-AB40-ACFED04E0217}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Hygiene, Hair Gel, Pouch Noise, Squeeze Empty, Just Air 02 SND26029" ID="{A61088B6-990B-4459-81B4-FF6D557DD226}">
+											<Language>SFX</Language>
+											<AudioFile>Hygiene, Hair Gel, Pouch Noise, Squeeze Empty, Just Air 02 SND26029.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="414820268"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Hygiene, Hair Gel, Pouch Noise, Squeeze Empty, Just Air 02 SND26029" ID="{A61088B6-990B-4459-81B4-FF6D557DD226}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_obj_cutting_net" ID="{30DDA913-B1B1-49E3-8F0A-01B8CD001642}" ShortID="384325965">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-560</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+											<ObjectRef Name="Room_Medium_Tiled" ID="{0C0A3A92-A571-4FDB-AB40-ACFED04E0217}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Fabric Rip by fotoshop Id-93346" ID="{A28F5111-A292-4562-945D-EC49A2407FE9}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0102048894197204"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0446463912112767"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0478354191549393"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.167742869836654"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Fabric Rip by fotoshop Id-93346.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="573015509"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Fabric Rip by fotoshop Id-93346" ID="{A28F5111-A292-4562-945D-EC49A2407FE9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_obj_burning_fuse" ID="{5D53042C-9375-495B-AF56-DC22FD1D8276}" ShortID="297959366">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>39</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+											<ObjectRef Name="Room_Medium_Tiled" ID="{0C0A3A92-A571-4FDB-AB40-ACFED04E0217}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Fire, Burning, Textures, Fuse On Fire, Dark Rumble SND42944" ID="{7D41AB72-7EB7-4386-ACD7-F7017F0A1553}">
+											<Language>SFX</Language>
+											<AudioFile>Fire, Burning, Textures, Fuse On Fire, Dark Rumble SND42944.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="575544239"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Fire, Burning, Textures, Fuse On Fire, Dark Rumble SND42944" ID="{7D41AB72-7EB7-4386-ACD7-F7017F0A1553}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_obj_radar_use" ID="{CACF1103-8202-47A9-B8AC-5D68631A76F9}" ShortID="838114809">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>39</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>44</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-280</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-14</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+											<ObjectRef Name="Room_Medium_Tiled" ID="{0C0A3A92-A571-4FDB-AB40-ACFED04E0217}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Aircraft, Radio Controlled, Drone, Nano, Pass Fast SND29506 1" ID="{228379B0-34D1-4720-B594-8B1C67DCF28B}">
+											<Language>SFX</Language>
+											<AudioFile>Aircraft, Radio Controlled, Drone, Nano, Pass Fast SND29506 1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="49311639"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Aircraft, Radio Controlled, Drone, Nano, Pass Fast SND29506 1" ID="{228379B0-34D1-4720-B594-8B1C67DCF28B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_obj_spike_trap_activate" ID="{FF085CE6-8ED5-42FB-9387-CB1DC1B5743F}" ShortID="762559163">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-1060</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-8</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+											<ObjectRef Name="Room_Medium_Tiled" ID="{0C0A3A92-A571-4FDB-AB40-ACFED04E0217}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gore, Bone, Break, Snap 01 SND22229" ID="{6761ADF7-5DF5-48A6-8269-2CC891D39393}">
+											<Language>SFX</Language>
+											<AudioFile>Gore, Bone, Break, Snap 01 SND22229.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="640247824"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gore, Bone, Break, Snap 01 SND22229" ID="{6761ADF7-5DF5-48A6-8269-2CC891D39393}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
@@ -3390,16 +3892,15 @@
 									</ValueList>
 								</Property>
 								<Property Name="OverrideEffect" Type="bool" Value="True"/>
-								<Property Name="OverridePositioning" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-17</Value>
+										<Value>-9</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+									<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -3524,7 +4025,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="footstep" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+									<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
@@ -3618,6 +4119,81 @@
 							<ObjectLists/>
 							<ActiveSourceList>
 								<ActiveSource Name="Cloth, Flap, Whoosh SND36449 1" ID="{EFAF4B89-B58D-4B62-9BEC-1808AE09B7E9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_supplies" ID="{D2026D39-40C1-4DE3-8667-68E2698269C4}" ShortID="1027444133">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-14</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Ambient Hits, Mid, Gong Like, Bright Shimmer End SND41467" ID="{47E56401-BF9A-4FAF-B33A-7096C9BE1A40}">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+									</ReferenceList>
+									<Language>SFX</Language>
+									<AudioFile>Ambient Hits, Mid, Gong Like, Bright Shimmer End SND41467.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="325261215"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="Ambient Hits, Mid, Gong Like, Bright Shimmer End SND41467" ID="{47E56401-BF9A-4FAF-B33A-7096C9BE1A40}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_end_attack_cooldown" ID="{F1E25031-7305-45F2-8748-8E4C12ACDCAA}" ShortID="289064337">
+							<PropertyList>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Room_Medium_Tiled" ID="{0C0A3A92-A571-4FDB-AB40-ACFED04E0217}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Cooking, Knife, Slide In Plastic Protective Cover Sheath 2 SND26936" ID="{40D6803D-EF90-4F0D-9E6A-2F3812DAA5BA}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.0979279580152672"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.134436187977099"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.220767414122138"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Cooking, Knife, Slide In Plastic Protective Cover Sheath 2 SND26936.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="328130194"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="Cooking, Knife, Slide In Plastic Protective Cover Sheath 2 SND26936" ID="{40D6803D-EF90-4F0D-9E6A-2F3812DAA5BA}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
