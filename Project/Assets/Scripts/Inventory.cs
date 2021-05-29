@@ -209,6 +209,9 @@ public class Inventory : MonoBehaviourPunCallbacks
                     int variant = Random.Range(0, player.camoObjects.Length);
                     player.GetComponent<PhotonView>().RPC("CamoSpell", RpcTarget.AllBuffered,variant);
                     break;
+                case 3:
+                    player.SilentPotion();
+                    break;
 
             }
 

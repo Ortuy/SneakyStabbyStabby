@@ -79,6 +79,7 @@ public class Player : MonoBehaviourPunCallbacks
     public Text goldText, mapNameText, mapNameTextRadar;
     public bool destroyWeb = false;
     public bool isTrapped, isSprinting;
+    public bool silentPotionActive;
 
 
 
@@ -1005,6 +1006,40 @@ public class Player : MonoBehaviourPunCallbacks
         {
             timeSprintRemaining = 4;
             sprintPotionActive = false;
+
+            inventory.currentPassive = null;
+
+            canUsePotion = true;
+        }
+    }
+    public void SilentPotion()
+    {
+        if (photonView.IsMine)
+        {
+
+            silentPotionActive = true;
+            StartCoroutine("PotionStopWorking3");
+        }
+
+    }
+    IEnumerator PotionStopWorking3()
+    {
+        int timeLeft = Mathf.FloorToInt(pasiveItemTimeWorking);
+        potionCooldownText.transform.parent.gameObject.SetActive(true);
+
+        while (timeLeft > 0)
+        {
+            potionCooldownText.text = timeLeft.ToString();
+            yield return new WaitForSeconds(1);
+            timeLeft--;
+        }
+
+        potionCooldownText.transform.parent.gameObject.SetActive(false);
+
+        if (photonView.IsMine)
+        {
+
+            silentPotionActive = false;
 
             inventory.currentPassive = null;
 

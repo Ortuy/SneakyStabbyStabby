@@ -59070,6 +59070,7 @@ MonoBehaviour:
   destroyWeb: 0
   isTrapped: 0
   isSprinting: 0
+  silentPotionActive: 0
   moveSpeed: 3
   shootSpeed: 18
   playerID: 0

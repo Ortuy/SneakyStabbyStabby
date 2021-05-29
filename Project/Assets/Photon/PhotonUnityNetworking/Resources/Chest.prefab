@@ -7347,12 +7347,12 @@ MonoBehaviour:
   chestlIsActive: 1
   spawnTime: 60
   dropPos: {fileID: 7113226272059822217}
-  pickup1: {fileID: 6016474575503332140, guid: e783a91ac1908a343a1bef5fbeae7a8d, type: 3}
+  pickup1: {fileID: 6016474575503332140, guid: d0096c7395cd4a14590a80fa508a7d80, type: 3}
   pickup2: {fileID: 6016474575503332140, guid: c66d80d1ed6802d48ba62afbd367f5e2, type: 3}
   pickup3: {fileID: 6016474575503332140, guid: 9dd5822f9fb932a4ea124131a2735652, type: 3}
   pickup4: {fileID: 6016474575503332140, guid: c872a01f6838bed419b7d1da564979a4, type: 3}
   pickup5: {fileID: 6016474575503332140, guid: 358c949d105326948a8fc196f2b0edb5, type: 3}
-  pickup6: {fileID: 6016474575503332140, guid: 358c949d105326948a8fc196f2b0edb5, type: 3}
+  pickup6: {fileID: 6016474575503332140, guid: 18a9ee4fb24226a4ca6db2bf9f5fb63a, type: 3}
   pickup7: {fileID: 6016474575503332140, guid: 7c189a1d93ea19a499758c109fe78dc8, type: 3}
   pickup8: {fileID: 6016474575503332140, guid: b7fdac3e149caeb47b82e22403c75a4a, type: 3}
   pickup9: {fileID: 6016474575503332140, guid: 3c4cccf8f876db44796d26131f7d8ef3, type: 3}
@@ -7370,7 +7370,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7203aa5d5ffb1ea4daf203f0b2fb049a, type: 3}
   - {fileID: 21300000, guid: df0c065e9a7a58c46926b78f05763d28, type: 3}
   - {fileID: 21300000, guid: d7d06f0af5a60df48ae1db7f1db76e0e, type: 3}
-  - {fileID: 21300000, guid: 7203aa5d5ffb1ea4daf203f0b2fb049a, type: 3}
+  - {fileID: 21300000, guid: 46f187448d34b6541b1393f4cf670014, type: 3}
   - {fileID: 21300000, guid: 5f3ab2d52dc42e3478350ecdbace8a3e, type: 3}
   - {fileID: 21300000, guid: b5446573a49994445883914bcc64a4e4, type: 3}
   - {fileID: 21300000, guid: 487022513042e2d47824d50bc6de9f4e, type: 3}

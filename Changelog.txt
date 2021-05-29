@@ -304,3 +304,8 @@
 ### Fixed
 - (Hopefully) fixed the bugs with joining the 6 player map
 - Fixed the dead player ghosts interacting with objects
+## [0.3.2] - 2021-05-29
+### Added
+- Silent potion
+### Fixed
+- Empty item from the chest
