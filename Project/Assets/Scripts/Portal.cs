@@ -97,7 +97,9 @@ public class Portal : MonoBehaviourPunCallbacks
     [PunRPC]
     private void ShowSupplyText()
     {
-        if(managers == null)
+        AkSoundEngine.PostEvent("sfx_supplies", gameObject, gameObject);
+
+        if (managers == null)
         {
             managers = FindObjectsOfType<GameManager>();
         }

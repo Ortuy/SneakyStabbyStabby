@@ -534,7 +534,7 @@ public class Player : MonoBehaviourPunCallbacks
         }
         stabCooldownText.transform.parent.gameObject.SetActive(false);
         stabReady = true;
-
+        AkSoundEngine.PostEvent("sfx_end_attack_cooldown", gameObject, gameObject);
         torsoAnimator.SetBool("Loaded", true);
     }
 

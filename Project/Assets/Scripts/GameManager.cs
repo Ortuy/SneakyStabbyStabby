@@ -309,10 +309,13 @@ public class GameManager : MonoBehaviourPunCallbacks
         countdownStarted = true;
         victoryText.gameObject.SetActive(true);
         victoryText.text = "3";
+        AkSoundEngine.PostEvent("ui_countdown", gameObject, gameObject);
         yield return new WaitForSeconds(1f);
         victoryText.text = "2";
+        AkSoundEngine.PostEvent("ui_countdown", gameObject, gameObject);
         yield return new WaitForSeconds(1f);
         victoryText.text = "1";
+        AkSoundEngine.PostEvent("ui_countdown", gameObject, gameObject);
         yield return new WaitForSeconds(1f);
         victoryText.gameObject.SetActive(false);
 

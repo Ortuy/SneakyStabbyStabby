@@ -56,7 +56,6 @@ public class Vegetation : MonoBehaviour
             case VegetationType.PLANT_SMALL:
                 AkSoundEngine.SetState("bush", "small");
                 AkSoundEngine.PostEvent("amb_bush_rustle_enter", gameObject, gameObject);
-                //Put code to play the small plant rustle sound here!
                 break;
             case VegetationType.SHROOMS:
                 AkSoundEngine.PostEvent("amb_schroom_enter", gameObject, gameObject);
@@ -64,10 +63,9 @@ public class Vegetation : MonoBehaviour
             case VegetationType.PUDDLE:
                 AkSoundEngine.SetSwitch("surface", "water", gameObject);
                 AkSoundEngine.PostEvent("char_footsteps", gameObject, gameObject);
-                //Put code to play the puddle splash sound here!
                 break;
             case VegetationType.BIRDS:
-                //Put code to play the flying birds sound here!
+                AkSoundEngine.PostEvent("amb_flying_birds", gameObject, gameObject);
                 break;
         }
     }
