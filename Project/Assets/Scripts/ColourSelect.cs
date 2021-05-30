@@ -24,10 +24,11 @@ public class ColourSelect : InteractableObject
 
         foreach(Player player in players)
         {
-            if(!player.photonView.IsMine)
-            {
-                colourLocked[player.currentColourID] = true;
-            }
+            colourLocked[player.currentColourID] = true;
+            //if (!player.photonView.IsMine)
+            //{
+            //    colourLocked[player.currentColourID] = true;
+            //}
         }
     }
 

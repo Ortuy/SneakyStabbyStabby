@@ -100,7 +100,7 @@ public class Player : MonoBehaviourPunCallbacks
     public Inventory inventory;
     public Text stabCooldownText, potionCooldownText;
 
-    public ParticleSystem footstep, footstepStone, footstepWood, camoFX, stimFX, visionFX, blinkFX, crossbowFX, trapFX;
+    public ParticleSystem footstep, footstepStone, footstepWood, camoFX, stimFX, visionFX, blinkFX, crossbowFX, trapFX, muffleFX;
     public SpriteRenderer glowingFootstep;
 
     [SerializeField] private Slider staminaBar;
@@ -164,12 +164,26 @@ public class Player : MonoBehaviourPunCallbacks
 
         colourSelectOnLevel = FindObjectOfType<ColourSelect>();
 
-        if (PlayerPrefs.HasKey("playerColour"))
+        if(photonView.IsMine)
         {
-            var colourTemp = PlayerPrefs.GetInt("playerColour");
-            if (!colourSelectOnLevel.colourLocked[colourTemp])
+            if (PlayerPrefs.HasKey("playerColour"))
             {
-                SetColourID(colourTemp);
+                var colourTemp = PlayerPrefs.GetInt("playerColour");
+                if (!colourSelectOnLevel.colourLocked[colourTemp])
+                {
+                    SetColourID(colourTemp);
+                }
+                else
+                {
+                    for (int i = 0; i < 8; i++)
+                    {
+                        if (!colourSelectOnLevel.colourLocked[i])
+                        {
+                            SetColourID(i);
+                            PlayerPrefs.SetInt("playerColour", i);
+                        }
+                    }
+                }
             }
             else
             {
@@ -183,18 +197,6 @@ public class Player : MonoBehaviourPunCallbacks
                 }
             }
         }
-        else
-        {
-            for (int i = 0; i < 8; i++)
-            {
-                if (!colourSelectOnLevel.colourLocked[i])
-                {
-                    SetColourID(i);
-                    PlayerPrefs.SetInt("playerColour", i);
-                }
-            }
-        }
-
         //playerCamera.transform.SetParent(null);
     }
 
@@ -1045,7 +1047,8 @@ public class Player : MonoBehaviourPunCallbacks
     {
         if (photonView.IsMine)
         {
-
+            muffleFX.Play();
+            AkSoundEngine.PostEvent("sfx_obj_visionpotion", gameObject, gameObject);
             silentPotionActive = true;
             StartCoroutine("PotionStopWorking3");
         }
