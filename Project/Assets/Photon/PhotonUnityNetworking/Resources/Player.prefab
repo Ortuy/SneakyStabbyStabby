@@ -64089,14 +64089,34 @@ MonoBehaviour:
   - Mooreton Family
   - The Bold Ones
   guildDescriptions:
-  - (temp) basically the king's pet killers
-  - (temp) they kill for anyone who pays
-  - (temp) they want to overthrow the monarchs and nobles
-  - (temp) a street gang
-  - (temp) tools for merchants' schemes
-  - (temp) some kind of Lovecraftian shit
-  - (temp) the biggest noble family, even more shemes
-  - (temp) they kill in plain sight, without hiding
+  - It is said the king rules absolute, but during his lengthy reign, he has found
+    many a dissident trying to undermine the statement. And thus was born the Ministry
+    of Shadows, protecting the tyrant with blades in the dark.
+  - If one called a member of the Guild a hired thug, one would quickly find themselves
+    dead in the gutter, a crossbow bolt sticking from the heart. No insult is greater
+    to those killers, who see themselves as masters of a delicate, elegant art.
+  - Dangerous fugitives, disgraced nobles, displeased peasants, anarchists, who dodged
+    the steel arm of the royal law. Lurking in dark alleys, shrouded by night, piece
+    by piece, they bring together a more just world.
+  - Deep in the capital's underbelly, beyond the eyes of the throne, a different
+    kind of hierarchy emerged. When you see a mark of a snake's head, you know you
+    walked into the territory of the Adderfangs. The look in the eyes of bystanders
+    tells you you're already watched.
+  - It didn't take long for the tradesmen to find the perfect form of leverage. After
+    all, it's common sense that a potential investor is more willing to pay with
+    a knife to the throat and a competitor loses their edge when they lay face-down
+    in a pool of blood.
+  - Even it the most tolerant of kingdoms, there is one religion persecuted without
+    relent. Still, those faithful to the abhorrent god of death continue their worship
+    in secrecy. Trained as killers, they bring sacrifices to wake the deity from
+    its everlasting slumber.
+  - None of the nobility hold more power than the Mooretons. The scions of the ancient
+    house live high in their palaces, detached from reality but hungry for more influence.
+    They will stop short of nothing to approach the throne, not even kidnapping children
+    and training them as killers.
+  - The brash tradition of murder cultivated by the gang is nothing short of a marvel.
+    They scoff at veils and shadowy cloaks, choosing gaudy silks instead and broad
+    daylight instead. When The Bold Ones arrive for someone's head, they send a message.
 --- !u!114 &5440725864618505865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116160,12 +116180,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-    in culpa qui officia deserunt mollit anim id est laborum.
+  m_Text: Deep in the capital's underbelly, beyond the eyes of the throne, a different
+    kind of hierarchy emerged. When you see a mark of a snake's head, you know you
+    walked into the territory of the Adderfangs. The look in the eyes of bystanders
+    tells you you're already watched.
 --- !u!1 &8177922455512053397
 GameObject:
   m_ObjectHideFlags: 0
