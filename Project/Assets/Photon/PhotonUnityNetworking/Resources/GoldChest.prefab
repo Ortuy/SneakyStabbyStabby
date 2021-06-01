@@ -226,8 +226,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1442127039
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: -2054668099214213088, guid: 65ce509cfd877c24cae9075b88c4fc63,
     type: 3}
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chestIsActive: 0
-  spawnTime: 60
+  spawnTime: 90
   itemNum: 0
   dropPosNum: 5
   dropPos: {fileID: 4477751074548902837}

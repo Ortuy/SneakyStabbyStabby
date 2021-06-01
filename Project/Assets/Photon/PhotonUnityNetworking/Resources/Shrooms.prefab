@@ -603,7 +603,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 1
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -10639,7 +10639,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1048197651
   m_SortingLayer: -2
-  m_SortingOrder: 5
+  m_SortingOrder: 6
   m_Sprite: {fileID: -3527876879021525145, guid: 0b6b27e681d8e0141a3d045755583942,
     type: 3}
   m_Color: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 0.5529412}
@@ -10805,7 +10805,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1048197651
   m_SortingLayer: -2
-  m_SortingOrder: 5
+  m_SortingOrder: 6
   m_Sprite: {fileID: -3527876879021525145, guid: 0b6b27e681d8e0141a3d045755583942,
     type: 3}
   m_Color: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 0.5529412}
@@ -11003,7 +11003,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1048197651
   m_SortingLayer: -2
-  m_SortingOrder: 5
+  m_SortingOrder: 6
   m_Sprite: {fileID: -3527876879021525145, guid: 0b6b27e681d8e0141a3d045755583942,
     type: 3}
   m_Color: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 0.5529412}
@@ -11284,7 +11284,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1048197651
   m_SortingLayer: -2
-  m_SortingOrder: 5
+  m_SortingOrder: 6
   m_Sprite: {fileID: -3527876879021525145, guid: 0b6b27e681d8e0141a3d045755583942,
     type: 3}
   m_Color: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 0.5529412}
@@ -11367,7 +11367,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1048197651
   m_SortingLayer: -2
-  m_SortingOrder: 5
+  m_SortingOrder: 6
   m_Sprite: {fileID: -3527876879021525145, guid: 0b6b27e681d8e0141a3d045755583942,
     type: 3}
   m_Color: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 0.5529412}
@@ -11672,7 +11672,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1048197651
   m_SortingLayer: -2
-  m_SortingOrder: 5
+  m_SortingOrder: 6
   m_Sprite: {fileID: -3527876879021525145, guid: 0b6b27e681d8e0141a3d045755583942,
     type: 3}
   m_Color: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 0.5529412}
@@ -16924,7 +16924,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0

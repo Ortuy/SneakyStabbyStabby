@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1048197651
   m_SortingLayer: -2
-  m_SortingOrder: 2
+  m_SortingOrder: 8
   m_Sprite: {fileID: -6252805913084083930, guid: e89344c4ac2870a47a3b2663bf8775fd,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

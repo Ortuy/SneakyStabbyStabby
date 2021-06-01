@@ -304,6 +304,7 @@
 ### Fixed
 - (Hopefully) fixed the bugs with joining the 6 player map
 - Fixed the dead player ghosts interacting with objects
+
 ## [0.3.2] - 2021-05-29
 ### Added
 - Silent potion
@@ -311,3 +312,16 @@
 - Pickups dissapear over time 
 ### Fixed
 - Empty item from the chest
+- Hearing audio from around other players even when out of range
+
+## [0.4.0] - 2021-06-01
+### Added
+- Improved colour picking - one person of each colour only, the game remembers the last colour
+- Guild descriptions
+### Changed
+- Reduced gold values to 5, 7 and 10
+- Increased gold chest refresh time to 90 seconds
+- Decreased radar refresh time to 60 seconds
+- Increased the range of the detector trap to 4.5
+### Fixed
+- Cleaned up all sprite sorting orders
