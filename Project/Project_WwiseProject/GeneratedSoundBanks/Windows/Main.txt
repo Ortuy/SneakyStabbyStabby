@@ -4,6 +4,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	171029537	sfx_change_color			\Default Work Unit\SFX\sfx_change_color	
 	205229924	Music_Ambient_Drone			\Default Work Unit\Music\Music_Ambient_Drone	
 	237514306	sfx_pickup_gold			\Default Work Unit\SFX\sfx_pickup_gold	
+	318795889	sfx_obj_build_trap			\Default Work Unit\SFX\sfx_obj\sfx_obj_build_trap	
 	490354319	sfx_box_destroy			\Default Work Unit\SFX\sfx_box_destroy	
 	601065099	ui_wood_panel_options_checkbox			\Default Work Unit\UI\ui_wood_panel_options_checkbox	
 	601085705	sfx_obj_radar_use			\Default Work Unit\SFX\sfx_obj\sfx_obj_radar_use	
@@ -77,6 +78,9 @@ Custom State	ID	Name	State Group	Owner		Notes
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	3671138082	New_Game_Parameter			\Default Work Unit\New_Game_Parameter	
 
+Modulator Envelope	ID	Name			Wwise Object Path	Notes
+	148610905	Modulator Envelope (Custom)				
+
 Effect plug-ins	ID	Name	Type				Notes
 	4496003	Dirty_Washing_Machine	Wwise RoomVerb			
 	790223115	Wwise Parametric EQ (Custom)	Wwise Parametric EQ			
@@ -140,6 +144,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	575544239	sfx_obj_burning_fuse	D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Fire, Burning, Textures, Fuse On Fire, Dark Rumble SND42944_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\sfx_object\sfx_obj_burning_fuse		484300
 	613104621	Knife, Swish, Air, Slash Movements SND34526 5	D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Knife, Swish, Air, Slash Movements SND34526 5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\Weapon\char_knife_swinging\Knife, Swish, Air, Slash Movements SND34526 5		27432
 	614058351	amb_schroom_enter	D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Gore, Stab, Impact, Vegetables, Slurps With Air, Bloody, Flesh 02 SND10415 3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\amb_schroom\amb_schroom_enter		186684
+	615672321	sfx_obj_build_trap	D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\hammer_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\sfx_object\sfx_obj_build_trap		101688
 	620292358	ui_wood_panel_exit	D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Wood, Impact, Hit, Table, Hard SND4258 7_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\ui_wood_panel_exit		50378
 	640247824	sfx_obj_spike_trap_activate	D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Gore, Bone, Break, Snap 01 SND22229_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\sfx_object\sfx_obj_spike_trap_activate		42040
 	654784289	Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 9	D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Windows\SFX\Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 9_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\char_footstep\char_footstep_stone\Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 9		35360

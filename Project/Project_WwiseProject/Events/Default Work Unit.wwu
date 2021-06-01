@@ -444,10 +444,20 @@
 								</Event>
 								<Event Name="sfx_obj_setting_gel_trap" ID="{1EE2DD18-995B-4864-B72E-8BC8577839FD}">
 									<ChildrenList>
-										<Action Name="" ID="{9087934C-692F-4FA5-871F-1429B5A158AB}" ShortID="214265583">
+										<Action Name="" ID="{C9D54E71-A412-47E4-9332-488C2A719A8C}" ShortID="1061139665">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.5"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="sfx_obj_setting_gel_trap" ID="{30F10008-C93F-4A0B-BA9D-41CB4551C03C}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+													<ObjectRef Name="sfx_obj_getting_into_gel_trap" ID="{136B0D8A-DD34-4B8D-AB37-E7C63C6FB3BB}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{DA42088C-6D5C-40E5-BA5C-F2AEBC061130}" ShortID="496240063">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="sfx_obj_build_trap" ID="{017E327E-A0A4-48F2-A8E7-1BF2E3089BEE}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -470,6 +480,17 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="sfx_obj_spike_trap_activate" ID="{FF085CE6-8ED5-42FB-9387-CB1DC1B5743F}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="sfx_obj_build_trap" ID="{1206B310-7126-499A-AD6F-802DE4725DBA}">
+									<ChildrenList>
+										<Action Name="" ID="{85BD0150-B29A-4EC6-AFF6-069D80867D74}" ShortID="1043064030">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="sfx_obj_build_trap" ID="{017E327E-A0A4-48F2-A8E7-1BF2E3089BEE}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

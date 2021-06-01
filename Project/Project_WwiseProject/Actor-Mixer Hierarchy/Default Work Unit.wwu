@@ -2936,9 +2936,19 @@
 						</RandomSequenceContainer>
 						<Sound Name="amb_waterfall" ID="{94CAE844-DEAD-405E-9DBD-0BAF80ADC5EB}" ShortID="699473288">
 							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
 								</Reference>
@@ -2947,26 +2957,30 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="Water, River, Medium Size, Close 2 SND3355" ID="{4E3CAE59-3DE2-4136-B21E-75130F261273}">
+								<AudioFileSource Name="wodospad" ID="{1D41611D-07F4-413D-BBDF-88BB5C62BB14}">
 									<Language>SFX</Language>
-									<AudioFile>Water, River, Medium Size, Close 2 SND3355.wav</AudioFile>
+									<AudioFile>wodospad.wav</AudioFile>
 									<MediaIDList>
-										<MediaID ID="864051607"/>
+										<MediaID ID="893744976"/>
 									</MediaIDList>
 								</AudioFileSource>
 							</ChildrenList>
+							<PositioningInfo>
+								<Position Name="" ID="{52E6C836-FE48-4EA3-8AEE-61EF952E863A}"/>
+							</PositioningInfo>
 							<ObjectLists/>
 							<ActiveSourceList>
-								<ActiveSource Name="Water, River, Medium Size, Close 2 SND3355" ID="{4E3CAE59-3DE2-4136-B21E-75130F261273}" Platform="Linked"/>
+								<ActiveSource Name="wodospad" ID="{1D41611D-07F4-413D-BBDF-88BB5C62BB14}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 						<RandomSequenceContainer Name="amb_birds" ID="{2746DA4E-6E85-4484-92F2-389F7C6E35E3}" ShortID="50685475">
 							<PropertyList>
-								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="3DPosition" Type="int16" Value="1"/>
+								<Property Name="EnableAttenuation" Type="bool" Value="False"/>
 								<Property Name="OverrideEffect" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-27</Value>
+										<Value>-14</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -3055,6 +3069,9 @@
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
+							<PositioningInfo>
+								<Position Name="" ID="{E3ED1700-3BBF-44E8-8286-6994873CC501}"/>
+							</PositioningInfo>
 							<ObjectLists/>
 						</RandomSequenceContainer>
 					</ChildrenList>
@@ -3697,6 +3714,39 @@
 											<ValueList>
 												<Value>-5</Value>
 											</ValueList>
+											<RTPCList>
+												<RTPC Name="" ID="{D8CAEA2C-60CA-4B4B-9DB0-1599FE81C27E}" ShortID="1033136978">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<Custom>
+																<ModulatorEnvelope Name="Modulator Envelope (Custom)" ID="{0EF0EFD5-B2B4-495E-9AC6-3CD9489C8B2A}" ShortID="148610905">
+																	<PropertyList>
+																		<Property Name="EnvelopeAttackTime" Type="Real64" Value="0.558"/>
+																		<Property Name="EnvelopeReleaseTime" Type="Real64" Value="0.721"/>
+																	</PropertyList>
+																</ModulatorEnvelope>
+															</Custom>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{D460804A-5869-4BC4-A642-9837C7252E68}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-200</YPos>
+																<Flags>21</Flags>
+															</Point>
+															<Point>
+																<XPos>1</XPos>
+																<YPos>0</YPos>
+																<Flags>53</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
+											</RTPCList>
 										</Property>
 									</PropertyList>
 									<ReferenceList>
@@ -3823,6 +3873,60 @@
 									<ObjectLists/>
 									<ActiveSourceList>
 										<ActiveSource Name="Gore, Bone, Break, Snap 01 SND22229" ID="{6761ADF7-5DF5-48A6-8269-2CC891D39393}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_obj_build_trap" ID="{017E327E-A0A4-48F2-A8E7-1BF2E3089BEE}" ShortID="775632331">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>32</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>56</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-730</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-8</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="sfx" ID="{F6F2E144-1A4E-4FAF-8523-D34FF293341B}" WorkUnitID="{BEAC0A93-CC79-4E89-8A91-2A4D9D2FC23E}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3BDE3334-90A9-42A5-8E88-9AF66390B3EA}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+											<ObjectRef Name="Room_Medium_Tiled" ID="{0C0A3A92-A571-4FDB-AB40-ACFED04E0217}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0B07D778-8EEB-4EA3-AFB3-673F7A95D97B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="hammer" ID="{AAE7429F-26BE-4285-A4E5-D63EAD9DE471}">
+											<Language>SFX</Language>
+											<AudioFile>hammer.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="615672321"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="hammer" ID="{AAE7429F-26BE-4285-A4E5-D63EAD9DE471}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>

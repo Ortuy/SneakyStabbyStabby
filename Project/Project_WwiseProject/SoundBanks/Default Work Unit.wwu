@@ -38,6 +38,7 @@
 						<ObjectRef Name="char_footstep_dash" ID="{81BA43F9-81B5-4963-BAE5-5D32C38565DC}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Music" ID="{819F6A3E-695E-4964-B9FB-1F5E08D9B862}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="SFX" ID="{975A747A-5318-4977-9ED0-14F5B538C135}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="sfx_obj_build_trap" ID="{1206B310-7126-499A-AD6F-802DE4725DBA}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="UI" ID="{1A24ED6D-A0C2-499F-A8F7-EAFCBABC865C}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Ambience" ID="{1ABA9297-6D2A-49D9-BAE6-F919317AE155}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="amb_waterfall" ID="{DE87115A-CB09-49D9-8E8D-CD0C36FF2656}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>

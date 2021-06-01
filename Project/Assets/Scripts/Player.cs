@@ -928,6 +928,7 @@ public class Player : MonoBehaviourPunCallbacks
 
     public void Spikepit()
     {
+        
         AkSoundEngine.PostEvent("sfx_obj_spikepit", gameObject, gameObject);
         GameObject obj = PhotonNetwork.Instantiate(spikePitObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();

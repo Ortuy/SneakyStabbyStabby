@@ -16,7 +16,7 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="251891979">
+		<SoundBank Id="3161908922" Language="SFX" Hash="1376683698">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -73,7 +73,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3871099588" Name="amb_waterfall" ObjectPath="\Events\Default Work Unit\Ambience\amb_waterfall" DurationType="Infinite">
+				<Event Id="3871099588" Name="amb_waterfall" ObjectPath="\Events\Default Work Unit\Ambience\amb_waterfall" MaxAttenuation="12.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="864051607" Language="SFX">
 							<ShortName>Water, River, Medium Size, Close 2 SND3355.wav</ShortName>
@@ -353,6 +353,14 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="318795889" Name="sfx_obj_build_trap" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_build_trap" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.806904" DurationMax="0.806904">
+					<IncludedMemoryFiles>
+						<File Id="615672321" Language="SFX">
+							<ShortName>hammer.wav</ShortName>
+							<Path>SFX\hammer_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="3544644124" Name="sfx_obj_burning_fuse" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_burning_fuse" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="2.522063" DurationMax="2.522063">
 					<IncludedMemoryFiles>
 						<File Id="575544239" Language="SFX">
@@ -425,11 +433,15 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1201681274" Name="sfx_obj_setting_gel_trap" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_setting_gel_trap" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.285625" DurationMax="0.285625">
+				<Event Id="1201681274" Name="sfx_obj_setting_gel_trap" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_setting_gel_trap" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.915528" DurationMax="0.915528">
 					<IncludedMemoryFiles>
-						<File Id="409538277" Language="SFX">
-							<ShortName>Hygiene, Shaving Gel Can, Lid Off 02 SND27576 1.wav</ShortName>
-							<Path>SFX\Hygiene, Shaving Gel Can, Lid Off 02 SND27576 1_10C4C929.wem</Path>
+						<File Id="11930197" Language="SFX">
+							<ShortName>Hygiene, Hair Gel, Squeeze From Plastic Pouch, Squirt 01 SND26041.wav</ShortName>
+							<Path>SFX\Hygiene, Hair Gel, Squeeze From Plastic Pouch, Squirt 01 SND26041_10C4C929.wem</Path>
+						</File>
+						<File Id="615672321" Language="SFX">
+							<ShortName>hammer.wav</ShortName>
+							<Path>SFX\hammer_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
