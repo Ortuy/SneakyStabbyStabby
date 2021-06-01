@@ -1,0 +1,21 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	1427625975	bush			\Default Work Unit\bush	
+	1866025847	footstep			\Default Work Unit\footstep	
+
+State	ID	Name	State Group			Notes
+	647611021	big	bush			
+	748895195	None	bush			
+	1846755610	small	bush			
+	640949982	speed	footstep			
+	748895195	None	footstep			
+	1160234136	normal	footstep			
+	2437297550	inaudible	footstep			
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	2255513057	New Audio Bus			\Default Work Unit\Master Audio Bus\New Audio Bus	
+	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+
+Audio Devices	ID	Name	Type				Notes
+	2317455096	No_Output	No Output			
+	3859886410	System	System			
+

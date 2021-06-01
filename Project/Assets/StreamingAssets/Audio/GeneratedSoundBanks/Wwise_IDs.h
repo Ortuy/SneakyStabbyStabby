@@ -31,6 +31,7 @@ namespace AK
         static const AkUniqueID SFX_CHANGE_COLOR = 171029537U;
         static const AkUniqueID SFX_CROSSBOW_SHOOT = 3500565137U;
         static const AkUniqueID SFX_END_ATTACK_COOLDOWN = 3677607289U;
+        static const AkUniqueID SFX_OBJ_BUILD_TRAP = 318795889U;
         static const AkUniqueID SFX_OBJ_BURNING_FUSE = 3544644124U;
         static const AkUniqueID SFX_OBJ_CAMO = 4108944039U;
         static const AkUniqueID SFX_OBJ_DETECTOR = 919196649U;
