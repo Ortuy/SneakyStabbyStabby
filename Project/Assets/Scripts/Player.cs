@@ -80,7 +80,7 @@ public class Player : MonoBehaviourPunCallbacks
     public bool destroyWeb = false;
     public bool isTrapped, isSprinting;
     public bool silentPotionActive;
-    public bool isGhostPlayer = false;
+
 
 
 
@@ -545,7 +545,7 @@ public class Player : MonoBehaviourPunCallbacks
 
         var intPosition = new Vector3Int(Mathf.FloorToInt(transform.position.x), Mathf.FloorToInt(transform.position.y), 0);
 
-        if (timerSprintRunning & !silentPotionActive)
+        if (timerSprintRunning)
         {
 
             if (GameManager.localInstance.stoneMask.GetTile(intPosition))
@@ -572,7 +572,7 @@ public class Player : MonoBehaviourPunCallbacks
                 footstep.Play();
             }
         }
-        if (!timerSprintRunning & !silentPotionActive)
+        else
         {
             if (GameManager.localInstance.stoneMask.GetTile(intPosition))
             {
@@ -666,14 +666,7 @@ public class Player : MonoBehaviourPunCallbacks
         {
             this.gameObject.layer = 15;
         }
-        if (!isGhostPlayer)
-        {
-            this.gameObject.layer = 0;
-        }
-        if (isGhostPlayer)
-        {
-            this.gameObject.layer = 16;
-        }
+
         if (Input.GetKey(KeyCode.LeftShift) && timeSprintRemaining != 0 && timerSprintRunning2 && isTrapped == false)
         {
             AkSoundEngine.SetState("footstep", "speed");
@@ -1326,7 +1319,6 @@ public class Player : MonoBehaviourPunCallbacks
     {
         this.gameObject.tag = "Player";
     }
-
 
 
 

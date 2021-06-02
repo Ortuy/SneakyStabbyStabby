@@ -32,6 +32,11 @@ public class ColourSelect : InteractableObject
         }
     }
 
+    private void Update()
+    {
+        CheckForInput();
+    }
+
     [PunRPC]
     public void LockColour(int colour)
     {

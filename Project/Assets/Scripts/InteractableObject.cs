@@ -7,7 +7,9 @@ public class InteractableObject : MonoBehaviourPunCallbacks
 {
     [SerializeField] private GameObject interactionKeyIndicator;
     protected PhotonView targetPV;
+    protected Player targetPlayer;
     protected bool interactionOn;
+    protected bool playerInRange;
 
     protected virtual void StartInteraction()
     {
@@ -19,44 +21,78 @@ public class InteractableObject : MonoBehaviourPunCallbacks
 
     }
 
+    //Run this in the update method
+    protected void CheckForInput()
+    {
+        if(playerInRange && targetPV.IsMine)
+        {
+            if (Input.GetKeyDown(KeyCode.E) && !interactionOn)
+            {
+                targetPlayer.isInteracting = true;
+                interactionOn = true;
+                StartInteraction();
+
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape) && interactionOn)
+            {
+                Debug.Log("InteractionCancel");
+                //other.GetComponent<Player>().isInteracting = false;
+                StartCoroutine(ClearPlayerInteractionStatus(targetPlayer));
+                interactionOn = false;
+                EndInteraction();
+
+            }
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player") && other.GetComponent<PhotonView>().IsMine)
         {            
             interactionKeyIndicator.SetActive(true);
+            targetPV = other.GetComponent<PhotonView>();
+            targetPlayer = other.GetComponent<Player>();
+            playerInRange = true;
         }
     }
 
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        
-        if (targetPV == null)
-        {
-            if (other.CompareTag("Player") && other.GetComponent<PhotonView>().IsMine)
-            {
-                targetPV = other.GetComponent<PhotonView>();
-            }
-        }
-        else if (other.CompareTag("Player") && targetPV.IsMine)
-        {
-            
-            if (Input.GetKeyDown(KeyCode.E) && !interactionOn)
-            {
-                other.GetComponent<Player>().isInteracting = true;
-                interactionOn = true;
-                StartInteraction();
+    //private void OnTriggerStay2D(Collider2D other)
+    //{       
+    //    if (targetPV == null)
+    //    {
+    //        if (other.CompareTag("Player") && other.GetComponent<PhotonView>().IsMine)
+    //        {
+    //            targetPV = other.GetComponent<PhotonView>();
+    //        }
+    //    }
+    //    else if (other.CompareTag("Player") && targetPV.IsMine)
+    //    {
+    //        Debug.Log("AAAAAAAAAAAAAAAA");
+    //        if (Input.GetKeyDown(KeyCode.E) && !interactionOn)
+    //        {
+    //            other.GetComponent<Player>().isInteracting = true;
+    //            interactionOn = true;
+    //            StartInteraction();
                 
-            }
+    //        }
 
-            if (Input.GetKeyDown(KeyCode.Escape) && interactionOn)
-            {
-                other.GetComponent<Player>().isInteracting = false;
-                interactionOn = false;
-                EndInteraction();
+    //        if (Input.GetKeyDown(KeyCode.Escape) && interactionOn)
+    //        {
+    //            Debug.Log("InteractionCancel");
+    //            //other.GetComponent<Player>().isInteracting = false;
+    //            StartCoroutine(ClearPlayerInteractionStatus(other.GetComponent<Player>()));
+    //            interactionOn = false;
+    //            EndInteraction();
                
-            }
-        }
+    //        }
+    //    }
+    //}
+
+    IEnumerator ClearPlayerInteractionStatus(Player player)
+    {
+        yield return null;
+        player.isInteracting = false;
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -69,8 +105,9 @@ public class InteractableObject : MonoBehaviourPunCallbacks
             {
                 EndInteraction();
                 targetPV = null;
-                
+                targetPlayer = null;
                 interactionOn = false;
+                playerInRange = false;
             }
         }
     }

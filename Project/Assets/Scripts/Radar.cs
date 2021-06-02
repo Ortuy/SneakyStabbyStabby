@@ -65,6 +65,11 @@ public class Radar : InteractableObject
         
     }
 
+    private void Update()
+    {
+        CheckForInput();
+    }
+
     [PunRPC]
     private void StartCooldown()
     {

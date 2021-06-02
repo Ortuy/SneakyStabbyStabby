@@ -179,9 +179,10 @@ public class Health : MonoBehaviourPunCallbacks
     private void Dead()
     {
         player.ChangeTagGhost();
-        player.isGhostPlayer = true;
         GameManager.localInstance.victoryText.gameObject.SetActive(true);
         GameManager.localInstance.victoryText.text = playerName + " is dead!";
+        GameManager.localInstance.secondaryText.text = "";
+        GameManager.localInstance.DisappearText(3f);
         GameManager.localInstance.numerOfPlayers++;
         GameManager.localInstance.MapWin();
         

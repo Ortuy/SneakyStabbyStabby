@@ -325,3 +325,11 @@
 - Increased the range of the detector trap to 4.5
 ### Fixed
 - Cleaned up all sprite sorting orders
+
+## [0.4.1] - 2021-06-02
+### Changed
+- Sped up the slot picking animations
+- Changed the text on the quit button
+### Fixed
+- Fixed pressing esc to hide UI panels
+- Fixed the player death text staying in place forever

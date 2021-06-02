@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviourPunCallbacks
             StartCoroutine(StartCountdown());
         }
 
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) && !localPlayer.GetComponent<Player>().isInteracting)
         {
             onoff = !onoff;
 
@@ -117,8 +117,18 @@ public class GameManager : MonoBehaviourPunCallbacks
                 //sound for closing
             }
 
-
-            TogglePauseMenu();
+            if(!optionsMenu.activeInHierarchy && !mapOut)
+            {
+                TogglePauseMenu();
+            }
+            else if(!mapOut)
+            {
+                ToggleOptions();
+            }
+            else
+            {
+                ToggleMap();
+            }
         }
 
     }

@@ -92,6 +92,8 @@ public class ShopEnter : InteractableObject
 
     public void Update()
     {
+        CheckForInput();
+
         if (shopSlotRange == 1)
         {
             buyBlinding.SetActive(true);
