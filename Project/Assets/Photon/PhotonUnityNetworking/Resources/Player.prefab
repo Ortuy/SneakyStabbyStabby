@@ -63851,7 +63851,7 @@ GameObject:
   - component: {fileID: 3254422218227237968}
   - component: {fileID: 1222969580622465534}
   - component: {fileID: 9090583457795101815}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -64001,6 +64001,7 @@ MonoBehaviour:
   isTrapped: 0
   isSprinting: 0
   silentPotionActive: 0
+  isGhostPlayer: 0
   moveSpeed: 3
   shootSpeed: 18
   playerID: 0
