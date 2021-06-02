@@ -64001,6 +64001,7 @@ MonoBehaviour:
   isTrapped: 0
   isSprinting: 0
   silentPotionActive: 0
+  isGhostPlayer: 0
   moveSpeed: 3
   shootSpeed: 18
   playerID: 0
