@@ -100,7 +100,7 @@ public class Player : MonoBehaviourPunCallbacks
     public Inventory inventory;
     public Text stabCooldownText, potionCooldownText;
 
-    public ParticleSystem footstep, footstepStone, footstepWood, camoFX, stimFX, visionFX, blinkFX, crossbowFX, trapFX, muffleFX;
+    public ParticleSystem footstep, footstepStone, footstepWood, camoFX, stimFX, visionFX, blinkFX, crossbowFX, trapFX, muffleFX, footstepMuffled;
     public SpriteRenderer glowingFootstep;
 
     [SerializeField] private Slider staminaBar;
@@ -601,8 +601,10 @@ public class Player : MonoBehaviourPunCallbacks
 
         }
 
-
-
+        if(silentPotionActive)
+        {
+            footstepMuffled.Play();
+        }
 
         if (timerPaintRunning2)
         {
