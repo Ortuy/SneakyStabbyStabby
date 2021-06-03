@@ -81,6 +81,7 @@ public class Player : MonoBehaviourPunCallbacks
     public bool isTrapped, isSprinting;
     public bool silentPotionActive;
     public bool isGhostPlayer = false;
+    public bool isAliveGhostPlayer = false;
 
 
 
@@ -546,7 +547,7 @@ public class Player : MonoBehaviourPunCallbacks
 
         var intPosition = new Vector3Int(Mathf.FloorToInt(transform.position.x), Mathf.FloorToInt(transform.position.y), 0);
 
-        if (timerSprintRunning & !silentPotionActive)
+        if (timerSprintRunning & !silentPotionActive & !isGhostPlayer & !isAliveGhostPlayer)
         {
 
             if (GameManager.localInstance.stoneMask.GetTile(intPosition))
@@ -573,7 +574,7 @@ public class Player : MonoBehaviourPunCallbacks
                 footstep.Play();
             }
         }
-        if (!timerSprintRunning & !silentPotionActive)
+        if (!timerSprintRunning & !silentPotionActive & !isGhostPlayer & !isAliveGhostPlayer)
         {
             if (GameManager.localInstance.stoneMask.GetTile(intPosition))
             {
@@ -663,15 +664,15 @@ public class Player : MonoBehaviourPunCallbacks
         if (!isBlinking)
         {
             rigidBody.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
-            this.gameObject.layer = 0;
+            this.gameObject.layer = 17;
         }
-        if (isBlinking)
+        if (isBlinking & !isGhostPlayer)
         {
             this.gameObject.layer = 15;
         }
-        if (!isGhostPlayer)
+        if (!isGhostPlayer & !isBlinking)
         {
-            this.gameObject.layer = 0;
+            this.gameObject.layer = 17;
         }
         if (isGhostPlayer)
         {
