@@ -160,7 +160,7 @@ public class Player : MonoBehaviourPunCallbacks
         //legsAnimator = GetComponent<Animator>();
 
         moveSpeed = 5;
-        stabLock = true;
+        //stabLock = true;
         destroyWeb = false;
 
         colourSelectOnLevel = FindObjectOfType<ColourSelect>();
@@ -217,7 +217,7 @@ public class Player : MonoBehaviourPunCallbacks
     private void Start()
     {
         Physics2D.queriesStartInColliders = false;
-
+        stabLock = true;
 
     }
 
@@ -678,7 +678,7 @@ public class Player : MonoBehaviourPunCallbacks
         {
             this.gameObject.layer = 16;
         }
-        if (Input.GetKey(KeyCode.LeftShift) && timeSprintRemaining != 0 && timerSprintRunning2 && isTrapped == false)
+        if (Input.GetKey(KeyCode.LeftShift) && timeSprintRemaining != 0 && /*timerSprintRunning2 &&*/ isTrapped == false & !isGhostPlayer & !isAliveGhostPlayer)
         {
             AkSoundEngine.SetState("footstep", "speed");
             rigidBody.velocity = new Vector2(moveDirection.x * sprint, moveDirection.y * sprint);
@@ -730,7 +730,7 @@ public class Player : MonoBehaviourPunCallbacks
         }
         if (photonView.IsMine && timerSprintRunning == false)
         {
-            timerSprintRunning2 = false;
+            //timerSprintRunning2 = false;
 
             timeSprintRemaining += Time.deltaTime;
 
@@ -750,7 +750,7 @@ public class Player : MonoBehaviourPunCallbacks
             {
 
                 timeSprintRemaining = 8;
-                timerSprintRunning2 = true;
+                //timerSprintRunning2 = true;
 
                 value = 1;
 
@@ -759,7 +759,7 @@ public class Player : MonoBehaviourPunCallbacks
             {
 
                 timeSprintRemaining = 4;
-                timerSprintRunning2 = true;
+                //timerSprintRunning2 = true;
 
                 value = 1;
 
