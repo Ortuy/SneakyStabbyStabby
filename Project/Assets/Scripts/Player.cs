@@ -100,7 +100,7 @@ public class Player : MonoBehaviourPunCallbacks
     public Inventory inventory;
     public Text stabCooldownText, potionCooldownText;
 
-    public ParticleSystem footstep, footstepStone, footstepWood, camoFX, stimFX, visionFX, blinkFX, crossbowFX, trapFX, muffleFX, footstepMuffled;
+    public ParticleSystem footstep, footstepStone, footstepWood, camoFX, stimFX, visionFX, blinkFX, crossbowFX, trapFX, muffleFX, footstepMuffled, footstepGel;
     public SpriteRenderer glowingFootstep;
 
     [SerializeField] private Slider staminaBar;
@@ -463,7 +463,7 @@ public class Player : MonoBehaviourPunCallbacks
 
     IEnumerator Blink()
     {
-        AkSoundEngine.PostEvent("char_footstep_dash", gameObject, gameObject);
+        //Here was the old blink sound line
         var durationLeft = 0.2f;
         var blinkDirection = GetDirectionFromMouse();
         var blinkSpeed = distance / durationLeft;
@@ -492,6 +492,7 @@ public class Player : MonoBehaviourPunCallbacks
     {
         if (isBlinkOn)
         {
+            AkSoundEngine.PostEvent("char_footstep_dash", gameObject, gameObject);
             Color playerColor = new Color(recolorSprites[0].color.r, recolorSprites[0].color.g, recolorSprites[0].color.b, 0);
 
             ghostSprites[0].color = new Color(1, 1, 1, 1);
@@ -608,7 +609,7 @@ public class Player : MonoBehaviourPunCallbacks
 
         if (timerPaintRunning2)
         {
-
+            footstepGel.Play();
             //photonView.RPC("SpawnGlowingFootstep", RpcTarget.AllBuffered);
             SpawnGlowingFootstep();
         }
@@ -801,7 +802,8 @@ public class Player : MonoBehaviourPunCallbacks
     {
         if (stabLock == false)
         {
-            AkSoundEngine.PostEvent("char_knife_swinging", gameObject, gameObject);
+            //AkSoundEngine.PostEvent("char_knife_swinging", gameObject, gameObject);
+            photonView.RPC("PlaySoundEvent", RpcTarget.AllBuffered, "char_knife_swinging");
             StartCoroutine(LockStabbing());
             StartCoroutine(HandleStabAnimation());
             StartCoroutine(WaitAndDeactivateStab());
@@ -916,7 +918,8 @@ public class Player : MonoBehaviourPunCallbacks
         torsoAnimator.SetBool("Stab", true);
         yield return new WaitForSeconds(0.08f);
         crossbowFX.Play();
-        AkSoundEngine.PostEvent("sfx_crossbow_shoot", gameObject, gameObject);
+        //AkSoundEngine.PostEvent("sfx_crossbow_shoot", gameObject, gameObject);
+        photonView.RPC("PlaySoundEvent", RpcTarget.AllBuffered, "sfx_crossbow_shoot");
         StartCoroutine(LockStabbing());
         GameObject obj = PhotonNetwork.Instantiate(boltObject.name, new Vector2(firePos.transform.position.x, firePos.transform.position.y), rotatingBody.transform.rotation, 0);
         Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
@@ -935,41 +938,53 @@ public class Player : MonoBehaviourPunCallbacks
         torsoAnimator.SetBool("Crossbow", value);
     }
 
+    [PunRPC]
+    private void PlaySoundEvent(string sound)
+    {
+        AkSoundEngine.PostEvent(sound, gameObject, gameObject);
+    }
+
     public void Spikepit()
     {
-        
-        AkSoundEngine.PostEvent("sfx_obj_spikepit", gameObject, gameObject);
+        photonView.RPC("PlaySoundEvent", RpcTarget.AllBuffered, "sfx_obj_spikepit");
+        //AkSoundEngine.PostEvent("sfx_obj_spikepit", gameObject, gameObject);
         GameObject obj = PhotonNetwork.Instantiate(spikePitObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
     public void Tripwire()
     {
-        AkSoundEngine.PostEvent("sfx_obj_tripwire", gameObject, gameObject);
+        photonView.RPC("PlaySoundEvent", RpcTarget.AllBuffered, "sfx_obj_tripwire");
+        //AkSoundEngine.PostEvent("sfx_obj_tripwire", gameObject, gameObject);
         GameObject obj = PhotonNetwork.Instantiate(tripwireObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
     public void Blindingtrap()
     {
-        AkSoundEngine.PostEvent("sfx_obj_throw", gameObject, gameObject);
+        photonView.RPC("PlaySoundEvent", RpcTarget.AllBuffered, "sfx_obj_throw");
+        //AkSoundEngine.PostEvent("sfx_obj_throw", gameObject, gameObject);
         GameObject obj = PhotonNetwork.Instantiate(blidingtrapObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
     public void Bomb()
     {
-        AkSoundEngine.PostEvent("sfx_obj_throw", gameObject, gameObject);
-        AkSoundEngine.PostEvent("sfx_obj_burning_fuse", gameObject, gameObject);
+        photonView.RPC("PlaySoundEvent", RpcTarget.AllBuffered, "sfx_obj_throw");
+        photonView.RPC("PlaySoundEvent", RpcTarget.AllBuffered, "sfx_obj_burning_fuse");
+        //AkSoundEngine.PostEvent("sfx_obj_throw", gameObject, gameObject);
+        //AkSoundEngine.PostEvent("sfx_obj_burning_fuse", gameObject, gameObject);
         GameObject obj = PhotonNetwork.Instantiate(bombObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
     public void Geltrap()
     {
-        AkSoundEngine.PostEvent("sfx_obj_setting_gel_trap", gameObject, gameObject);
+        photonView.RPC("PlaySoundEvent", RpcTarget.AllBuffered, "sfx_obj_setting_gel_trap");
+        //AkSoundEngine.PostEvent("sfx_obj_setting_gel_trap", gameObject, gameObject);
         GameObject obj = PhotonNetwork.Instantiate(gelTrapObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
     public void Detector()
     {
-        AkSoundEngine.PostEvent("sfx_obj_detector", gameObject, gameObject);
+        photonView.RPC("PlaySoundEvent", RpcTarget.AllBuffered, "sfx_obj_detector");
+        //AkSoundEngine.PostEvent("sfx_obj_detector", gameObject, gameObject);
         GameObject obj = PhotonNetwork.Instantiate("Detector", new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
