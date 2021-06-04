@@ -93,19 +93,44 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="ui_walls_down" ID="{6964B5C5-7F6D-425B-9EB6-8842DAB075AA}">
+							<ChildrenList>
+								<Action Name="" ID="{541D3F4E-70E5-4883-A423-97A4F746A95C}" ShortID="767150843">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ui_walls_down" ID="{8CABD009-1D1B-485F-82F3-FED6657F18C7}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{8B8FE8A7-DC5C-4E66-B542-F6D6895800E2}" ShortID="710822026">
+									<PropertyList>
+										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ui_walls_down_01" ID="{446AA331-2F8B-4D9F-8E5D-3FA1E78FBFFE}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="ui_start_game" ID="{36E07728-BC62-4C1B-9D3A-CA1C02909F23}">
+							<ChildrenList>
+								<Action Name="" ID="{09CDB531-09BD-4A88-AB21-F6F29E2E76DF}" ShortID="672826046">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ui_start_game" ID="{ACED0B46-852C-4288-8080-BA97AE98B9EC}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Music" ID="{819F6A3E-695E-4964-B9FB-1F5E08D9B862}" ShortID="30761040">
 					<ChildrenList>
 						<Event Name="Music_Ambient_Drone" ID="{73E89B78-0A93-4FD3-9A4C-C9836485148B}">
 							<ChildrenList>
-								<Action Name="" ID="{F806D0A4-3489-478C-BE55-FE729345B149}" ShortID="192686045">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="music" ID="{5679D916-BC0E-4401-B7A2-A1F0C7ED5CF6}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
 								<Action Name="" ID="{C24273ED-BBCD-4C04-ABC9-4829C3DCA84E}" ShortID="722222788">
 									<ReferenceList>
 										<Reference Name="Target">
@@ -117,6 +142,13 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="amb_wings" ID="{79B9D876-AD7E-46D6-BCEF-A845176658C0}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{24FF4CDA-E36B-476F-BFD5-3637D81DA064}" ShortID="359176217">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music" ID="{63C1366B-B7BF-423F-972A-1676E6F6D089}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -596,6 +628,21 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="char_voice_death" ID="{9E45B668-723E-42C8-A5DA-F6B1ABBB8F03}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Seller" ID="{6B6F2787-B9E1-4CCC-9AE2-8F0ECD5E50AC}" ShortID="803063377">
+					<ChildrenList>
+						<Event Name="seller_mmm" ID="{7E486332-764B-474B-AF73-365E521CAF40}">
+							<ChildrenList>
+								<Action Name="" ID="{64CA00B9-7AF1-4C68-A04B-AC1563992B17}" ShortID="157073107">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="seller_mmm" ID="{177CA3BC-BB28-4702-9BBF-D33FC9FF02FE}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

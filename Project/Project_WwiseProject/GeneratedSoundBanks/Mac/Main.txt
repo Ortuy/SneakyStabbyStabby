@@ -78,6 +78,9 @@ Custom State	ID	Name	State Group	Owner		Notes
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	3671138082	New_Game_Parameter			\Default Work Unit\New_Game_Parameter	
 
+Modulator Envelope	ID	Name			Wwise Object Path	Notes
+	148610905	Modulator Envelope (Custom)				
+
 Effect plug-ins	ID	Name	Type				Notes
 	4496003	Dirty_Washing_Machine	Wwise RoomVerb			
 	790223115	Wwise Parametric EQ (Custom)	Wwise Parametric EQ			
@@ -154,9 +157,9 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	770380962	sfx_teleport	D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Mac\SFX\Sci-Fi, Teleportation, Arrive SND32584_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\sfx_teleport		189610
 	815409904	Footsteps, Human, Boots, Wet, Squelchy, Out Of Water 2 SND17379	D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Mac\SFX\Footsteps, Human, Boots, Wet, Squelchy, Out Of Water 2 SND17379_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\char_footstep\char_footstep_water\Footsteps, Human, Boots, Wet, Squelchy, Out Of Water 2 SND17379		89632
 	829195809	sfx_box_destroy	D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Mac\SFX\Destruction, Crash & Debris, Wood,, Roof, Destroy SND58486_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\boxdestroy\sfx_box_destroy		194116
-	864051607	amb_waterfall	D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Mac\SFX\Water, River, Medium Size, Close 2 SND3355_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\amb_waterfall		1066064
 	871946633	Footsteps, Human, Grass, Bare Foot, Slow SND1046 33	D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Mac\SFX\Footsteps, Human, Grass, Bare Foot, Slow SND1046 33_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\char_footstep\char_footstep_grass\Footsteps, Human, Grass, Bare Foot, Slow SND1046 33		52202
 	885430307	sfx_object_pickup	D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Mac\SFX\Gun, Rifle, Grab, Pick Up SND6244_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\sfx_object_pickup		28980
+	893744976	amb_waterfall	D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Mac\SFX\wodospad_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\amb_waterfall		1536064
 	916975936	Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 8	D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Mac\SFX\Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 8_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\char_footstep\char_footstep_stone\Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 8		32644
 	924478928	Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 5	D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Mac\SFX\Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\char_footstep\char_footstep_stone\Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 5		28120
 	925787624	sfx_obj_throw	D:\Programowanie\Games\Unity\Stabby\SneakyStabbyStabby\Project\Project_WwiseProject\.cache\Mac\SFX\Cushion, Throw Down On Sofa SND24959 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\sfx_object\sfx_obj_throw		26976
