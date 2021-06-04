@@ -80,7 +80,8 @@ public class Player : MonoBehaviourPunCallbacks
     public bool destroyWeb = false;
     public bool isTrapped, isSprinting;
     public bool silentPotionActive;
-
+    public bool isGhostPlayer = false;
+    public bool isAliveGhostPlayer = false;
 
 
 
@@ -100,7 +101,7 @@ public class Player : MonoBehaviourPunCallbacks
     public Inventory inventory;
     public Text stabCooldownText, potionCooldownText;
 
-    public ParticleSystem footstep, footstepStone, footstepWood, camoFX, stimFX, visionFX, blinkFX, crossbowFX, trapFX, muffleFX;
+    public ParticleSystem footstep, footstepStone, footstepWood, camoFX, stimFX, visionFX, blinkFX, crossbowFX, trapFX, muffleFX, footstepMuffled, footstepGel;
     public SpriteRenderer glowingFootstep;
 
     [SerializeField] private Slider staminaBar;
@@ -159,7 +160,7 @@ public class Player : MonoBehaviourPunCallbacks
         //legsAnimator = GetComponent<Animator>();
 
         moveSpeed = 5;
-        stabLock = true;
+        //stabLock = true;
         destroyWeb = false;
 
         colourSelectOnLevel = FindObjectOfType<ColourSelect>();
@@ -216,7 +217,7 @@ public class Player : MonoBehaviourPunCallbacks
     private void Start()
     {
         Physics2D.queriesStartInColliders = false;
-
+        stabLock = true;
 
     }
 
@@ -463,7 +464,7 @@ public class Player : MonoBehaviourPunCallbacks
 
     IEnumerator Blink()
     {
-        AkSoundEngine.PostEvent("char_footstep_dash", gameObject, gameObject);
+        //Here was the old blink sound line
         var durationLeft = 0.2f;
         var blinkDirection = GetDirectionFromMouse();
         var blinkSpeed = distance / durationLeft;
@@ -492,6 +493,7 @@ public class Player : MonoBehaviourPunCallbacks
     {
         if (isBlinkOn)
         {
+            AkSoundEngine.PostEvent("char_footstep_dash", gameObject, gameObject);
             Color playerColor = new Color(recolorSprites[0].color.r, recolorSprites[0].color.g, recolorSprites[0].color.b, 0);
 
             ghostSprites[0].color = new Color(1, 1, 1, 1);
@@ -545,7 +547,7 @@ public class Player : MonoBehaviourPunCallbacks
 
         var intPosition = new Vector3Int(Mathf.FloorToInt(transform.position.x), Mathf.FloorToInt(transform.position.y), 0);
 
-        if (timerSprintRunning)
+        if (timerSprintRunning & !silentPotionActive & !isGhostPlayer & !isAliveGhostPlayer)
         {
 
             if (GameManager.localInstance.stoneMask.GetTile(intPosition))
@@ -572,7 +574,7 @@ public class Player : MonoBehaviourPunCallbacks
                 footstep.Play();
             }
         }
-        else
+        if (!timerSprintRunning & !silentPotionActive & !isGhostPlayer & !isAliveGhostPlayer)
         {
             if (GameManager.localInstance.stoneMask.GetTile(intPosition))
             {
@@ -601,12 +603,14 @@ public class Player : MonoBehaviourPunCallbacks
 
         }
 
-
-
+        if(silentPotionActive)
+        {
+            footstepMuffled.Play();
+        }
 
         if (timerPaintRunning2)
         {
-
+            footstepGel.Play();
             //photonView.RPC("SpawnGlowingFootstep", RpcTarget.AllBuffered);
             SpawnGlowingFootstep();
         }
@@ -660,14 +664,21 @@ public class Player : MonoBehaviourPunCallbacks
         if (!isBlinking)
         {
             rigidBody.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
-            this.gameObject.layer = 0;
+            this.gameObject.layer = 17;
         }
-        if (isBlinking)
+        if (isBlinking & !isGhostPlayer)
         {
             this.gameObject.layer = 15;
         }
-
-        if (Input.GetKey(KeyCode.LeftShift) && timeSprintRemaining != 0 && timerSprintRunning2 && isTrapped == false)
+        if (!isGhostPlayer & !isBlinking)
+        {
+            this.gameObject.layer = 17;
+        }
+        if (isGhostPlayer)
+        {
+            this.gameObject.layer = 16;
+        }
+        if (Input.GetKey(KeyCode.LeftShift) && timeSprintRemaining != 0 && /*timerSprintRunning2 &&*/ isTrapped == false & !isGhostPlayer & !isAliveGhostPlayer)
         {
             AkSoundEngine.SetState("footstep", "speed");
             rigidBody.velocity = new Vector2(moveDirection.x * sprint, moveDirection.y * sprint);
@@ -719,7 +730,7 @@ public class Player : MonoBehaviourPunCallbacks
         }
         if (photonView.IsMine && timerSprintRunning == false)
         {
-            timerSprintRunning2 = false;
+            //timerSprintRunning2 = false;
 
             timeSprintRemaining += Time.deltaTime;
 
@@ -739,7 +750,7 @@ public class Player : MonoBehaviourPunCallbacks
             {
 
                 timeSprintRemaining = 8;
-                timerSprintRunning2 = true;
+                //timerSprintRunning2 = true;
 
                 value = 1;
 
@@ -748,7 +759,7 @@ public class Player : MonoBehaviourPunCallbacks
             {
 
                 timeSprintRemaining = 4;
-                timerSprintRunning2 = true;
+                //timerSprintRunning2 = true;
 
                 value = 1;
 
@@ -792,7 +803,8 @@ public class Player : MonoBehaviourPunCallbacks
     {
         if (stabLock == false)
         {
-            AkSoundEngine.PostEvent("char_knife_swinging", gameObject, gameObject);
+            //AkSoundEngine.PostEvent("char_knife_swinging", gameObject, gameObject);
+            photonView.RPC("PlaySoundEvent", RpcTarget.AllBuffered, "char_knife_swinging");
             StartCoroutine(LockStabbing());
             StartCoroutine(HandleStabAnimation());
             StartCoroutine(WaitAndDeactivateStab());
@@ -907,7 +919,8 @@ public class Player : MonoBehaviourPunCallbacks
         torsoAnimator.SetBool("Stab", true);
         yield return new WaitForSeconds(0.08f);
         crossbowFX.Play();
-        AkSoundEngine.PostEvent("sfx_crossbow_shoot", gameObject, gameObject);
+        //AkSoundEngine.PostEvent("sfx_crossbow_shoot", gameObject, gameObject);
+        photonView.RPC("PlaySoundEvent", RpcTarget.AllBuffered, "sfx_crossbow_shoot");
         StartCoroutine(LockStabbing());
         GameObject obj = PhotonNetwork.Instantiate(boltObject.name, new Vector2(firePos.transform.position.x, firePos.transform.position.y), rotatingBody.transform.rotation, 0);
         Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
@@ -926,41 +939,53 @@ public class Player : MonoBehaviourPunCallbacks
         torsoAnimator.SetBool("Crossbow", value);
     }
 
+    [PunRPC]
+    private void PlaySoundEvent(string sound)
+    {
+        AkSoundEngine.PostEvent(sound, gameObject, gameObject);
+    }
+
     public void Spikepit()
     {
-        
-        AkSoundEngine.PostEvent("sfx_obj_spikepit", gameObject, gameObject);
+        photonView.RPC("PlaySoundEvent", RpcTarget.AllBuffered, "sfx_obj_spikepit");
+        //AkSoundEngine.PostEvent("sfx_obj_spikepit", gameObject, gameObject);
         GameObject obj = PhotonNetwork.Instantiate(spikePitObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
     public void Tripwire()
     {
-        AkSoundEngine.PostEvent("sfx_obj_tripwire", gameObject, gameObject);
+        photonView.RPC("PlaySoundEvent", RpcTarget.AllBuffered, "sfx_obj_tripwire");
+        //AkSoundEngine.PostEvent("sfx_obj_tripwire", gameObject, gameObject);
         GameObject obj = PhotonNetwork.Instantiate(tripwireObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
     public void Blindingtrap()
     {
-        AkSoundEngine.PostEvent("sfx_obj_throw", gameObject, gameObject);
+        photonView.RPC("PlaySoundEvent", RpcTarget.AllBuffered, "sfx_obj_throw");
+        //AkSoundEngine.PostEvent("sfx_obj_throw", gameObject, gameObject);
         GameObject obj = PhotonNetwork.Instantiate(blidingtrapObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
     public void Bomb()
     {
-        AkSoundEngine.PostEvent("sfx_obj_throw", gameObject, gameObject);
-        AkSoundEngine.PostEvent("sfx_obj_burning_fuse", gameObject, gameObject);
+        photonView.RPC("PlaySoundEvent", RpcTarget.AllBuffered, "sfx_obj_throw");
+        photonView.RPC("PlaySoundEvent", RpcTarget.AllBuffered, "sfx_obj_burning_fuse");
+        //AkSoundEngine.PostEvent("sfx_obj_throw", gameObject, gameObject);
+        //AkSoundEngine.PostEvent("sfx_obj_burning_fuse", gameObject, gameObject);
         GameObject obj = PhotonNetwork.Instantiate(bombObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
     public void Geltrap()
     {
-        AkSoundEngine.PostEvent("sfx_obj_setting_gel_trap", gameObject, gameObject);
+        photonView.RPC("PlaySoundEvent", RpcTarget.AllBuffered, "sfx_obj_setting_gel_trap");
+        //AkSoundEngine.PostEvent("sfx_obj_setting_gel_trap", gameObject, gameObject);
         GameObject obj = PhotonNetwork.Instantiate(gelTrapObject.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }
     public void Detector()
     {
-        AkSoundEngine.PostEvent("sfx_obj_detector", gameObject, gameObject);
+        photonView.RPC("PlaySoundEvent", RpcTarget.AllBuffered, "sfx_obj_detector");
+        //AkSoundEngine.PostEvent("sfx_obj_detector", gameObject, gameObject);
         GameObject obj = PhotonNetwork.Instantiate("Detector", new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), rotatingBody.transform.rotation, 0);
         //Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
     }

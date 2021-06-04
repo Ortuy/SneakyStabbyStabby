@@ -71,9 +71,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1048197651
+  m_SortingLayer: -2
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 0881b739382690c4aaec734335bfe868, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -135,3 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 039567640fc1c054389180f04e32dbdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartPortal8: {fileID: 0}
+  Player: {fileID: 0}
+  gameManager: {fileID: 0}
+  timeSpawnEnd8: 0
+  portalAnimator: {fileID: 0}

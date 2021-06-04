@@ -17,9 +17,10 @@ public class Radar : InteractableObject
     protected override void StartInteraction()
     {
         
-        AkSoundEngine.PostEvent("sfx_obj_radar_use", gameObject, gameObject);
+        
         if (isAvaliable)
         {
+            AkSoundEngine.PostEvent("sfx_obj_radar_use", gameObject, gameObject);
             base.StartInteraction();
             currentPlayer = targetPV.GetComponent<Player>();
 
@@ -63,6 +64,11 @@ public class Radar : InteractableObject
         }
 
         
+    }
+
+    private void Update()
+    {
+        CheckForInput();
     }
 
     [PunRPC]

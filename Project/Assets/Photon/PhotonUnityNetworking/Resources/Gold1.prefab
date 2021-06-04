@@ -237,6 +237,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 5440725864618505864, guid: 8bbee6f82a5b23c4bb8ad53e8d910e2e, type: 3}
-  goldAmount: 10
+  goldAmount: 7
   particleEffect: {fileID: 1071225970061495074, guid: 7f6e8a61c5b91ab49b8c2d468e94c903,
     type: 3}

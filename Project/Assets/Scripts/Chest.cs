@@ -99,10 +99,16 @@ public class Chest : MonoBehaviourPunCallbacks
         itemNum = number;
     }
 
+    [PunRPC]
+    private void PlaySoundEvent(string sound)
+    {
+        AkSoundEngine.PostEvent(sound, gameObject, gameObject);
+    }
+
     private void CreateItem()
     {
-
-        AkSoundEngine.PostEvent("sfx_box_destroy", gameObject, gameObject);
+        photonView.RPC("PlaySoundEvent", RpcTarget.AllBuffered, "sfx_box_destroy");
+        //AkSoundEngine.PostEvent("sfx_box_destroy", gameObject, gameObject);
         if (itemNum == 0)
         {
             PhotonNetwork.Instantiate(pickup1.name, new Vector2(dropPos.transform.position.x, dropPos.transform.position.y), Quaternion.identity, 0);
