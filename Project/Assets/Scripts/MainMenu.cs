@@ -217,6 +217,7 @@ public class MainMenu : MonoBehaviourPunCallbacks
 
     public void MapMinus()
     {
+        AkSoundEngine.PostEvent("UIClickWoodPanel", gameObject, gameObject);
         mapNum = 0;
         playerNum = 2;
         mapNameText.text = mapNames[0];
@@ -226,6 +227,7 @@ public class MainMenu : MonoBehaviourPunCallbacks
 
     public void MapPlus()
     {
+        AkSoundEngine.PostEvent("UIClickWoodPanel", gameObject, gameObject);
         mapNum = 1;
         playerNum = 6;
         mapNameText.text = mapNames[1];
