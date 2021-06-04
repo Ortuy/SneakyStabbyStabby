@@ -16,7 +16,7 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="1774189587">
+		<SoundBank Id="3161908922" Language="SFX" Hash="3240722334">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -260,13 +260,13 @@
 							<ShortName>Birds, Crow, Ravens, Raven Call 06 SND50092.wav</ShortName>
 							<Path>SFX\Birds, Crow, Ravens, Raven Call 06 SND50092_10C4C929.wem</Path>
 						</File>
+						<File Id="139834555" Language="SFX">
+							<ShortName>drone_music.wav</ShortName>
+							<Path>SFX\drone_music_D79FB2B7.wem</Path>
+						</File>
 						<File Id="180403610" Language="SFX">
 							<ShortName>Birds, Crow, Ravens, Raven Call 04 SND50093 1.wav</ShortName>
 							<Path>SFX\Birds, Crow, Ravens, Raven Call 04 SND50093 1_10C4C929.wem</Path>
-						</File>
-						<File Id="272355085" Language="SFX">
-							<ShortName>drone_music.wav</ShortName>
-							<Path>SFX\drone_music_10C4C929.wem</Path>
 						</File>
 						<File Id="407920327" Language="SFX">
 							<ShortName>Birds, Crow, Ravens, Raven Call 04 SND50093.wav</ShortName>
@@ -284,9 +284,13 @@
 							<ShortName>Wings, Bird, Parrot, Wing Flaps 1 SND0864.wav</ShortName>
 							<Path>SFX\Wings, Bird, Parrot, Wing Flaps 1 SND0864_10C4C929.wem</Path>
 						</File>
-						<File Id="799330159" Language="SFX">
+						<File Id="826423501" Language="SFX">
+							<ShortName>sneaky.wav</ShortName>
+							<Path>SFX\sneaky_D79FB2B7.wem</Path>
+						</File>
+						<File Id="845735767" Language="SFX">
 							<ShortName>soundtrack.wav</ShortName>
-							<Path>SFX\soundtrack_10C4C929.wem</Path>
+							<Path>SFX\soundtrack_D79FB2B7.wem</Path>
 						</File>
 						<File Id="939365507" Language="SFX">
 							<ShortName>Wings, Bird, Parrot, Wing Flaps 1 SND0864 2.wav</ShortName>
@@ -296,29 +300,37 @@
 							<ShortName>Wings, Bird, Wing Flaps, Low 1 SND11280 1.wav</ShortName>
 							<Path>SFX\Wings, Bird, Wing Flaps, Low 1 SND11280 1_10C4C929.wem</Path>
 						</File>
-						<File Id="1036242072" Language="SFX">
-							<ShortName>sneaky.wav</ShortName>
-							<Path>SFX\sneaky_10C4C929.wem</Path>
-						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="4011189322" Name="seller_mmm" ObjectPath="\Events\Default Work Unit\Seller\seller_mmm" DurationType="OneShot" DurationMin="0.566555" DurationMax="1.063037">
+				<Event Id="4011189322" Name="seller_mmm" ObjectPath="\Events\Default Work Unit\Seller\seller_mmm" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.421992" DurationMax="0.791791">
 					<IncludedMemoryFiles>
 						<File Id="316395250" Language="SFX">
 							<ShortName>4.wav</ShortName>
-							<Path>SFX\4_31CA5C7A.wem</Path>
+							<Path>SFX\4_57A62F7F.wem</Path>
 						</File>
 						<File Id="561411478" Language="SFX">
 							<ShortName>3.wav</ShortName>
-							<Path>SFX\3_F251012E.wem</Path>
+							<Path>SFX\3_60CF7EAD.wem</Path>
 						</File>
 						<File Id="580089437" Language="SFX">
 							<ShortName>2.wav</ShortName>
-							<Path>SFX\2_0486E5CB.wem</Path>
+							<Path>SFX\2_B26C63C7.wem</Path>
 						</File>
 						<File Id="586334990" Language="SFX">
 							<ShortName>1.wav</ShortName>
-							<Path>SFX\1_FDFA1511.wem</Path>
+							<Path>SFX\1_1F127BCD.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2631409595" Name="seller_open" ObjectPath="\Events\Default Work Unit\Seller\seller_open" DurationType="OneShot" DurationMin="1.008636" DurationMax="1.286155">
+					<IncludedMemoryFiles>
+						<File Id="614182129" Language="SFX">
+							<ShortName>hehehe.wav</ShortName>
+							<Path>SFX\hehehe_10C4C929.wem</Path>
+						</File>
+						<File Id="987174822" Language="SFX">
+							<ShortName>gegege.wav</ShortName>
+							<Path>SFX\gegege_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -594,7 +606,7 @@
 					<IncludedMemoryFiles>
 						<File Id="1012915184" Language="SFX">
 							<ShortName>Weapons, Knife, Picked Up, Blade Ringing SND4124.wav</ShortName>
-							<Path>SFX\Weapons, Knife, Picked Up, Blade Ringing SND4124_ECF9EC4F.wem</Path>
+							<Path>SFX\Weapons, Knife, Picked Up, Blade Ringing SND4124_2733E577.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -602,7 +614,7 @@
 					<IncludedMemoryFiles>
 						<File Id="401790329" Language="SFX">
 							<ShortName>Scraping Stone  by dslrguide Id-321488.wav</ShortName>
-							<Path>SFX\Scraping Stone  by dslrguide Id-321488_5876783D.wem</Path>
+							<Path>SFX\Scraping Stone  by dslrguide Id-321488_564F3F73.wem</Path>
 						</File>
 						<File Id="503611264" Language="SFX">
 							<ShortName>R27 01 Large Sword Stab And Slide by craigsmith Id-481957 R.wav</ShortName>

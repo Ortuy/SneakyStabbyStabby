@@ -145,10 +145,10 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
-								<Action Name="" ID="{24FF4CDA-E36B-476F-BFD5-3637D81DA064}" ShortID="359176217">
+								<Action Name="" ID="{102FE55E-0508-40AE-A88B-B7333A096592}" ShortID="134475161">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Music" ID="{63C1366B-B7BF-423F-972A-1676E6F6D089}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+											<ObjectRef Name="Music" ID="{9C48140A-96DE-48BD-B82F-88B9E9229FEC}" WorkUnitID="{7DFCE4A3-7B0C-47F5-9972-930A742FF029}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -643,6 +643,17 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="seller_mmm" ID="{177CA3BC-BB28-4702-9BBF-D33FC9FF02FE}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="seller_open" ID="{95D1D3AC-235D-4B8D-A0E9-C7773DA51D88}">
+							<ChildrenList>
+								<Action Name="" ID="{5F7A5E3C-94F4-4105-88C0-017698136B4E}" ShortID="400490773">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="seller_open" ID="{F263416F-310D-42D5-A136-49847AD42675}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

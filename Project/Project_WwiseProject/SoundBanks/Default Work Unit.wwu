@@ -49,6 +49,7 @@
 						<ObjectRef Name="sfx_obj_getting_into_gel_trap" ID="{2F3CBA34-9EB3-4A65-AC9F-4EE909A94888}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="amb_flying_birds" ID="{D8F2A8F8-9497-4B37-9457-C42ABB0B42B8}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="sfx_obj_pickup" ID="{05E96D8B-FC9F-4B4E-A869-9CB5214ADE0E}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="seller_open" ID="{95D1D3AC-235D-4B8D-A0E9-C7773DA51D88}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="sfx_obj_tripwire" ID="{43F8E362-D7DC-4BA0-ADBC-7BAEC3E7D909}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="sfx_change_color" ID="{A6DD9700-FD98-4BDA-905F-4FC69F59B3CE}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="sfx_obj_spike_trap_activate" ID="{16592A10-A8F0-4C0E-A172-F6634811323F}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
