@@ -329,7 +329,10 @@ public class GameManager : MonoBehaviourPunCallbacks
         yield return new WaitForSeconds(1f);
         victoryText.gameObject.SetActive(false);
 
-        if(PhotonNetwork.IsMasterClient)
+        AkSoundEngine.PostEvent("ui_start_game", gameObject, gameObject);
+        AkSoundEngine.PostEvent("ui_walls_down", gameObject, gameObject);
+
+        if (PhotonNetwork.IsMasterClient)
         {
             FindObjectOfType<Portal>().portalIsActive = true;
             var gChests = FindObjectsOfType<GoldChest>();
