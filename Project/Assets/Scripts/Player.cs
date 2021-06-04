@@ -428,8 +428,9 @@ public class Player : MonoBehaviourPunCallbacks
     }
 
     IEnumerator SetTrap()
-    {
+    {        
         settingTrap = true;
+        rigidBody.velocity = Vector2.zero;
         trapMarker.SetActive(false);
         yield return new WaitForSeconds(0.5f);
         torsoAnimator.SetBool("Stab", false);
@@ -765,7 +766,7 @@ public class Player : MonoBehaviourPunCallbacks
 
             }
             staminaBar.value = value;
-
+            
         }
         if (Input.GetKey(KeyCode.Alpha1))
         {
@@ -782,6 +783,11 @@ public class Player : MonoBehaviourPunCallbacks
         if (Input.GetKey(KeyCode.Alpha4))
         {
             inventory.Slot3();
+        }
+
+        if (settingTrap)
+        {
+            rigidBody.velocity = Vector2.zero;
         }
     }
     
@@ -1069,17 +1075,17 @@ public class Player : MonoBehaviourPunCallbacks
             canUsePotion = true;
         }
     }
+
+    [PunRPC]
     public void SilentPotion()
     {
-        if (photonView.IsMine)
-        {
-            muffleFX.Play();
-            AkSoundEngine.PostEvent("sfx_obj_visionpotion", gameObject, gameObject);
-            silentPotionActive = true;
-            StartCoroutine("PotionStopWorking3");
-        }
+        muffleFX.Play();
+        AkSoundEngine.PostEvent("sfx_obj_visionpotion", gameObject, gameObject);
+        silentPotionActive = true;
+        StartCoroutine("PotionStopWorking3");
 
     }
+
     IEnumerator PotionStopWorking3()
     {
         int timeLeft = Mathf.FloorToInt(pasiveItemTimeWorking);

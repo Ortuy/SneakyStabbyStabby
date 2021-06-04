@@ -309,7 +309,8 @@ public class Inventory : MonoBehaviourPunCallbacks
                     player.GetComponent<PhotonView>().RPC("CamoSpell", RpcTarget.AllBuffered,variant);
                     break;
                 case 3:
-                    player.SilentPotion();
+                    //player.SilentPotion();
+                    player.GetComponent<PhotonView>().RPC("SilentPotion", RpcTarget.AllBuffered);
                     break;
 
             }
