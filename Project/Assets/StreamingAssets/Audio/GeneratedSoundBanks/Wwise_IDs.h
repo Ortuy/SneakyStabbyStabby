@@ -26,6 +26,7 @@ namespace AK
         static const AkUniqueID CHAR_TAKING_DAMAGE = 120190188U;
         static const AkUniqueID CHAR_VOICE_DEATH = 3627586745U;
         static const AkUniqueID MUSIC_AMBIENT_DRONE = 205229924U;
+        static const AkUniqueID SELLER_MMM = 4011189322U;
         static const AkUniqueID SFX_BOX_DESTROY = 490354319U;
         static const AkUniqueID SFX_BUY_SHOP = 2554305358U;
         static const AkUniqueID SFX_CHANGE_COLOR = 171029537U;
@@ -57,6 +58,8 @@ namespace AK
         static const AkUniqueID UI_COUNTDOWN = 3267870591U;
         static const AkUniqueID UI_INTERACT = 4294591936U;
         static const AkUniqueID UI_OPEN_MAP = 2149148881U;
+        static const AkUniqueID UI_START_GAME = 3730899723U;
+        static const AkUniqueID UI_WALLS_DOWN = 2373628060U;
         static const AkUniqueID UI_WOOD_OPEN_PANEL = 3080149663U;
         static const AkUniqueID UI_WOOD_PANEL_OPTIONS_CHECKBOX = 601065099U;
         static const AkUniqueID UICLICKWOODPANEL = 2097608532U;

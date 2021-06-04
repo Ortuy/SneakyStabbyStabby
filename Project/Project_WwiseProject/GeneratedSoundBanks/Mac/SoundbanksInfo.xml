@@ -16,7 +16,7 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="1985796658">
+		<SoundBank Id="3161908922" Language="SFX" Hash="1527873957">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -75,9 +75,9 @@
 				</Event>
 				<Event Id="3871099588" Name="amb_waterfall" ObjectPath="\Events\Default Work Unit\Ambience\amb_waterfall" MaxAttenuation="12.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
-						<File Id="864051607" Language="SFX">
-							<ShortName>Water, River, Medium Size, Close 2 SND3355.wav</ShortName>
-							<Path>SFX\Water, River, Medium Size, Close 2 SND3355_D79FB2B7.wem</Path>
+						<File Id="893744976" Language="SFX">
+							<ShortName>wodospad.wav</ShortName>
+							<Path>SFX\wodospad_D79FB2B7.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -433,11 +433,15 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1201681274" Name="sfx_obj_setting_gel_trap" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_setting_gel_trap" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.285625" DurationMax="0.285625">
+				<Event Id="1201681274" Name="sfx_obj_setting_gel_trap" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_setting_gel_trap" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.915528" DurationMax="0.915528">
 					<IncludedMemoryFiles>
-						<File Id="409538277" Language="SFX">
-							<ShortName>Hygiene, Shaving Gel Can, Lid Off 02 SND27576 1.wav</ShortName>
-							<Path>SFX\Hygiene, Shaving Gel Can, Lid Off 02 SND27576 1_10C4C929.wem</Path>
+						<File Id="11930197" Language="SFX">
+							<ShortName>Hygiene, Hair Gel, Squeeze From Plastic Pouch, Squirt 01 SND26041.wav</ShortName>
+							<Path>SFX\Hygiene, Hair Gel, Squeeze From Plastic Pouch, Squirt 01 SND26041_10C4C929.wem</Path>
+						</File>
+						<File Id="615672321" Language="SFX">
+							<ShortName>hammer.wav</ShortName>
+							<Path>SFX\hammer_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
