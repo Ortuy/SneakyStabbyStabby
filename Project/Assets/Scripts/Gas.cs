@@ -15,6 +15,7 @@ public class Gas : MonoBehaviourPunCallbacks
 
     private Health playerInGas;
 
+
     [PunRPC]
     public void DestroyObject()
     {
@@ -91,11 +92,16 @@ public class Gas : MonoBehaviourPunCallbacks
         {
             if (target.tag == "Player")
             {
-                timerInhaleRunning = true;
+                
+                //timerInhaleRunning = true;
                 if(ded == true)
                 {
                     AkSoundEngine.PostEvent("char_cough_gas", gameObject, gameObject);
                     target.RPC("ReduceHealth", RpcTarget.AllBuffered, toxinDamage);
+                    timerInhaleRunning = false;
+                    timeInhaleRemaining = timeInhaleBase;
+                    ded = false;
+                    StartCoroutine("IsGhost");
                 }
 
                 
@@ -118,7 +124,7 @@ public class Gas : MonoBehaviourPunCallbacks
                 timerInhaleRunning = false;
                 ded = false;
                 timeInhaleRemaining = timeInhaleBase;
-
+                StopCoroutine("IsGhost");
 
 
             }
@@ -133,6 +139,13 @@ public class Gas : MonoBehaviourPunCallbacks
         yield return new WaitForSeconds(10f);
         photonView.RPC("DestroyObject", RpcTarget.AllBuffered);
 
+    }
+    IEnumerator IsGhost()
+    {
+
+        yield return new WaitForSeconds(3f);
+        timerInhaleRunning = true;
+        playerInGas.breathMeter.gameObject.SetActive(true);
     }
 
 }
