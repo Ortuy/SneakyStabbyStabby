@@ -31,12 +31,14 @@ public class Blindingtrap : MonoBehaviourPunCallbacks
                 //target.RPC("Blinded", RpcTarget.AllBuffered, !see);
                 StartCoroutine(BlindPlayer(target));
 
+                animator.SetBool("Activated", true);
+
+                this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered);
+
             }
 
 
-            animator.SetBool("Activated", true);
-
-            this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered);
+            
         }
     }
 
