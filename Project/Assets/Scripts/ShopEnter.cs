@@ -86,7 +86,6 @@ public class ShopEnter : InteractableObject
             RandomItem1();
             RandomItem2();
         }
-        
 
     }
 
@@ -503,11 +502,13 @@ public class ShopEnter : InteractableObject
 
     protected override void StartInteraction()
     {
+
         player = targetPV.GetComponent<Player>();
         Shop.SetActive(true);
         Shop.GetComponent<UIAnimator>().Show();
         player.stabLock = true;
         base.StartInteraction();
+        AkSoundEngine.PostEvent("seller_open", gameObject, gameObject);
     }
 
     protected override void EndInteraction()

@@ -8,6 +8,7 @@ public class ShopkeeperVoice : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
+            AkSoundEngine.PostEvent("seller_mmm", gameObject, gameObject);
             //Sounds here
         }
     }

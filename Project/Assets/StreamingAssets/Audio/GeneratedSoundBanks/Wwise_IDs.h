@@ -27,6 +27,7 @@ namespace AK
         static const AkUniqueID CHAR_VOICE_DEATH = 3627586745U;
         static const AkUniqueID MUSIC_AMBIENT_DRONE = 205229924U;
         static const AkUniqueID SELLER_MMM = 4011189322U;
+        static const AkUniqueID SELLER_OPEN = 2631409595U;
         static const AkUniqueID SFX_BOX_DESTROY = 490354319U;
         static const AkUniqueID SFX_BUY_SHOP = 2554305358U;
         static const AkUniqueID SFX_CHANGE_COLOR = 171029537U;
