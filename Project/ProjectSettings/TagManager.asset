@@ -10,6 +10,7 @@ TagManager:
   - Chest
   - ViewCone
   - Ghost
+  - Walls
   layers:
   - Default
   - TransparentFX
