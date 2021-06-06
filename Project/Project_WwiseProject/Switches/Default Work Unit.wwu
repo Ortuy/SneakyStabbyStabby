@@ -21,6 +21,7 @@
 						<Switch Name="wood" ID="{6540C3FB-D589-41C5-9BD6-D91CF46C97FD}"/>
 						<Switch Name="water" ID="{CEDE420E-0ADB-4D79-8299-1F25CBD822AB}"/>
 						<Switch Name="grass" ID="{AB212DBE-0836-40C8-A3B2-9A776F406A3C}"/>
+						<Switch Name="gel" ID="{BE30AAEA-0B15-45A5-9AC9-3FC0B53553BE}"/>
 					</ChildrenList>
 				</SwitchGroup>
 			</ChildrenList>
