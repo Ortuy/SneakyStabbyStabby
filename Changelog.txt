@@ -352,3 +352,6 @@
 - Fixed being stuck in the shop after dying while using it
 - Fixed the featherfeet potion not turning off sounds for other players
 
+## [1.0.1] - 2021-06-06
+### Changed
+- Removed developer shortcuts
