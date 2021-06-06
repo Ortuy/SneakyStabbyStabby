@@ -31,7 +31,6 @@ public class Geltrap : MonoBehaviourPunCallbacks
 
                 target.GetComponent<Health>().cFollow.ShakeCamera(1);
             }
-
             activateFX.Play();
 
 

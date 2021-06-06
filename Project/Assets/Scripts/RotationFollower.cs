@@ -15,6 +15,9 @@ public class RotationFollower : MonoBehaviour
     [SerializeField]
     private bool canFollow;
 
+    [SerializeField]
+    private bool isShop;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +49,11 @@ public class RotationFollower : MonoBehaviour
                 var temp = Physics2D.OverlapCircle(transform.position, range, LayerMask.GetMask("MeleeHurtable"));
                 if (temp != null && temp.CompareTag("Player"))
                 {
+                    if(isShop)
+                    {
+                        PlayShopkeeperSounds();
+                    }
+
                     following = true;
                     followTarget = temp.transform;
                 }
@@ -55,5 +63,10 @@ public class RotationFollower : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void PlayShopkeeperSounds()
+    {
+        //Sounds here!
     }
 }

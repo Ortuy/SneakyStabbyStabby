@@ -31,12 +31,24 @@ public class Blindingtrap : MonoBehaviourPunCallbacks
                 //target.RPC("Blinded", RpcTarget.AllBuffered, !see);
                 StartCoroutine(BlindPlayer(target));
 
+                animator.SetBool("Activated", true);
+
+                this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered);
+
+            }
+            else if (target.CompareTag("Bolt"))
+            {
+                AkSoundEngine.PostEvent("sfx_obj_getting_into_binding_trap", gameObject, gameObject);
+                //target.RPC("Blinded", RpcTarget.AllBuffered, !see);
+                //StartCoroutine(BlindPlayer(target));
+
+                animator.SetBool("Activated", true);
+
+                this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered);
             }
 
 
-            animator.SetBool("Activated", true);
 
-            this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered);
         }
     }
 

@@ -10,6 +10,8 @@ public class Bolt : MonoBehaviourPunCallbacks
     public float destroyTime;
     public Rigidbody2D rb;
     public float boltDamage;
+    public GameObject hitFX;
+    public Transform impactPoint;
 
     private void Awake()
     {
@@ -52,8 +54,14 @@ public class Bolt : MonoBehaviourPunCallbacks
                 target.GetComponent<Health>().hurtFX.transform.rotation = Quaternion.AngleAxis(newAngle, Vector3.forward);
 
                 target.RPC("ReduceHealth", RpcTarget.AllBuffered, boltDamage);
-            }
-
+                Destroy(Instantiate(hitFX, impactPoint.position, Quaternion.identity), 2f);
+                this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered);
+            }           
+        }
+        //Debug.Log(collision.gameObject.layer);
+        if(collision.CompareTag("Walls") || collision.CompareTag("Trap"))
+        {
+            Destroy(Instantiate(hitFX, impactPoint.position, Quaternion.identity), 2f);
             this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered);
         }
     }

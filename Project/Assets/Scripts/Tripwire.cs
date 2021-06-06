@@ -59,8 +59,22 @@ public class Tripwire : MonoBehaviourPunCallbacks
                 target.GetComponent<Health>().cFollow.ShakeCamera(1);
                 StartCoroutine("DestroyByTime");
             }
+            else if (target.CompareTag("Bolt"))
+            {
+                AkSoundEngine.PostEvent("sfx_obj_tripwire_activate", gameObject, gameObject);
+                AkSoundEngine.PostEvent("sfx_obj_tripwire", gameObject, gameObject);
 
+                bool flip = false;
+                if (Vector2.Distance(target.transform.position, lowerPoint.position) > Vector2.Distance(target.transform.position, upperPoint.position))
+                {
+                    flip = true;
+                }
 
+                animator.SetBool("Snap", true);
+                web.transform.position = target.transform.position;
+                GetComponent<PhotonView>().RPC("SetFlipDirection", RpcTarget.AllBuffered, flip);
+                StartCoroutine("DestroyByTime");
+            }
         }
     }
 
