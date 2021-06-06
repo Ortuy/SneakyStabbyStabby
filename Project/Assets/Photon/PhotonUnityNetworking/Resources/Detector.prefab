@@ -158,6 +158,7 @@ MonoBehaviour:
   checkFrequency: 1
   offset: 0
   canFollow: 1
+  isShop: 0
 --- !u!58 &5391766273373983274
 CircleCollider2D:
   m_ObjectHideFlags: 0
