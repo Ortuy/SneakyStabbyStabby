@@ -61,7 +61,7 @@ public class WaitRoomPortal35 : MonoBehaviourPunCallbacks
         AkSoundEngine.PostEvent("sfx_teleport", gameObject, gameObject);
         timeSpawnEnd8 = true;
         Player.stabLock = false;
-
+        Player.inWaitRoom = false;
     }
 
     IEnumerator StopPortal8()

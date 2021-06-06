@@ -82,6 +82,7 @@ public class Player : MonoBehaviourPunCallbacks
     public bool silentPotionActive;
     public bool isGhostPlayer = false;
     public bool isAliveGhostPlayer = false;
+    public bool inWaitRoom;
 
 
 
@@ -218,6 +219,7 @@ public class Player : MonoBehaviourPunCallbacks
     {
         Physics2D.queriesStartInColliders = false;
         stabLock = true;
+        inWaitRoom = true;
 
     }
 
@@ -678,6 +680,7 @@ public class Player : MonoBehaviourPunCallbacks
         if (isGhostPlayer)
         {
             this.gameObject.layer = 16;
+            rotatingBody.layer = 16;
         }
         if (Input.GetKey(KeyCode.LeftShift) && timeSprintRemaining != 0 && /*timerSprintRunning2 &&*/ isTrapped == false & !isGhostPlayer & !isAliveGhostPlayer)
         {

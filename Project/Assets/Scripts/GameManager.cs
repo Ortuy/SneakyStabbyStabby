@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     public GameObject gameCanvas;
     public GameObject sceneCamera;
     [HideInInspector] public GameObject localPlayer;
-    public GameObject respawnMenu, pauseMenu, optionsMenu;
+    public GameObject respawnMenu, pauseMenu, optionsMenu, tipsMenu;
     public GameObject waitRoomPortal;
     public GameObject waitRoomPortal1;
     public GameObject waitRoom1Portal;
@@ -116,8 +116,11 @@ public class GameManager : MonoBehaviourPunCallbacks
             {
                 //sound for closing
             }
-
-            if(!optionsMenu.activeInHierarchy && !mapOut)
+            if (tipsMenu.activeInHierarchy)
+            {
+                ToggleTips();
+            }
+            if (!optionsMenu.activeInHierarchy && !mapOut)
             {
                 TogglePauseMenu();
             }
@@ -139,7 +142,11 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         if (pauseMenu.activeInHierarchy)
         {
-            player.stabLock = false;
+            if (player.inWaitRoom==false)
+            {
+                player.stabLock = false;
+            }
+
             //pauseMenu.SetActive(false);
             pauseMenu.GetComponent<UIAnimator>().Hide();
         }
@@ -181,6 +188,21 @@ public class GameManager : MonoBehaviourPunCallbacks
         {
             optionsMenu.SetActive(true);
             optionsMenu.GetComponent<UIAnimator>().Show();
+        }
+    }
+    public void ToggleTips()
+    {
+        AkSoundEngine.PostEvent("UIClickWoodPanel", gameObject, gameObject);
+        TogglePauseMenu();
+        if (tipsMenu.activeInHierarchy)
+        {
+            //optionsMenu.SetActive(false);
+            tipsMenu.GetComponent<UIAnimator>().Hide();
+        }
+        else
+        {
+            tipsMenu.SetActive(true);
+            tipsMenu.GetComponent<UIAnimator>().Show();
         }
     }
 

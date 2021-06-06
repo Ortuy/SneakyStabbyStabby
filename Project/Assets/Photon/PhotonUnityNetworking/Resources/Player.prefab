@@ -88430,6 +88430,7 @@ MonoBehaviour:
   silentPotionActive: 0
   isGhostPlayer: 0
   isAliveGhostPlayer: 0
+  inWaitRoom: 0
   moveSpeed: 3
   shootSpeed: 18
   playerID: 0
