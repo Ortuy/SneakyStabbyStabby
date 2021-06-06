@@ -16,7 +16,7 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="2937693639">
+		<SoundBank Id="3161908922" Language="SFX" Hash="4183692257">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -105,11 +105,15 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3331452589" Name="char_footsteps" ObjectPath="\Events\Default Work Unit\Character\char_footsteps" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.220062" DurationMax="0.543104">
+				<Event Id="3331452589" Name="char_footsteps" ObjectPath="\Events\Default Work Unit\Character\char_footsteps" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.202260" DurationMax="0.543104">
 					<IncludedMemoryFiles>
 						<File Id="16374533" Language="SFX">
 							<ShortName>Footsteps, Human, Boots, Wet, Squelchy, Out Of Water 3 SND17378.wav</ShortName>
 							<Path>SFX\Footsteps, Human, Boots, Wet, Squelchy, Out Of Water 3 SND17378_10C4C929.wem</Path>
+						</File>
+						<File Id="21892173" Language="SFX">
+							<ShortName>Gore, Ooze, Squeezing, Blood Spurting, Bloody, Flesh, Guts 09 SND10664.wav</ShortName>
+							<Path>SFX\Gore, Ooze, Squeezing, Blood Spurting, Bloody, Flesh, Guts 09 SND10664_10C4C929.wem</Path>
 						</File>
 						<File Id="136970473" Language="SFX">
 							<ShortName>Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 7.wav</ShortName>
@@ -122,6 +126,10 @@
 						<File Id="236070337" Language="SFX">
 							<ShortName>Footsteps, Human, Wood, Sneakers, Running SND1121 3.wav</ShortName>
 							<Path>SFX\Footsteps, Human, Wood, Sneakers, Running SND1121 3_10C4C929.wem</Path>
+						</File>
+						<File Id="377186557" Language="SFX">
+							<ShortName>Toys, Slime, Gloop, Drip, Fall, Hit Surface SND35399.wav</ShortName>
+							<Path>SFX\Toys, Slime, Gloop, Drip, Fall, Hit Surface SND35399_10C4C929.wem</Path>
 						</File>
 						<File Id="392090490" Language="SFX">
 							<ShortName>Footsteps, Human, Wood, Sneakers, Running SND1121 2.wav</ShortName>
@@ -142,6 +150,10 @@
 						<File Id="654784289" Language="SFX">
 							<ShortName>Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 9.wav</ShortName>
 							<Path>SFX\Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 9_10C4C929.wem</Path>
+						</File>
+						<File Id="700655808" Language="SFX">
+							<ShortName>Toys, Slime, Gloop, Drip, Land On Wood SND35402.wav</ShortName>
+							<Path>SFX\Toys, Slime, Gloop, Drip, Land On Wood SND35402_10C4C929.wem</Path>
 						</File>
 						<File Id="716166893" Language="SFX">
 							<ShortName>Footsteps, Human, Rocks, Small, Pebble, Sneakers, Medium SND1095 6.wav</ShortName>
@@ -166,6 +178,10 @@
 						<File Id="927981314" Language="SFX">
 							<ShortName>Footsteps, Human, Grass, Bare Foot, Slow SND1046 32.wav</ShortName>
 							<Path>SFX\Footsteps, Human, Grass, Bare Foot, Slow SND1046 32_10C4C929.wem</Path>
+						</File>
+						<File Id="1031467088" Language="SFX">
+							<ShortName>Gore, Ooze, Squeezing, Blood Spurting, Bloody, Flesh, Guts 09 SND10664 1.wav</ShortName>
+							<Path>SFX\Gore, Ooze, Squeezing, Blood Spurting, Bloody, Flesh, Guts 09 SND10664 1_10C4C929.wem</Path>
 						</File>
 						<File Id="1043490922" Language="SFX">
 							<ShortName>Footsteps, Human, Grass, Bare Foot, Slow SND1046 30.wav</ShortName>
@@ -209,6 +225,14 @@
 								<File Id="871946633"/>
 								<File Id="927981314"/>
 								<File Id="1043490922"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{BE30AAEA-0B15-45A5-9AC9-3FC0B53553BE}">
+							<Media>
+								<File Id="21892173"/>
+								<File Id="377186557"/>
+								<File Id="700655808"/>
+								<File Id="1031467088"/>
 							</Media>
 						</SwitchContainer>
 					</SwitchContainers>
@@ -405,6 +429,22 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="1313382400" Name="sfx_obj_arrow_hit" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_arrow_hit" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.233865" DurationMax="0.290312">
+					<IncludedMemoryFiles>
+						<File Id="179612942" Language="SFX">
+							<ShortName>Weapons, Arrow, Bolt, Impact 02 SND13192 3.wav</ShortName>
+							<Path>SFX\Weapons, Arrow, Bolt, Impact 02 SND13192 3_10C4C929.wem</Path>
+						</File>
+						<File Id="391406840" Language="SFX">
+							<ShortName>Weapons, Arrow, Bolt, Impact 02 SND13192 2.wav</ShortName>
+							<Path>SFX\Weapons, Arrow, Bolt, Impact 02 SND13192 2_10C4C929.wem</Path>
+						</File>
+						<File Id="719110069" Language="SFX">
+							<ShortName>Weapons, Arrow, Bolt, Impact 02 SND13192 1.wav</ShortName>
+							<Path>SFX\Weapons, Arrow, Bolt, Impact 02 SND13192 1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="318795889" Name="sfx_obj_build_trap" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_build_trap" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.806904" DurationMax="0.806904">
 					<IncludedMemoryFiles>
 						<File Id="615672321" Language="SFX">
@@ -433,7 +473,7 @@
 					<IncludedMemoryFiles>
 						<File Id="390859809" Language="SFX">
 							<ShortName>Ripping by Walter_Odington Id-18624 1.wav</ShortName>
-							<Path>SFX\Ripping by Walter_Odington Id-18624 1_B3927093.wem</Path>
+							<Path>SFX\Ripping by Walter_Odington Id-18624 1_CF23C80D.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -702,6 +742,7 @@
 						<Switch Id="2058049674" Name="wood" ObjectPath="\Switches\Default Work Unit\surface\wood"/>
 						<Switch Id="2654748154" Name="water" ObjectPath="\Switches\Default Work Unit\surface\water"/>
 						<Switch Id="4248645337" Name="grass" ObjectPath="\Switches\Default Work Unit\surface\grass"/>
+						<Switch Id="646772379" Name="gel" ObjectPath="\Switches\Default Work Unit\surface\gel"/>
 					</Switches>
 				</SwitchGroup>
 			</SwitchGroups>

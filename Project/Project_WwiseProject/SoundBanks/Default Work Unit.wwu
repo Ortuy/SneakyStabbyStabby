@@ -72,6 +72,7 @@
 						<ObjectRef Name="sfx_obj_burning_fuse" ID="{B0BF4AE0-A979-4F7F-B57A-7313DA82468C}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="char_cough_gas" ID="{81B2EEDE-2B47-4FA0-9357-B3007F8E3CC5}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Music_Ambient_Drone" ID="{73E89B78-0A93-4FD3-9A4C-C9836485148B}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="sfx_obj_arrow_hit" ID="{7822F4C2-412A-4FD3-8F64-32846EEB8FBF}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

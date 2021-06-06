@@ -539,6 +539,17 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="sfx_obj_arrow_hit" ID="{7822F4C2-412A-4FD3-8F64-32846EEB8FBF}">
+									<ChildrenList>
+										<Action Name="" ID="{A99D0F8C-F6F9-4D8F-B02D-14BF084F0747}" ShortID="458540154">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="sfx_obj_arrow_hit" ID="{DB9F1A49-CE33-4BE3-9742-D3061CE16F06}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Event Name="sfx_crossbow_shoot" ID="{7D427882-91E6-421C-A20C-506FE4AAFDA7}">

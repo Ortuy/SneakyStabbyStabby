@@ -33,6 +33,7 @@ namespace AK
         static const AkUniqueID SFX_CHANGE_COLOR = 171029537U;
         static const AkUniqueID SFX_CROSSBOW_SHOOT = 3500565137U;
         static const AkUniqueID SFX_END_ATTACK_COOLDOWN = 3677607289U;
+        static const AkUniqueID SFX_OBJ_ARROW_HIT = 1313382400U;
         static const AkUniqueID SFX_OBJ_BUILD_TRAP = 318795889U;
         static const AkUniqueID SFX_OBJ_BURNING_FUSE = 3544644124U;
         static const AkUniqueID SFX_OBJ_CAMO = 4108944039U;
@@ -127,6 +128,7 @@ namespace AK
 
             namespace SWITCH
             {
+                static const AkUniqueID GEL = 646772379U;
                 static const AkUniqueID GRASS = 4248645337U;
                 static const AkUniqueID STONE = 1216965916U;
                 static const AkUniqueID WATER = 2654748154U;
