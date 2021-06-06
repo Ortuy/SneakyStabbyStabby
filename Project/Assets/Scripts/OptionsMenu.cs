@@ -31,6 +31,33 @@ public class OptionsMenu : MonoBehaviour
     void Start()
     {
         resolutions = Screen.resolutions;
+        List<Resolution> tempRes = new List<Resolution>();
+        
+        int highestRefRate = 0;
+        for (int i = 0; i < resolutions.Length; i++)
+        {
+            if(resolutions[i].refreshRate > highestRefRate)
+            {
+                highestRefRate = resolutions[i].refreshRate;
+            }
+        }
+
+        for (int i = 0; i < resolutions.Length; i++)
+        {
+            float temp = (float)resolutions[i].width / (float)resolutions[i].height;
+            temp = Mathf.Round(temp * 100f);
+
+            float goodRes = (16f / 9f);
+            goodRes = Mathf.Round(goodRes * 100f);
+
+            Debug.Log(temp + "  " + goodRes);
+            if (temp == goodRes)
+            {
+                tempRes.Add(resolutions[i]);
+            }
+        }
+        resolutions = tempRes.ToArray();
+
         resolutionDropdown.ClearOptions();
 
         List<string> options = new List<string>();

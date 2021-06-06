@@ -333,3 +333,22 @@
 ### Fixed
 - Fixed pressing esc to hide UI panels
 - Fixed the player death text staying in place forever
+
+## [1.0.0] - 2021-06-06
+### Added
+- How to Play panel
+- Added particle effects for the crossbow bolts hitting walls
+- Added footstep particle effects for the featherfeet potion and gel trap glow
+### Changed
+- The crossbow now disarms traps
+- The spike pit now uses a different sprite
+- Chose the final game name
+### Fixed
+- Dead players can now walk through living players
+- Fixed an infinite item bug
+- Fixed a bug with crossbows shooting through walls
+- Fixed being able to attack in the waiting room
+- Fixed being unable to blink while sprinting
+- Fixed being stuck in the shop after dying while using it
+- Fixed the featherfeet potion not turning off sounds for other players
+
