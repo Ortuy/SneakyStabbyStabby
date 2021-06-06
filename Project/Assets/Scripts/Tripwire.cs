@@ -10,6 +10,8 @@ public class Tripwire : MonoBehaviourPunCallbacks
     public float destroyTime;
     public bool isTrapped;
 
+    private bool usedUp;
+
     private Animator animator;
     public Transform lowerPoint, upperPoint;
 
@@ -33,10 +35,10 @@ public class Tripwire : MonoBehaviourPunCallbacks
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        
 
         PhotonView target = collision.gameObject.GetComponent<PhotonView>();
-        if (target != null)
+        if (target != null && !usedUp)
         {
             if (target.tag == "Player")
             {
@@ -115,6 +117,8 @@ public class Tripwire : MonoBehaviourPunCallbacks
 
     IEnumerator DestroyByTime()
     {
+        usedUp = true;
+        //GetComponent<BoxCollider2D>().enabled = false;
         yield return new WaitForSeconds(destroyTime);
         this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered);
 

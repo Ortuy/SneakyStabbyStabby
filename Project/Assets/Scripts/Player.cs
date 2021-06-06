@@ -690,7 +690,7 @@ public class Player : MonoBehaviourPunCallbacks
             this.gameObject.layer = 16;
             rotatingBody.layer = 16;
         }
-        if (Input.GetKey(KeyCode.LeftShift) && timeSprintRemaining != 0 && /*timerSprintRunning2 &&*/ isTrapped == false & !isGhostPlayer & !isAliveGhostPlayer)
+        if (Input.GetKey(KeyCode.LeftShift) && timeSprintRemaining != 0 && /*timerSprintRunning2 &&*/ isTrapped == false & !isGhostPlayer & !isAliveGhostPlayer && !isBlinking)
         {
             AkSoundEngine.SetState("footstep", "speed");
             rigidBody.velocity = new Vector2(moveDirection.x * sprint, moveDirection.y * sprint);

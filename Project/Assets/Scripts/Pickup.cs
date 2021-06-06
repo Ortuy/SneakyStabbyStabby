@@ -30,7 +30,7 @@ public class Pickup : MonoBehaviourPunCallbacks
         AkSoundEngine.PostEvent("sfx_obj_pickup", gameObject, gameObject);
         var particle = Instantiate(particleEffect, transform.position, Quaternion.identity);
         Destroy(particle, 5f);
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -88,18 +88,21 @@ public class Pickup : MonoBehaviourPunCallbacks
 
             if (pickedUp)
             {
-                Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+                
                 DestroyPickup();
-                if (photonView.IsMine)
-                {
-                    PhotonNetwork.Destroy(gameObject);
-                }
+                //PhotonNetwork.Destroy(gameObject);
+                //if (photonView.IsMine)
+                //{
+                //    Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+                //    PhotonNetwork.Destroy(gameObject);
+                //}
 
 
-                if (photonView.IsMine)
-                {
-                    PhotonNetwork.Destroy(gameObject);
-                }
+                //if (photonView.IsMine)
+                //{
+                //    Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+                //    PhotonNetwork.Destroy(gameObject);
+                //}
 
                 if (other.GetComponent<PhotonView>().IsMine)
                 {
