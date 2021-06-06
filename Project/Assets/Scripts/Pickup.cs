@@ -51,7 +51,6 @@ public class Pickup : MonoBehaviourPunCallbacks
                             //inventory.isFull[i] = true;
                             //Instantiate(itemButton, inventory.slots[i].transform, false);
                             inventory.SetActiveItem(i, item);
-
                             pickedUp = true;
 
                             break;
@@ -89,6 +88,7 @@ public class Pickup : MonoBehaviourPunCallbacks
 
             if (pickedUp)
             {
+                Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
                 DestroyPickup();
                 if (photonView.IsMine)
                 {

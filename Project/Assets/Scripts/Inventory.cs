@@ -263,9 +263,13 @@ public class Inventory : MonoBehaviourPunCallbacks
                 }
 
                 currentActives[selectedSlot].usesLeft--;
-                useMarkers[selectedSlot].markers[currentActives[selectedSlot].usesLeft].color = usedColor;
+                if(currentActives[selectedSlot].usesLeft >= 0)
+                {
+                    useMarkers[selectedSlot].markers[currentActives[selectedSlot].usesLeft].color = usedColor;
+                }
+                
 
-                if (currentActives[selectedSlot].usesLeft == 0)
+                if (currentActives[selectedSlot].usesLeft <= 0)
                 {
                     StartCoroutine(WaitAndHideCrossbow());
 
