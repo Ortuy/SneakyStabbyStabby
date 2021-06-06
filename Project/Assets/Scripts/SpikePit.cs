@@ -25,7 +25,7 @@ public class SpikePit : MonoBehaviourPunCallbacks
             PhotonView target = collision.gameObject.GetComponent<PhotonView>();
             if (target != null)
             {
-                if (target.tag == "Player")
+                if (target.CompareTag("Player"))
                 {
                     
                     AkSoundEngine.PostEvent("sfx_obj_spike_trap_activate", gameObject, gameObject);
@@ -36,9 +36,19 @@ public class SpikePit : MonoBehaviourPunCallbacks
                     this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered, 3f);
                     usedUp = true;
                 }
+                else if(target.CompareTag("Bolt"))
+                {
+                    AkSoundEngine.PostEvent("sfx_obj_spike_trap_activate", gameObject, gameObject);
 
+                    animator.SetBool("Activated", true);
+                    activateFX.Play();
+
+                    GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered, 3f);
+                    usedUp = true;
+                }
 
             }
+
         }
         
     }

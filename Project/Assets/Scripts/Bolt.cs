@@ -59,7 +59,7 @@ public class Bolt : MonoBehaviourPunCallbacks
             }           
         }
         //Debug.Log(collision.gameObject.layer);
-        if(collision.CompareTag("Walls"))
+        if(collision.CompareTag("Walls") || collision.CompareTag("Trap"))
         {
             Destroy(Instantiate(hitFX, impactPoint.position, Quaternion.identity), 2f);
             this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered);

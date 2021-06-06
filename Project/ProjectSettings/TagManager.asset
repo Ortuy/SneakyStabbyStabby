@@ -11,6 +11,8 @@ TagManager:
   - ViewCone
   - Ghost
   - Walls
+  - Trap
+  - Bolt
   layers:
   - Default
   - TransparentFX
