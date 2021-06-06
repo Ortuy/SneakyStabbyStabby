@@ -47,6 +47,13 @@ public class Health : MonoBehaviourPunCallbacks
         
         if (isGhost == false)
         {
+            if(player.isInteracting)
+            {
+                player.nearbyInteractable.EndInteraction();
+                player.isInteracting = false;
+                player.nearbyInteractable.interactionOn = false;
+            }
+
             AkSoundEngine.PostEvent("char_taking_damage", gameObject, gameObject);
             hurtFX.Play();
             //StopAllCoroutines();

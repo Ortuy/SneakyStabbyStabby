@@ -8,7 +8,7 @@ public class InteractableObject : MonoBehaviourPunCallbacks
     [SerializeField] private GameObject interactionKeyIndicator;
     protected PhotonView targetPV;
     protected Player targetPlayer;
-    protected bool interactionOn;
+    public bool interactionOn;
     protected bool playerInRange;
 
     protected virtual void StartInteraction()
@@ -16,7 +16,7 @@ public class InteractableObject : MonoBehaviourPunCallbacks
 
     }
 
-    protected virtual void EndInteraction()
+    public virtual void EndInteraction()
     {
 
     }
@@ -53,6 +53,7 @@ public class InteractableObject : MonoBehaviourPunCallbacks
             interactionKeyIndicator.SetActive(true);
             targetPV = other.GetComponent<PhotonView>();
             targetPlayer = other.GetComponent<Player>();
+            targetPlayer.nearbyInteractable = this;
             playerInRange = true;
         }
     }
@@ -104,6 +105,7 @@ public class InteractableObject : MonoBehaviourPunCallbacks
             if(targetPV == other.GetComponent<PhotonView>())
             {
                 EndInteraction();
+                targetPlayer.nearbyInteractable = null;
                 targetPV = null;
                 targetPlayer = null;
                 interactionOn = false;

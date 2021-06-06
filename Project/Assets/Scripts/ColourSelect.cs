@@ -61,7 +61,7 @@ public class ColourSelect : InteractableObject
         playertemp.ColorSelect.GetComponent<UIAnimator>().Show();
     }
 
-    protected override void EndInteraction()
+    public override void EndInteraction()
     {
         targetPV.GetComponent<Player>().ColorSelect.GetComponent<UIAnimator>().Hide();
         base.EndInteraction();

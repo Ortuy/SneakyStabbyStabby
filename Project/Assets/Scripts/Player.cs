@@ -111,6 +111,7 @@ public class Player : MonoBehaviourPunCallbacks
     [SerializeField] public GameObject[] camoObjects;
 
     public bool waitingForTrap, settingTrap, isByDetector, isInteracting;
+    public InteractableObject nearbyInteractable;
     [SerializeField] private GameObject trapMarker;
     [SerializeField] private Sprite[] trapImages;
 
