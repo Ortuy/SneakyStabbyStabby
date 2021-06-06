@@ -41,10 +41,10 @@ public class WaitRoomPortal1 : MonoBehaviourPunCallbacks
                 portalAnimator.SetBool("Open", true);
                 StartCoroutine(StopPortal());
             }
-            //if (Input.GetKeyDown(KeyCode.F))
-            //{
-            //    StartCoroutine(Ready1());
-            //}
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                StartCoroutine(Ready1());
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

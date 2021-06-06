@@ -39,10 +39,10 @@ public class WaitRoomPortal : MonoBehaviourPunCallbacks
                 portalAnimator.SetBool("Open", true);
                 StartCoroutine(StopPortal());
             }
-            //if (Input.GetKeyDown(KeyCode.F))
-            //{
-            //    StartCoroutine(Ready());
-            //}
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                StartCoroutine(Ready());
+            }
 
         }
     }

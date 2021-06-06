@@ -99,10 +99,10 @@ public class GameManager : MonoBehaviourPunCallbacks
             StartCoroutine(StartCountdown());
         }
 
-        //if (!countdownStarted && Input.GetKeyDown(KeyCode.O))
-        //{
-        //    StartCoroutine(StartCountdown());
-        //}
+        if (!countdownStarted && Input.GetKeyDown(KeyCode.O))
+        {
+            StartCoroutine(StartCountdown());
+        }
 
         if(Input.GetKeyDown(KeyCode.Escape) && !localPlayer.GetComponent<Player>().isInteracting)
         {
