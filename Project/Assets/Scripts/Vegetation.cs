@@ -65,7 +65,7 @@ public class Vegetation : MonoBehaviour
                 AkSoundEngine.PostEvent("char_footsteps", gameObject, gameObject);
                 break;
             case VegetationType.BIRDS:
-                AkSoundEngine.PostEvent("amb_flying_birds", gameObject, gameObject);
+                AkSoundEngine.PostEvent("amb_birds", gameObject, gameObject);
                 break;
         }
     }

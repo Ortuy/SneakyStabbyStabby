@@ -222,7 +222,7 @@
 						</Event>
 						<Event Name="amb_flying_birds" ID="{D8F2A8F8-9497-4B37-9457-C42ABB0B42B8}">
 							<ChildrenList>
-								<Action Name="" ID="{33E36E98-0DEA-4EAF-8933-C1F0296DD311}" ShortID="868334293">
+								<Action Name="" ID="{C0C88EDC-7138-481D-A6A6-B46AA6EDA8BD}" ShortID="446848580">
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="amb_flying_birds" ID="{FAC568BE-2D69-4DC7-992B-EC1BF3EA7758}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
@@ -523,6 +523,17 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="sfx_obj_build_trap" ID="{017E327E-A0A4-48F2-A8E7-1BF2E3089BEE}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="sfx_obj_cut" ID="{528CEA24-1126-4852-8569-AD1940360383}">
+									<ChildrenList>
+										<Action Name="" ID="{1AE6A763-27D0-4D7C-AA93-6EE94F590E5C}" ShortID="563858344">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="sfx_obj_cut_trap" ID="{FA8D7A53-18D1-4615-B870-00FF5E06EDFE}" WorkUnitID="{166551F8-BBDF-4BD8-9C3F-4DCEB5321DDE}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

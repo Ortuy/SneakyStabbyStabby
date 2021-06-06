@@ -36,6 +36,7 @@ namespace AK
         static const AkUniqueID SFX_OBJ_BUILD_TRAP = 318795889U;
         static const AkUniqueID SFX_OBJ_BURNING_FUSE = 3544644124U;
         static const AkUniqueID SFX_OBJ_CAMO = 4108944039U;
+        static const AkUniqueID SFX_OBJ_CUT = 1442787213U;
         static const AkUniqueID SFX_OBJ_DETECTOR = 919196649U;
         static const AkUniqueID SFX_OBJ_GAS = 1107926442U;
         static const AkUniqueID SFX_OBJ_GEL = 1175037001U;

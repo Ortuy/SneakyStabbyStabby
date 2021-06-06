@@ -134,6 +134,7 @@ public class Tripwire : MonoBehaviourPunCallbacks
                 player = collision.GetComponent<Player>();
                 if (player.destroyWeb == true)
                 {
+                    AkSoundEngine.PostEvent("sfx_obj_cut", gameObject, gameObject);
                     target.GetComponent<Health>().cFollow.ShakeCamera(1);
                     DestroyWeb();
                 }

@@ -30,6 +30,7 @@
 						<ObjectRef Name="ui_wood_panel_options_checkbox" ID="{05B0927E-DE95-4794-87A8-433C8930B6AC}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="char_knife_swinging" ID="{864A35CE-32B9-47A5-A72F-92EE6882F47A}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="sfx_obj_gas" ID="{68062411-6FFE-483D-8ED0-70977026E5F8}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="sfx_obj_cut" ID="{528CEA24-1126-4852-8569-AD1940360383}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="sfx_obj_setting_gel_trap" ID="{1EE2DD18-995B-4864-B72E-8BC8577839FD}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Events" ID="{A69BF0FC-D84A-487C-ABDD-56F71CB2A126}" WorkUnitID="{A69BF0FC-D84A-487C-ABDD-56F71CB2A126}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="ui_close_map" ID="{2324F4BB-A7F4-48BE-AB7E-02686B953BDE}" WorkUnitID="{F546EF83-A9A6-45C4-BA90-1990FA04FEBF}" Origin="Manual" Filter="7"/>

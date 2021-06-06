@@ -16,7 +16,7 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="3240722334">
+		<SoundBank Id="3161908922" Language="SFX" Hash="2937693639">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -57,7 +57,14 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3910014366" Name="amb_flying_birds" ObjectPath="\Events\Default Work Unit\Ambience\amb_flying_birds" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3910014366" Name="amb_flying_birds" ObjectPath="\Events\Default Work Unit\Ambience\amb_flying_birds" DurationType="OneShot" DurationMin="3.195469" DurationMax="3.195469">
+					<IncludedMemoryFiles>
+						<File Id="393212323" Language="SFX">
+							<ShortName>Birds, Crow, Ravens, Chirp, Wings, Fly By SND50106.wav</ShortName>
+							<Path>SFX\Birds, Crow, Ravens, Chirp, Wings, Fly By SND50106_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="4025637178" Name="amb_schroom_enter" ObjectPath="\Events\Default Work Unit\Ambience\amb_schroom_enter" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.528148" DurationMax="0.830190">
 					<IncludedMemoryFiles>
 						<File Id="77449660" Language="SFX">
@@ -322,11 +329,19 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2631409595" Name="seller_open" ObjectPath="\Events\Default Work Unit\Seller\seller_open" DurationType="OneShot" DurationMin="1.008636" DurationMax="1.286155">
+				<Event Id="2631409595" Name="seller_open" ObjectPath="\Events\Default Work Unit\Seller\seller_open" DurationType="OneShot" DurationMin="1.008636" DurationMax="1.987133">
 					<IncludedMemoryFiles>
+						<File Id="308208136" Language="SFX">
+							<ShortName>shop.wav</ShortName>
+							<Path>SFX\shop_10C4C929.wem</Path>
+						</File>
 						<File Id="614182129" Language="SFX">
 							<ShortName>hehehe.wav</ShortName>
 							<Path>SFX\hehehe_10C4C929.wem</Path>
+						</File>
+						<File Id="836529807" Language="SFX">
+							<ShortName>what.wav</ShortName>
+							<Path>SFX\what_10C4C929.wem</Path>
 						</File>
 						<File Id="987174822" Language="SFX">
 							<ShortName>gegege.wav</ShortName>
@@ -411,6 +426,14 @@
 						<File Id="301789713" Language="SFX">
 							<ShortName>Rocks, Impact, Throw And Roll, Small Thump SND0788 1.wav</ShortName>
 							<Path>SFX\Rocks, Impact, Throw And Roll, Small Thump SND0788 1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1442787213" Name="sfx_obj_cut" ObjectPath="\Events\Default Work Unit\SFX\sfx_obj\sfx_obj_cut" MaxAttenuation="12.000000" DurationType="OneShot" DurationMin="0.184561" DurationMax="0.184561">
+					<IncludedMemoryFiles>
+						<File Id="390859809" Language="SFX">
+							<ShortName>Ripping by Walter_Odington Id-18624 1.wav</ShortName>
+							<Path>SFX\Ripping by Walter_Odington Id-18624 1_B3927093.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
