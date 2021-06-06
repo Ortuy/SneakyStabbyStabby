@@ -44,7 +44,7 @@ public class Radar : InteractableObject
         }        
     }
 
-    protected override void EndInteraction()
+    public override void EndInteraction()
     {
         base.EndInteraction();
         if (GameManager.localInstance.mapOut)

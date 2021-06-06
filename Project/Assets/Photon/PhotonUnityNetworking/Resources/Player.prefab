@@ -88480,6 +88480,7 @@ MonoBehaviour:
   settingTrap: 0
   isByDetector: 0
   isInteracting: 0
+  nearbyInteractable: {fileID: 0}
   trapMarker: {fileID: 8217094936792234436}
   trapImages:
   - {fileID: 21300000, guid: 6dfdda76ac9dd4b46b612adac8ea1938, type: 3}

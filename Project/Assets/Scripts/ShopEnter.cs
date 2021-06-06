@@ -511,7 +511,7 @@ public class ShopEnter : InteractableObject
         AkSoundEngine.PostEvent("seller_open", gameObject, gameObject);
     }
 
-    protected override void EndInteraction()
+    public override void EndInteraction()
     {
         player = targetPV.GetComponent<Player>();
         Shop.GetComponent<UIAnimator>().Hide();
