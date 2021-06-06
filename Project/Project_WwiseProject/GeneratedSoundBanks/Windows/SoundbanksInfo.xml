@@ -16,7 +16,7 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="2158554543">
+		<SoundBank Id="3161908922" Language="SFX" Hash="4183692257">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -473,7 +473,7 @@
 					<IncludedMemoryFiles>
 						<File Id="390859809" Language="SFX">
 							<ShortName>Ripping by Walter_Odington Id-18624 1.wav</ShortName>
-							<Path>SFX\Ripping by Walter_Odington Id-18624 1_B3927093.wem</Path>
+							<Path>SFX\Ripping by Walter_Odington Id-18624 1_CF23C80D.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
