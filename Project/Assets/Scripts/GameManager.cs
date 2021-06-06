@@ -142,7 +142,11 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         if (pauseMenu.activeInHierarchy)
         {
-            player.stabLock = false;
+            if (player.inWaitRoom==false)
+            {
+                player.stabLock = false;
+            }
+
             //pauseMenu.SetActive(false);
             pauseMenu.GetComponent<UIAnimator>().Hide();
         }
