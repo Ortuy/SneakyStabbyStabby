@@ -402,12 +402,19 @@ public class Player : MonoBehaviourPunCallbacks
             if (GameManager.localInstance.mapOut)
             {
                 AkSoundEngine.PostEvent("ui_open_map", gameObject, gameObject);
+
+
                 stabLock = true;
+
+                
                 torsoAnimator.SetBool("Map", true);
             }
             else
             {
-                stabLock = false;
+                if (inWaitRoom == false)
+                {
+                    stabLock = false;
+                }
                 AkSoundEngine.PostEvent("ui_close_map", gameObject, gameObject);
                 torsoAnimator.SetBool("Map", false);
             }
