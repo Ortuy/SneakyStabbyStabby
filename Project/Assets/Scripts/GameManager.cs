@@ -71,6 +71,8 @@ public class GameManager : MonoBehaviourPunCallbacks
         localInstance = this;
         //gameCanvas.SetActive(true);
         StartCoroutine(WaitAndSpawnPlayer());
+
+        
     }
 
     IEnumerator WaitAndSpawnPlayer()
@@ -99,10 +101,10 @@ public class GameManager : MonoBehaviourPunCallbacks
             StartCoroutine(StartCountdown());
         }
 
-        if (!countdownStarted && Input.GetKeyDown(KeyCode.O))
-        {
-            StartCoroutine(StartCountdown());
-        }
+        //if (!countdownStarted && Input.GetKeyDown(KeyCode.O))
+        //{
+        //    StartCoroutine(StartCountdown());
+        //}
 
         if(Input.GetKeyDown(KeyCode.Escape) && !localPlayer.GetComponent<Player>().isInteracting)
         {

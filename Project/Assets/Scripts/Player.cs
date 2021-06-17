@@ -635,6 +635,9 @@ public class Player : MonoBehaviourPunCallbacks
         if (photonView.IsMine)
         {
             //AkSoundEngine.SetState("footstep", "inaudible");
+            AkSoundEngine.SetSwitch("surface", "gel", gameObject);
+            AkSoundEngine.PostEvent("char_footsteps", gameObject, gameObject);
+
             foot = PhotonNetwork.Instantiate/*RoomObject*/(glowingFootstep.name, transform.position, legs.transform.rotation);
             //foot.GetComponent<SpriteRenderer>().flipX = legs.GetComponent<SpriteRenderer>().flipX;
             //Destroy(foot, 16);

@@ -61,6 +61,7 @@ public class Bolt : MonoBehaviourPunCallbacks
         //Debug.Log(collision.gameObject.layer);
         if(collision.CompareTag("Walls") || collision.CompareTag("Trap"))
         {
+            AkSoundEngine.PostEvent("sfx_obj_arrow_hit", gameObject, gameObject);
             Destroy(Instantiate(hitFX, impactPoint.position, Quaternion.identity), 2f);
             this.GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.AllBuffered);
         }

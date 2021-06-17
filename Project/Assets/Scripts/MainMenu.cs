@@ -48,6 +48,7 @@ public class MainMenu : MonoBehaviourPunCallbacks
 
     public void CreateGame()
     {
+        AnalyticsManager.Get.SendHostGameEvent(roomName);
         PhotonNetwork.CreateRoom(roomName, new RoomOptions() { MaxPlayers = playerNum }, null);
     }
 
